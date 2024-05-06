@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/src/main/java/org/example/frontendintro/FrontEndIntroApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/src/main/resources/script/ArgumentInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/src/main/resources/script/SortArray.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-intro/src/test/java/org/example/frontendintro/FrontEndIntroApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-intro/src/main/resources/script/PersonalBMI.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +61,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Node.js.ArgumentInfo.js.executor": "Run",
+    "Node.js.PersonalBMI.js.executor": "Run",
     "Node.js.SortArray.js.executor": "Run",
     "Node.js.demo.js (1).executor": "Run",
     "Node.js.demo.js.executor": "Run",
@@ -114,8 +98,11 @@
       <recent name="C:\GitHub\Spring Fundamentals\front-end-basics\src\main\resources\static\js" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.ArgumentInfo.js">
+  <component name="RunManager" selected="Node.js.PersonalBMI.js">
     <configuration name="ArgumentInfo.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front-end-intro/src/main/resources/script/ArgumentInfo.js" working-dir="$PROJECT_DIR$/front-end-intro/src/main/resources/script">
+      <method v="2" />
+    </configuration>
+    <configuration name="PersonalBMI.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front-end-intro/src/main/resources/script/PersonalBMI.js" working-dir="$PROJECT_DIR$/front-end-intro/src/main/resources/script">
       <method v="2" />
     </configuration>
     <configuration name="SortArray.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front-end-intro/src/main/resources/script/SortArray.js" working-dir="$PROJECT_DIR$/front-end-intro/src/main/resources/script">
@@ -136,6 +123,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.PersonalBMI.js" />
         <item itemvalue="Node.js.ArgumentInfo.js" />
         <item itemvalue="Node.js.SortArray.js" />
         <item itemvalue="Node.js.demo.js (1)" />
@@ -153,7 +141,7 @@
       <updated>1715020135426</updated>
       <workItem from="1715020136738" duration="2110000" />
       <workItem from="1715022273670" duration="200000" />
-      <workItem from="1715022487530" duration="4825000" />
+      <workItem from="1715022487530" duration="5658000" />
     </task>
     <servers />
   </component>
