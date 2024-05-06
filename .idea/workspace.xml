@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end-intro/src/main/resources/script/PersonalBMI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-intro/src/main/resources/script/HeroicInventory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,17 +99,17 @@
       <recent name="C:\GitHub\Spring Fundamentals\front-end-basics\src\main\resources\static\js" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.PersonalBMI.js">
+  <component name="RunManager" selected="Node.js.HeroicInventory.js">
     <configuration name="ArgumentInfo.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front-end-intro/src/main/resources/script/ArgumentInfo.js" working-dir="$PROJECT_DIR$/front-end-intro/src/main/resources/script">
+      <method v="2" />
+    </configuration>
+    <configuration name="HeroicInventory.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front-end-intro/src/main/resources/script/HeroicInventory.js" working-dir="$PROJECT_DIR$/front-end-intro/src/main/resources/script">
       <method v="2" />
     </configuration>
     <configuration name="PersonalBMI.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front-end-intro/src/main/resources/script/PersonalBMI.js" working-dir="$PROJECT_DIR$/front-end-intro/src/main/resources/script">
       <method v="2" />
     </configuration>
     <configuration name="SortArray.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front-end-intro/src/main/resources/script/SortArray.js" working-dir="$PROJECT_DIR$/front-end-intro/src/main/resources/script">
-      <method v="2" />
-    </configuration>
-    <configuration name="demo.js" type="NodeJSConfigurationType" temporary="true" path-to-node="$APPLICATION_HOME_DIR$/plugins/javascript-impl/jsLanguageServicesImpl/flow/node.js" nameIsGenerated="true" path-to-js-file="demo.js" working-dir="$PROJECT_DIR$/front-end-basics/src/main/resources/static">
       <method v="2" />
     </configuration>
     <configuration name="demo.js" type="NodeJSConfigurationType" temporary="true" path-to-node="$PROJECT_DIR$/../../Program Files/nodejs/node" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front-end-intro/src/main/resources/script/demo.js" working-dir="$PROJECT_DIR$/front-end-intro/src/main/resources">
@@ -123,11 +124,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.HeroicInventory.js" />
         <item itemvalue="Node.js.PersonalBMI.js" />
         <item itemvalue="Node.js.ArgumentInfo.js" />
         <item itemvalue="Node.js.SortArray.js" />
         <item itemvalue="Node.js.demo.js (1)" />
-        <item itemvalue="Node.js.demo.js" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +142,7 @@
       <updated>1715020135426</updated>
       <workItem from="1715020136738" duration="2110000" />
       <workItem from="1715022273670" duration="200000" />
-      <workItem from="1715022487530" duration="5658000" />
+      <workItem from="1715022487530" duration="6571000" />
     </task>
     <servers />
   </component>
