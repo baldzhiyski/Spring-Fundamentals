@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .register-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .register-form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-container">
+    <h2 class="text-center">Create an Account</h2>
+    <form class="register-form">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+            <div id="emailAlert" class="alert alert-danger mt-2" style="display: none;">Please enter a valid email address.</div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+            <div id="passwordAlert" class="alert alert-danger mt-2" style="display: none;">Password must be at least 8 characters long.</div>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+            <div id="confirmPasswordAlert" class="alert alert-danger mt-2" style="display: none;">Passwords do not match.</div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+        <p class="text-center mt-3">Already have an account? <a href="#">Login</a></p>
+    </form>
+</div>
+
+<!-- Bootstrap JS (optional, if you want to use Bootstrap JavaScript components) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.querySelector('.register-form').addEventListener('submit', function(event) {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        // Email validation
+        if (!validateEmail(email)) {
+            event.preventDefault();
+            document.getElementById('emailAlert').style.display = 'block';
+        } else {
+            document.getElementById('emailAlert').style.display = 'none';
+        }
+
+        // Password validation
+        if (password.length < 8) {
+            event.preventDefault();
+            document.getElementById('passwordAlert').style.display = 'block';
+        } else {
+            document.getElementById('passwordAlert').style.display = 'none';
+        }
+
+        // Confirm password validation
+        if (password !== confirmPassword) {
+            event.preventDefault();
+            document.getElementById('confirmPasswordAlert').style.display = 'block';
+        } else {
+            document.getElementById('confirmPasswordAlert').style.display = 'none';
+        }
+    });
+
+    function validateEmail(email) {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+</script>
+</body>
+</html>
