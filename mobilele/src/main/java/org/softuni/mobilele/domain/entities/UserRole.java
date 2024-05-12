@@ -1,14 +1,13 @@
 package org.softuni.mobilele.domain.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.softuni.mobilele.domain.entities.enums.Role;
+
+import java.util.List;
 
 @Entity
 @Table(name = "user_roles")

@@ -1,6 +1,7 @@
 package org.softuni.mobilele.services.implementations;
 
 import com.google.gson.Gson;
+import jakarta.persistence.EntityManager;
 import org.modelmapper.ModelMapper;
 import org.softuni.mobilele.domain.dtos.*;
 import org.softuni.mobilele.domain.dtos.brand.BrandDto;
@@ -17,6 +18,7 @@ import org.softuni.mobilele.services.SeedService;
 import org.softuni.mobilele.utils.Paths;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -37,8 +39,9 @@ public class SeedServiceImpl implements SeedService {
 
     private Gson gson;
 
+    private EntityManager entityManager;
     @Autowired
-    public SeedServiceImpl(ModelRepository modelRepository, UserRepository userRepository, OfferRepository offerRepository, BrandRepository brandRepository, UserRoleRepository userRoleRepository, ModelMapper mapper, Gson gson) {
+    public SeedServiceImpl(ModelRepository modelRepository, UserRepository userRepository, OfferRepository offerRepository, BrandRepository brandRepository, UserRoleRepository userRoleRepository, ModelMapper mapper, Gson gson, EntityManager entityManager) {
         this.modelRepository = modelRepository;
         this.userRepository = userRepository;
         this.offerRepository = offerRepository;
@@ -46,6 +49,7 @@ public class SeedServiceImpl implements SeedService {
         this.userRoleRepository = userRoleRepository;
         this.mapper = mapper;
         this.gson = gson;
+        this.entityManager = entityManager;
     }
 
     @Override
@@ -106,19 +110,22 @@ public class SeedServiceImpl implements SeedService {
     }
 
     @Override
+    @Transactional
     public void seedUsers() throws FileNotFoundException {
-        if(this.userRepository.count()>0) return;
+        if (this.userRepository.count() > 0) {
+            return;
+        }
 
         FileReader fileReader = new FileReader(Paths.PATH_USERS);
         List<UserDto> userDtos = Arrays.stream(this.gson.fromJson(fileReader, UserDto[].class))
                 .toList();
 
-        userDtos.stream().map(userDto ->{
+        userDtos.stream().map(userDto -> {
             UserRoleIdDto roleDto = userDto.getRole();
+            UserRole userRole = this.userRoleRepository.findById(roleDto.getId())
+                    .orElseThrow(() -> new IllegalArgumentException("User role not found"));
 
-            UserRole userRole = this.userRoleRepository.findById(roleDto.getId()).orElseThrow();
             User user = this.mapper.map(userDto, User.class);
-
             user.setRole(userRole);
 
             return user;

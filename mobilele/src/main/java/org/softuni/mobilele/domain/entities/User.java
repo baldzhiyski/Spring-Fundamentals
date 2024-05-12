@@ -29,7 +29,7 @@ public class User  extends BaseEntity{
     @Column
     private boolean isActive;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
     @JoinColumn(name = "user_role_id")
     private UserRole role;
 

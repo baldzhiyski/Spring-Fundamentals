@@ -16,8 +16,8 @@ public interface SeedService {
     default void seedAll() throws FileNotFoundException {
         seedUserRoles();
         seedBrands();
-        seedUsers();
         seedModels();
+        seedUsers();
         seedOffers();
     }
 }
