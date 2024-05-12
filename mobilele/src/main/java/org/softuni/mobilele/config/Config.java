@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Year;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -47,6 +48,12 @@ public class Config {
                 LocalTime parse = LocalTime.parse(mappingContext.getSource(),
                         DateTimeFormatter.ofPattern("HH:mm:ss"));
                 return parse;
+            }
+        });
+        modelMapper.addConverter(new Converter<String, Year>() {
+            @Override
+            public Year convert(MappingContext<String, Year> context) {
+                return Year.parse(context.getSource());
             }
         });
 

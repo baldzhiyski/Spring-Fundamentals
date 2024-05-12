@@ -1,7 +1,55 @@
 [
   {
     "name": "Corolla",
-    "category": "SEDAN",
+    "category": "CAR",
+    "imageUrl": "https://example.com/corolla.jpg",
+    "startYear": 2015,
+    "endYear": 2022,
+    "created": "2023-03-15T12:30:00Z",
+    "modified": "2023-03-15T12:30:00Z",
+    "brand": {
+      "id": 1
+    }
+  },
+  {
+    "name": "Bus1",
+    "category": "BUS",
+    "imageUrl": "https://example.com/bus1.jpg",
+    "startYear": 2019,
+    "endYear": 2023,
+    "created": "2023-04-20T09:45:00Z",
+    "modified": "2023-04-20T09:45:00Z",
+    "brand": {
+      "id": 6
+    }
+  },
+  {
+    "name": "Truck1",
+    "category": "TRUCK",
+    "imageUrl": "https://example.com/truck1.jpg",
+    "startYear": 2018,
+    "endYear": 2022,
+    "created": "2023-05-10T15:20:00Z",
+    "modified": "2023-05-10T15:20:00Z",
+    "brand": {
+      "id": 9
+    }
+  },
+  {
+    "name": "Ninja",
+    "category": "MOTORCYCLE",
+    "imageUrl": "https://example.com/ninja.jpg",
+    "startYear": 2020,
+    "endYear": 2023,
+    "created": "2023-06-25T11:10:00Z",
+    "modified": "2023-06-25T11:10:00Z",
+    "brand": {
+      "id": 11
+    }
+  },
+  {
+    "name": "Corolla",
+    "category": "CAR",
     "imageUrl": "https://example.com/corolla.jpg",
     "startYear": 2015,
     "endYear": 2022,
@@ -13,7 +61,7 @@
   },
   {
     "name": "Accord",
-    "category": "SEDAN",
+    "category": "CAR",
     "imageUrl": "https://example.com/accord.jpg",
     "startYear": 2017,
     "endYear": 2023,
@@ -25,7 +73,7 @@
   },
   {
     "name": "Focus",
-    "category": "HATCHBACK",
+    "category": "CAR",
     "imageUrl": "https://example.com/focus.jpg",
     "startYear": 2016,
     "endYear": 2022,
@@ -37,7 +85,7 @@
   },
   {
     "name": "Civic",
-    "category": "SEDAN",
+    "category": "CAR",
     "imageUrl": "https://example.com/civic.jpg",
     "startYear": 2018,
     "endYear": 2024,
@@ -49,7 +97,7 @@
   },
   {
     "name": "Fiesta",
-    "category": "HATCHBACK",
+    "category": "CAR",
     "imageUrl": "https://example.com/fiesta.jpg",
     "startYear": 2017,
     "endYear": 2023,
@@ -61,7 +109,7 @@
   },
   {
     "name": "3 Series",
-    "category": "SEDAN",
+    "category": "CAR",
     "imageUrl": "https://example.com/3series.jpg",
     "startYear": 2016,
     "endYear": 2022,
@@ -73,7 +121,7 @@
   },
   {
     "name": "C-Class",
-    "category": "SEDAN",
+    "category": "CAR",
     "imageUrl": "https://example.com/cclass.jpg",
     "startYear": 2017,
     "endYear": 2023,
@@ -85,7 +133,7 @@
   },
   {
     "name": "A4",
-    "category": "SEDAN",
+    "category": "CAR",
     "imageUrl": "https://example.com/a4.jpg",
     "startYear": 2018,
     "endYear": 2024,
@@ -97,7 +145,7 @@
   },
   {
     "name": "Altima",
-    "category": "SEDAN",
+    "category": "CAR",
     "imageUrl": "https://example.com/altima.jpg",
     "startYear": 2016,
     "endYear": 2022,
@@ -109,7 +157,7 @@
   },
   {
     "name": "Golf",
-    "category": "HATCHBACK",
+    "category": "CAR",
     "imageUrl": "https://example.com/golf.jpg",
     "startYear": 2017,
     "endYear": 2023,
@@ -121,7 +169,7 @@
   },
   {
     "name": "Sonata",
-    "category": "SEDAN",
+    "category": "CAR",
     "imageUrl": "https://example.com/sonata.jpg",
     "startYear": 2018,
     "endYear": 2024,
@@ -133,14 +181,14 @@
   },
   {
     "name": "Optima",
-    "category": "SEDAN",
+    "category": "CAR",
     "imageUrl": "https://example.com/optima.jpg",
     "startYear": 2017,
     "endYear": 2023,
     "created": "2024-02-18T11:45:00Z",
     "modified": "2024-02-18T11:45:00Z",
     "brand": {
-      "id": 11
+      "id": 3
     }
   }
 ]

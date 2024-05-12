@@ -1,7 +1,7 @@
 [
   {
     "description": "Ford Fiesta in excellent condition",
-    "engine": "PETROL",
+    "engine": "GASOLINE",
     "mileage": 40000,
     "price": 12000.00,
     "transmission": "MANUAL",
@@ -17,7 +17,7 @@
   },
   {
     "description": "Honda Civic with sport package",
-    "engine": "PETROL",
+    "engine": "GASOLINE",
     "mileage": 25000,
     "price": 20000.00,
     "transmission": "AUTOMATIC",
@@ -65,7 +65,7 @@
   },
   {
     "description": "Audi A4 with navigation system",
-    "engine": "PETROL",
+    "engine": "GASOLINE",
     "mileage": 20000,
     "price": 30000.00,
     "transmission": "AUTOMATIC",
@@ -81,7 +81,7 @@
   },
   {
     "description": "Nissan Altima in mint condition",
-    "engine": "PETROL",
+    "engine": "HYBRID",
     "mileage": 28000,
     "price": 17000.00,
     "transmission": "AUTOMATIC",
@@ -97,7 +97,7 @@
   },
   {
     "description": "Volkswagen Golf GTI with performance package",
-    "engine": "PETROL",
+    "engine": "HYBRID",
     "mileage": 30000,
     "price": 22000.00,
     "transmission": "AUTOMATIC",
@@ -129,7 +129,7 @@
   },
   {
     "description": "Kia Optima with panoramic sunroof",
-    "engine": "PETROL",
+    "engine": "ELECTRIC",
     "mileage": 25000,
     "price": 19000.00,
     "transmission": "AUTOMATIC",
@@ -145,7 +145,7 @@
   },
   {
     "description": "Mazda 3 with premium audio system",
-    "engine": "PETROL",
+    "engine": "ELECTRIC",
     "mileage": 22000,
     "price": 20000.00,
     "transmission": "AUTOMATIC",
@@ -153,7 +153,7 @@
     "created": "2024-02-18T11:45:00Z",
     "modified": "2024-02-18T11:45:00Z",
     "model": {
-      "id": 13
+      "id": 10
     },
     "seller": {
       "id": 12

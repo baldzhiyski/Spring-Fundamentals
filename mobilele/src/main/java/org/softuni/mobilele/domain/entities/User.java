@@ -2,6 +2,7 @@ package org.softuni.mobilele.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.mindrot.jbcrypt.BCrypt;
 import org.softuni.mobilele.domain.entities.enums.Role;
 
 import java.util.Date;
@@ -28,7 +29,7 @@ public class User  extends BaseEntity{
     @Column
     private boolean isActive;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_role_id")
     private UserRole role;
 
@@ -40,4 +41,9 @@ public class User  extends BaseEntity{
 
     @Column
     private Date modified;
+
+    @PrePersist
+    public void hashPassword() {
+        this.password = BCrypt.hashpw(this.password, BCrypt.gensalt());
+    }
 }

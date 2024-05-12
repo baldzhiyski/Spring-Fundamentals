@@ -9,7 +9,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/DataInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/BrandDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/BrandIdDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/ModelDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/ModelIdDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/OfferDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/UserIdDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/UserRoleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/UserRoleIdDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/feed4a68-c453-4be6-8eba-89ea78e4c75a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/feed4a68-c453-4be6-8eba-89ea78e4c75a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/enums/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/enums/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/BrandRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/BrandRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/ModelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/ModelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/UserRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/UserRoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/SeedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/SeedService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/SeedServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/SeedServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/utils/Paths.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/utils/Paths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/models.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/models.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/offers.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/offers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/user_role.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/user_role.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +230,7 @@
       <workItem from="1715266238070" duration="7102000" />
       <workItem from="1715290587182" duration="6000" />
       <workItem from="1715498349162" duration="5055000" />
-      <workItem from="1715538733196" duration="2564000" />
+      <workItem from="1715538733196" duration="7739000" />
     </task>
     <servers />
   </component>

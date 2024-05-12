@@ -1145,7 +1145,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="338" parent="1" name="mobilele">
-      <LastIntrospectionLocalTimestamp>2024-05-12.18:53:26</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-05-12.20:42:00</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="339" parent="1" name="mysql.infoschema">
@@ -1188,7 +1188,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="348" parent="343" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>13</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1216,13 +1216,13 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="354" parent="344" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>17</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="355" parent="344" name="category">
-      <DasType>enum(&apos;CAR&apos;, &apos;BUSS&apos;, &apos;TRUCK&apos;, &apos;MOTORCYCLE&apos;)|0e</DasType>
+      <DasType>enum(&apos;CAR&apos;, &apos;BUS&apos;, &apos;TRUCK&apos;, &apos;MOTORCYCLE&apos;)|0e</DasType>
       <Position>2</Position>
     </column>
     <column id="356" parent="344" name="created">
@@ -1273,7 +1273,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="367" parent="345" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>11</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1347,7 +1347,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="384" parent="346" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1367,7 +1367,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="388" parent="347" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>13</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1418,18 +1418,14 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="400" parent="347" name="UK_blvmyr4rgpt5rvfms3obvsus7">
+    <index id="400" parent="347" name="FKsy1luwgtc2qas77si4xlrkjtl">
       <ColNames>user_role_id</ColNames>
       <Type>btree</Type>
-      <Unique>1</Unique>
     </index>
     <key id="401" parent="347" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="402" parent="347" name="UK_blvmyr4rgpt5rvfms3obvsus7">
-      <UnderlyingIndexName>UK_blvmyr4rgpt5rvfms3obvsus7</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

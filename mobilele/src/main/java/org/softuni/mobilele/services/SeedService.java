@@ -1,17 +1,19 @@
 package org.softuni.mobilele.services;
 
+import java.io.FileNotFoundException;
+
 public interface SeedService {
-    void seedBrands();
+    void seedBrands() throws FileNotFoundException;
 
-    void seedModels();
+    void seedModels() throws FileNotFoundException;
 
-    void seedOffers();
+    void seedOffers() throws FileNotFoundException;
 
-    void seedUsers();
+    void seedUsers() throws FileNotFoundException;
 
-    void seedUserRoles();
+    void seedUserRoles() throws FileNotFoundException;
 
-    default void seedAll(){
+    default void seedAll() throws FileNotFoundException {
         seedUserRoles();
         seedBrands();
         seedUsers();
