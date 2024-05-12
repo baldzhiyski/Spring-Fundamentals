@@ -1,4 +1,4 @@
-package org.softuni.mobilele.domain.dtos;
+package org.softuni.mobilele.domain.dtos.user_role;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserRoleDto {
-
-    private String role;
+public class UserRoleIdDto {
+    private Long id;
 }

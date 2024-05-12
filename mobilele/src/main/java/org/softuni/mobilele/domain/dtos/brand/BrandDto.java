@@ -1,4 +1,4 @@
-package org.softuni.mobilele.domain.dtos;
+package org.softuni.mobilele.domain.dtos.brand;
 
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;

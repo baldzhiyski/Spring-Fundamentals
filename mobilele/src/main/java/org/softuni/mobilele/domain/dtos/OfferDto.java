@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.softuni.mobilele.domain.dtos.model.ModelIdDto;
+import org.softuni.mobilele.domain.dtos.user.UserIdDto;
 
 @Getter
 @Setter

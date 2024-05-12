@@ -1,10 +1,11 @@
-package org.softuni.mobilele.domain.dtos;
+package org.softuni.mobilele.domain.dtos.user;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.softuni.mobilele.domain.dtos.user_role.UserRoleIdDto;
 
 @Getter
 @Setter

@@ -1,4 +1,4 @@
-package org.softuni.mobilele.domain.dtos;
+package org.softuni.mobilele.domain.dtos.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserIdDto {
+public class ModelIdDto {
     private Long id;
 }

@@ -3,6 +3,14 @@ package org.softuni.mobilele.services.implementations;
 import com.google.gson.Gson;
 import org.modelmapper.ModelMapper;
 import org.softuni.mobilele.domain.dtos.*;
+import org.softuni.mobilele.domain.dtos.brand.BrandDto;
+import org.softuni.mobilele.domain.dtos.brand.BrandIdDto;
+import org.softuni.mobilele.domain.dtos.model.ModelDto;
+import org.softuni.mobilele.domain.dtos.model.ModelIdDto;
+import org.softuni.mobilele.domain.dtos.user.UserDto;
+import org.softuni.mobilele.domain.dtos.user.UserIdDto;
+import org.softuni.mobilele.domain.dtos.user_role.UserRoleDto;
+import org.softuni.mobilele.domain.dtos.user_role.UserRoleIdDto;
 import org.softuni.mobilele.domain.entities.*;
 import org.softuni.mobilele.repositories.*;
 import org.softuni.mobilele.services.SeedService;
@@ -14,7 +22,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class SeedServiceImpl implements SeedService {
