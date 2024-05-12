@@ -1,5 +1,7 @@
 package org.softuni.mobilele.config;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.spi.MappingContext;
@@ -54,6 +56,11 @@ public class Config {
     @Bean
     public Scanner scanner(){
         return new Scanner(System.in);
+    }
+
+    @Bean
+    public Gson gson(){
+        return new GsonBuilder().setPrettyPrinting().create();
     }
 }
 
