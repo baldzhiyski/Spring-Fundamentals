@@ -9,12 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/BrandService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/ModelService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/OfferService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/SeedService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/UserRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/brands.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/models.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/offers.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/user_role.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/inputs/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +52,8 @@
         <option value="package.json" />
         <option value="HTML File" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -208,7 +208,7 @@
       <workItem from="1715266238070" duration="7102000" />
       <workItem from="1715290587182" duration="6000" />
       <workItem from="1715498349162" duration="5055000" />
-      <workItem from="1715538733196" duration="1869000" />
+      <workItem from="1715538733196" duration="2503000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,162 @@
+[
+  {
+    "description": "Ford Fiesta in excellent condition",
+    "engine": "PETROL",
+    "mileage": 40000,
+    "price": 12000.00,
+    "transmission": "MANUAL",
+    "year": 2017,
+    "created": "2023-05-10T15:20:00Z",
+    "modified": "2023-05-10T15:20:00Z",
+    "model": {
+      "id": 3
+    },
+    "seller": {
+      "id": 3
+    }
+  },
+  {
+    "description": "Honda Civic with sport package",
+    "engine": "PETROL",
+    "mileage": 25000,
+    "price": 20000.00,
+    "transmission": "AUTOMATIC",
+    "year": 2019,
+    "created": "2023-06-25T11:10:00Z",
+    "modified": "2023-06-25T11:10:00Z",
+    "model": {
+      "id": 4
+    },
+    "seller": {
+      "id": 4
+    }
+  },
+  {
+    "description": "BMW 3 Series with M Sport package",
+    "engine": "DIESEL",
+    "mileage": 35000,
+    "price": 25000.00,
+    "transmission": "AUTOMATIC",
+    "year": 2017,
+    "created": "2023-07-30T14:50:00Z",
+    "modified": "2023-07-30T14:50:00Z",
+    "model": {
+      "id": 6
+    },
+    "seller": {
+      "id": 5
+    }
+  },
+  {
+    "description": "Mercedes-Benz C-Class luxury sedan",
+    "engine": "DIESEL",
+    "mileage": 30000,
+    "price": 28000.00,
+    "transmission": "AUTOMATIC",
+    "year": 2018,
+    "created": "2023-08-18T08:30:00Z",
+    "modified": "2023-08-18T08:30:00Z",
+    "model": {
+      "id": 7
+    },
+    "seller": {
+      "id": 6
+    }
+  },
+  {
+    "description": "Audi A4 with navigation system",
+    "engine": "PETROL",
+    "mileage": 20000,
+    "price": 30000.00,
+    "transmission": "AUTOMATIC",
+    "year": 2019,
+    "created": "2023-09-05T16:40:00Z",
+    "modified": "2023-09-05T16:40:00Z",
+    "model": {
+      "id": 8
+    },
+    "seller": {
+      "id": 7
+    }
+  },
+  {
+    "description": "Nissan Altima in mint condition",
+    "engine": "PETROL",
+    "mileage": 28000,
+    "price": 17000.00,
+    "transmission": "AUTOMATIC",
+    "year": 2017,
+    "created": "2023-10-12T10:15:00Z",
+    "modified": "2023-10-12T10:15:00Z",
+    "model": {
+      "id": 9
+    },
+    "seller": {
+      "id": 8
+    }
+  },
+  {
+    "description": "Volkswagen Golf GTI with performance package",
+    "engine": "PETROL",
+    "mileage": 30000,
+    "price": 22000.00,
+    "transmission": "AUTOMATIC",
+    "year": 2018,
+    "created": "2023-11-20T13:55:00Z",
+    "modified": "2023-11-20T13:55:00Z",
+    "model": {
+      "id": 10
+    },
+    "seller": {
+      "id": 9
+    }
+  },
+  {
+    "description": "Hyundai Sonata hybrid",
+    "engine": "HYBRID",
+    "mileage": 20000,
+    "price": 23000.00,
+    "transmission": "AUTOMATIC",
+    "year": 2020,
+    "created": "2023-12-22T09:25:00Z",
+    "modified": "2023-12-22T09:25:00Z",
+    "model": {
+      "id": 11
+    },
+    "seller": {
+      "id": 10
+    }
+  },
+  {
+    "description": "Kia Optima with panoramic sunroof",
+    "engine": "PETROL",
+    "mileage": 25000,
+    "price": 19000.00,
+    "transmission": "AUTOMATIC",
+    "year": 2019,
+    "created": "2024-01-10T17:00:00Z",
+    "modified": "2024-01-10T17:00:00Z",
+    "model": {
+      "id": 12
+    },
+    "seller": {
+      "id": 11
+    }
+  },
+  {
+    "description": "Mazda 3 with premium audio system",
+    "engine": "PETROL",
+    "mileage": 22000,
+    "price": 20000.00,
+    "transmission": "AUTOMATIC",
+    "year": 2018,
+    "created": "2024-02-18T11:45:00Z",
+    "modified": "2024-02-18T11:45:00Z",
+    "model": {
+      "id": 13
+    },
+    "seller": {
+      "id": 12
+    }
+  }
+]

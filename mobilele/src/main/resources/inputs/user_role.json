@@ -1,0 +1,38 @@
+[
+  {
+    "role": "ADMIN"
+  },
+  {
+    "role": "USER"
+  },
+  {
+    "role": "SELLER"
+  },
+  {
+    "role": "GUEST"
+  },
+  {
+    "role": "MODERATOR"
+  },
+  {
+    "role": "CUSTOMER"
+  },
+  {
+    "role": "SUBSCRIBER"
+  },
+  {
+    "role": "EDITOR"
+  },
+  {
+    "role": "MANAGER"
+  },
+  {
+    "role": "SUPERUSER"
+  },
+  {
+    "role": "ANALYST"
+  },
+  {
+    "role": "DEVELOPER"
+  }
+]

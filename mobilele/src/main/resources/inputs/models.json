@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Corolla",
+    "category": "SEDAN",
+    "imageUrl": "https://example.com/corolla.jpg",
+    "startYear": 2015,
+    "endYear": 2022,
+    "created": "2023-03-15T12:30:00Z",
+    "modified": "2023-03-15T12:30:00Z",
+    "brand": {
+      "id": 1
+    }
+  },
+  {
+    "name": "Accord",
+    "category": "SEDAN",
+    "imageUrl": "https://example.com/accord.jpg",
+    "startYear": 2017,
+    "endYear": 2023,
+    "created": "2023-04-20T09:45:00Z",
+    "modified": "2023-04-20T09:45:00Z",
+    "brand": {
+      "id": 2
+    }
+  },
+  {
+    "name": "Focus",
+    "category": "HATCHBACK",
+    "imageUrl": "https://example.com/focus.jpg",
+    "startYear": 2016,
+    "endYear": 2022,
+    "created": "2023-05-10T15:20:00Z",
+    "modified": "2023-05-10T15:20:00Z",
+    "brand": {
+      "id": 3
+    }
+  },
+  {
+    "name": "Civic",
+    "category": "SEDAN",
+    "imageUrl": "https://example.com/civic.jpg",
+    "startYear": 2018,
+    "endYear": 2024,
+    "created": "2023-06-25T11:10:00Z",
+    "modified": "2023-06-25T11:10:00Z",
+    "brand": {
+      "id": 2
+    }
+  },
+  {
+    "name": "Fiesta",
+    "category": "HATCHBACK",
+    "imageUrl": "https://example.com/fiesta.jpg",
+    "startYear": 2017,
+    "endYear": 2023,
+    "created": "2023-07-30T14:50:00Z",
+    "modified": "2023-07-30T14:50:00Z",
+    "brand": {
+      "id": 3
+    }
+  },
+  {
+    "name": "3 Series",
+    "category": "SEDAN",
+    "imageUrl": "https://example.com/3series.jpg",
+    "startYear": 2016,
+    "endYear": 2022,
+    "created": "2023-08-18T08:30:00Z",
+    "modified": "2023-08-18T08:30:00Z",
+    "brand": {
+      "id": 5
+    }
+  },
+  {
+    "name": "C-Class",
+    "category": "SEDAN",
+    "imageUrl": "https://example.com/cclass.jpg",
+    "startYear": 2017,
+    "endYear": 2023,
+    "created": "2023-09-05T16:40:00Z",
+    "modified": "2023-09-05T16:40:00Z",
+    "brand": {
+      "id": 6
+    }
+  },
+  {
+    "name": "A4",
+    "category": "SEDAN",
+    "imageUrl": "https://example.com/a4.jpg",
+    "startYear": 2018,
+    "endYear": 2024,
+    "created": "2023-10-12T10:15:00Z",
+    "modified": "2023-10-12T10:15:00Z",
+    "brand": {
+      "id": 7
+    }
+  },
+  {
+    "name": "Altima",
+    "category": "SEDAN",
+    "imageUrl": "https://example.com/altima.jpg",
+    "startYear": 2016,
+    "endYear": 2022,
+    "created": "2023-11-20T13:55:00Z",
+    "modified": "2023-11-20T13:55:00Z",
+    "brand": {
+      "id": 8
+    }
+  },
+  {
+    "name": "Golf",
+    "category": "HATCHBACK",
+    "imageUrl": "https://example.com/golf.jpg",
+    "startYear": 2017,
+    "endYear": 2023,
+    "created": "2023-12-22T09:25:00Z",
+    "modified": "2023-12-22T09:25:00Z",
+    "brand": {
+      "id": 9
+    }
+  },
+  {
+    "name": "Sonata",
+    "category": "SEDAN",
+    "imageUrl": "https://example.com/sonata.jpg",
+    "startYear": 2018,
+    "endYear": 2024,
+    "created": "2024-01-10T17:00:00Z",
+    "modified": "2024-01-10T17:00:00Z",
+    "brand": {
+      "id": 10
+    }
+  },
+  {
+    "name": "Optima",
+    "category": "SEDAN",
+    "imageUrl": "https://example.com/optima.jpg",
+    "startYear": 2017,
+    "endYear": 2023,
+    "created": "2024-02-18T11:45:00Z",
+    "modified": "2024-02-18T11:45:00Z",
+    "brand": {
+      "id": 11
+    }
+  }
+]

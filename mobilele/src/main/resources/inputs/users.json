@@ -1,0 +1,158 @@
+[
+  {
+    "username": "john_doe",
+    "password": "password123",
+    "firstName": "John",
+    "lastName": "Doe",
+    "isActive": true,
+    "role": {
+      "id": 2
+    },
+    "imageUrl": "https://example.com/john.jpg",
+    "created": "2023-03-15T12:30:00Z",
+    "modified": "2023-03-15T12:30:00Z"
+  },
+  {
+    "username": "jane_smith",
+    "password": "password456",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "isActive": true,
+    "role": {
+      "id": 3
+    },
+    "imageUrl": "https://example.com/jane.jpg",
+    "created": "2023-04-20T09:45:00Z",
+    "modified": "2023-04-20T09:45:00Z"
+  },
+  {
+    "username": "alice_johnson",
+    "password": "password789",
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "isActive": true,
+    "role": {
+      "id": 3
+    },
+    "imageUrl": "https://example.com/alice.jpg",
+    "created": "2023-05-10T15:20:00Z",
+    "modified": "2023-05-10T15:20:00Z"
+  },
+  {
+    "username": "tom_williams",
+    "password": "passwordABC",
+    "firstName": "Tom",
+    "lastName": "Williams",
+    "isActive": true,
+    "role": {
+      "id": 2
+    },
+    "imageUrl": "https://example.com/tom.jpg",
+    "created": "2023-06-25T11:10:00Z",
+    "modified": "2023-06-25T11:10:00Z"
+  },
+  {
+    "username": "emma_brown",
+    "password": "passwordDEF",
+    "firstName": "Emma",
+    "lastName": "Brown",
+    "isActive": true,
+    "role": {
+      "id": 3
+    },
+    "imageUrl": "https://example.com/emma.jpg",
+    "created": "2023-07-30T14:50:00Z",
+    "modified": "2023-07-30T14:50:00Z"
+  },
+  {
+    "username": "michael_miller",
+    "password": "passwordGHI",
+    "firstName": "Michael",
+    "lastName": "Miller",
+    "isActive": true,
+    "role": {
+      "id": 2
+    },
+    "imageUrl": "https://example.com/michael.jpg",
+    "created": "2023-08-18T08:30:00Z",
+    "modified": "2023-08-18T08:30:00Z"
+  },
+  {
+    "username": "olivia_davis",
+    "password": "passwordJKL",
+    "firstName": "Olivia",
+    "lastName": "Davis",
+    "isActive": true,
+    "role": {
+      "id": 3
+    },
+    "imageUrl": "https://example.com/olivia.jpg",
+    "created": "2023-09-05T16:40:00Z",
+    "modified": "2023-09-05T16:40:00Z"
+  },
+  {
+    "username": "james_wilson",
+    "password": "passwordMNO",
+    "firstName": "James",
+    "lastName": "Wilson",
+    "isActive": true,
+    "role": {
+      "id": 2
+    },
+    "imageUrl": "https://example.com/james.jpg",
+    "created": "2023-10-12T10:15:00Z",
+    "modified": "2023-10-12T10:15:00Z"
+  },
+  {
+    "username": "amelia_taylor",
+    "password": "passwordPQR",
+    "firstName": "Amelia",
+    "lastName": "Taylor",
+    "isActive": true,
+    "role": {
+      "id": 3
+    },
+    "imageUrl": "https://example.com/amelia.jpg",
+    "created": "2023-11-20T13:55:00Z",
+    "modified": "2023-11-20T13:55:00Z"
+  },
+  {
+    "username": "william_clark",
+    "password": "passwordSTU",
+    "firstName": "William",
+    "lastName": "Clark",
+    "isActive": true,
+    "role": {
+      "id": 2
+    },
+    "imageUrl": "https://example.com/william.jpg",
+    "created": "2023-12-22T09:25:00Z",
+    "modified": "2023-12-22T09:25:00Z"
+  },
+  {
+    "username": "sophia_martin",
+    "password": "passwordVWX",
+    "firstName": "Sophia",
+    "lastName": "Martin",
+    "isActive": true,
+    "role": {
+      "id": 3
+    },
+    "imageUrl": "https://example.com/sophia.jpg",
+    "created": "2024-01-10T17:00:00Z",
+    "modified": "2024-01-10T17:00:00Z"
+  },
+  {
+    "username": "joseph_hill",
+    "password": "passwordYZA",
+    "firstName": "Joseph",
+    "lastName": "Hill",
+    "isActive": true,
+    "role": {
+      "id": 2
+    },
+    "imageUrl": "https://example.com/joseph.jpg",
+    "created": "2024-02-18T11:45:00Z",
+    "modified": "2024-02-18T11:45:00Z"
+  }
+]
