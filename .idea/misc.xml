@@ -3,6 +3,7 @@
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/front-end-basics" />
+    <file type="web" url="file://$PROJECT_DIR$/mobilelele" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -10,6 +11,7 @@
         <option value="$PROJECT_DIR$/Front-End-Basics/pom.xml" />
         <option value="$PROJECT_DIR$/front-end-basics/pom.xml" />
         <option value="$PROJECT_DIR$/front-end-intro/pom.xml" />
+        <option value="$PROJECT_DIR$/mobilele/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
