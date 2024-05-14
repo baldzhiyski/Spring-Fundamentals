@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html lang="en">
 <head th:replace="~{fragments/head}">
-
+</head>
 <body>
 
 <div>
-    <nav th:replace ="~{fragments/navbar}">
-
+    <nav th:replace="~{fragments/navbar}">
     </nav>
 </div>
 
 <div class="container">
     <h2 class="text-center text-white m-3">All Brands</h2>
     <div class='row mb-4 d-flex justify-content-around'>
-        <div  class="brand-section col-md-5 mr-auto d-flex flex-column">
+        <div class="brand-section col-md-5 mr-auto d-flex flex-column" th:each="brand : ${brands}">
             <h2>Car brand:
-                <span >Brand name</span>
+                <span th:text="${brand.name}">Brand name</span>
             </h2>
             <div>Models:
                 <table>
+                    <thead>
                     <tr>
                         <th>No</th>
                         <th>Name</th>
@@ -28,23 +27,25 @@
                         <th>End Year</th>
                         <th>Picture</th>
                     </tr>
-                    <tr>
-                        <th>No</th>
-                        <th >Model Name</th>
-                        <th >Model Category</th>
-                        <th >Model Start Year</th>
-                        <th >Model End Year</th>
-                        <th><img alt="image" src="/"
-                                 class="img-thumbnail rounded"></th>
+                    </thead>
+                    <tbody>
+                    <tr th:each="model, iterStat : ${brand.models}">
+                        <td th:text="${iterStat.count}">No</td>
+                        <td th:text="${model.name}">Model Name</td>
+                        <td th:text="${model.category}">Model Category</td>
+                        <td th:text="${model.startYear}">Model Start Year</td>
+                        <td th:text="${model.endYear}">Model End Year</td>
+                        <td><img th:src="${model.imageUrl}" alt="image" class="img-thumbnail rounded"></td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
     </div>
-
     <div>
-             <footer> </footer>
+        <footer></footer>
     </div>
 </div>
 </body>
 </html>
+

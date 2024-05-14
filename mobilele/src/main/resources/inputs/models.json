@@ -2,55 +2,7 @@
   {
     "name": "Corolla",
     "category": "CAR",
-    "imageUrl": "https://example.com/corolla.jpg",
-    "startYear": 2015,
-    "endYear": 2022,
-    "created": "2023-03-15T12:30:00Z",
-    "modified": "2023-03-15T12:30:00Z",
-    "brand": {
-      "id": 1
-    }
-  },
-  {
-    "name": "Bus1",
-    "category": "BUS",
-    "imageUrl": "https://example.com/bus1.jpg",
-    "startYear": 2019,
-    "endYear": 2023,
-    "created": "2023-04-20T09:45:00Z",
-    "modified": "2023-04-20T09:45:00Z",
-    "brand": {
-      "id": 6
-    }
-  },
-  {
-    "name": "Truck1",
-    "category": "TRUCK",
-    "imageUrl": "https://example.com/truck1.jpg",
-    "startYear": 2018,
-    "endYear": 2022,
-    "created": "2023-05-10T15:20:00Z",
-    "modified": "2023-05-10T15:20:00Z",
-    "brand": {
-      "id": 9
-    }
-  },
-  {
-    "name": "Ninja",
-    "category": "MOTORCYCLE",
-    "imageUrl": "https://example.com/ninja.jpg",
-    "startYear": 2020,
-    "endYear": 2023,
-    "created": "2023-06-25T11:10:00Z",
-    "modified": "2023-06-25T11:10:00Z",
-    "brand": {
-      "id": 11
-    }
-  },
-  {
-    "name": "Corolla",
-    "category": "CAR",
-    "imageUrl": "https://example.com/corolla.jpg",
+    "imageUrl": "https://cdn.motor1.com/images/mgl/M7O1Y/s1/2021-toyota-corolla-apex-edition.jpg",
     "startYear": 2015,
     "endYear": 2022,
     "created": "2023-03-15T12:30:00Z",
@@ -62,7 +14,7 @@
   {
     "name": "Accord",
     "category": "CAR",
-    "imageUrl": "https://example.com/accord.jpg",
+    "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/2022-honda-accord-mmp-1-1638306151.jpg",
     "startYear": 2017,
     "endYear": 2023,
     "created": "2023-04-20T09:45:00Z",
@@ -74,7 +26,7 @@
   {
     "name": "Focus",
     "category": "CAR",
-    "imageUrl": "https://example.com/focus.jpg",
+    "imageUrl": "https://cdn.motor1.com/images/mgl/0x6Mx/s1/2022-ford-focus-st.jpg",
     "startYear": 2016,
     "endYear": 2022,
     "created": "2023-05-10T15:20:00Z",
@@ -84,33 +36,21 @@
     }
   },
   {
-    "name": "Civic",
+    "name": "Malibu",
     "category": "CAR",
-    "imageUrl": "https://example.com/civic.jpg",
+    "imageUrl": "https://cdn.carbuzz.com/gallery-images/1600/600000/800/600839.jpg",
     "startYear": 2018,
     "endYear": 2024,
-    "created": "2023-06-25T11:10:00Z",
-    "modified": "2023-06-25T11:10:00Z",
+    "created": "2023-08-15T11:20:00Z",
+    "modified": "2023-08-15T11:20:00Z",
     "brand": {
-      "id": 2
-    }
-  },
-  {
-    "name": "Fiesta",
-    "category": "CAR",
-    "imageUrl": "https://example.com/fiesta.jpg",
-    "startYear": 2017,
-    "endYear": 2023,
-    "created": "2023-07-30T14:50:00Z",
-    "modified": "2023-07-30T14:50:00Z",
-    "brand": {
-      "id": 3
+      "id": 4
     }
   },
   {
     "name": "3 Series",
     "category": "CAR",
-    "imageUrl": "https://example.com/3series.jpg",
+    "imageUrl": "https://www.bmwusa.com/content/dam/bmwusa/3-series/sedan/2021/3-series-sedan-gallery-1-1680x756.jpg",
     "startYear": 2016,
     "endYear": 2022,
     "created": "2023-08-18T08:30:00Z",
@@ -122,7 +62,7 @@
   {
     "name": "C-Class",
     "category": "CAR",
-    "imageUrl": "https://example.com/cclass.jpg",
+    "imageUrl": "https://www.mercedes-benz.com/en/vehicles/models/c-class/saloon-w205/_jcr_content/root/slider_3/sliderchilditems/slideritem/image/MQ6-12-image-20190122093816/03-mercedes-benz-c-class-saloon-amg-line-w205-3400x1440.jpeg",
     "startYear": 2017,
     "endYear": 2023,
     "created": "2023-09-05T16:40:00Z",
@@ -134,7 +74,7 @@
   {
     "name": "A4",
     "category": "CAR",
-    "imageUrl": "https://example.com/a4.jpg",
+    "imageUrl": "https://cdn.motor1.com/images/mgl/xPqx1/s1/2020-audi-a4.jpg",
     "startYear": 2018,
     "endYear": 2024,
     "created": "2023-10-12T10:15:00Z",
@@ -146,7 +86,7 @@
   {
     "name": "Altima",
     "category": "CAR",
-    "imageUrl": "https://example.com/altima.jpg",
+    "imageUrl": "https://cdn.motor1.com/images/mgl/Vm2VP/s1/2020-nissan-altima.jpg",
     "startYear": 2016,
     "endYear": 2022,
     "created": "2023-11-20T13:55:00Z",
@@ -158,7 +98,7 @@
   {
     "name": "Golf",
     "category": "CAR",
-    "imageUrl": "https://example.com/golf.jpg",
+    "imageUrl": "https://cdn.motor1.com/images/mgl/PyX7Y/s1/volkswagen-golf-gtie-2021.jpg",
     "startYear": 2017,
     "endYear": 2023,
     "created": "2023-12-22T09:25:00Z",
@@ -170,7 +110,7 @@
   {
     "name": "Sonata",
     "category": "CAR",
-    "imageUrl": "https://example.com/sonata.jpg",
+    "imageUrl": "https://cdn.motor1.com/images/mgl/1YMQY/s1/2020-hyundai-sonata.jpg",
     "startYear": 2018,
     "endYear": 2024,
     "created": "2024-01-10T17:00:00Z",
@@ -182,7 +122,7 @@
   {
     "name": "Optima",
     "category": "CAR",
-    "imageUrl": "https://example.com/optima.jpg",
+    "imageUrl": "https://cdn.motor1.com/images/mgl/3eQVR/s1/2020-kia-optima.jpg",
     "startYear": 2017,
     "endYear": 2023,
     "created": "2024-02-18T11:45:00Z",
