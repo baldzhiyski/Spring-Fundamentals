@@ -2,7 +2,7 @@
   {
     "name": "Corolla",
     "category": "CAR",
-    "imageUrl": "https://cdn.motor1.com/images/mgl/M7O1Y/s1/2021-toyota-corolla-apex-edition.jpg",
+    "imageUrl": "mobilele/src/main/resources/static/img/corolla1.jpg",
     "startYear": 2015,
     "endYear": 2022,
     "created": "2023-03-15T12:30:00Z",
