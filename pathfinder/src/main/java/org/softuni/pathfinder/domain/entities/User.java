@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+import org.mindrot.jbcrypt.BCrypt;
 import org.softuni.pathfinder.domain.entities.enums.Level;
 
 import java.util.List;
@@ -45,5 +46,10 @@ public class User extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
     private Level level;
+
+    @PrePersist
+    public void hashPassword() {
+        this.password = BCrypt.hashpw(this.password, BCrypt.gensalt());
+    }
 
 }
