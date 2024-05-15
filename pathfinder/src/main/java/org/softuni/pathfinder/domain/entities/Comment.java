@@ -2,12 +2,11 @@ package org.softuni.pathfinder.domain.entities;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
 @Table(name = "comments")
-public class Comments  extends BaseEntity{
+public class Comment extends BaseEntity{
 
     @Column
     private boolean approved;
