@@ -1,6 +1,7 @@
 package org.softuni.pathfinder.services.impl;
 
 import org.modelmapper.ModelMapper;
+import org.softuni.pathfinder.domain.dtos.UserLogInDto;
 import org.softuni.pathfinder.domain.dtos.UserRegisterDto;
 import org.softuni.pathfinder.domain.entities.User;
 import org.softuni.pathfinder.repositories.UserRepository;
@@ -33,7 +34,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void register(UserRegisterDto userRegisterDto) {
+        // TODO : Set the blanks columns to something
         User user = this.mapper.map(userRegisterDto, User.class);
         this.userRepository.saveAndFlush(user);
+    }
+
+    @Override
+    public void login(UserLogInDto userLogInDto) {
+        // TODO
     }
 }
