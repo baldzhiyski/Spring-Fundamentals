@@ -9,8 +9,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/dtos/UserRegisterDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/fragments/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/add-route.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/add-route.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/bicycle.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/bicycle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/car.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/car.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/motorcycle.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/motorcycle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/pedestrian.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/pedestrian.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/route-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/route-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/routes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/routes.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +233,7 @@
       <workItem from="1715590690200" duration="13000" />
       <workItem from="1715720103221" duration="4414000" />
       <workItem from="1715757659826" duration="26000" />
-      <workItem from="1715794484825" duration="6833000" />
+      <workItem from="1715794484825" duration="8182000" />
     </task>
     <servers />
   </component>
