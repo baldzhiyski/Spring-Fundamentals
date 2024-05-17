@@ -1,6 +1,7 @@
 package org.softuni.pathfinder.web;
 
 import jakarta.validation.Valid;
+import org.softuni.pathfinder.domain.dtos.UserLogInDto;
 import org.softuni.pathfinder.domain.dtos.UserRegisterDto;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.UserService;
@@ -64,10 +65,41 @@ public class UserController {
     }
 
     @GetMapping("/users/login")
-    public ModelAndView getLoginPage(){
+    public ModelAndView showLoginForm() {
+        // Create a new ModelAndView object
         ModelAndView modelAndView = new ModelAndView();
 
+        // Add userLogInDto object to the ModelAndView
+        modelAndView.addObject("userLogInDto", new UserLogInDto());
+
+        // Set the view name to "login", assuming "login" is the name of your Thymeleaf template
         modelAndView.setViewName("login");
+
+        return modelAndView;
+    }
+    @PostMapping("/users/login")
+    public ModelAndView logInUser(@Valid UserLogInDto userLogInDto,
+                                  BindingResult bindingResult){
+        ModelAndView modelAndView = new ModelAndView();
+
+        // Check if username exists
+        if (!this.userService.userByUsernameExists(userLogInDto.getUsername())) {
+            bindingResult.rejectValue("username", "error.user", "Wrong username. Please try again.");
+        }
+
+        // Check if password is correct for the given username
+        if (!userService.checkPasswordCorrectForTheUsername(userLogInDto)) {
+            bindingResult.rejectValue("password", "error.user", "Wrong password. Please try again.");
+        }
+
+        // If there are errors, return to the login page with error messages
+        if (bindingResult.hasErrors()) {
+            modelAndView.setViewName("login");
+        } else {
+            // If no errors, perform login and redirect to home page
+            this.userService.login(userLogInDto);
+            modelAndView.setViewName("redirect:/home");
+        }
 
         return modelAndView;
     }

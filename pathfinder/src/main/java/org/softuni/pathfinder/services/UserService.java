@@ -11,4 +11,6 @@ public interface UserService {
     void register(UserRegisterDto userRegisterDto);
 
     void login(UserLogInDto userLogInDto);
+
+    boolean checkPasswordCorrectForTheUsername(UserLogInDto userLogInDto);
 }
