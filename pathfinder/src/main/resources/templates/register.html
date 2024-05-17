@@ -16,7 +16,6 @@
                     <label for="inputUsername" class="col-form-label">Username</label>
                     <input name="username" type="text" id="inputUsername" class="form-control" th:classappend="${#fields.hasErrors('username')} ? 'is-invalid'" th:field="*{username}">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:each="err : ${#fields.errors('username')}" th:text="${err}"></div>
-                    <div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:text="Username must be between 5 and 20 characters." th:unless="${#fields.hasErrors('username')}"></div>
                 </div>
 
                 <!-- Email -->
@@ -24,21 +23,18 @@
                     <label for="inputEmail" class="col-form-label">Email</label>
                     <input name="email" type="email" id="inputEmail" class="form-control" th:classappend="${#fields.hasErrors('email')} ? 'is-invalid'" th:field="*{email}">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
-                    <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:text="Must be a valid email." th:unless="${#fields.hasErrors('email')}"></div>
                 </div>
                 <!-- Full Name -->
                 <div class="col-auto">
                     <label for="inputFullName" class="col-form-label">Full Name</label>
                     <input name="fullName" type="text" id="inputFullName" class="form-control" th:classappend="${#fields.hasErrors('fullName')} ? 'is-invalid'" th:field="*{fullName}">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('fullName')}" th:each="err : ${#fields.errors('fullName')}" th:text="${err}"></div>
-                    <div class="invalid-feedback" th:if="${#fields.hasErrors('fullName')}" th:text="Full name must be between 2 and 50 characters." th:unless="${#fields.hasErrors('fullName')}"></div>
                 </div>
                 <!-- Age -->
                 <div class="col-auto">
                     <label for="inputAge" class="col-form-label">Age</label>
                     <input name="age" type="number" id="inputAge" class="form-control" th:classappend="${#fields.hasErrors('age')} ? 'is-invalid'" th:field="*{age}">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('age')}" th:each="err : ${#fields.errors('age')}" th:text="${err}"></div>
-                    <div class="invalid-feedback" th:if="${#fields.hasErrors('age')}" th:text="Age must be between 18 and 100." th:unless="${#fields.hasErrors('age')}"></div>
                 </div>
 
                 <!-- Password -->
@@ -46,7 +42,6 @@
                     <label for="inputPassword" class="col-form-label">Password</label>
                     <input name="password" type="password" id="inputPassword" class="form-control" th:classappend="${#fields.hasErrors('password')} ? 'is-invalid'" th:field="*{password}">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:each="err : ${#fields.errors('password')}" th:text="${err}"></div>
-                    <div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:text="Password must be between 5 and 20 characters." th:unless="${#fields.hasErrors('password')}"></div>
                 </div>
 
                 <!-- Confirm Password -->
@@ -54,7 +49,6 @@
                     <label for="inputConfirmPassword" class="col-form-label">Confirm Password</label>
                     <input name="confirmPassword" type="password" id="inputConfirmPassword" class="form-control" th:classappend="${#fields.hasErrors('confirmPassword')} ? 'is-invalid'" th:field="*{confirmPassword}">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('confirmPassword')}" th:each="err : ${#fields.errors('confirmPassword')}" th:text="${err}"></div>
-                    <div class="invalid-feedback" th:if="${#fields.hasErrors('confirmPassword')}" th:text="Password must be between 5 and 20 characters." th:unless="${#fields.hasErrors('confirmPassword')}"></div>
                 </div>
 
 
