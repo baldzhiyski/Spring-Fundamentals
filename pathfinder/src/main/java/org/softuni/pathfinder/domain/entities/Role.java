@@ -21,4 +21,8 @@ public class Role extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private UserRole name;
 
+    @Override
+    public String toString() {
+        return String.valueOf(name);
+    }
 }

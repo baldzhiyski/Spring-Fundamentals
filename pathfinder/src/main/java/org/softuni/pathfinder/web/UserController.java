@@ -3,6 +3,7 @@ package org.softuni.pathfinder.web;
 import jakarta.validation.Valid;
 import org.softuni.pathfinder.domain.dtos.UserLogInDto;
 import org.softuni.pathfinder.domain.dtos.UserRegisterDto;
+import org.softuni.pathfinder.domain.entities.User;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,6 +107,24 @@ public class UserController {
 
         return modelAndView;
     }
+
+    @GetMapping("/users/profile")
+    public  ModelAndView profilePicture(){
+        ModelAndView modelAndView = new ModelAndView("profile");
+
+        boolean loggedIn = this.userService.isLoggedIn();
+        modelAndView.addObject("loggedIn", loggedIn);
+
+
+        boolean isAdmin = this.userService.isAdmin();
+        modelAndView.addObject("isAdmin", isAdmin);
+        // Retrieve the currently logged-in user
+        User loggedUser = userService.getLoggedInUser();
+        modelAndView.addObject("user", loggedUser);
+
+        return modelAndView;
+    }
+
 
 
 }

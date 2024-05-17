@@ -117,10 +117,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean isAdmin() {
-        if(this.logged!=null){
-            System.out.println(this.logged.getRoles().size());
-        }
         return this.logged != null && this.logged.getRoles().stream().anyMatch(role -> role.getName().equals(UserRole.ADMIN)
         || role.getName().equals(UserRole.MODERATOR));
+    }
+
+    @Override
+    public User getLoggedInUser() {
+        return this.logged;
     }
 }

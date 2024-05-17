@@ -19,8 +19,8 @@
         <li>
             <a href="/">Add new route</a>
         </li>
-        <li>
-            <a href="/profile">Profile</a>
+        <li th:if="${loggedIn}">
+            <a href="/users/profile">Profile</a>
         </li>
         <li th:if="${isAdmin}">
             <a href="/admin/page">Admin</a>

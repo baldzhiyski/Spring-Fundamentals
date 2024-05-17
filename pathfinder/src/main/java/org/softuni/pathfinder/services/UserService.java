@@ -2,6 +2,7 @@ package org.softuni.pathfinder.services;
 
 import org.softuni.pathfinder.domain.dtos.UserLogInDto;
 import org.softuni.pathfinder.domain.dtos.UserRegisterDto;
+import org.softuni.pathfinder.domain.entities.User;
 
 public interface UserService {
     boolean userByUsernameExists(String username);
@@ -19,4 +20,6 @@ public interface UserService {
     boolean isLoggedIn();
 
     boolean isAdmin();
+
+    User getLoggedInUser();
 }
