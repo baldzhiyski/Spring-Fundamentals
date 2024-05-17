@@ -17,7 +17,7 @@
                         <label for="inputUsername" class="col-form-label">Username</label>
                     </div>
                     <div class="col-auto">
-                        <input name="username" required minlength="5" maxlength="20" type="text"
+                        <input name="username"  type="text"
                                id="inputUsername" class="form-control" aria-describedby="usernameHelpInline"
                                th:class="${#fields.hasErrors('username')} ? 'form-control is-invalid' : 'form-control'">
                         <small id="usernameError"
@@ -34,7 +34,7 @@
                         <label for="inputFullName" class="col-form-label">Full Name</label>
                     </div>
                     <div class="col-auto">
-                        <input name="fullName" required minlength="5" maxlength="20" type="text"
+                        <input name="fullName"  type="text"
                                id="inputFullName" class="form-control" aria-describedby="fullNameHelpInline"
                                th:class="${#fields.hasErrors('fullName')} ? 'form-control is-invalid' : 'form-control'">
                         <small id="fullNameError"
@@ -49,7 +49,7 @@
                         <label for="inputEmail" class="col-form-label">Email</label>
                     </div>
                     <div class="col-auto">
-                        <input name="email" required type="email" id="inputEmail" class="form-control"
+                        <input name="email"  id="inputEmail" class="form-control"
                                aria-describedby="emailHelpInline"
                                th:class="${#fields.hasErrors('email')} ? 'form-control is-invalid' : 'form-control'">
                         <small id="emailError"
@@ -79,7 +79,7 @@
                         <label for="inputPassword" class="col-form-label">Password</label>
                     </div>
                     <div class="col-auto">
-                        <input name="password" required minlength="5" maxlength="20" type="password"
+                        <input name="password" type="password"
                                id="inputPassword" class="form-control" aria-describedby="passwordHelpInline"
                                th:class="${#fields.hasErrors('password')} ? 'form-control is-invalid' : 'form-control'">
                         <small id="passwordError"
@@ -94,7 +94,7 @@
                         <label for="inputConfirmPassword" class="col-form-label">Confirm Password</label>
                     </div>
                     <div class="col-auto">
-                        <input name="confirmPassword" required minlength="5" maxlength="20" type="password"
+                        <input name="confirmPassword"  type="password"
                                id="inputConfirmPassword" class="form-control"
                                aria-describedby="confirmPasswordHelpInline"
                                th:class="${#fields.hasErrors('confirmPassword')} ? 'form-control is-invalid' : 'form-control'">

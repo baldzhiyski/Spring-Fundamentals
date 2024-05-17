@@ -1,8 +1,6 @@
 package org.softuni.pathfinder.domain.dtos;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,20 +13,26 @@ import org.hibernate.validator.constraints.Length;
 @AllArgsConstructor
 public class UserRegisterDto {
 
-    @NotNull
+    @NotEmpty(message = "Username is required")
+    @Size(min = 5, max = 20, message = "Username must be between 5 and 20 characters")
     private String username;
 
+    @NotEmpty(message = "Full Name is required")
+    @Size(min = 5, max = 20, message = "Full Name must be between 5 and 20 characters")
     private String fullName;
 
-    @Email
+    @NotEmpty(message = "Email is required")
+    @Email(message = "Must be a valid email")
     private String email;
 
-    @Positive
+    @NotEmpty(message = "Age is required")
     private Integer age;
 
-    @Length(min = 2,max = 20)
+    @NotEmpty(message = "Password is required")
+    @Size(min = 5, max = 20, message = "Password must be between 5 and 20 characters")
     private String password;
 
-    @Length(min = 2,max = 20)
+    @NotEmpty(message = "Confirm Password is required")
+    @Size(min = 5, max = 20, message = "Confirm Password must be between 5 and 20 characters")
     private String confirmPassword;
 }
