@@ -8,109 +8,63 @@
 <body>
 <main class="p-5 align-content-center bg-blur my-register-div">
     <h1 class="border-bottom">Register</h1>
-    <div class="d-flex justify-content-center ">
+    <div class="d-flex justify-content-center">
         <div class="row g-3">
             <form action="/users/register" method="post" th:object="${userRegisterDto}">
                 <!-- Username -->
-                <div>
-                    <div class="col-auto">
-                        <label for="inputUsername" class="col-form-label">Username</label>
-                    </div>
-                    <div class="col-auto">
-                        <input name="username"  type="text"
-                               id="inputUsername" class="form-control" aria-describedby="usernameHelpInline"
-                               th:class="${#fields.hasErrors('username')} ? 'form-control is-invalid' : 'form-control'">
-                        <small id="usernameError"
-                               class="invalid-feedback bg-danger rounded text-white"
-                               th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></small>
-                        <small id="usernameUniqueError" class="bg-danger rounded text-white"
-                               th:if="${#fields.hasErrors('username') and #fields.hasErrors('username', 'unique')}">Username is already occupied</small>
-                    </div>
-                </div>
-
-                <!-- Full Name -->
-                <div>
-                    <div class="col-auto">
-                        <label for="inputFullName" class="col-form-label">Full Name</label>
-                    </div>
-                    <div class="col-auto">
-                        <input name="fullName"  type="text"
-                               id="inputFullName" class="form-control" aria-describedby="fullNameHelpInline"
-                               th:class="${#fields.hasErrors('fullName')} ? 'form-control is-invalid' : 'form-control'">
-                        <small id="fullNameError"
-                               class="invalid-feedback form-text bg-danger rounded text-white"
-                               th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></small>
-                    </div>
+                <div class="col-auto">
+                    <label for="inputUsername" class="col-form-label">Username</label>
+                    <input name="username" type="text" id="inputUsername" class="form-control" th:classappend="${#fields.hasErrors('username')} ? 'is-invalid'" th:field="*{username}">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:each="err : ${#fields.errors('username')}" th:text="${err}"></div>
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:text="Username must be between 5 and 20 characters." th:unless="${#fields.hasErrors('username')}"></div>
                 </div>
 
                 <!-- Email -->
-                <div>
-                    <div class="col-auto">
-                        <label for="inputEmail" class="col-form-label">Email</label>
-                    </div>
-                    <div class="col-auto">
-                        <input name="email"  id="inputEmail" class="form-control"
-                               aria-describedby="emailHelpInline"
-                               th:class="${#fields.hasErrors('email')} ? 'form-control is-invalid' : 'form-control'">
-                        <small id="emailError"
-                               class="invalid-feedback form-text bg-danger rounded text-white"
-                               th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></small>
-                    </div>
+                <div class="col-auto">
+                    <label for="inputEmail" class="col-form-label">Email</label>
+                    <input name="email" type="email" id="inputEmail" class="form-control" th:classappend="${#fields.hasErrors('email')} ? 'is-invalid'" th:field="*{email}">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('email')}" th:text="Must be a valid email." th:unless="${#fields.hasErrors('email')}"></div>
                 </div>
-
+                <!-- Full Name -->
+                <div class="col-auto">
+                    <label for="inputFullName" class="col-form-label">Full Name</label>
+                    <input name="fullName" type="text" id="inputFullName" class="form-control" th:classappend="${#fields.hasErrors('fullName')} ? 'is-invalid'" th:field="*{fullName}">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('fullName')}" th:each="err : ${#fields.errors('fullName')}" th:text="${err}"></div>
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('fullName')}" th:text="Full name must be between 2 and 50 characters." th:unless="${#fields.hasErrors('fullName')}"></div>
+                </div>
                 <!-- Age -->
-                <div>
-                    <div class="col-auto">
-                        <label for="inputAge" class="col-form-label">Age</label>
-                    </div>
-                    <div class="col-auto">
-                        <input name="age" required type="number" id="inputAge" class="form-control" min="0"
-                               max="90" aria-describedby="ageHelpInline"
-                               th:class="${#fields.hasErrors('age')} ? 'form-control is-invalid' : 'form-control'">
-                        <small id="ageError"
-                               class="invalid-feedback form-text bg-danger rounded text-white"
-                               th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></small>
-                    </div>
+                <div class="col-auto">
+                    <label for="inputAge" class="col-form-label">Age</label>
+                    <input name="age" type="number" id="inputAge" class="form-control" th:classappend="${#fields.hasErrors('age')} ? 'is-invalid'" th:field="*{age}">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('age')}" th:each="err : ${#fields.errors('age')}" th:text="${err}"></div>
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('age')}" th:text="Age must be between 18 and 100." th:unless="${#fields.hasErrors('age')}"></div>
                 </div>
 
                 <!-- Password -->
-                <div>
-                    <div class="col-auto">
-                        <label for="inputPassword" class="col-form-label">Password</label>
-                    </div>
-                    <div class="col-auto">
-                        <input name="password" type="password"
-                               id="inputPassword" class="form-control" aria-describedby="passwordHelpInline"
-                               th:class="${#fields.hasErrors('password')} ? 'form-control is-invalid' : 'form-control'">
-                        <small id="passwordError"
-                               class="invalid-feedback form-text bg-danger rounded text-white"
-                               th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
-                    </div>
+                <div class="col-auto">
+                    <label for="inputPassword" class="col-form-label">Password</label>
+                    <input name="password" type="password" id="inputPassword" class="form-control" th:classappend="${#fields.hasErrors('password')} ? 'is-invalid'" th:field="*{password}">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:each="err : ${#fields.errors('password')}" th:text="${err}"></div>
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:text="Password must be between 5 and 20 characters." th:unless="${#fields.hasErrors('password')}"></div>
                 </div>
 
                 <!-- Confirm Password -->
-                <div>
-                    <div class="col-auto">
-                        <label for="inputConfirmPassword" class="col-form-label">Confirm Password</label>
-                    </div>
-                    <div class="col-auto">
-                        <input name="confirmPassword"  type="password"
-                               id="inputConfirmPassword" class="form-control"
-                               aria-describedby="confirmPasswordHelpInline"
-                               th:class="${#fields.hasErrors('confirmPassword')} ? 'form-control is-invalid' : 'form-control'">
-                        <small id="confirmPasswordError"
-                               class="invalid-feedback form-text bg-danger rounded text-white"
-                               th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></small>
-                    </div>
+                <div class="col-auto">
+                    <label for="inputConfirmPassword" class="col-form-label">Confirm Password</label>
+                    <input name="confirmPassword" type="password" id="inputConfirmPassword" class="form-control" th:classappend="${#fields.hasErrors('confirmPassword')} ? 'is-invalid'" th:field="*{confirmPassword}">
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('confirmPassword')}" th:each="err : ${#fields.errors('confirmPassword')}" th:text="${err}"></div>
+                    <div class="invalid-feedback" th:if="${#fields.hasErrors('confirmPassword')}" th:text="Password must be between 5 and 20 characters." th:unless="${#fields.hasErrors('confirmPassword')}"></div>
                 </div>
+
 
                 <div class="d-flex justify-content-center mt-4">
                     <!-- Registration Button -->
                     <button class="btn btn-primary btn-block w-50" type="submit">Register</button>
                 </div>
 
-                <!-- Display global errors -->
-                <div th:if="${#fields.hasGlobalErrors()}" class="text-danger mt-3">
+                <!-- Custom validation errors after form submission -->
+                <div class="invalid-feedback" th:if="${#fields.hasGlobalErrors()}">
                     <p th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
                 </div>
             </form>
@@ -120,10 +74,14 @@
 <footer class="footer bg-blur rounded">
     <div class="container-fluid text-center">
         <div class="h5 text-white">
-            &copy; Lucho, Chocho & Spring Advanced Students 2021. All rights reserved.
+            &copy; Hristo Baldzhiyski Pathfinder Project 2024. All rights reserved.
         </div>
     </div>
 </footer>
+
+
+
 </body>
+
 
 </html>

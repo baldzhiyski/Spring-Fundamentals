@@ -7,11 +7,15 @@ import org.softuni.pathfinder.domain.entities.Role;
 import org.softuni.pathfinder.domain.entities.User;
 import org.softuni.pathfinder.domain.entities.enums.Level;
 import org.softuni.pathfinder.domain.entities.enums.UserRole;
+import org.softuni.pathfinder.repositories.RoleRepository;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Service
@@ -19,13 +23,15 @@ public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
     private ModelMapper mapper;
+    private RoleRepository roleRepository;
 
     private User logged;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, RoleRepository roleRepository) {
         this.userRepository = userRepository;
         this.mapper = mapper;
+        this.roleRepository = roleRepository;
         this.logged = null;
     }
 
@@ -44,15 +50,23 @@ public class UserServiceImpl implements UserService {
     public void register(UserRegisterDto userRegisterDto) {
         // TODO : Set the blanks columns to something
         User mapped = this.mapper.map(userRegisterDto, User.class);
-        Role adminRole = new Role(UserRole.ADMIN);
-        Role userRole = new Role(UserRole.USER);
+
+        Set<Role> roles = new HashSet<>();
+
+        Role adminRole = this.roleRepository.getById(1L);
+        Role userRole = this.roleRepository.getById(2L);
         if(userRegisterDto.getUsername() == "admin" && userRegisterDto.getPassword() == "adminPass"){
             mapped.setLevel(Level.ADVANCED);
-            mapped.getRoles().add(adminRole);
+            roles.add(adminRole);
         }
-        mapped.getRoles().add(userRole);
+        roles.add(userRole);
+        mapped.setRoles(roles);
 
-        this.logged = mapped;
+        if(mapped.getAge() < 20){
+            mapped.setLevel(Level.BEGINNER);
+        }else {
+            mapped.setLevel(Level.INTERMEDIATE);
+        }
 
         this.userRepository.saveAndFlush(mapped);
     }

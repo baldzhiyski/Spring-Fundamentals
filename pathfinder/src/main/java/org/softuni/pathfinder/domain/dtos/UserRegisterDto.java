@@ -25,7 +25,7 @@ public class UserRegisterDto {
     @Email(message = "Must be a valid email")
     private String email;
 
-    @NotEmpty(message = "Age is required")
+    @NotNull(message = "Age is required")
     private Integer age;
 
     @NotEmpty(message = "Password is required")
