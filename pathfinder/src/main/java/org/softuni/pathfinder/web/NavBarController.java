@@ -20,13 +20,16 @@ public class NavBarController {
     }
 
     @GetMapping("/")
-    public String home(Model model) {
-        boolean loggedIn = this.userService.isLoggedIn();
-
-        model.addAttribute("loggedIn", loggedIn);
-
+    public String firstPage(Model model) {
         return "index";
     }
+    @GetMapping("/home")
+    public String home(Model model) {
+        boolean loggedIn = this.userService.isLoggedIn();
+        model.addAttribute("loggedIn", loggedIn);
+        return "index";
+    }
+
 
     @GetMapping("/logout")
     public ModelAndView logout() {

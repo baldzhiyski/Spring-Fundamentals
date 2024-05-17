@@ -101,7 +101,7 @@ public class UserController {
         } else {
             // If no errors, perform login and redirect to home page
             this.userService.login(userLogInDto);
-            modelAndView.setViewName("redirect:/");
+            modelAndView.setViewName("redirect:/home");
         }
 
         return modelAndView;
