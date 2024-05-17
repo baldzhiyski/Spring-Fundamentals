@@ -50,4 +50,22 @@ public class NavBarController {
 
         return modelAndView;
     }
+
+    @GetMapping("/about")
+    public ModelAndView about(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("/about");
+
+        boolean loggedIn = this.userService.isLoggedIn();
+        modelAndView.addObject("loggedIn", loggedIn);
+
+
+        boolean isAdmin = this.userService.isAdmin();
+        modelAndView.addObject("isAdmin", isAdmin);
+
+        modelAndView.addObject("isInThePage",true);
+
+        return modelAndView;
+
+    }
 }
