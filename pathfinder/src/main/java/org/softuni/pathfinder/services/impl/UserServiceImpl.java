@@ -1,11 +1,13 @@
 package org.softuni.pathfinder.services.impl;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.modelmapper.ModelMapper;
 import org.softuni.pathfinder.domain.dtos.UserLogInDto;
 import org.softuni.pathfinder.domain.dtos.UserRegisterDto;
 import org.softuni.pathfinder.domain.entities.Role;
 import org.softuni.pathfinder.domain.entities.User;
 import org.softuni.pathfinder.domain.entities.enums.Level;
+import org.softuni.pathfinder.domain.entities.enums.UserRole;
 import org.softuni.pathfinder.repositories.RoleRepository;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.UserService;
@@ -25,6 +27,7 @@ public class UserServiceImpl implements UserService {
     private ModelMapper mapper;
     private RoleRepository roleRepository;
 
+    private BCrypt passwordEncoder;
     private User logged;
 
     @Autowired
@@ -53,11 +56,12 @@ public class UserServiceImpl implements UserService {
         Set<Role> roles = new HashSet<>();
 
         Role adminRole = this.roleRepository.getById(1L);
-        Role userRole = this.roleRepository.getById(2L);
+        Role userRole = this.roleRepository.getById(3L);
+        Role moderatorRole = this.roleRepository.getById(2L);
 
         // Register a new admin in the system
         // We can change here the properties and give them to people to use so they can become admins when creating account
-        if(userRegisterDto.getUsername() == "admin" && userRegisterDto.getPassword() == "adminPass"){
+        if(userRegisterDto.getUsername().equals("admin123456") && userRegisterDto.getPassword().equals("1234567")){
             mapped.setLevel(Level.ADVANCED);
             roles.add(adminRole);
         }
@@ -87,7 +91,10 @@ public class UserServiceImpl implements UserService {
         Optional<User> optionalUser = userRepository.getUserByUsername(userLogInDto.getUsername());
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
-            return user.getPassword().equals(userLogInDto.getPassword());
+            String hashedPassword = user.getPassword(); // Get hashed password from the database
+            // Use BCryptPasswordEncoder to verify if the provided password matches the hashed password
+            return BCrypt.checkpw(userLogInDto.getPassword(), hashedPassword);
+
         } else {
             return false;
         }
@@ -106,5 +113,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean isLoggedIn() {
         return this.logged!=null;
+    }
+
+    @Override
+    public boolean isAdmin() {
+        if(this.logged!=null){
+            System.out.println(this.logged.getRoles().size());
+        }
+        return this.logged != null && this.logged.getRoles().stream().anyMatch(role -> role.getName().equals(UserRole.ADMIN)
+        || role.getName().equals(UserRole.MODERATOR));
     }
 }

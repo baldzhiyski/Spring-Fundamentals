@@ -1149,7 +1149,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="339" parent="1" name="pathfinder">
-      <LastIntrospectionLocalTimestamp>2024-05-15.21:23:41</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-05-17.12:31:19</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="340" parent="1" name="mysql.infoschema">
@@ -1490,7 +1490,7 @@ category_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="414" parent="351" name="id">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>15</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

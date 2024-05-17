@@ -21,12 +21,22 @@ public class NavBarController {
 
     @GetMapping("/")
     public String firstPage(Model model) {
+        boolean loggedIn = this.userService.isLoggedIn();
+        model.addAttribute("loggedIn", loggedIn);
+
+        boolean isAdmin = this.userService.isAdmin();
+        model.addAttribute("isAdmin", isAdmin);
         return "index";
     }
     @GetMapping("/home")
     public String home(Model model) {
         boolean loggedIn = this.userService.isLoggedIn();
         model.addAttribute("loggedIn", loggedIn);
+
+
+        boolean isAdmin = this.userService.isAdmin();
+        model.addAttribute("isAdmin", isAdmin);
+
         return "index";
     }
 

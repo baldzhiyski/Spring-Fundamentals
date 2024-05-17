@@ -17,4 +17,6 @@ public interface UserService {
     boolean logOut();
 
     boolean isLoggedIn();
+
+    boolean isAdmin();
 }
