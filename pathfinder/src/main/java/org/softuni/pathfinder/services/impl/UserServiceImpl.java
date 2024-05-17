@@ -102,4 +102,9 @@ public class UserServiceImpl implements UserService {
             return true;
         }
     }
+
+    @Override
+    public boolean isLoggedIn() {
+        return this.logged!=null;
+    }
 }

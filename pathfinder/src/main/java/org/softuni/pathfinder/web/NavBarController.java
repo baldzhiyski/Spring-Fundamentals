@@ -19,8 +19,12 @@ public class NavBarController {
         this.userService = userService;
     }
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String home(Model model) {
+        boolean loggedIn = this.userService.isLoggedIn();
+
+        model.addAttribute("loggedIn", loggedIn);
+
         return "index";
     }
 

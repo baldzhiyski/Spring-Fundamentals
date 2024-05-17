@@ -15,4 +15,6 @@ public interface UserService {
     boolean checkPasswordCorrectForTheUsername(UserLogInDto userLogInDto);
 
     boolean logOut();
+
+    boolean isLoggedIn();
 }
