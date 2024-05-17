@@ -13,7 +13,7 @@
                     <label for="inputUsername" class="col-form-label">Username</label>
                 </div>
                 <div class="col-auto">
-                    <input type="text" name="username" id="inputUsername" class="form-control" required minlength="4" maxlength="20" aria-describedby="usernameHelpInline" th:classappend="${#fields.hasErrors('username')} ? 'is-invalid'" th:field="*{username}">
+                    <input type="text" name="username" id="inputUsername" class="form-control"  aria-describedby="usernameHelpInline" th:classappend="${#fields.hasErrors('username')} ? 'is-invalid'" th:field="*{username}">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></div>
                 </div>
                 <!-- Password -->
@@ -21,12 +21,13 @@
                     <label for="inputPassword" class="col-form-label">Password</label>
                 </div>
                 <div class="col-auto mt-3">
-                    <input type="password" name="password" id="inputPassword" class="form-control" required minlength="4" maxlength="20" aria-describedby="passwordHelpInline" th:classappend="${#fields.hasErrors('password')} ? 'is-invalid'" th:field="*{password}">
+                    <input type="password" name="password" id="inputPassword" class="form-control"  aria-describedby="passwordHelpInline" th:classappend="${#fields.hasErrors('password')} ? 'is-invalid'" th:field="*{password}">
                     <div class="invalid-feedback" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
                 </div>
                 <div class="d-flex justify-content-center mt-3">
                     <button class="btn btn-primary btn-block w-50" type="submit">Login</button>
                 </div>
+
             </form>
         </div>
     </div>
@@ -38,5 +39,6 @@
         </div>
     </div>
 </footer>
+
 </body>
 </html>

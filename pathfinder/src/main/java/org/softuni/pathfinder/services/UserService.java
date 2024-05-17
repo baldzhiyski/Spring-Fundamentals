@@ -13,4 +13,6 @@ public interface UserService {
     void login(UserLogInDto userLogInDto);
 
     boolean checkPasswordCorrectForTheUsername(UserLogInDto userLogInDto);
+
+    boolean logOut();
 }

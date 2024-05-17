@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 
@@ -83,8 +84,22 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean checkPasswordCorrectForTheUsername(UserLogInDto userLogInDto) {
-        User user = this.userRepository.getUserByUsername(userLogInDto.getUsername()).get();
+        Optional<User> optionalUser = userRepository.getUserByUsername(userLogInDto.getUsername());
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            return user.getPassword().equals(userLogInDto.getPassword());
+        } else {
+            return false;
+        }
+    }
 
-        return user.getPassword().equals(userLogInDto.getPassword());
+    @Override
+    public boolean logOut() {
+        if(this.logged == null){
+            return false;
+        }else{
+            this.logged = null;
+            return true;
+        }
     }
 }

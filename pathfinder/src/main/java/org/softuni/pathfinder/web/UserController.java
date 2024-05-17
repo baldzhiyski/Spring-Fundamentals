@@ -95,6 +95,8 @@ public class UserController {
         // If there are errors, return to the login page with error messages
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("login");
+            modelAndView.addObject("userLogInDto", userLogInDto);
+            modelAndView.addObject("bindingResult", bindingResult);
         } else {
             // If no errors, perform login and redirect to home page
             this.userService.login(userLogInDto);
@@ -103,4 +105,5 @@ public class UserController {
 
         return modelAndView;
     }
+
 }
