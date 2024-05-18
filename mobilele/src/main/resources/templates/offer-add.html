@@ -24,7 +24,14 @@
                 <select id="model" class="form-control">
                     <option value="">- Select a model -</option>
                     <optgroup label="Brand name">
-                        <option>Model</option>
+                        <option>Toyota</option>
+                        <option>BMW</option>
+                        <option>Volkswagen</option>
+                        <option>Hyundai</option>
+                        <option>Audi</option>
+                        <option>Mercedes</option>
+                        <option>Honda</option>
+                        <option>Kia</option>
                     </optgroup>
                 </select>
                 <p class="errors alert alert-danger">
@@ -45,9 +52,10 @@
                 <label class="text-center text-white font-weight-bold" for="engine">Engine</label>
                 <select id="engine" class="form-control">
                     <option value="">- Select engine type -</option>
-                    <option>
-                        Engine type
-                    </option>
+                    <option>GASOLINE</option>
+                    <option>HYBRID</option>
+                    <option>DIESEL</option>
+                    <option>ELECTRIC</option>
                 </select>
                 <p class="errors alert alert-danger">
                     Engine type is required.
@@ -57,8 +65,8 @@
                 <label class="text-center text-white font-weight-bold" for="transmission">Transmission</label>
                 <select id="transmission" class="form-control">
                     <option value="">- Select transmission type -</option>
-                    <option> Transmission type
-                    </option>
+                    <option> MANUEL</option>
+                    <option> AUTOMATIC</option>
                 </select>
                 <p class="errors alert alert-danger">
                     Transmission type is required.
@@ -94,11 +102,10 @@
             </p>
         </div>
         <div class="form-group">
-            <label class="text-white font-weight-bold" for="imageUrl">Image URL</label>
-            <input id="imageUrl" type="url" class="form-control"
-                   placeholder="Put vehicle image URL here">
+            <label class="text-white font-weight-bold" for="photo">Photo</label>
+            <input id="photo" name="photo" type="file" class="form-control" />
             <p class="errors alert alert-danger">
-                Vehicle image URL is required.
+                Vehicle photo is required.
             </p>
         </div>
 

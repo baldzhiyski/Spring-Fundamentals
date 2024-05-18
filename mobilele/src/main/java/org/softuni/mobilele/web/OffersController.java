@@ -43,6 +43,11 @@ public class OffersController {
     @GetMapping("/offers/add")
     public ModelAndView addOfferPage(){
         ModelAndView modelAndView = new ModelAndView();
+        boolean loggedIn = userService.checkLoggedUser();
+        modelAndView.addObject("loggedIn", loggedIn);
+
+        boolean isAdmin = userService.isAdmin();
+        modelAndView.addObject("isAdmin", isAdmin);
 
         modelAndView.setViewName("offer-add");
         return modelAndView;
