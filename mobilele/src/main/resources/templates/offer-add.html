@@ -16,7 +16,7 @@
 <div class="container">
     <h2 class="text-center text-white">Upload Offer</h2>
     <form method="POST" th:action="@{/offers/add}" th:object="${offerRegisterDto}"
-          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center" enctype="multipart/form-data">
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label class="text-center text-white font-weight-bold" for="brand">Brand</label>
@@ -35,25 +35,28 @@
                    th:errors="*{brand}">Vehicle brand is required.</p>
             </div>
             <div class="form-group col-md-6 mb-3">
-                <label class="text-center text-white font-weight-bold" for="model">Model</label>
-                <select id="model" name="model" class="form-control" th:field="*{model}">
+                <label class="text-center text-white font-weight-bold" for="category">Model</label>
+                <select id="category" name="category" class="form-control" th:field="*{category}">
                     <option value="">- Select a category -</option>
                     <option value="CAR">CAR</option>
                     <option value="BUS">BUS</option>
                     <option value="TRUCK">TRUCK</option>
                     <option value="MOTORCYCLE">MOTORCYCLE</option>
                 </select>
+                <label for="name" class="text-white font-weight-bold">Car Name</label>
                 <input id="name" type="text" name="name" class="form-control"
-                       placeholder="Name of car" th:field="*{name}"/>
-                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('model')}"
-                   th:errors="*{model}">Vehicle model is required.</p>
+                                                 placeholder="Name of car" th:field="*{name}"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('category')}"
+                   th:errors="*{category}">Vehicle category is required.</p>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('name')}"
+                   th:errors="*{name}">Vehicle name is required.</p>
             </div>
             <div class="form-group col-md-6 mb-3">
                 <label for="price" class="text-white font-weight-bold">Price</label>
                 <input id="price" type="number" name="price" min="0" step="100" class="form-control"
                        placeholder="Suggested price" th:field="*{price}"/>
                 <p class="errors alert alert-danger" th:if="${#fields.hasErrors('price')}"
-                   th:errors="*{price}">Suggested price is required.</p>
+                   th:errors="*{price}" >Suggested price is required.</p>
             </div>
         </div>
         <div class="row">
@@ -106,14 +109,11 @@
                    th:errors="*{description}">Description is required.</p>
             </div>
         </div>
-
-        <div class="form-group col-md-6 mb-3">
-            <label for="photo" class="text-white font-weight-bold">Photo</label>
-            <input id="photo" type="file" name="photo" accept="image/*" class="form-control-file">
-            <p class="errors alert alert-danger" th:if="${#fields.hasErrors('photo')}"
-               th:errors="*{photo}">Please select a photo.</p>
+        <div class="form-group">
+            <label class="text-center text-white font-weight-bold" for="photo">Photo</label>
+            <input id="photo" name="photo" type="file" class="form-control" th:field="*{photo}" />
+            <p class="errors alert alert-danger" th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}">Please select a photo.</p>
         </div>
-
         <div class="row justify-content-center">
             <button type="submit" class="btn btn-primary">Upload</button>
         </div>

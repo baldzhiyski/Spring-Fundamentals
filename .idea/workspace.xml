@@ -9,13 +9,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/offer/OfferRegisterDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/bmw.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/seqoia.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/feed4a68-c453-4be6-8eba-89ea78e4c75a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/feed4a68-c453-4be6-8eba-89ea78e4c75a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/offer/OfferRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/offer/OfferRegisterDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/BrandRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/BrandRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/OfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/OffersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/OffersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/users_photos/Stuttgart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/Stuttgart.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/users_photos/desert.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/desert.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/users_photos/forest.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/forest.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/offer-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/offer-add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,9 +144,9 @@
       <recent name="C:\GitHub\Spring Fundamentals\front-end-intro\src\main\resources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GitHub\Spring Fundamentals\mobilele\src\main\resources\static\img" />
       <recent name="C:\GitHub\Spring Fundamentals\mobilele\src\main\resources\static\img\users_photos" />
       <recent name="C:\GitHub\Spring Fundamentals\pathfinder\src\main\resources" />
-      <recent name="C:\GitHub\Spring Fundamentals\mobilele\src\main\resources\static\img" />
       <recent name="C:\GitHub\Spring Fundamentals\mobilele\src\main\resources" />
       <recent name="C:\GitHub\Spring Fundamentals\front-end-intro\src\main\resources\templates" />
     </key>
@@ -229,7 +237,7 @@
       <workItem from="1715794484825" duration="11563000" />
       <workItem from="1715842374570" duration="75000" />
       <workItem from="1715934570877" duration="19909000" />
-      <workItem from="1716019693734" duration="14665000" />
+      <workItem from="1716019693734" duration="21409000" />
     </task>
     <servers />
   </component>

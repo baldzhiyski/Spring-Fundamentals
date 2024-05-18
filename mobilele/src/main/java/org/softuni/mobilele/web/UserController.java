@@ -45,7 +45,6 @@ public class UserController {
                 userService.registerUser(userRegisterDto);
                 modelAndView.setViewName("redirect:/users/login");
             } catch (Exception e) {
-                e.printStackTrace();
                 bindingResult.rejectValue("photo", "error.userRegisterDto", "Failed to upload photo.");
                 modelAndView.setViewName("auth-register");
                 modelAndView.addObject("userRegisterDto", userRegisterDto);

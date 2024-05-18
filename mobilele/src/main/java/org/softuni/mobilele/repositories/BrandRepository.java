@@ -15,4 +15,6 @@ public interface BrandRepository extends JpaRepository<Brand,Long> {
 
     @Query("SELECT b FROM Brand b JOIN FETCH b.models")
     List<Brand> findAllWithModels();
+
+    Optional<Brand> findByName(String name);
 }
