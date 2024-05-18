@@ -9,9 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/utils/CurrentUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/feed4a68-c453-4be6-8eba-89ea78e4c75a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/feed4a68-c453-4be6-8eba-89ea78e4c75a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +179,10 @@
       </method>
     </configuration>
     <configuration name="MobileleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="MYSQL_PASS" value="pass123" />
+        <env name="MYSQL_USER" value="root" />
+      </envs>
       <module name="mobilele" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.softuni.mobilele.MobileleApplication" />
       <method v="2">
@@ -193,6 +196,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Database Script.data.sql" />
+      <item itemvalue="Node.js.CappyJuice.js" />
+      <item itemvalue="Node.js.ConvertTable.js" />
+      <item itemvalue="Node.js.HeroicInventory.js" />
+      <item itemvalue="Node.js.PersonalBMI.js" />
+      <item itemvalue="Spring Boot.FrontEndBasicsApplication" />
+      <item itemvalue="Spring Boot.FrontEndIntroApplication" />
+      <item itemvalue="Spring Boot.MobileleApplication" />
+      <item itemvalue="Spring Boot.PathfinderApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.CappyJuice.js" />
@@ -227,7 +241,7 @@
       <workItem from="1716019693734" duration="22186000" />
       <workItem from="1716049496005" duration="1231000" />
       <workItem from="1716054190986" duration="138000" />
-      <workItem from="1716055641071" duration="3484000" />
+      <workItem from="1716055641071" duration="5671000" />
     </task>
     <servers />
   </component>
