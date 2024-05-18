@@ -1,7 +1,10 @@
 package org.softuni.mobilele.web;
 
 import jakarta.validation.Valid;
+import org.mindrot.jbcrypt.BCrypt;
+import org.softuni.mobilele.domain.dtos.UserLogInDto;
 import org.softuni.mobilele.domain.dtos.user.UserRegisterDto;
+import org.softuni.mobilele.domain.entities.User;
 import org.softuni.mobilele.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -53,7 +56,41 @@ public class UserController {
 
     @GetMapping("/users/login")
     public String logIn(Model model){
+        model.addAttribute("logInDto", new UserLogInDto());
         return "auth-login";
+    }
+
+    @PostMapping("/users/login")
+    public ModelAndView logIntoAccount(@Valid UserLogInDto logInDto,
+                                       BindingResult bindingResult){
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.addObject("logInDto",logInDto);
+        if (bindingResult.hasErrors()) {
+            modelAndView.setViewName("auth-login");
+            modelAndView.addObject("loginError", "Invalid login details");
+            return modelAndView;
+        }
+
+        if (!this.userService.userByUsernameExists(logInDto.getUsername())) {
+            modelAndView.setViewName("auth-login");
+            modelAndView.addObject("loginError", "No such username in the database. Please create an account first.");
+            return modelAndView;
+        }
+
+        User user = this.userService.getUserByUsername(logInDto.getUsername());
+        boolean areEquals = BCrypt.checkpw(logInDto.getPassword(), user.getPassword());
+
+        if (areEquals) {
+            
+            modelAndView.setViewName("redirect:/");
+        } else {
+            modelAndView.setViewName("auth-login");
+            modelAndView.addObject("loginError", "Incorrect username or password");
+            return modelAndView;
+        }
+
+        return modelAndView;
     }
 
 
