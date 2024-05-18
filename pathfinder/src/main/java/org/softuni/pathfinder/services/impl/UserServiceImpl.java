@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void register(UserRegisterDto userRegisterDto) {
 
-        // TODO : How should we actually set the roles , which should be admins , which not 
+        // TODO : How should we actually set the roles , which should be admins , which not
 
         User mapped = this.mapper.map(userRegisterDto, User.class);
 

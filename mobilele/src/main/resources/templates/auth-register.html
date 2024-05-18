@@ -1,70 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head th:replace="~{fragments/head}">
-
+    <style>
+        .errors {
+            color: red;
+        }
+    </style>
 </head>
-
 <body>
-
 <div>
-     <nav th:replace ="~{fragments/navbar}">
-
-     </nav>
+    <nav th:replace="~{fragments/navbar}"></nav>
 </div>
 
 <div class="container">
     <h2 class="text-center text-white">Register User</h2>
-
-
-    <form
-            th:action="@{/users/register}"
-            th:method="post"
-          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+    <form th:action="@{/users/register}" th:method="post" th:object="${userRegisterDto}"
+          enctype="multipart/form-data" class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label for="firstName" class="text-white font-weight-bold">First Name</label>
-                <input  id="firstName" name="firstName" type="text" min="2" max="20" class="form-control"
+                <input id="firstName" name="firstName" type="text" th:field="*{firstName}" class="form-control"
                        placeholder="First name"/>
-                <p class="errors alert alert-danger">
-                    First name is required.
-                </p>
+                <p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="errors alert alert-danger"></p>
             </div>
             <div class="form-group col-md-6 mb-3">
                 <label for="lastName" class="text-white font-weight-bold">Last Name</label>
-                <input id="lastName" name="lastName" type="text" min="2" max="20" class="form-control"
+                <input id="lastName" name="lastName" type="text" th:field="*{lastName}" class="form-control"
                        placeholder="Last name"/>
-                <p class="errors alert alert-danger">
-                    Last name is required.
-                </p>
+                <p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="errors alert alert-danger"></p>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label for="username" class="text-white font-weight-bold">Username</label>
-                <input id="username"  name="username" type="text" min="2" max="20" class="form-control"
+                <input id="username" name="username" type="text" th:field="*{username}" class="form-control"
                        placeholder="Username"/>
-                <p class="errors alert alert-danger">
-                    Username is required.
-                </p>
+                <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="errors alert alert-danger"></p>
             </div>
             <div class="form-group col-md-6 mb-3">
                 <label for="password" class="text-white font-weight-bold">Password</label>
-                <input id="password" name="password" type="password" min="2" max="20" class="form-control"
+                <input id="password" name="password" type="password" th:field="*{password}" class="form-control"
                        placeholder="Password"/>
-                <p class="errors alert alert-danger">
-                    Password is required.
-                </p>
+                <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="errors alert alert-danger"></p>
             </div>
         </div>
         <div class="form-group">
             <label class="text-center text-white font-weight-bold" for="role">Role</label>
-            <input  id="role" name="role" type="text" placeholder="Press 1 for Admin and 2 for User">
-            <p class="errors alert alert-danger">
-                Selecting a role is required.
-            </p>
+            <input id="role" name="role" type="text" th:field="*{role}" class="form-control"
+                   placeholder="Press 1 for Admin and 2 for User"/>
+            <p th:if="${#fields.hasErrors('role')}" th:errors="*{role}" class="errors alert alert-danger"></p>
         </div>
-
+        <div class="form-group">
+            <label class="text-center text-white font-weight-bold" for="photo">Photo</label>
+            <input id="photo" name="photo" type="file" class="form-control" th:field="*{photo}" />
+            <p class="errors alert alert-danger" th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}">Please select a photo.</p>
+        </div>
         <div class="row">
             <div class="col col-md-4">
                 <div class="button-holder d-flex">
@@ -76,8 +66,7 @@
 </div>
 
 <div>
-     <footer> </footer>
+    <footer></footer>
 </div>
-
 </body>
 </html>
