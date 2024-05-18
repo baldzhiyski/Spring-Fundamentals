@@ -9,8 +9,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/x7.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/feed4a68-c453-4be6-8eba-89ea78e4c75a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/feed4a68-c453-4be6-8eba-89ea78e4c75a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/Stuttgart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/lambo.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/seqoia.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/Stuttgart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/uni-stuttgart.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,54 +80,54 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Node.js.ArgumentInfo.js.executor": "Run",
-    "Node.js.CappyJuice.js.executor": "Run",
-    "Node.js.ConvertTable.js.executor": "Run",
-    "Node.js.HeroicInventory.js.executor": "Run",
-    "Node.js.PersonalBMI.js.executor": "Run",
-    "Node.js.SortArray.js.executor": "Run",
-    "Node.js.demo.js (1).executor": "Run",
-    "Node.js.demo.js.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.FrontEndBasicsApplication.executor": "Run",
-    "Spring Boot.MobileleApplication.executor": "Run",
-    "Spring Boot.PathfinderApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "javascript.nodejs.core.library.configured.version": "22.1.0",
-    "javascript.nodejs.core.library.typings.version": "20.12.10",
-    "jdk.selected.JAVA_MODULE": "20",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/GitHub/DSA/Ex04_BaldzhiyskiSteckHuetter_project",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "C:/Program Files/nodejs/node",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "configurable.group.language",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Node.js.ArgumentInfo.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.CappyJuice.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.ConvertTable.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.HeroicInventory.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.PersonalBMI.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.SortArray.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.demo.js (1).executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.demo.js.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.FrontEndBasicsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MobileleApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.PathfinderApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;22.1.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.12.10&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/GitHub/DSA/Ex04_BaldzhiyskiSteckHuetter_project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;C:/Program Files/nodejs/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.softuni.mobilele.services.implementations" />
@@ -223,7 +233,8 @@
       <workItem from="1715794484825" duration="11563000" />
       <workItem from="1715842374570" duration="75000" />
       <workItem from="1715934570877" duration="19909000" />
-      <workItem from="1716019693734" duration="21925000" />
+      <workItem from="1716019693734" duration="22186000" />
+      <workItem from="1716049496005" duration="625000" />
     </task>
     <servers />
   </component>

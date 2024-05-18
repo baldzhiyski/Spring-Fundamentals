@@ -103,9 +103,6 @@ public class OfferServiceImpl implements OfferService {
         // Construct the full path where you want to save the file
         Path filePath = Paths.get(uploadDir).resolve(filename);
 
-        // Create the directory if it doesn't exist
-        Files.createDirectories(filePath.getParent());
-
         // Open an output stream to the newly created file
         try (OutputStream outputStream = Files.newOutputStream(filePath, StandardOpenOption.CREATE)) {
             // Copy the contents of the uploaded file to the output stream

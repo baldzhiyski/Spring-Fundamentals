@@ -90,7 +90,7 @@ public class OffersController {
                 modelAndView.setViewName("offer-add"); // Return to the same view with the error message
                 modelAndView.addObject("offerRegisterDto", offerRegisterDto);
             }
-            // Add logic to add the offer
+
         }
         return modelAndView;
     }
