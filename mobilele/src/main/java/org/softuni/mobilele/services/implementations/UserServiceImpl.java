@@ -117,4 +117,9 @@ public class UserServiceImpl  implements UserService {
         return actualRole.equalsIgnoreCase("ADMIN");
     }
 
+    @Override
+    public User getLoggedUser() {
+        return this.logged;
+    }
+
 }

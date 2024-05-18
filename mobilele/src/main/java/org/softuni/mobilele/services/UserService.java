@@ -23,4 +23,6 @@ public interface UserService {
     void logOut();
 
     boolean isAdmin();
+
+    User getLoggedUser();
 }

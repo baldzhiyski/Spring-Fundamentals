@@ -1,12 +1,16 @@
 package org.softuni.mobilele.web;
 
+import jakarta.validation.Valid;
+import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
 import org.softuni.mobilele.domain.entities.Model;
 import org.softuni.mobilele.domain.entities.Offer;
 import org.softuni.mobilele.services.OfferService;
 import org.softuni.mobilele.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -43,6 +47,7 @@ public class OffersController {
     @GetMapping("/offers/add")
     public ModelAndView addOfferPage(){
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("offerRegisterDto", new OfferRegisterDto());
         boolean loggedIn = userService.checkLoggedUser();
         modelAndView.addObject("loggedIn", loggedIn);
 
@@ -50,6 +55,20 @@ public class OffersController {
         modelAndView.addObject("isAdmin", isAdmin);
 
         modelAndView.setViewName("offer-add");
+        return modelAndView;
+    }
+
+    @PostMapping("offers/add")
+    public ModelAndView addOffer(@Valid OfferRegisterDto offerRegisterDto,
+                                 BindingResult bindingResult){
+        ModelAndView modelAndView = new ModelAndView();
+        if (bindingResult.hasErrors()) {
+            modelAndView.addObject("offerRegisterDto", offerRegisterDto);
+            modelAndView.setViewName("offer-add"); // Return to the same view
+        } else {
+            modelAndView.setViewName("redirect:/home"); // Redirect to home page
+            // Add logic to add the offer
+        }
         return modelAndView;
     }
 

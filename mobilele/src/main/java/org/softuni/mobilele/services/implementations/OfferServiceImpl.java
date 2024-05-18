@@ -21,4 +21,9 @@ public class OfferServiceImpl implements OfferService {
     public List<Offer> getAllOffers() {
         return this.offerRepository.findAll();
     }
+
+    @Override
+    public void addOffer() {
+
+    }
 }
