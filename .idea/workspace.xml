@@ -9,18 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/x7.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/feed4a68-c453-4be6-8eba-89ea78e4c75a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/feed4a68-c453-4be6-8eba-89ea78e4c75a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/utils/CurrentUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/Stuttgart.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/lambo.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/seqoia.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/Stuttgart.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/uni-stuttgart.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +225,9 @@
       <workItem from="1715842374570" duration="75000" />
       <workItem from="1715934570877" duration="19909000" />
       <workItem from="1716019693734" duration="22186000" />
-      <workItem from="1716049496005" duration="625000" />
+      <workItem from="1716049496005" duration="1231000" />
+      <workItem from="1716054190986" duration="138000" />
+      <workItem from="1716055641071" duration="3484000" />
     </task>
     <servers />
   </component>

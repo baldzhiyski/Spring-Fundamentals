@@ -9,6 +9,7 @@ import org.softuni.mobilele.domain.entities.UserRole;
 import org.softuni.mobilele.repositories.UserRepository;
 import org.softuni.mobilele.repositories.UserRoleRepository;
 import org.softuni.mobilele.services.UserService;
+import org.softuni.mobilele.utils.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -28,14 +29,14 @@ public class UserServiceImpl  implements UserService {
     @Value("${upload.directory}")
     private String uploadDir;
 
-    private User logged;
+    private CurrentUser currentUser;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, UserRoleRepository userRoleRepository) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, UserRoleRepository userRoleRepository, CurrentUser currentUser) {
         this.userRepository = userRepository;
         this.mapper = mapper;
         this.userRoleRepository = userRoleRepository;
-        this.logged = null;
+        this.currentUser = currentUser;
     }
 
     @Override
@@ -89,34 +90,38 @@ public class UserServiceImpl  implements UserService {
     @Override
     public void logIn(UserLogInDto logInDto) {
         User user = this.userRepository.findByUsername(logInDto.getUsername()).orElseThrow();
-
-        logged = user;
+        currentUser.setFirstName(user.getFirstName());
+        currentUser.setLastName(user.getLastName());
+        currentUser.setLogged(true);
+        currentUser.setId(user.getId());
     }
 
     @Override
     public boolean checkLoggedUser() {
-        return logged !=null;
+        return currentUser.isLogged();
     }
 
     @Override
     public void logOut() {
-        this.logged = null;
+        currentUser.setLogged(false);
+        currentUser.setFirstName(null);
+        currentUser.setLastName(null);
+        currentUser.setId(null);
     }
 
     @Override
     public boolean isAdmin() {
-        User loggedUser = this.logged;
-        if (loggedUser == null) {
+        if (!currentUser.isLogged()) {
             return false;
         }
-        UserRole role = logged.getRole();
-        String actualRole = role.getRole().toString();
-        return actualRole.equalsIgnoreCase("ADMIN");
-    }
 
+        UserRole userRole = userRoleRepository.findById(currentUser.getId()).orElse(null);
+        return userRole != null && "ADMIN".equals(userRole.getRole());
+    }
     @Override
     public User getLoggedUser() {
-        return this.logged;
+        // This method might need to return more information, depending on your needs
+        return currentUser.isLogged() ? this.userRepository.findByUsername(currentUser.getFirstName()).orElse(null) : null;
     }
 
 }
