@@ -1,4 +1,4 @@
-package org.softuni.mobilele.domain.dtos;
+package org.softuni.mobilele.domain.dtos.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

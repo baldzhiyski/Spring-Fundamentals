@@ -2,7 +2,7 @@ package org.softuni.mobilele.services.implementations;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.modelmapper.ModelMapper;
-import org.softuni.mobilele.domain.dtos.UserLogInDto;
+import org.softuni.mobilele.domain.dtos.user.UserLogInDto;
 import org.softuni.mobilele.domain.dtos.user.UserRegisterDto;
 import org.softuni.mobilele.domain.entities.User;
 import org.softuni.mobilele.domain.entities.UserRole;
@@ -14,12 +14,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.*;
 import java.util.Date;
-import java.util.UUID;
 
 @Service
 public class UserServiceImpl  implements UserService {

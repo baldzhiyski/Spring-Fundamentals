@@ -1,5 +1,6 @@
 package org.softuni.mobilele.web;
 
+import org.softuni.mobilele.domain.entities.Model;
 import org.softuni.mobilele.domain.entities.Offer;
 import org.softuni.mobilele.services.OfferService;
 import org.softuni.mobilele.services.UserService;
@@ -38,4 +39,14 @@ public class OffersController {
 
         return modelAndView;
     }
+
+    @GetMapping("/offers/add")
+    public ModelAndView addOfferPage(){
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.setViewName("offer-add");
+        return modelAndView;
+    }
+
+
 }

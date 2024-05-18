@@ -1,7 +1,6 @@
 package org.softuni.mobilele.services;
 
-import org.softuni.mobilele.domain.dtos.UserLogInDto;
-import org.softuni.mobilele.domain.dtos.user.UserDto;
+import org.softuni.mobilele.domain.dtos.user.UserLogInDto;
 import org.softuni.mobilele.domain.dtos.user.UserRegisterDto;
 import org.softuni.mobilele.domain.entities.User;
 

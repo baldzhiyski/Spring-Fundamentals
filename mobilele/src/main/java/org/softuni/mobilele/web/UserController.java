@@ -2,7 +2,7 @@ package org.softuni.mobilele.web;
 
 import jakarta.validation.Valid;
 import org.mindrot.jbcrypt.BCrypt;
-import org.softuni.mobilele.domain.dtos.UserLogInDto;
+import org.softuni.mobilele.domain.dtos.user.UserLogInDto;
 import org.softuni.mobilele.domain.dtos.user.UserRegisterDto;
 import org.softuni.mobilele.domain.entities.User;
 import org.softuni.mobilele.services.UserService;
