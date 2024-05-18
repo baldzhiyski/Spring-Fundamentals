@@ -70,7 +70,7 @@ public class UserServiceImpl  implements UserService {
         }
 
         // Return the URL of the saved photo (relative to the application context)
-        return "/static/img/" + filename;
+        return "/img/" + filename;
     }
     @Override
     public boolean userByUsernameExists(String username) {
