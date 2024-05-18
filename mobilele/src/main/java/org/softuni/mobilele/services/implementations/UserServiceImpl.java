@@ -2,6 +2,7 @@ package org.softuni.mobilele.services.implementations;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.modelmapper.ModelMapper;
+import org.softuni.mobilele.domain.dtos.UserLogInDto;
 import org.softuni.mobilele.domain.dtos.user.UserRegisterDto;
 import org.softuni.mobilele.domain.entities.User;
 import org.softuni.mobilele.domain.entities.UserRole;
@@ -29,11 +30,14 @@ public class UserServiceImpl  implements UserService {
     @Value("${upload.directory}")
     private String uploadDir;
 
+    private User logged;
+
     @Autowired
     public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, UserRoleRepository userRoleRepository) {
         this.userRepository = userRepository;
         this.mapper = mapper;
         this.userRoleRepository = userRoleRepository;
+        this.logged = null;
     }
 
     @Override
@@ -86,4 +90,33 @@ public class UserServiceImpl  implements UserService {
     public User getUserByUsername(String username) {
         return this.userRepository.findByUsername(username).orElseThrow();
     }
+
+    @Override
+    public void logIn(UserLogInDto logInDto) {
+        User user = this.userRepository.findByUsername(logInDto.getUsername()).orElseThrow();
+
+        logged = user;
+    }
+
+    @Override
+    public boolean checkLoggedUser() {
+        return logged !=null;
+    }
+
+    @Override
+    public void logOut() {
+        this.logged = null;
+    }
+
+    @Override
+    public boolean isAdmin() {
+        User loggedUser = this.logged;
+        if (loggedUser == null) {
+            return false;
+        }
+        UserRole role = logged.getRole();
+        String actualRole = role.getRole().toString();
+        return actualRole.equalsIgnoreCase("ADMIN");
+    }
+
 }

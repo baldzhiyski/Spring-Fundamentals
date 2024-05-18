@@ -82,13 +82,23 @@ public class UserController {
         boolean areEquals = BCrypt.checkpw(logInDto.getPassword(), user.getPassword());
 
         if (areEquals) {
-            
-            modelAndView.setViewName("redirect:/");
+            this.userService.logIn(logInDto);
+            modelAndView.setViewName("redirect:/home");
         } else {
             modelAndView.setViewName("auth-login");
             modelAndView.addObject("loginError", "Incorrect username or password");
             return modelAndView;
         }
+
+        return modelAndView;
+    }
+
+    @GetMapping("/users/logout")
+    public ModelAndView logout() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("redirect:/users/login");
+
+        this.userService.logOut();
 
         return modelAndView;
     }

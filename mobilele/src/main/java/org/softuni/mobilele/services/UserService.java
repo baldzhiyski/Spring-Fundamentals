@@ -1,5 +1,6 @@
 package org.softuni.mobilele.services;
 
+import org.softuni.mobilele.domain.dtos.UserLogInDto;
 import org.softuni.mobilele.domain.dtos.user.UserDto;
 import org.softuni.mobilele.domain.dtos.user.UserRegisterDto;
 import org.softuni.mobilele.domain.entities.User;
@@ -16,4 +17,11 @@ public interface UserService {
 
     User getUserByUsername(String username);
 
+    void logIn(UserLogInDto logInDto);
+
+    boolean checkLoggedUser();
+
+    void logOut();
+
+    boolean isAdmin();
 }
