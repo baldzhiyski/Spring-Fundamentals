@@ -32,11 +32,14 @@ public class Route  extends BaseEntity{
     @Column(name = "video_url")
     private String videoUrl;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @Column(name = "image_url")
+    public String imageUrl;
+
+    @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     @JoinColumn(name = "author_id")
     private User author;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "routes_categories")
     private Set<Category> category;
 
