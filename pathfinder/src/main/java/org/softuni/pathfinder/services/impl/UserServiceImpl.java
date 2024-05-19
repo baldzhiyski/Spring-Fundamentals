@@ -122,7 +122,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean isLoggedIn() {
-        return this.logged!=null;
+        return this.logged.isLogged();
     }
 
     @Override

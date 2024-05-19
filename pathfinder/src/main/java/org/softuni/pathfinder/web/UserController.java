@@ -124,9 +124,8 @@ public class UserController {
         modelAndView.addObject("isAdmin", isAdmin);
         // Retrieve the currently logged-in user
         LoggedInUser loggedUser = userService.getLoggedInUser();
-        User user = this.mapper.map(loggedUser, User.class);
 
-        modelAndView.addObject("user", user);
+        modelAndView.addObject("loggedIn", loggedUser);
 
         return modelAndView;
     }

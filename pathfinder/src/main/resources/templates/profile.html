@@ -17,16 +17,16 @@
                 <div class="profile-card p-3 py-4">
                     <div class="text-center"><img src="/images/profile.jpg" width="100" class="rounded-circle"></div>
                     <div class="text-center mt-3">
-                        <span class="bg-secondary p-1 px-4 rounded text-white" th:text="${user.level}"></span>
+                        <span class="bg-secondary p-1 px-4 rounded text-white" th:text="${loggedIn.level}"></span>
                         <h5 class="mt-4 mb-0">Full name</h5>
-                        <span th:text="${user.fullName}"></span>
+                        <span th:text="${loggedIn.fullName}"></span>
                         <h5 class="mt-2 mb-0">Username</h5>
-                        <span th:text="${user.username}"></span>
+                        <span th:text="${loggedIn.username}"></span>
                         <h5 class="mt-2 mb-0">Age</h5>
-                        <span th:text="${user.age}"></span>
+                        <span th:text="${loggedIn.age}"></span>
                         <h5 class="mt-2 mb-0">Roles</h5>
                         <span>
-                           <th:block th:each="role, iterStat : ${user.roles}">
+                           <th:block th:each="role, iterStat : ${loggedIn.roles}">
                            <span th:text="${role}" th:if="${!iterStat.last}">,</span>
                            <span th:text="${role}" th:unless="${!iterStat.last}"></span>
                            </th:block>
