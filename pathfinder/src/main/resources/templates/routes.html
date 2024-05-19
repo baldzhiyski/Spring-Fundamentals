@@ -1,28 +1,28 @@
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
-
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head}">
-
 </head>
 <body>
 <div class="wrapper">
     <!-- Navigation -->
     <header>
-    <nav th:replace ="~{fragments/navbar}" class="main-nav">
+        <nav th:replace="~{fragments/navbar}" class="main-nav"></nav>
+    </header>
 
-    </nav>
-</header>
+    <!-- Section for Routes -->
     <section class="road">
-        <div th:each="route, iterStat : ${routes}">
-            <img th:src="@{${route.imagePath}}" alt="Title image">
-            <h2 th:text="${route.name}"></h2>
-            <p th:text="${route.description}"></p>
-            <a th:href="@{/route/details/{id}(id=${route.id})}" class="btn">Learn More</a>
+        <div th:each="route, iterStat : ${routes}" class="card">
+            <img th:src="@{${route.imageUrl}}" alt="Title image" class="card-img-top">
+            <div class="card-body">
+                <h5 th:text="${route.name}" class="card-title"></h5>
+                <p th:text="${route.description}" class="card-text"></p>
+                <a th:href="@{/route/details/{id}(id=${route.id})}" class="btn btn-primary">Learn More</a>
+            </div>
         </div>
     </section>
 </div>
-<!-- Wrapper Ends -->
-</body>
+
+<!-- Footer -->
 <footer class="footer bg-blur rounded">
     <div class="container-fluid text-center">
         <div class="h5 text-white">
@@ -30,4 +30,5 @@
         </div>
     </div>
 </footer>
+</body>
 </html>
