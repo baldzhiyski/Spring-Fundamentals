@@ -1,11 +1,13 @@
 package org.softuni.pathfinder.web;
 
 import jakarta.validation.Valid;
+import org.modelmapper.ModelMapper;
 import org.softuni.pathfinder.domain.dtos.UserLogInDto;
 import org.softuni.pathfinder.domain.dtos.UserRegisterDto;
 import org.softuni.pathfinder.domain.entities.User;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.UserService;
+import org.softuni.pathfinder.utils.LoggedInUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +21,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class UserController {
     private UserService userService;
+    private ModelMapper mapper;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService, ModelMapper mapper) {
         this.userService = userService;
+        this.mapper = mapper;
     }
 
     @GetMapping("/users/register")
@@ -119,8 +123,10 @@ public class UserController {
         boolean isAdmin = this.userService.isAdmin();
         modelAndView.addObject("isAdmin", isAdmin);
         // Retrieve the currently logged-in user
-        User loggedUser = userService.getLoggedInUser();
-        modelAndView.addObject("user", loggedUser);
+        LoggedInUser loggedUser = userService.getLoggedInUser();
+        User user = this.mapper.map(loggedUser, User.class);
+
+        modelAndView.addObject("user", user);
 
         return modelAndView;
     }

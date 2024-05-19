@@ -11,6 +11,7 @@ import org.softuni.pathfinder.domain.entities.enums.UserRole;
 import org.softuni.pathfinder.repositories.RoleRepository;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.UserService;
+import org.softuni.pathfinder.utils.LoggedInUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,14 +29,14 @@ public class UserServiceImpl implements UserService {
     private RoleRepository roleRepository;
 
     private BCrypt passwordEncoder;
-    private User logged;
+    private LoggedInUser logged;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, RoleRepository roleRepository) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, RoleRepository roleRepository,LoggedInUser logged) {
         this.userRepository = userRepository;
         this.mapper = mapper;
         this.roleRepository = roleRepository;
-        this.logged = null;
+        this.logged = logged;
     }
 
     @Override
@@ -85,7 +86,13 @@ public class UserServiceImpl implements UserService {
         User user = this.userRepository.getUserByUsername(userLogInDto.getUsername())
                 .orElseThrow();
 
-        this.logged = user;
+        this.logged.setId(user.getId());
+        this.logged.setLogged(true);
+        this.logged.setFullName(user.getFullName());
+        this.logged.setUsername(user.getUsername());
+        this.logged.setAge(user.getAge());
+        this.logged.setRoles(user.getRoles());
+        this.logged.setLevel(user.getLevel());
 
     }
 
@@ -105,10 +112,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean logOut() {
-        if(this.logged == null){
+        if(!this.logged.isLogged()){
             return false;
         }else{
-            this.logged = null;
+            this.logged.setLogged(false);
             return true;
         }
     }
@@ -120,12 +127,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean isAdmin() {
-        return this.logged != null && this.logged.getRoles().stream().anyMatch(role -> role.getName().equals(UserRole.ADMIN)
-        || role.getName().equals(UserRole.MODERATOR));
+        if (!logged.isLogged()) {
+            return false;
+        }
+
+        User user = userRepository.findById(logged.getId()).orElse(null);
+        return (user != null ? user.getRoles().stream().filter(role -> role.getName().equals(UserRole.valueOf("ADMIN"))).count() : 0) > 0;
     }
 
     @Override
-    public User getLoggedInUser() {
+    public LoggedInUser getLoggedInUser() {
         return this.logged;
     }
 }
