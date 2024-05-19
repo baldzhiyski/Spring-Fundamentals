@@ -14,7 +14,7 @@
 
 <!-- Top Container -->
 <div class="row justify-content-center ">
-    <form id="add-route-form" class="w-50 rounded text-white mt-5" action="/" method="/" enctype="multipart/form-data">
+    <form id="add-route-form" class="w-50 rounded text-white mt-5" action="/routes/add" method="post" enctype="multipart/form-data" th:object="${routeDto}">
         <h3 class="border-left border-light pl-2">Add a new route</h3>
 
         <div>
@@ -22,8 +22,10 @@
                 <label for="inputName" class="col-form-label">Name</label>
             </div>
             <div class="form-group">
-                <input name="name" type="text" id="inputName" class="form-control" aria-describedby="inputNameError">
-                <small id="inputNameError" class="invalid-feedback bg-danger rounded">Name length must be more than 3 characters</small>
+                <input name="name" type="text" id="inputName" class="form-control"  th:value="${originalRouteDto != null ? originalRouteDto.name : ''}"
+                       aria-describedby="inputNameError" th:classappend="${#fields.hasErrors('name')} ? 'is-invalid'">
+                <small id="inputNameError" class="invalid-feedback bg-danger rounded text-white"
+                       th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
             </div>
         </div>
 
@@ -32,8 +34,10 @@
                 <label for="inputDescription" class="col-form-label">Description</label>
             </div>
             <div class="form-group">
-                <textarea name="description" id="inputDescription" class="form-control" aria-describedby="inputDescriptionError"></textarea>
-                <small id="inputDescriptionError" class="invalid-feedback form-text bg-danger rounded">Description length must be more than 5 characters</small>
+                <textarea name="description" id="inputDescription" class="form-control"  th:value="${originalRouteDto != null ? originalRouteDto.description : ''}"
+                          aria-describedby="inputDescriptionError" th:classappend="${#fields.hasErrors('description')} ? 'is-invalid'"></textarea>
+                <small id="inputDescriptionError" class="invalid-feedback form-text bg-danger rounded text-white"
+                       th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></small>
             </div>
         </div>
 
@@ -42,29 +46,37 @@
                 <label for="inputGpx" class="col-form-label">GPX Coordinates</label>
             </div>
             <div class="form-group">
-                <input type="file" name="gpxCoordinates" required id="inputGpx" class="form-control-file" aria-describedby="inputGpxError" accept=".txt">
-                <small id="inputGpxError" class="invalid-feedback form-text bg-danger rounded">Must be valid GPX Coordinates</small>
+                <input type="file" name="gpxCoordinates" required id="inputGpx" class="form-control-file"
+                       aria-describedby="inputGpxError" accept=".txt" th:classappend="${#fields.hasErrors('gpxCoordinates')} ? 'is-invalid'">
+                <small id="inputGpxError" class="invalid-feedback bg-danger rounded text-white"
+                       th:if="${#fields.hasErrors('gpxCoordinates')}" th:errors="*{gpxCoordinates}"></small>
             </div>
         </div>
 
         <div>
             <div class="form-group">
                 <label for="level">Level</label>
-                <select  name="level" id="level" class="custom-select">
+                <select  name="level" id="level" class="custom-select" th:classappend="${#fields.hasErrors('level')} ? 'is-invalid'"
+                         th:value="${originalRouteDto != null ? originalRouteDto.level : ''}">
                     <option value="" selected>Select level</option>
                     <option value="ADVANCED">ADVANCED</option>
                     <option value="INTERMEDIATE">INTERMEDIATE</option>
                     <option value="BEGINNER">BEGINNER</option>
                 </select>
+                <small class="invalid-feedback bg-danger rounded text-white"
+                       th:if="${#fields.hasErrors('level')}" th:errors="*{level}"></small>
             </div>
         </div>
 
         <div>
             <div class="form-group">
                 <label for="videoUrl">Video Url (only last eleven characters from Youtube)</label>
-                <input  name="videoUrl" id="videoUrl" type="text" class="form-control" placeholder="Video url">
+                <input  name="videoUrl" id="videoUrl" th:value="${originalRouteDto != null ? originalRouteDto.videoUrl : ''}"  type="text" class="form-control" placeholder="Video url" th:classappend="${#fields.hasErrors('videoUrl')} ? 'is-invalid'">
+                <small class="invalid-feedback bg-danger rounded text-white"
+                       th:if="${#fields.hasErrors('videoUrl')}" th:errors="*{videoUrl}"></small>
             </div>
         </div>
+
 
         <!-- Categories -->
         <div class="form-group p-3">
@@ -87,13 +99,15 @@
                     <label class="form-check-label" for="categoryCar">Car</label>
                 </div>
             </div>
+            <small class="text-danger" th:if="${#fields.hasErrors('categories')}">Please select at least one category.</small>
         </div>
 
         <!-- Photo Input -->
         <div class="form-group">
             <label for="photo" class="col-form-label text-white">Photo</label>
-            <input type="file" name="image" required id="photo" class="form-control-file" aria-describedby="inputPhotoError">
-            <small id="inputPhotoError" class="invalid-feedback form-text bg-danger rounded">Must be a valid photo</small>
+            <input type="file" name="image"   required id="photo" class="form-control-file" aria-describedby="inputPhotoError" th:classappend="${#fields.hasErrors('image')} ? 'is-invalid'">
+            <small id="inputPhotoError" class="invalid-feedback form-text bg-danger rounded text-white"
+                   th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></small>
         </div>
 
         <div class="d-flex justify-content-center mt-4">

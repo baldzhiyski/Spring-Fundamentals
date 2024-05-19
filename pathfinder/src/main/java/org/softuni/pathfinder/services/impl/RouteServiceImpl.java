@@ -18,8 +18,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -27,6 +27,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class RouteServiceImpl implements RouteService {
@@ -69,6 +70,7 @@ public class RouteServiceImpl implements RouteService {
         route.setImageUrl(imageUrl);
         route.setVideoUrl(routeDto.getVideoUrl());
         route.setGpxCoordinates(gpxCoordinates);
+        route.setDescription(routeDto.getDescription());
 
         this.routeRepository.saveAndFlush(route);
     }
@@ -104,7 +106,14 @@ public class RouteServiceImpl implements RouteService {
         return "/images/" + filename;
     }
 
-    private String extractCoordinates(MultipartFile gpxCoordinates) {
-        return null;
+    private String extractCoordinates(MultipartFile gpxCoordinates) throws IOException {
+        if (gpxCoordinates == null || gpxCoordinates.isEmpty()) {
+            return null;
+        }
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(gpxCoordinates.getInputStream(), StandardCharsets.UTF_8))) {
+            // Read the contents of the GPX file and convert it to plain text
+            return reader.lines().collect(Collectors.joining("\n"));
+        }
     }
 }

@@ -22,9 +22,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Stream;
 
 @Controller
 public class RoutesController {
@@ -109,6 +108,7 @@ public class RoutesController {
         boolean loggedIn = this.userService.isLoggedIn();
         modelAndView.addObject("loggedIn", loggedIn);
         modelAndView.addObject("isAtPage",true);
+        modelAndView.addObject("routeDto",new RouteDto());
 
         modelAndView.setViewName("add-route");
         return modelAndView;
@@ -121,18 +121,21 @@ public class RoutesController {
         ModelAndView modelAndView = new ModelAndView();
         boolean loggedIn = this.userService.isLoggedIn();
         modelAndView.addObject("loggedIn", loggedIn);
-        modelAndView.addObject("isAtPage",true);
+        modelAndView.addObject("isAtPage", true);
 
-        if(bindingResult.hasErrors()){
+        // Check if at least one category is selected
+        boolean categorySelected = Stream.of(routeDto.getCategories()).anyMatch(Objects::nonNull);
+        if (!categorySelected) {
+            bindingResult.rejectValue("categories", "error.routeDto", "Please select at least one category.");
+        }
 
-
+        if (bindingResult.hasErrors()) {
             modelAndView.setViewName("add-route");
-        }else{
-
+        } else {
             this.routeService.registerRoute(routeDto);
             modelAndView.setViewName("redirect:/home");
         }
-
+        modelAndView.addObject("routeDto", routeDto); // Add routeDto to the model
         return modelAndView;
     }
 }
