@@ -2,8 +2,8 @@ package org.softuni.pathfinder.services.impl;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.modelmapper.ModelMapper;
-import org.softuni.pathfinder.domain.dtos.UserLogInDto;
-import org.softuni.pathfinder.domain.dtos.UserRegisterDto;
+import org.softuni.pathfinder.domain.dtos.user.UserLogInDto;
+import org.softuni.pathfinder.domain.dtos.user.UserRegisterDto;
 import org.softuni.pathfinder.domain.entities.Role;
 import org.softuni.pathfinder.domain.entities.User;
 import org.softuni.pathfinder.domain.entities.enums.Level;
@@ -138,5 +138,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public LoggedInUser getLoggedInUser() {
         return this.logged;
+    }
+
+    @Override
+    public User getById(Long id) {
+        return this.userRepository.findById(id).orElse(null);
     }
 }

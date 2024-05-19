@@ -43,4 +43,7 @@ public class Route  extends BaseEntity{
     @JoinTable(name = "routes_categories")
     private Set<Category> category;
 
+    @OneToMany(mappedBy = "route",fetch = FetchType.EAGER)
+    private Set<Comment> comments;
+
 }

@@ -1,4 +1,4 @@
-package org.softuni.pathfinder.domain.dtos;
+package org.softuni.pathfinder.domain.dtos.user;
 
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;

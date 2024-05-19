@@ -1,4 +1,4 @@
-package org.softuni.pathfinder.domain.dtos;
+package org.softuni.pathfinder.domain.dtos.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
