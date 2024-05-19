@@ -4,7 +4,9 @@ import org.softuni.pathfinder.domain.entities.Route;
 import org.softuni.pathfinder.repositories.RouteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -27,6 +29,17 @@ public class RoutesController {
         modelAndView.setViewName("routes");
         modelAndView.addObject("routes",routes);
 
+        return modelAndView;
+    }
+
+    @GetMapping("/route/details/{id}")
+    public ModelAndView getDetailInfo(@PathVariable Long id){
+        ModelAndView modelAndView = new ModelAndView();
+
+        Route route = this.routeRepository.findById(id).orElseThrow();
+
+        modelAndView.addObject("route",route);
+        modelAndView.setViewName("route-details");
         return modelAndView;
     }
 }
