@@ -29,7 +29,7 @@
 
             <div style="margin-top: 20px;">
                 <span style="color: black; font-weight: bold;">GPX Download:</span>
-                <a id="showGPX" style="color: white; margin-left: 10px;">Show GPX</a>
+                <a id="showGPX"  href="#" style="color: white; margin-left: 10px;">Show GPX</a>
             </div>
 
             <div id="gpxContent" style="display: none; margin-top: 10px;">
@@ -90,16 +90,19 @@
         <div class="h5 text-white">&copy; Hristo Baldzhiyski Pathfinder Project 2024. All rights reserved.</div>
     </div>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 <script>
-    $(document).ready(function() {
-        $("#showGPX").click(function(e) {
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("showGPX").addEventListener("click", function(e) {
             e.preventDefault();
-            var gpxCoordinates = $("#gpxCoordinates").val();
+            var gpxCoordinates = document.getElementById("gpxCoordinates").value;
             var filename = "route.gpx";
             var blob = new Blob([gpxCoordinates], { type: "text/plain;charset=utf-8" });
-            saveAs(blob, filename);
+            var link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         });
     });
 </script>
