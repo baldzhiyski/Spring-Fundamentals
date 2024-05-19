@@ -55,7 +55,7 @@ public class RoutesController {
         return modelAndView;
     }
 
-    // TODO : Get a map for the route and also calculate the distance. How ???
+    // TODO : Get a map for the route and also calculate the distance. How ??? Still needed to be implemented
     @GetMapping("/route/details/{id}")
     public ModelAndView getDetailInfo(@PathVariable Long id){
         ModelAndView modelAndView = new ModelAndView();
@@ -115,7 +115,6 @@ public class RoutesController {
 
     }
 
-    // TODO : PostMapping to the add route page
     @PostMapping("/routes/add")
     public ModelAndView addRoute(@Valid RouteDto routeDto, BindingResult bindingResult) throws IOException {
         ModelAndView modelAndView = new ModelAndView();
