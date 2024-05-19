@@ -53,6 +53,7 @@ public class RoutesController {
         return modelAndView;
     }
 
+    // TODO : Get a map for the route and also calculate the distance. How ???
     @GetMapping("/route/details/{id}")
     public ModelAndView getDetailInfo(@PathVariable Long id){
         ModelAndView modelAndView = new ModelAndView();
@@ -98,4 +99,18 @@ public class RoutesController {
 
         return modelAndView;
     }
+
+    @GetMapping("/routes/add")
+    public ModelAndView addPage(){
+        ModelAndView modelAndView = new ModelAndView();
+        boolean loggedIn = this.userService.isLoggedIn();
+        modelAndView.addObject("loggedIn", loggedIn);
+        modelAndView.addObject("isAtPage",true);
+
+        modelAndView.setViewName("add-route");
+        return modelAndView;
+
+    }
+
+    // TODO : PostMapping to the add route page
 }
