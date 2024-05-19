@@ -16,7 +16,7 @@
         <li th:unless = "${isInThePage}">
             <a href="/about">About</a>
         </li>
-        <li>
+        <li th:if="${loggedIn}">
             <a href="/">Add new route</a>
         </li>
         <li th:if="${loggedIn}">

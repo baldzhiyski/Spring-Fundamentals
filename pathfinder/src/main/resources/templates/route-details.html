@@ -2,22 +2,9 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="~{fragments/head}">
-    <script>
-        function toggleGpxDownload() {
-            var gpxContent = document.getElementById("gpxContent");
-            var gpxDownloadLink = document.getElementById("gpxDownloadLink");
-            if (gpxContent.style.display === "none") {
-                gpxContent.style.display = "block";
-                gpxDownloadLink.textContent = "Hide GPX";
-            } else {
-                gpxContent.style.display = "none";
-                gpxDownloadLink.textContent = "Show GPX";
-            }
-        }
-    </script>
 </head>
 
-<body onload="calculateTotalDistance()">
+<body>
 <div class="wrapper">
     <header>
         <nav th:replace="~{fragments/navbar}" class="main-nav"></nav>
@@ -42,7 +29,12 @@
 
             <div style="margin-top: 20px;">
                 <span style="color: black; font-weight: bold;">GPX Download:</span>
-                <a id="gpxDownloadLink" href="#" onclick="toggleGpxDownload()" style="color: white; margin-left: 10px;">Show GPX</a>
+                <a id="showGPX" style="color: white; margin-left: 10px;">Show GPX</a>
+            </div>
+
+            <div id="gpxContent" style="display: none; margin-top: 10px;">
+                <label for="gpxCoordinates">GPX Coordinates:</label>
+                <textarea id="gpxCoordinates" name="gpxCoordinates" style="width: 100%; height: 100px;" th:text="${route.gpxCoordinates}" readonly></textarea>
             </div>
         </section>
 
@@ -98,6 +90,19 @@
         <div class="h5 text-white">&copy; Hristo Baldzhiyski Pathfinder Project 2024. All rights reserved.</div>
     </div>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#showGPX").click(function(e) {
+            e.preventDefault();
+            var gpxCoordinates = $("#gpxCoordinates").val();
+            var filename = "route.gpx";
+            var blob = new Blob([gpxCoordinates], { type: "text/plain;charset=utf-8" });
+            saveAs(blob, filename);
+        });
+    });
+</script>
 </body>
 
 </html>
