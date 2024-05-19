@@ -7,90 +7,93 @@
 <!--<div class="wrapper">-->
 <!-- Navigation -->
 <header>
-    <nav  th:replace ="~{fragments/navbar}" class="main-nav">
+    <nav th:replace="~{fragments/navbar}" class="main-nav">
 
     </nav>
 </header>
 
 <!-- Top Container -->
 <div class="row justify-content-center ">
-    <form id="add-route-form" class="w-50 rounded text-white mt-5"
-          action="/" 
-          method="/" enctype="multipart/form-data">
-
+    <form id="add-route-form" class="w-50 rounded text-white mt-5" action="/" method="/" enctype="multipart/form-data">
         <h3 class="border-left border-light pl-2">Add a new route</h3>
+
         <div>
             <div class="form-group">
-                <label for="inputName" class="col-form-label ">Name</label>
+                <label for="inputName" class="col-form-label">Name</label>
             </div>
             <div class="form-group">
-                <input name="name" 
-                       required minlength="5" maxlength="20"
-                       type="text"
-                       id="inputName"
-                       class="form-control"
-                       aria-describedby="inputNameError">
-                <small id="inputNameError"
-                       class="invalid-feedback bg-danger rounded">Name length must be more than 3 characters</small>
-
+                <input name="name" type="text" id="inputName" class="form-control" aria-describedby="inputNameError">
+                <small id="inputNameError" class="invalid-feedback bg-danger rounded">Name length must be more than 3 characters</small>
             </div>
         </div>
 
         <div>
             <div class="form-group">
-                <label for="inputDescription" class="col-form-label ">Description</label>
+                <label for="inputDescription" class="col-form-label">Description</label>
             </div>
             <div class="form-group">
-                    <textarea name="description" 
-                              required minlength="5"
-                              id="inputDescription"
-                              class="form-control"
-                              aria-describedby="inputDescriptionError"></textarea>
-                <small id="inputDescriptionError"
-                       class="invalid-feedback  form-text bg-danger rounded">Description length must be more than 5
-                    characters</small>
+                <textarea name="description" id="inputDescription" class="form-control" aria-describedby="inputDescriptionError"></textarea>
+                <small id="inputDescriptionError" class="invalid-feedback form-text bg-danger rounded">Description length must be more than 5 characters</small>
             </div>
         </div>
 
         <div>
             <div class="form-group">
-                <label for="inputGpx" class="col-form-label ">GPX Coordinates</label>
+                <label for="inputGpx" class="col-form-label">GPX Coordinates</label>
             </div>
             <div class="form-group">
-                <input type="file" name="gpxCoordinates"
-					   required
-                       id="inputGpx"
-                       class="form-control-file"
-                       aria-describedby="inputGpxError">
-                <small id="inputGpxError"
-                       class="invalid-feedback  form-text bg-danger rounded">Must be valid GPX Coordinates</small>
+                <input type="file" name="gpxCoordinates" required id="inputGpx" class="form-control-file" aria-describedby="inputGpxError" accept=".txt">
+                <small id="inputGpxError" class="invalid-feedback form-text bg-danger rounded">Must be valid GPX Coordinates</small>
             </div>
         </div>
+
         <div>
             <div class="form-group">
                 <label for="level">Level</label>
-                <select id="level" class="custom-select">
+                <select  name="level" id="level" class="custom-select">
                     <option value="" selected>Select level</option>
-                    <option value="1" text="ADVANCED">Select level</option>
+                    <option value="ADVANCED">ADVANCED</option>
+                    <option value="INTERMEDIATE">INTERMEDIATE</option>
+                    <option value="BEGINNER">BEGINNER</option>
                 </select>
             </div>
         </div>
-        <div>
 
+        <div>
             <div class="form-group">
                 <label for="videoUrl">Video Url (only last eleven characters from Youtube)</label>
-                <input id="videoUrl" type="text"
-                       class="form-control" placeholder="Video url">
+                <input  name="videoUrl" id="videoUrl" type="text" class="form-control" placeholder="Video url">
             </div>
         </div>
 
-        <div>
-            <div class="form-group p-3">
-                <label class="p-2" for="categories">Categories:</label>
-                <input class="m-3" type="checkbox" name="categories" id="categories"
-                       value="1" text="Category">
-				<br>
+        <!-- Categories -->
+        <div class="form-group p-3">
+            <label class="p-2">Categories:</label>
+            <div class="d-flex flex-wrap align-items-center">
+                <div class="form-check m-1">
+                    <input class="form-check-input" type="checkbox" name="categories" id="categoryPedestrian" value="PEDESTRIAN">
+                    <label class="form-check-label" for="categoryPedestrian">Pedestrian</label>
+                </div>
+                <div class="form-check m-1">
+                    <input class="form-check-input" type="checkbox" name="categories" id="categoryBicycle" value="BICYCLE">
+                    <label class="form-check-label" for="categoryBicycle">Bicycle</label>
+                </div>
+                <div class="form-check m-1">
+                    <input class="form-check-input" type="checkbox" name="categories" id="categoryMotorcycle" value="MOTORCYCLE">
+                    <label class="form-check-label" for="categoryMotorcycle">Motorcycle</label>
+                </div>
+                <div class="form-check m-1">
+                    <input class="form-check-input" type="checkbox" name="categories" id="categoryCar" value="CAR">
+                    <label class="form-check-label" for="categoryCar">Car</label>
+                </div>
             </div>
+        </div>
+
+        <!-- Photo Input -->
+        <div class="form-group">
+            <label for="photo" class="col-form-label text-white">Photo</label>
+            <input type="file" name="image" required id="photo" class="form-control-file" aria-describedby="inputPhotoError">
+            <small id="inputPhotoError" class="invalid-feedback form-text bg-danger rounded">Must be a valid photo</small>
         </div>
 
         <div class="d-flex justify-content-center mt-4">
