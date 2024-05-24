@@ -1,9 +1,13 @@
 package org.softuni.pathfinder.domain.entities;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Table(name = "pictures")
+@Getter
+@Setter
 public class Picture extends BaseEntity{
     @Column
     private String title;
@@ -14,6 +18,7 @@ public class Picture extends BaseEntity{
     @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     private User author;
 
-    @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
+    @JoinColumn(name = "route_id")
     private Route route;
 }

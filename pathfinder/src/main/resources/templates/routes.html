@@ -12,7 +12,7 @@
     <!-- Section for Routes -->
     <section class="road">
         <div th:each="route, iterStat : ${routes}" class="card">
-            <img th:src="@{${route.imageUrl}}" alt="Title image" class="card-img-top">
+            <img th:src="@{${route.picture.url}}" alt="Title image" class="card-img-top">
             <div class="card-body">
                 <h5 th:text="${route.name}" class="card-title"></h5>
                 <p th:text="${route.description}" class="card-text"></p>

@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.softuni.pathfinder.domain.entities.enums.Level;
 
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -32,9 +33,6 @@ public class Route  extends BaseEntity{
     @Column(name = "video_url")
     private String videoUrl;
 
-    @Column(name = "image_url")
-    public String imageUrl;
-
     @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     @JoinColumn(name = "author_id")
     private User author;
@@ -45,5 +43,8 @@ public class Route  extends BaseEntity{
 
     @OneToMany(mappedBy = "route",fetch = FetchType.EAGER)
     private Set<Comment> comments;
+
+    @OneToOne(mappedBy = "route")
+    private Picture picture;
 
 }

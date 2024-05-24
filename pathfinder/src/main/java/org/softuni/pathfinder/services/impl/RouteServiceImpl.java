@@ -3,11 +3,13 @@ package org.softuni.pathfinder.services.impl;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.softuni.pathfinder.domain.dtos.routes.RouteDto;
 import org.softuni.pathfinder.domain.entities.Category;
+import org.softuni.pathfinder.domain.entities.Picture;
 import org.softuni.pathfinder.domain.entities.Route;
 import org.softuni.pathfinder.domain.entities.User;
 import org.softuni.pathfinder.domain.entities.enums.CategoryName;
 import org.softuni.pathfinder.domain.entities.enums.Level;
 import org.softuni.pathfinder.repositories.CategoryRepository;
+import org.softuni.pathfinder.repositories.PictureRepository;
 import org.softuni.pathfinder.repositories.RouteRepository;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.RouteService;
@@ -35,16 +37,19 @@ public class RouteServiceImpl implements RouteService {
     private LoggedInUser loggedInUser;
     private UserRepository userRepository;
 
+    private PictureRepository pictureRepository;
+
     private CategoryRepository categoryRepository;
 
     @Value("${upload.directory}")
     private String uploadDir;
 
     @Autowired
-    public RouteServiceImpl(RouteRepository routeRepository, LoggedInUser loggedInUser, UserRepository userRepository, CategoryRepository categoryRepository) {
+    public RouteServiceImpl(RouteRepository routeRepository, LoggedInUser loggedInUser, UserRepository userRepository, PictureRepository pictureRepository, CategoryRepository categoryRepository) {
         this.routeRepository = routeRepository;
         this.loggedInUser = loggedInUser;
         this.userRepository = userRepository;
+        this.pictureRepository = pictureRepository;
         this.categoryRepository = categoryRepository;
     }
 
@@ -59,7 +64,18 @@ public class RouteServiceImpl implements RouteService {
             Category catToAdd = this.categoryRepository.findByName(CategoryName.valueOf(category.toUpperCase()));
             collection.add(catToAdd);
         }
-        String imageUrl = saveFile(routeDto.getImage());
+
+        StringBuilder nameOfPic = new StringBuilder();
+        String imageUrl = saveFile(routeDto.getImage(),nameOfPic);
+        Picture picture = new Picture();
+
+        picture.setUrl(imageUrl);
+        picture.setRoute(route);
+        picture.setAuthor(user);
+        picture.setTitle(nameOfPic.toString());
+
+        this.pictureRepository.saveAndFlush(picture);
+
         String gpxCoordinates = extractCoordinates(routeDto.getGpxCoordinates());
 
         route.setAuthor(user);
@@ -67,7 +83,7 @@ public class RouteServiceImpl implements RouteService {
         route.setCategory(collection);
         route.setCategory(route.getCategory());
         route.setName(routeDto.getName());
-        route.setImageUrl(imageUrl);
+        route.setPicture(picture);
         route.setVideoUrl(routeDto.getVideoUrl());
         route.setGpxCoordinates(gpxCoordinates);
         route.setDescription(routeDto.getDescription());
@@ -85,13 +101,14 @@ public class RouteServiceImpl implements RouteService {
         return this.routeRepository.findById(id).orElse(null);
     }
 
-    private String saveFile(MultipartFile file) throws IOException {
+    private String saveFile(MultipartFile file, StringBuilder nameOfPic) throws IOException {
         if (file == null || file.isEmpty()) {
             return null;
         }
 
         // Generate a unique filename to avoid conflicts
         String filename = file.getOriginalFilename();
+        nameOfPic.append(filename);
 
         // Construct the full path where you want to save the file
         Path filePath = Paths.get(uploadDir).resolve(filename);

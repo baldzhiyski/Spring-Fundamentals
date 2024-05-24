@@ -994,161 +994,161 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="287" parent="1" name="utf8mb4_mn_cyrl_0900_as_cs">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="288" parent="1" name="advanced_queries_ex">
+    <schema id="288" parent="1" name="mysql">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="289" parent="1" name="bills">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="290" parent="1" name="book_library">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="291" parent="1" name="book_shop_system">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="292" parent="1" name="camp">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="293" parent="1" name="car_rental">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="294" parent="1" name="car_shop_db">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="295" parent="1" name="del_spring_retake_db">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="296" parent="1" name="diablo">
+    <schema id="289" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="297" parent="1" name="find_a_star_db">
+    <schema id="290" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="298" parent="1" name="first_exercise">
+    <schema id="291" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="299" parent="1" name="football">
+    <schema id="292" parent="1" name="first_exercise">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="300" parent="1" name="fsd">
+    <schema id="293" parent="1" name="movies">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="301" parent="1" name="game_store_db">
+    <schema id="294" parent="1" name="car_rental">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="295" parent="1" name="hotel">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="296" parent="1" name="book_library">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="297" parent="1" name="orders">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="298" parent="1" name="restaurant">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="299" parent="1" name="camp">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="300" parent="1" name="mountains">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="301" parent="1" name="test">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="302" parent="1" name="geography">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="303" parent="1" name="gringotts">
+    <schema id="303" parent="1" name="universities_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="304" parent="1" name="hospital">
+    <schema id="304" parent="1" name="stc">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="305" parent="1" name="hotel">
+    <schema id="305" parent="1" name="fsd">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="306" parent="1" name="information_schema">
+    <schema id="306" parent="1" name="instagraph_db">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="307" parent="1" name="preserves_db">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="308" parent="1" name="diablo">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <schema id="307" parent="1" name="inheritance">
+    <schema id="309" parent="1" name="minions_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="308" parent="1" name="instagraph_db">
+    <schema id="310" parent="1" name="school">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="309" parent="1" name="job_finder_db">
+    <schema id="311" parent="1" name="soft_uni">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="310" parent="1" name="library_exam_db">
+    <schema id="312" parent="1" name="inheritance">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="311" parent="1" name="mapping_objects_lab">
+    <schema id="313" parent="1" name="football">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="312" parent="1" name="minions_db">
+    <schema id="314" parent="1" name="gringotts">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="313" parent="1" name="mobilele">
+    <schema id="315" parent="1" name="sales">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="314" parent="1" name="mountains">
+    <schema id="316" parent="1" name="university">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="315" parent="1" name="movies">
+    <schema id="317" parent="1" name="bills">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="316" parent="1" name="mvc_project_db">
+    <schema id="318" parent="1" name="hospital">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="317" parent="1" name="mysql">
+    <schema id="319" parent="1" name="spring_demo">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="318" parent="1" name="orders">
+    <schema id="320" parent="1" name="spring_database">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="319" parent="1" name="pathfinder">
-      <LastIntrospectionLocalTimestamp>2024-05-19.14:05:54</LastIntrospectionLocalTimestamp>
+    <schema id="321" parent="1" name="book_shop_system">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="320" parent="1" name="performance_schema">
+    <schema id="322" parent="1" name="shampoo_company">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="321" parent="1" name="preserves_db">
+    <schema id="323" parent="1" name="user-system">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="322" parent="1" name="product_shop_db">
+    <schema id="324" parent="1" name="spring_data_intro">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="323" parent="1" name="real_estate_db">
+    <schema id="325" parent="1" name="advanced_queries_ex">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="324" parent="1" name="restaurant">
+    <schema id="326" parent="1" name="mapping_objects_lab">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="325" parent="1" name="sales">
+    <schema id="327" parent="1" name="game_store_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="326" parent="1" name="school">
+    <schema id="328" parent="1" name="product_shop_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="327" parent="1" name="shampoo_company">
+    <schema id="329" parent="1" name="car_shop_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="328" parent="1" name="soft_uni">
+    <schema id="330" parent="1" name="del_spring_retake_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="329" parent="1" name="softweather_forecast">
+    <schema id="331" parent="1" name="find_a_star_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="330" parent="1" name="spring_data_intro">
+    <schema id="332" parent="1" name="library_exam_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="331" parent="1" name="spring_database">
+    <schema id="333" parent="1" name="softweather_forecast">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="332" parent="1" name="spring_demo">
+    <schema id="334" parent="1" name="mvc_project_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="333" parent="1" name="stc">
+    <schema id="335" parent="1" name="real_estate_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="334" parent="1" name="sys">
+    <schema id="336" parent="1" name="job_finder_db">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="335" parent="1" name="test">
+    <schema id="337" parent="1" name="volcanoes">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="336" parent="1" name="universities_db">
+    <schema id="338" parent="1" name="pathfinder">
+      <LastIntrospectionLocalTimestamp>2024-05-24.13:51:44</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="337" parent="1" name="university">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="338" parent="1" name="user-system">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="339" parent="1" name="volcanoes">
+    <schema id="339" parent="1" name="mobilele">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="340" parent="1" name="mysql.infoschema">
@@ -1170,44 +1170,44 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="344" parent="319" name="categories">
+    <table id="344" parent="338" name="categories">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="345" parent="319" name="comments">
+    <table id="345" parent="338" name="comments">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="346" parent="319" name="messages">
+    <table id="346" parent="338" name="messages">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="347" parent="319" name="pictures">
+    <table id="347" parent="338" name="pictures">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="348" parent="319" name="roles">
+    <table id="348" parent="338" name="roles">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="349" parent="319" name="routes">
+    <table id="349" parent="338" name="routes">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="350" parent="319" name="routes_categories">
+    <table id="350" parent="338" name="routes_categories">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="351" parent="319" name="users">
+    <table id="351" parent="338" name="users">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="352" parent="319" name="users_roles">
+    <table id="352" parent="338" name="users_roles">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="353" parent="344" name="id">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1231,7 +1231,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="358" parent="345" name="id">
-      <AutoIncrement>3</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1335,7 +1335,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="381" parent="347" name="id">
-      <AutoIncrement>11</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1371,12 +1371,13 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="389" parent="347" name="FKrndue6dq3063584yvjmpa09jc">
-      <ColNames>author_id</ColNames>
-      <Type>btree</Type>
-    </index>
-    <index id="390" parent="347" name="FK9sbfb2rmhm4l35myhkhexfon3">
+    <index id="389" parent="347" name="UK_22u2jxtw0wlnjqttohhdl42p6">
       <ColNames>route_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="390" parent="347" name="FKrndue6dq3063584yvjmpa09jc">
+      <ColNames>author_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="391" parent="347" name="PRIMARY">
@@ -1384,59 +1385,58 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="392" parent="348" name="id">
-      <AutoIncrement>4</AutoIncrement>
+    <key id="392" parent="347" name="UK_22u2jxtw0wlnjqttohhdl42p6">
+      <UnderlyingIndexName>UK_22u2jxtw0wlnjqttohhdl42p6</UnderlyingIndexName>
+    </key>
+    <column id="393" parent="348" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="393" parent="348" name="name">
+    <column id="394" parent="348" name="name">
       <DasType>enum(&apos;USER&apos;, &apos;MODERATOR&apos;, &apos;ADMIN&apos;)|0e</DasType>
       <Position>2</Position>
     </column>
-    <index id="394" parent="348" name="PRIMARY">
+    <index id="395" parent="348" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="395" parent="348" name="PRIMARY">
+    <key id="396" parent="348" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="396" parent="349" name="id">
-      <AutoIncrement>6</AutoIncrement>
+    <column id="397" parent="349" name="id">
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="397" parent="349" name="description">
+    <column id="398" parent="349" name="description">
       <DasType>text|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="398" parent="349" name="gpx_coordinates">
+    <column id="399" parent="349" name="gpx_coordinates">
       <DasType>longtext|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="399" parent="349" name="image_url">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>4</Position>
-    </column>
     <column id="400" parent="349" name="level">
       <DasType>enum(&apos;BEGINNER&apos;, &apos;INTERMEDIATE&apos;, &apos;ADVANCED&apos;)|0e</DasType>
-      <Position>5</Position>
+      <Position>4</Position>
     </column>
     <column id="401" parent="349" name="name">
       <DasType>varchar(255)|0s</DasType>
-      <Position>6</Position>
+      <Position>5</Position>
     </column>
     <column id="402" parent="349" name="video_url">
       <DasType>varchar(255)|0s</DasType>
-      <Position>7</Position>
+      <Position>6</Position>
     </column>
     <column id="403" parent="349" name="author_id">
       <DasType>bigint|0s</DasType>
-      <Position>8</Position>
+      <Position>7</Position>
     </column>
     <foreign-key id="404" parent="349" name="FK718folur1fr8yq7n1rg56us16">
       <ColNames>author_id</ColNames>
@@ -1493,7 +1493,7 @@ category_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="415" parent="351" name="id">
-      <AutoIncrement>5</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
