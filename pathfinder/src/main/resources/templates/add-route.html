@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <input name="name" type="text" id="inputName" class="form-control"  th:value="${originalRouteDto != null ? originalRouteDto.name : ''}"
-                       aria-describedby="inputNameError" th:classappend="${#fields.hasErrors('name')} ? 'is-invalid'">
+                       aria-describedby="inputNameError" th:classappend="${#fields.hasErrors('name')} ? 'is-invalid'" th:field="*{name}">
                 <small id="inputNameError" class="invalid-feedback bg-danger rounded text-white"
                        th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
             </div>
@@ -35,7 +35,7 @@
             </div>
             <div class="form-group">
                 <textarea name="description" id="inputDescription" class="form-control"  th:value="${originalRouteDto != null ? originalRouteDto.description : ''}"
-                          aria-describedby="inputDescriptionError" th:classappend="${#fields.hasErrors('description')} ? 'is-invalid'"></textarea>
+                          aria-describedby="inputDescriptionError" th:classappend="${#fields.hasErrors('description')} ? 'is-invalid'" th:field="*{description}"></textarea>
                 <small id="inputDescriptionError" class="invalid-feedback form-text bg-danger rounded text-white"
                        th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></small>
             </div>
@@ -47,7 +47,7 @@
             </div>
             <div class="form-group">
                 <input type="file" name="gpxCoordinates" required id="inputGpx" class="form-control-file"
-                       aria-describedby="inputGpxError" accept=".txt" th:classappend="${#fields.hasErrors('gpxCoordinates')} ? 'is-invalid'">
+                       aria-describedby="inputGpxError" accept=".txt" th:classappend="${#fields.hasErrors('gpxCoordinates')} ? 'is-invalid'" th:field="*{gpxCoordinates}">
                 <small id="inputGpxError" class="invalid-feedback bg-danger rounded text-white"
                        th:if="${#fields.hasErrors('gpxCoordinates')}" th:errors="*{gpxCoordinates}"></small>
             </div>
@@ -56,8 +56,7 @@
         <div>
             <div class="form-group">
                 <label for="level">Level</label>
-                <select  name="level" id="level" class="custom-select" th:classappend="${#fields.hasErrors('level')} ? 'is-invalid'"
-                         th:value="${originalRouteDto != null ? originalRouteDto.level : ''}">
+                <select  name="level" id="level" class="custom-select" th:classappend="${#fields.hasErrors('level')} ? 'is-invalid'" th:field="*{level}">
                     <option value="" selected>Select level</option>
                     <option value="ADVANCED">ADVANCED</option>
                     <option value="INTERMEDIATE">INTERMEDIATE</option>
@@ -71,7 +70,7 @@
         <div>
             <div class="form-group">
                 <label for="videoUrl">Video Url (only last eleven characters from Youtube)</label>
-                <input  name="videoUrl" id="videoUrl" th:value="${originalRouteDto != null ? originalRouteDto.videoUrl : ''}"  type="text" class="form-control" placeholder="Video url" th:classappend="${#fields.hasErrors('videoUrl')} ? 'is-invalid'">
+                <input  name="videoUrl" id="videoUrl"   type="text" class="form-control" placeholder="Video url" th:classappend="${#fields.hasErrors('videoUrl')} ? 'is-invalid'" th:field="*{videoUrl}">
                 <small class="invalid-feedback bg-danger rounded text-white"
                        th:if="${#fields.hasErrors('videoUrl')}" th:errors="*{videoUrl}"></small>
             </div>
@@ -105,7 +104,7 @@
         <!-- Photo Input -->
         <div class="form-group">
             <label for="photo" class="col-form-label text-white">Photo</label>
-            <input type="file" name="image"   required id="photo" class="form-control-file" aria-describedby="inputPhotoError" th:classappend="${#fields.hasErrors('image')} ? 'is-invalid'">
+            <input type="file" name="image"   required id="photo" class="form-control-file" aria-describedby="inputPhotoError" th:classappend="${#fields.hasErrors('image')} ? 'is-invalid'" th:field="*{image}">
             <small id="inputPhotoError" class="invalid-feedback form-text bg-danger rounded text-white"
                    th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></small>
         </div>
