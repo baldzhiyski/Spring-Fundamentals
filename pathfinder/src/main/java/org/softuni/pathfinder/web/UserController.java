@@ -56,11 +56,16 @@ public class UserController {
         // If there are any validation errors, return to the registration page with error messages
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("register");
+            // Add binding result errors to redirect attributes
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterDto", bindingResult);
+            redirectAttributes.addFlashAttribute("userRegisterDto", userRegisterDto);
         } else {
             // Otherwise, proceed with user registration
+            this.userService.register(userRegisterDto);
             // Your registration logic here
             modelAndView.setViewName("redirect:/users/login");
-            this.userService.register(userRegisterDto);
+            // Add success message to redirect attributes
+            redirectAttributes.addFlashAttribute("successMessage", "Registration successful. Please log in.");
             // Redirect to login page after successful registration
         }
 
