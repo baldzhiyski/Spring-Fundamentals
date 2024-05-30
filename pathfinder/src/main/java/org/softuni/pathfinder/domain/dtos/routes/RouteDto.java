@@ -24,8 +24,10 @@ public class RouteDto {
     @Length(min = 5)
     private String description;
 
+    @NotNull(message = "Please select a GPX file")
     private MultipartFile gpxCoordinates;
 
+    @NotEmpty(message = "At least one category must be selected")
     private Set<String> categories;
 
     @NotEmpty(message = "Select a level")

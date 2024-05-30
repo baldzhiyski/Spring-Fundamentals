@@ -15,13 +15,17 @@ import org.softuni.pathfinder.services.RouteService;
 import org.softuni.pathfinder.services.UserService;
 import org.softuni.pathfinder.utils.LoggedInUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.util.*;
@@ -36,6 +40,10 @@ public class RoutesController {
 
     private CommentService commentService;
     private UserService userService;
+
+    @Value("${binding-result-package}")
+    private String bindingResultPath;
+    private static final String DOT = ".";
 
 
     @Autowired
@@ -81,7 +89,7 @@ public class RoutesController {
 
 
     // TODO : Fix the comments section in the view and also here ! It should be displayed better.
-    // TODO: Add functionality for admins and moderators 
+    // TODO: Add functionality for admins and moderators
     @PostMapping("/routes/details/{id}")
     public  ModelAndView postComment(@PathVariable Long id , @Valid CommentDto commentDto,
                                      BindingResult bindingResult){
@@ -124,25 +132,33 @@ public class RoutesController {
     }
 
     @PostMapping("/routes/add")
-    public ModelAndView addRoute(@Valid RouteDto routeDto, BindingResult bindingResult) throws IOException {
+    public ModelAndView addRoute(@Valid RouteDto routeDto, BindingResult bindingResult
+    , RedirectAttributes redirectAttributes) throws IOException {
         ModelAndView modelAndView = new ModelAndView();
         boolean loggedIn = this.userService.isLoggedIn();
         modelAndView.addObject("loggedIn", loggedIn);
         modelAndView.addObject("isAtPage", true);
 
-        // Check if at least one category is selected
-        boolean categorySelected = Stream.of(routeDto.getCategories()).anyMatch(Objects::nonNull);
-        if (!categorySelected) {
-            bindingResult.rejectValue("categories", "error.routeDto", "Please select at least one category.");
+        // Perform file type validation
+        MultipartFile gpxCoordinates = routeDto.getGpxCoordinates();
+        if (gpxCoordinates != null) {
+            String contentType = gpxCoordinates.getContentType();
+            if (!"text/plain".equals(contentType)) {
+                bindingResult.rejectValue("gpxCoordinates", "error.routeDto", "Invalid file type. Please upload a .txt file.");
+            }
         }
 
         if (bindingResult.hasErrors()) {
+            final String attributeName = "routeDto";
+            redirectAttributes
+                    .addFlashAttribute(attributeName, routeDto)
+                    .addFlashAttribute(bindingResultPath + DOT + attributeName, bindingResult);
             modelAndView.setViewName("add-route");
         } else {
-            this.routeService.registerRoute(routeDto);
-            modelAndView.setViewName("redirect:/home");
+            routeService.registerRoute(routeDto);
+            modelAndView.setViewName("redirect:/");
         }
-        modelAndView.addObject("routeDto", routeDto); // Add routeDto to the model
+
         return modelAndView;
     }
     @GetMapping("/routes/{categoryName}")
