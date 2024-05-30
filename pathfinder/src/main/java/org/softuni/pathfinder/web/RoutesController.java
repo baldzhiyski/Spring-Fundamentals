@@ -79,6 +79,9 @@ public class RoutesController {
         return modelAndView;
     }
 
+
+    // TODO : Fix the comments section in the view and also here ! It should be displayed better.
+    // TODO: Add functionality for admins and moderators 
     @PostMapping("/routes/details/{id}")
     public  ModelAndView postComment(@PathVariable Long id , @Valid CommentDto commentDto,
                                      BindingResult bindingResult){
