@@ -69,7 +69,7 @@
                 <div class="col-md-6">
                     <div class="write-comment-block">
                         <h3>Write a Comment</h3>
-                        <form id="commentForm" th:action="@{'/route/details/' + ${route.id}}" method="post" th:object="${commentDto}">
+                        <form id="commentForm" th:action="@{'/routes/details/' + ${route.id}}" method="post" th:object="${commentDto}">
                             <div class="form-group">
                                 <label for="textContent">Message</label>
                                 <textarea form="commentForm" name="textContent" id="textContent" cols="30" rows="5" class="form-control" style="background-color: white;"></textarea>
