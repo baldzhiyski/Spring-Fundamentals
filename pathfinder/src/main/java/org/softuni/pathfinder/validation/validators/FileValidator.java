@@ -1,4 +1,5 @@
 package org.softuni.pathfinder.validation.validators;
+
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.softuni.pathfinder.validation.anotations.FileAnnotation;
@@ -11,44 +12,17 @@ public class FileValidator implements ConstraintValidator<FileAnnotation, Multip
 
     private List<String> contentTypes;
 
-    private long size;
-
     @Override
     public void initialize(FileAnnotation constraintAnnotation) {
-        this.size = constraintAnnotation.size();
-        this.contentTypes = Arrays.stream(constraintAnnotation.contentTypes()).toList();
-        ConstraintValidator.super.initialize(constraintAnnotation);
+        this.contentTypes = Arrays.asList(constraintAnnotation.contentTypes());
     }
 
     @Override
     public boolean isValid(MultipartFile file, ConstraintValidatorContext context) {
-        String errorMsg = getErrorMsg(file);
-
-        if (!errorMsg.isEmpty()) {
-            context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate(errorMsg)
-                    .addConstraintViolation();
-
-            return false;
+        if (file == null || file.isEmpty()) {
+            return false; // Consider empty files as invalid
         }
 
-        return true;
-
-    }
-
-    private String getErrorMsg(MultipartFile file) {
-        if (file.isEmpty()) {
-            return "File must be provided";
-        }
-
-        if (file.getSize() > size) {
-            return "Exceeded file size. Max size: " + size;
-        }
-
-        if (!contentTypes.contains(file.getContentType())) {
-            return "Invalid file extension. Supported files: " + String.join(", ", contentTypes);
-        }
-
-        return "";
+        return contentTypes.contains(file.getContentType());
     }
 }

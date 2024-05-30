@@ -9,18 +9,16 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.FIELD)
+@Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = FileValidator.class)
 public @interface FileAnnotation {
 
-    long size() default 5 * 1024 * 1024;
-
     String[] contentTypes();
 
-    String message() default "{user.password-match}";
+    String message() default "Invalid file content type";
 
-    Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 }

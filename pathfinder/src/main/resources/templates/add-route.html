@@ -53,7 +53,7 @@
                 <input type="file" name="gpxCoordinates" required id="inputGpx" class="form-control-file"
                        aria-describedby="inputGpxError" accept=".txt" th:classappend="${#fields.hasErrors('gpxCoordinates')} ? 'is-invalid'" th:field="*{gpxCoordinates}">
                 <small id="inputGpxError" class="invalid-feedback bg-danger rounded"
-                       th:if="${#fields.hasErrors('gpxCoordinates')}" th:errors="*{gpxCoordinates}" style="color: red"></small>
+                       th:if="${#fields.hasErrors('gpxCoordinates')}" th:each="err : ${#fields.errors('gpxCoordinates')}" th:text="${err}">></small>
             </div>
         </div>
 
@@ -116,6 +116,7 @@
         <div class="d-flex justify-content-center mt-4">
             <button class="btn btn-primary btn-block w-50" type="submit">Add Route</button>
         </div>
+
 
     </form>
 </div>

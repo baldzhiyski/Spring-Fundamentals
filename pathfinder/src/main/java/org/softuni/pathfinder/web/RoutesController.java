@@ -124,6 +124,7 @@ public class RoutesController {
         boolean loggedIn = this.userService.isLoggedIn();
         modelAndView.addObject("loggedIn", loggedIn);
         modelAndView.addObject("isAtPage",true);
+
         modelAndView.addObject("routeDto",new RouteDto());
 
         modelAndView.setViewName("add-route");
@@ -138,15 +139,6 @@ public class RoutesController {
         boolean loggedIn = this.userService.isLoggedIn();
         modelAndView.addObject("loggedIn", loggedIn);
         modelAndView.addObject("isAtPage", true);
-
-        // Perform file type validation
-        MultipartFile gpxCoordinates = routeDto.getGpxCoordinates();
-        if (gpxCoordinates != null) {
-            String contentType = gpxCoordinates.getContentType();
-            if (!"text/plain".equals(contentType)) {
-                bindingResult.rejectValue("gpxCoordinates", "error.routeDto", "Invalid file type. Please upload a .txt file.");
-            }
-        }
 
         if (bindingResult.hasErrors()) {
             final String attributeName = "routeDto";
