@@ -32,34 +32,51 @@
 
     <!-- Boxes Section -->
     <section class="boxes">
-        <a href="/" class="main-btn" >
+        <div th:if="${loggedIn}">
+        <a th:href="@{/routes/PEDESTRIAN}" class="main-btn">
             <div class="box">
                 <img src="/images/pedestrian.png" height="150px" alt="">
                 <h3>Pedestrian</h3>
                 <p>Is this your Leg day?</p>
             </div>
         </a>
-        <a href="/" class="main-btn" >
+        </div>
+
+        <div th:if="${loggedIn}">
+        <a th:href="@{/routes/BICYCLE}" class="main-btn">
             <div class="box">
                 <img src="/images/bicycle.png" height="150px" alt="">
                 <h3>Bicycle</h3>
                 <p>When you want to be one with nature!</p>
             </div>
         </a>
-        <a href="/" class="main-btn" >
+        </div>
+
+        <div th:if="${loggedIn}">
+        <a th:href="@{/routes/MOTORCYCLE}" class="main-btn">
             <div class="box">
                 <img src="/images/motorcycle.png" height="150px" alt="">
                 <h3>Motorcycle</h3>
                 <p>When you want the wind to blow on your face!</p>
             </div>
         </a>
-        <a href="/" class="main-btn" >
+        </div>
+
+        <div th:if="${loggedIn}">
+        <a th:href="@{/routes/CAR}" class="main-btn">
             <div class="box">
                 <img src="/images/car.png" height="150px" alt="">
                 <h3>Car</h3>
                 <p>Going on a trip with friends?</p>
             </div>
         </a>
+        </div>
+
+        <div th:unless="${loggedIn}">
+            <div class="box">
+                <h2>Log in or Register and explore our website</h2>
+            </div>
+        </div>
     </section>
 
     <!-- Info Section -->
@@ -69,7 +86,13 @@
             <h2>The most commented route</h2>
             <p>Read more about the most commented route and do not miss the
                 chance to visit it and give your opinion to help other users.</p>
-            <a href="/" class="btn">Learn More</a>
+            <div th:if="${loggedIn}">
+                <a href="/" class="btn">Learn More</a>
+            </div>
+
+            <div th:unless="${loggedIn}">
+               <h4>In order to see the most commented route , u need to be logged.</h4>
+            </div>
         </div>
     </section>
 
@@ -85,5 +108,4 @@
 
 <div th:replace="~{fragments/footer}"></div>
 </body>
-
 </html>

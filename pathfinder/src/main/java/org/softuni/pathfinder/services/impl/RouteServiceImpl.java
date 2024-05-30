@@ -1,6 +1,8 @@
 package org.softuni.pathfinder.services.impl;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.modelmapper.ModelMapper;
+import org.softuni.pathfinder.domain.dtos.routes.RouteCategoryViewModel;
 import org.softuni.pathfinder.domain.dtos.routes.RouteDto;
 import org.softuni.pathfinder.domain.entities.Category;
 import org.softuni.pathfinder.domain.entities.Picture;
@@ -41,16 +43,19 @@ public class RouteServiceImpl implements RouteService {
 
     private CategoryRepository categoryRepository;
 
+    private ModelMapper mapper;
+
     @Value("${upload.directory}")
     private String uploadDir;
 
     @Autowired
-    public RouteServiceImpl(RouteRepository routeRepository, LoggedInUser loggedInUser, UserRepository userRepository, PictureRepository pictureRepository, CategoryRepository categoryRepository) {
+    public RouteServiceImpl(RouteRepository routeRepository, LoggedInUser loggedInUser, UserRepository userRepository, PictureRepository pictureRepository, CategoryRepository categoryRepository, ModelMapper mapper) {
         this.routeRepository = routeRepository;
         this.loggedInUser = loggedInUser;
         this.userRepository = userRepository;
         this.pictureRepository = pictureRepository;
         this.categoryRepository = categoryRepository;
+        this.mapper = mapper;
     }
 
     @Override
@@ -99,6 +104,23 @@ public class RouteServiceImpl implements RouteService {
     @Override
     public Route findById(Long id) {
         return this.routeRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<RouteCategoryViewModel> getAllByCategory(CategoryName categoryName) {
+        Category category = categoryRepository.findByName(categoryName);
+        List<Route> allByCategory = this.routeRepository.getAllByCategory(category);
+
+        return allByCategory.stream()
+                .map(cat -> this.mapper.map(cat, RouteCategoryViewModel.class))
+                .collect(Collectors.toList());
+
+
+    }
+
+    @Override
+    public Route mapToRoute(RouteCategoryViewModel routeCategoryViewModel) {
+        return this.mapper.map(routeCategoryViewModel,Route.class);
     }
 
     private String saveFile(MultipartFile file, StringBuilder nameOfPic) throws IOException {

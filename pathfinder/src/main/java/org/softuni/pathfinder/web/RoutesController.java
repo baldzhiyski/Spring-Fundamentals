@@ -2,10 +2,12 @@ package org.softuni.pathfinder.web;
 
 import jakarta.validation.Valid;
 import org.softuni.pathfinder.domain.dtos.comments.CommentDto;
+import org.softuni.pathfinder.domain.dtos.routes.RouteCategoryViewModel;
 import org.softuni.pathfinder.domain.dtos.routes.RouteDto;
 import org.softuni.pathfinder.domain.entities.Comment;
 import org.softuni.pathfinder.domain.entities.Route;
 import org.softuni.pathfinder.domain.entities.User;
+import org.softuni.pathfinder.domain.entities.enums.CategoryName;
 import org.softuni.pathfinder.repositories.RouteRepository;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.CommentService;
@@ -25,6 +27,8 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Stream;
 
+import static org.softuni.pathfinder.domain.entities.enums.CategoryName.*;
+
 @Controller
 public class RoutesController {
   private RouteService routeService;
@@ -32,6 +36,7 @@ public class RoutesController {
 
     private CommentService commentService;
     private UserService userService;
+
 
     @Autowired
     public RoutesController(RouteRepository routeRepository, RouteService routeService, LoggedInUser logged, CommentService commentService, UserService userService) {
@@ -56,7 +61,7 @@ public class RoutesController {
     }
 
     // TODO : Get a map for the route and also calculate the distance. How ??? Still needed to be implemented
-    @GetMapping("/route/details/{id}")
+    @GetMapping("/routes/details/{id}")
     public ModelAndView getDetailInfo(@PathVariable Long id){
         ModelAndView modelAndView = new ModelAndView();
 
@@ -74,7 +79,7 @@ public class RoutesController {
         return modelAndView;
     }
 
-    @PostMapping("/route/details/{id}")
+    @PostMapping("/routes/details/{id}")
     public  ModelAndView postComment(@PathVariable Long id , @Valid CommentDto commentDto,
                                      BindingResult bindingResult){
         ModelAndView modelAndView = new ModelAndView();
@@ -137,4 +142,23 @@ public class RoutesController {
         modelAndView.addObject("routeDto", routeDto); // Add routeDto to the model
         return modelAndView;
     }
+    @GetMapping("/routes/{categoryName}")
+    public ModelAndView getAllByCategory(@PathVariable("categoryName") CategoryName categoryName) {
+        List<RouteCategoryViewModel> routes = routeService.getAllByCategory(categoryName);
+
+        String view =
+                switch (categoryName) {
+                    case PEDESTRIAN -> "pedestrian";
+                    case MOTORCYCLE -> "motorcycle";
+                    case CAR -> "car";
+                    case BICYCLE -> "bicycle";
+                };
+
+        ModelAndView modelAndView = new ModelAndView(view);
+
+        modelAndView.addObject("routes", routes);
+
+        return modelAndView;
+    }
+
 }

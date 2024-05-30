@@ -2,24 +2,19 @@
       xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="~{fragments/head}">
-
 </head>
 <body>
 <div class="wrapper">
     <!-- Navigation -->
-    <header>
-    <nav  th:replace ="~{fragments/navbar}" class="main-nav">
+    <div th:replace="~{fragments/navbar}"></div>
 
-    </nav>
-</header>
-
-    <section class="road">
+    <section class="road" th:each="route:${routes}">
         <div>
-            <h2>Title</h2>
-            <p>Very long description</p>
-            <a href="/" class="btn">Learn More</a>
+            <h2 th:text="${route.title}">Title</h2>
+            <p th:text="${route.description}">Very long description</p>
+            <a th:href="@{/routes/details/{id}(id=${route.id})}" class="btn">Learn More</a>
+            <img class="rounded-circle w-75 ml-5" th:src="@{${route.picture.url}}"  alt="Title image">
         </div>
-        <img class="rounded-circle w-75 ml-5" src="/images/pic1.jpg" alt="Title image">
     </section>
 </div>
 <!-- Wrapper Ends -->
