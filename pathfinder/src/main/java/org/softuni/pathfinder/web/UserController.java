@@ -77,13 +77,10 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView();
 
         // Check if username exists
-        if (!this.userService.userByUsernameExists(userLogInDto.getUsername())) {
-            bindingResult.rejectValue("username", "error.user", "Wrong username. Please try again.");
-        }
-
-        // Check if password is correct for the given username
-        if (!userService.checkPasswordCorrectForTheUsername(userLogInDto)) {
-            bindingResult.rejectValue("password", "error.user", "Wrong password. Please try again.");
+        if (!this.userService.userByUsernameExists(userLogInDto.getUsername()) || !userService.checkPasswordCorrectForTheUsername(userLogInDto)) {
+            modelAndView.addObject("badRequest","Invalid username or password. Please try again.");
+            modelAndView.setViewName("login");
+            return modelAndView;
         }
 
         // If there are errors, return to the login page with error messages
