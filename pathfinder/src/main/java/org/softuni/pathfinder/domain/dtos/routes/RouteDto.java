@@ -2,10 +2,12 @@ package org.softuni.pathfinder.domain.dtos.routes;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 import org.softuni.pathfinder.domain.entities.enums.Level;
+import org.softuni.pathfinder.validation.anotations.FileAnnotation;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Set;

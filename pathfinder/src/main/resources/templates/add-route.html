@@ -104,7 +104,7 @@
         <!-- Photo Input -->
         <div class="form-group">
             <label for="photo" class="col-form-label text-white">Photo</label>
-            <input type="file" name="image"   required id="photo" class="form-control-file" aria-describedby="inputPhotoError" th:classappend="${#fields.hasErrors('image')} ? 'is-invalid'" th:field="*{image}">
+            <input type="file" name="image"   required id="photo"  accept="image/jpeg, image/jpg" class="form-control-file" aria-describedby="inputPhotoError" th:classappend="${#fields.hasErrors('image')} ? 'is-invalid'" th:field="*{image}">
             <small id="inputPhotoError" class="invalid-feedback form-text bg-danger rounded text-white"
                    th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></small>
         </div>

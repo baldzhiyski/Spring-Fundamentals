@@ -1145,7 +1145,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="338" parent="1" name="pathfinder">
-      <LastIntrospectionLocalTimestamp>2024-05-30.15:48:59</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-05-30.16:49:24</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="339" parent="1" name="mobilele">
@@ -1493,7 +1493,7 @@ category_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="415" parent="351" name="id">
-      <AutoIncrement>8</AutoIncrement>
+      <AutoIncrement>5</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
