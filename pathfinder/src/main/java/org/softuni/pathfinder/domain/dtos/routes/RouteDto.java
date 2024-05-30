@@ -31,8 +31,8 @@ public class RouteDto {
     @NotEmpty(message = "At least one category must be selected")
     private Set<String> categories;
 
-    @NotEmpty(message = "Select a level")
-    private String level;
+    @NotNull(message = "Select a level")
+    private Level level;
 
     @NotEmpty(message = "Add a video url ")
     private String videoUrl;

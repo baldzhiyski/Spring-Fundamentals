@@ -84,7 +84,7 @@ public class RouteServiceImpl implements RouteService {
         String gpxCoordinates = extractCoordinates(routeDto.getGpxCoordinates());
 
         route.setAuthor(user);
-        route.setLevel(Level.valueOf(routeDto.getLevel()));
+        route.setLevel(routeDto.getLevel());
         route.setCategory(collection);
         route.setCategory(route.getCategory());
         route.setName(routeDto.getName());
