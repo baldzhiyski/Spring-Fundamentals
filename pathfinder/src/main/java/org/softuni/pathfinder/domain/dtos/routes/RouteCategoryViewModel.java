@@ -8,7 +8,7 @@ import org.softuni.pathfinder.domain.entities.Picture;
 public class RouteCategoryViewModel {
 
     private long id;
-    private String title;
+    private String name;
     private String description;
     private Picture picture;
 }
