@@ -16,9 +16,6 @@
                 <div th:if="${successMessage}" class="alert alert-success" role="alert">
                     <p th:text="${successMessage}"></p>
                 </div>
-                <div th:if="${#fields.hasGlobalErrors()}" class="alert alert-danger" role="alert">
-                    <p th:each="err : ${#fields.globalErrors()}" th:text="${err}"></p>
-                </div>
 
                 <!-- Username -->
                 <div class="col-auto">

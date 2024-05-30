@@ -17,6 +17,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class UserController {
+    public static final String BINDING_RESULT_PATH = "org.springframework.validation.BindingResult";
+    public static final String DOT = ".";
     private UserService userService;
     private ModelMapper mapper;
 
@@ -34,39 +36,23 @@ public class UserController {
     }
 
     @PostMapping("/users/register")
-    public ModelAndView registerConfirm(@Valid UserRegisterDto userRegisterDto,
-                                        BindingResult bindingResult,
-                                        RedirectAttributes redirectAttributes){
-        ModelAndView modelAndView = new ModelAndView();
-        // Check if password matches confirm password
-        if (!userRegisterDto.getPassword().equals(userRegisterDto.getConfirmPassword())) {
-            bindingResult.rejectValue("password", "error.user", "Passwords do not match.");
-        }
+    public ModelAndView register(@Valid UserRegisterDto userRegisterDto,
+                                 BindingResult bindingResult,
+                                 RedirectAttributes redirectAttributes) {
 
-        // Check if user with the same email exists
-        if (userService.usernameByEmailExists(userRegisterDto.getEmail())) {
-            bindingResult.rejectValue("email", "error.user", "User with this email already exists.");
-        }
+        final ModelAndView modelAndView = new ModelAndView();
 
-        // Check if user with the same username exists
-        if (userService.userByUsernameExists(userRegisterDto.getUsername())) {
-            bindingResult.rejectValue("username", "error.user", "User with this username already exists.");
-        }
-
-        // If there are any validation errors, return to the registration page with error messages
         if (bindingResult.hasErrors()) {
+            final String attributeName = "userRegisterDto";
+            redirectAttributes
+                    .addFlashAttribute(attributeName, userRegisterDto)
+                    .addFlashAttribute(BINDING_RESULT_PATH + DOT + attributeName, bindingResult);
             modelAndView.setViewName("register");
-            // Add binding result errors to redirect attributes
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterDto", bindingResult);
-            redirectAttributes.addFlashAttribute("userRegisterDto", userRegisterDto);
+
         } else {
-            // Otherwise, proceed with user registration
             this.userService.register(userRegisterDto);
-            // Your registration logic here
-            modelAndView.setViewName("redirect:/users/login");
-            // Add success message to redirect attributes
-            redirectAttributes.addFlashAttribute("successMessage", "Registration successful. Please log in.");
-            // Redirect to login page after successful registration
+            redirectAttributes.addFlashAttribute("successMessage","Successfully registered ! Please Log In !");
+            modelAndView.setViewName("redirect:login");
         }
 
         return modelAndView;

@@ -6,15 +6,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+import org.softuni.pathfinder.validation.anotations.PasswordMatch;
+import org.softuni.pathfinder.validation.anotations.UniqueEmail;
+import org.softuni.pathfinder.validation.anotations.UniqueUsername;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@PasswordMatch
 public class UserRegisterDto {
 
     @NotEmpty(message = "Username is required")
     @Size(min = 5, max = 20, message = "Username must be between 5 and 20 characters")
+    @UniqueUsername
     private String username;
 
     @NotEmpty(message = "Full Name is required")
@@ -22,17 +27,18 @@ public class UserRegisterDto {
     private String fullName;
 
     @NotEmpty(message = "Email is required")
-    @Email(message = "Must be a valid email")
+    @Email(regexp = ".+[@].+", message = "{user.email}")
+    @UniqueEmail
     private String email;
 
     @NotNull(message = "Age is required")
     private Integer age;
 
     @NotEmpty(message = "Password is required")
-    @Size(min = 5, max = 20, message = "Password must be between 5 and 20 characters")
+    @Size(min = 2, message = "{user.confirm-password.length}")
     private String password;
 
     @NotEmpty(message = "Confirm Password is required")
-    @Size(min = 5, max = 20, message = "Confirm Password must be between 5 and 20 characters")
+    @Size(min = 2, message = "{user.confirm-password.length}")
     private String confirmPassword;
 }

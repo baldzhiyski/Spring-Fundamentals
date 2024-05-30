@@ -35,7 +35,7 @@ public class UniqueUsernameValidator implements ConstraintValidator<UniqueUserna
 
             if (isPresent) replaceDefaultConstraintViolation(context, this.message);
 
-            return isPresent;
+            return !isPresent;
         }
     }
 

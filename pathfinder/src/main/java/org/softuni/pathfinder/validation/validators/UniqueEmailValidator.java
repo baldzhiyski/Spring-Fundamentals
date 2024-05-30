@@ -35,7 +35,7 @@ public class UniqueEmailValidator implements ConstraintValidator<UniqueEmail, St
 
             if (isPresent) replaceDefaultConstraintViolation(context, this.message);
 
-            return isPresent;
+            return !isPresent;
         }
     }
 
