@@ -8,6 +8,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.softuni.mobilele.domain.entities.User;
+import org.softuni.mobilele.domain.entities.enums.Category;
+import org.softuni.mobilele.domain.entities.enums.Engine;
+import org.softuni.mobilele.domain.entities.enums.Transmission;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.Year;
@@ -20,18 +23,18 @@ public class OfferRegisterDto {
 
     @NotEmpty(message = "Brand is required")
     private String brand;
-    @NotEmpty(message = "Category is required")
-    private String category;
+    @NotNull(message = "Category is required")
+    private Category category;
 
     @NotNull(message = "Name is required")
     private String name;
     @Positive(message = "Price can not be negative !")
     @NotNull(message = "Price is required")
     private Long price;
-    @NotEmpty(message = "Type of engine is required")
-    private String engine;
+    @NotNull(message = "Type of engine is required")
+    private Engine engine;
     @NotEmpty(message = "Transmission is required")
-    private String transmission;
+    private Transmission transmission;
 
     @NotNull(message = "Year is required")
     private Year year;

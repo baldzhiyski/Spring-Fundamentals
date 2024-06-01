@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
 import org.softuni.mobilele.domain.entities.Model;
 import org.softuni.mobilele.domain.entities.Offer;
+import org.softuni.mobilele.services.BrandService;
 import org.softuni.mobilele.services.OfferService;
 import org.softuni.mobilele.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,13 @@ public class OffersController {
     private OfferService offerService;
     private UserService userService;
 
+    private BrandService brandService;
+
     @Autowired
-    public OffersController(OfferService offerService, UserService userService) {
+    public OffersController(OfferService offerService, UserService userService, BrandService brandService) {
         this.offerService = offerService;
         this.userService = userService;
+        this.brandService = brandService;
     }
 
     @GetMapping("/offers/all")
@@ -57,6 +61,9 @@ public class OffersController {
         boolean isAdmin = userService.isAdmin();
         modelAndView.addObject("isAdmin", isAdmin);
 
+        List<String> brandsByName = this.brandService.getAllBrandsNames();
+
+        modelAndView.addObject("brands",brandsByName);
         modelAndView.setViewName("offer-add");
         return modelAndView;
     }

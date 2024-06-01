@@ -7,4 +7,6 @@ import java.util.List;
 public interface BrandService {
 
     List<Brand> getAllWithModels();
+
+    List<String> getAllBrandsNames();
 }

@@ -22,14 +22,10 @@
                 <label class="text-center text-white font-weight-bold" for="brand">Brand</label>
                 <select id="brand" name="brand" class="form-control" th:field="*{brand}">
                     <option value="">- Select a brand -</option>
-                    <option value="Toyota">Toyota</option>
-                    <option value="BMW">BMW</option>
-                    <option value="Volkswagen">Volkswagen</option>
-                    <option value="Hyundai">Hyundai</option>
-                    <option value="Audi">Audi</option>
-                    <option value="Mercedes">Mercedes</option>
-                    <option value="Honda">Honda</option>
-                    <option value="Kia">Kia</option>
+                    <option th:each="brand : ${brands}"
+                            th:value="${brand}"
+                            th:text="${brand}">
+                    </option>
                 </select>
                 <p class="errors alert alert-danger" th:if="${#fields.hasErrors('brand')}"
                    th:errors="*{brand}">Vehicle brand is required.</p>
@@ -38,10 +34,10 @@
                 <label class="text-center text-white font-weight-bold" for="category">Model</label>
                 <select id="category" name="category" class="form-control" th:field="*{category}">
                     <option value="">- Select a category -</option>
-                    <option value="CAR">CAR</option>
-                    <option value="BUS">BUS</option>
-                    <option value="TRUCK">TRUCK</option>
-                    <option value="MOTORCYCLE">MOTORCYCLE</option>
+                    <option th:each="category : ${T(org.softuni.mobilele.domain.entities.enums.Category).values()}"
+                            th:value="${category}"
+                            th:text="${category}">
+                    </option>
                 </select>
                 <label for="name" class="text-white font-weight-bold">Car Name</label>
                 <input id="name" type="text" name="name" class="form-control"
@@ -64,10 +60,10 @@
                 <label class="text-center text-white font-weight-bold" for="engine">Engine</label>
                 <select id="engine" name="engine" class="form-control" th:field="*{engine}">
                     <option value="">- Select engine type -</option>
-                    <option value="GASOLINE">GASOLINE</option>
-                    <option value="HYBRID">HYBRID</option>
-                    <option value="DIESEL">DIESEL</option>
-                    <option value="ELECTRIC">ELECTRIC</option>
+                    <option th:each="engine : ${T(org.softuni.mobilele.domain.entities.enums.Engine).values()}"
+                            th:value="${engine}"
+                            th:text="${engine}">
+                    </option>
                 </select>
                 <p class="errors alert alert-danger" th:if="${#fields.hasErrors('engine')}"
                    th:errors="*{engine}">Engine type is required.</p>
@@ -76,8 +72,10 @@
                 <label class="text-center text-white font-weight-bold" for="transmission">Transmission</label>
                 <select id="transmission" name="transmission" class="form-control" th:field="*{transmission}">
                     <option value="">- Select transmission type -</option>
-                    <option value="MANUAL">MANUAL</option>
-                    <option value="AUTOMATIC">AUTOMATIC</option>
+                    <option th:each="transm : ${T(org.softuni.mobilele.domain.entities.enums.Transmission).values()}"
+                            th:value="${transm}"
+                            th:text="${transm}">
+                    </option>
                 </select>
                 <p class="errors alert alert-danger" th:if="${#fields.hasErrors('transmission')}"
                    th:errors="*{transmission}">Transmission type is required.</p>

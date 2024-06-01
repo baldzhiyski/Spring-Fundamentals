@@ -57,13 +57,13 @@ public class OfferServiceImpl implements OfferService {
     public void addOffer(OfferRegisterDto offerRegisterDto) throws IOException {
         String brandName = offerRegisterDto.getBrand();
         String photoUrl = saveFile(offerRegisterDto.getPhoto());
-        String category = offerRegisterDto.getCategory();
-        String engine = offerRegisterDto.getEngine();
+        Category category = offerRegisterDto.getCategory();
+        Engine engine = offerRegisterDto.getEngine();
         String name = offerRegisterDto.getName();
         Long mileage = offerRegisterDto.getMileage();
         String description = offerRegisterDto.getDescription();
         Long price = offerRegisterDto.getPrice();
-        String transmission = offerRegisterDto.getTransmission();
+        Transmission transmission = offerRegisterDto.getTransmission();
         Year year = offerRegisterDto.getYear();
 
         Brand brand = this.brandRepository.findByName(brandName).orElseThrow();
@@ -72,19 +72,19 @@ public class OfferServiceImpl implements OfferService {
         model.setCreated(new Date());
         model.setName(name);
         model.setBrand(brand);
-        model.setCategory(Category.valueOf(category));
+        model.setCategory(category);
         model.setImageUrl(photoUrl);
         this.modelRepository.saveAndFlush(model);
 
 
         Offer currentOffer = new Offer();
         currentOffer.setModel(model);
-        currentOffer.setEngine(Engine.valueOf(engine));
+        currentOffer.setEngine(engine);
         currentOffer.setSeller(userService.getLoggedUser());
         currentOffer.setMileage(mileage);
         currentOffer.setPrice(Double.valueOf(price));
         currentOffer.setYear(year);
-        currentOffer.setTransmission(Transmission.valueOf(transmission));
+        currentOffer.setTransmission(transmission);
         currentOffer.setDescription(description);
         currentOffer.setCreated(new Date());
 

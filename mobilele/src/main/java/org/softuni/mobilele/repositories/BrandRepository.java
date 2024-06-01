@@ -17,4 +17,7 @@ public interface BrandRepository extends JpaRepository<Brand,Long> {
     List<Brand> findAllWithModels();
 
     Optional<Brand> findByName(String name);
+
+    @Query("SELECT DISTINCT b.name FROM Brand  b")
+    List<String> getNamesBrands();
 }
