@@ -4,13 +4,16 @@ import jakarta.validation.Valid;
 import org.softuni.pathfinder.domain.dtos.comments.CommentDto;
 import org.softuni.pathfinder.domain.dtos.routes.RouteCategoryViewModel;
 import org.softuni.pathfinder.domain.dtos.routes.RouteDto;
+import org.softuni.pathfinder.domain.dtos.routes.RouteWithRandomPicDto;
 import org.softuni.pathfinder.domain.entities.Comment;
+import org.softuni.pathfinder.domain.entities.Picture;
 import org.softuni.pathfinder.domain.entities.Route;
 import org.softuni.pathfinder.domain.entities.User;
 import org.softuni.pathfinder.domain.entities.enums.CategoryName;
 import org.softuni.pathfinder.repositories.RouteRepository;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.CommentService;
+import org.softuni.pathfinder.services.PictureService;
 import org.softuni.pathfinder.services.RouteService;
 import org.softuni.pathfinder.services.UserService;
 import org.softuni.pathfinder.utils.LoggedInUser;
@@ -35,11 +38,13 @@ import static org.softuni.pathfinder.domain.entities.enums.CategoryName.*;
 
 @Controller
 public class RoutesController {
-  private RouteService routeService;
+    private RouteService routeService;
     private LoggedInUser logged;
 
     private CommentService commentService;
     private UserService userService;
+
+    private PictureService pictureService;
 
     @Value("${binding-result-package}")
     private String bindingResultPath;
@@ -47,30 +52,44 @@ public class RoutesController {
 
 
     @Autowired
-    public RoutesController(RouteRepository routeRepository, RouteService routeService, LoggedInUser logged, CommentService commentService, UserService userService) {
+    public RoutesController(RouteRepository routeRepository, RouteService routeService, LoggedInUser logged, CommentService commentService, UserService userService, PictureService pictureService) {
         this.routeService = routeService;
         this.logged = logged;
         this.commentService = commentService;
         this.userService = userService;
+        this.pictureService = pictureService;
     }
 
     @GetMapping("/routes")
-    public ModelAndView getRoutes(){
+    public ModelAndView getRoutes() {
         ModelAndView modelAndView = new ModelAndView();
 
         boolean loggedIn = this.userService.isLoggedIn();
         modelAndView.addObject("loggedIn", loggedIn);
+
         List<Route> routes = this.routeService.getAllRoutes();
+        List<RouteWithRandomPicDto> routeWithRandomPics = new ArrayList<>();
+        for (Route route : routes) {
+            Picture randomPicture = this.pictureService.getRandomPicture(route.getId());
+            RouteWithRandomPicDto dto = new RouteWithRandomPicDto();
+
+            dto.setId(route.getId());
+            dto.setDescription(route.getDescription());
+            dto.setName(route.getName());
+            dto.setRandomImageUrl(randomPicture.getUrl());
+
+            routeWithRandomPics.add(dto);
+        }
 
         modelAndView.setViewName("routes");
-        modelAndView.addObject("routes",routes);
+        modelAndView.addObject("routeWithRandomPics", routeWithRandomPics);
 
         return modelAndView;
     }
 
     // TODO : Get a map for the route and also calculate the distance. How ??? Still needed to be implemented
     @GetMapping("/routes/details/{id}")
-    public ModelAndView getDetailInfo(@PathVariable Long id){
+    public ModelAndView getDetailInfo(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView();
 
         boolean loggedIn = this.userService.isLoggedIn();
@@ -78,11 +97,9 @@ public class RoutesController {
 
         Route route = this.routeService.findById(id);
 
-
         Set<Comment> comments = route.getComments();
-        modelAndView.addObject("comments",comments);
-
-        modelAndView.addObject("route",route);
+        modelAndView.addObject("comments", comments);
+        modelAndView.addObject("route", route);
         modelAndView.setViewName("route-details");
         return modelAndView;
     }
@@ -91,13 +108,13 @@ public class RoutesController {
     // TODO : Fix the comments section in the view and also here ! It should be displayed better.
     // TODO: Add functionality for admins and moderators
     @PostMapping("/routes/details/{id}")
-    public  ModelAndView postComment(@PathVariable Long id , @Valid CommentDto commentDto,
-                                     BindingResult bindingResult){
+    public ModelAndView postComment(@PathVariable Long id, @Valid CommentDto commentDto,
+                                    BindingResult bindingResult) {
         ModelAndView modelAndView = new ModelAndView();
         Route route = this.routeService.findById(id);
         User user = this.userService.getById(logged.getId());
 
-        modelAndView.addObject("route",route);
+        modelAndView.addObject("route", route);
         modelAndView.setViewName("route-details");
 
         if (bindingResult.hasErrors()) {
@@ -119,13 +136,13 @@ public class RoutesController {
     }
 
     @GetMapping("/routes/add")
-    public ModelAndView addPage(){
+    public ModelAndView addPage() {
         ModelAndView modelAndView = new ModelAndView();
         boolean loggedIn = this.userService.isLoggedIn();
         modelAndView.addObject("loggedIn", loggedIn);
-        modelAndView.addObject("isAtPage",true);
+        modelAndView.addObject("isAtPage", true);
 
-        modelAndView.addObject("routeDto",new RouteDto());
+        modelAndView.addObject("routeDto", new RouteDto());
 
         modelAndView.setViewName("add-route");
         return modelAndView;
@@ -134,7 +151,7 @@ public class RoutesController {
 
     @PostMapping("/routes/add")
     public ModelAndView addRoute(@Valid RouteDto routeDto, BindingResult bindingResult
-    , RedirectAttributes redirectAttributes) throws IOException {
+            , RedirectAttributes redirectAttributes) throws IOException {
         ModelAndView modelAndView = new ModelAndView();
         boolean loggedIn = this.userService.isLoggedIn();
         modelAndView.addObject("loggedIn", loggedIn);
@@ -153,6 +170,7 @@ public class RoutesController {
 
         return modelAndView;
     }
+
     @GetMapping("/routes/{categoryName}")
     public ModelAndView getAllByCategory(@PathVariable("categoryName") CategoryName categoryName) {
         List<RouteCategoryViewModel> routes = routeService.getAllByCategory(categoryName);

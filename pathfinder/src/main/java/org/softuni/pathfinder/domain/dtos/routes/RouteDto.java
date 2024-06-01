@@ -10,6 +10,7 @@ import org.softuni.pathfinder.domain.entities.enums.Level;
 import org.softuni.pathfinder.validation.anotations.FileAnnotation;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -37,7 +38,6 @@ public class RouteDto {
     @NotEmpty(message = "Add a video url ")
     private String videoUrl;
 
-    @NotNull(message = "Please select a photo")
-    @FileAnnotation(contentTypes = "image/jpeg")
-    private MultipartFile image;
+    @NotNull(message = "Please select at least one photo")
+    private List<MultipartFile> images;
 }

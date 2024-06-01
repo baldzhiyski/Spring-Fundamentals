@@ -70,16 +70,21 @@ public class RouteServiceImpl implements RouteService {
             collection.add(catToAdd);
         }
 
-        StringBuilder nameOfPic = new StringBuilder();
-        String imageUrl = saveFile(routeDto.getImage(),nameOfPic);
-        Picture picture = new Picture();
+        List<MultipartFile> images = routeDto.getImages();
+        Set<Picture> pictures = new HashSet<>();
 
-        picture.setUrl(imageUrl);
-        picture.setRoute(route);
-        picture.setAuthor(user);
-        picture.setTitle(nameOfPic.toString());
+        for (MultipartFile image : images) {
+            StringBuilder nameOfPic = new StringBuilder();
+            String imageUrl = saveFile(image,nameOfPic);
+            Picture picture = new Picture();
+            picture.setUrl(imageUrl);
+            picture.setRoute(route);
+            picture.setAuthor(user);
+            picture.setTitle(nameOfPic.toString());
 
-        this.pictureRepository.saveAndFlush(picture);
+            pictures.add(picture);
+            this.pictureRepository.saveAndFlush(picture);
+        }
 
         String gpxCoordinates = extractCoordinates(routeDto.getGpxCoordinates());
 
@@ -88,7 +93,7 @@ public class RouteServiceImpl implements RouteService {
         route.setCategory(collection);
         route.setCategory(route.getCategory());
         route.setName(routeDto.getName());
-        route.setPicture(picture);
+        route.setPictures(pictures);
         route.setVideoUrl(routeDto.getVideoUrl());
         route.setGpxCoordinates(gpxCoordinates);
         route.setDescription(routeDto.getDescription());
@@ -103,7 +108,7 @@ public class RouteServiceImpl implements RouteService {
 
     @Override
     public Route findById(Long id) {
-        return this.routeRepository.findById(id).orElse(null);
+        return this.routeRepository.findById(id).orElseThrow();
     }
 
     @Override

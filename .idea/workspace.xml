@@ -9,8 +9,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/dtos/routes/RouteWithRandomPicDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/PictureService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/PictureServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/OffersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/OffersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/dtos/routes/RouteDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/dtos/routes/RouteDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/entities/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/entities/Picture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/entities/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/repositories/PictureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/repositories/PictureRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/RouteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/RouteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/add-route.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/add-route.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/route-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/route-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/routes.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/routes.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +160,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MobileleApplication">
+  <component name="RunManager" selected="Spring Boot.PathfinderApplication">
     <configuration name="data.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/pathfinder/src/main/resources/data.sql" />
       <script-mode>FILE</script-mode>
@@ -266,7 +279,7 @@
       <workItem from="1717101688914" duration="3528000" />
       <workItem from="1717144064841" duration="16000" />
       <workItem from="1717167405001" duration="889000" />
-      <workItem from="1717227420649" duration="4952000" />
+      <workItem from="1717227420649" duration="12198000" />
     </task>
     <servers />
   </component>
@@ -286,17 +299,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java</url>
-          <line>75</line>
+          <line>94</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java</url>
-          <line>142</line>
+          <line>159</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/RouteServiceImpl.java</url>
-          <line>109</line>
+          <line>114</line>
           <properties class="org.softuni.pathfinder.services.impl.RouteServiceImpl" method="getAllByCategory">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

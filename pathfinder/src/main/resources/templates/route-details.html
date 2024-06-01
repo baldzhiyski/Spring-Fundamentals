@@ -11,20 +11,15 @@
     </header>
 
     <!-- Input for Route ID -->
-    <input type="hidden" name="routeId" id="routeId">
+    <input type="hidden" name="routeId" id="routeId" th:value="${route.id}">
 
     <!-- Details Section -->
     <div class="details-main">
 
         <section class="route-info text-center" style="display: flex; flex-direction: column; align-items: center;">
             <h4 th:text="${route.name}" id="track-name"></h4>
-            <p style="font-size: 18px; font-weight: bold;">Total distance: <span id="totalDistance"
-                                                                                 style="font-weight: normal"></span> km
-            </p>
-            <p style="font-size: 18px; font-weight: bold;">Author name: <span th:text="${route.author.fullName}"
-                                                                              style="font-weight: normal"
-                                                                              id="authorName"></span></p>
-
+            <p style="font-size: 18px; font-weight: bold;">Total distance: <span id="totalDistance" style="font-weight: normal"></span> km</p>
+            <p style="font-size: 18px; font-weight: bold;">Author name: <span th:text="${route.author.fullName}" style="font-weight: normal" id="authorName"></span></p>
             <div style="margin-top: 20px;">
                 <span style="font-size: 18px; font-weight: bold; color: black;">Difficulty Level:</span>
                 <p th:text="${route.level}" style="margin-top: 5px; font-size: 18px;"></p>
@@ -59,7 +54,14 @@
         </section>
 
         <section class="gallery">
-
+            <div class="row">
+                <div th:each="picture : ${route.pictures}" class="col-md-4 mb-3">
+                    <img class="rounded img-fluid"
+                         th:src="@{${picture.url}}"
+                         th:alt="${picture.title}"
+                         style="max-height: 200px;">
+                </div>
+            </div>
         </section>
 
         <section class="comments">
@@ -69,10 +71,12 @@
                 <div class="col-md-6">
                     <div class="write-comment-block">
                         <h3>Write a Comment</h3>
-                        <form id="commentForm" th:action="@{'/routes/details/' + ${route.id}}" method="post" th:object="${commentDto}">
+                        <form id="commentForm" th:action="@{'/routes/details/' + ${route.id}}" method="post"
+                              th:object="${commentDto}">
                             <div class="form-group">
                                 <label for="textContent">Message</label>
-                                <textarea form="commentForm" name="textContent" id="textContent" cols="30" rows="5" class="form-control" style="background-color: white;"></textarea>
+                                <textarea form="commentForm" name="textContent" id="textContent" cols="30" rows="5"
+                                          class="form-control" style="background-color: white;"></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Post Comment</button>
@@ -87,7 +91,8 @@
                         <h3>Current Comments</h3>
                         <div id="commentContainer">
                             <div th:each="comment : ${comments}">
-                                <p><strong th:text="${comment.author.fullName}">Author</strong>: <span th:text="${comment.textContent}">Comment text</span></p>
+                                <p><strong th:text="${comment.author.fullName}">Author</strong>: <span
+                                        th:text="${comment.textContent}">Comment text</span></p>
                                 <p th:text="${#dates.format(comment.created, 'dd-MM-yyyy HH:mm:ss')}">Comment date</p>
                             </div>
                         </div>

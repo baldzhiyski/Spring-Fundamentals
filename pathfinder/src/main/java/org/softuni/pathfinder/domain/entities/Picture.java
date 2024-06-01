@@ -18,7 +18,7 @@ public class Picture extends BaseEntity{
     @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     private User author;
 
-    @OneToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     @JoinColumn(name = "route_id")
     private Route route;
 }
