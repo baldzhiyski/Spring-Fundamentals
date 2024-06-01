@@ -6,7 +6,9 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+import org.softuni.pathfinder.domain.entities.enums.CategoryName;
 import org.softuni.pathfinder.domain.entities.enums.Level;
+import org.softuni.pathfinder.validation.anotations.AtLeastOneCategory;
 import org.softuni.pathfinder.validation.anotations.FileAnnotation;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -29,8 +31,8 @@ public class RouteDto {
     @FileAnnotation(contentTypes = "text/plain")
     private MultipartFile gpxCoordinates;
 
-    @NotEmpty(message = "At least one category must be selected")
-    private Set<String> categories;
+    @AtLeastOneCategory
+    private List<CategoryName> categories;
 
     @NotNull(message = "Select a level")
     private Level level;

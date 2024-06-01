@@ -26,7 +26,7 @@
                 <label for="inputName" class="col-form-label">Name</label>
             </div>
             <div class="form-group">
-                <input name="name" type="text" id="inputName" class="form-control"  th:value="${originalRouteDto != null ? originalRouteDto.name : ''}"
+                <input name="name" type="text" id="inputName" class="form-control"
                        aria-describedby="inputNameError" th:classappend="${#fields.hasErrors('name')} ? 'is-invalid'" th:field="*{name}">
                 <small id="inputNameError" class="invalid-feedback bg-danger rounded text-white"
                        th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
@@ -38,7 +38,7 @@
                 <label for="inputDescription" class="col-form-label">Description</label>
             </div>
             <div class="form-group">
-                <textarea name="description" id="inputDescription" class="form-control"  th:value="${originalRouteDto != null ? originalRouteDto.description : ''}"
+                <textarea name="description" id="inputDescription" class="form-control"
                           aria-describedby="inputDescriptionError" th:classappend="${#fields.hasErrors('description')} ? 'is-invalid'" th:field="*{description}"></textarea>
                 <small id="inputDescriptionError" class="invalid-feedback form-text bg-danger rounded text-white"
                        th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></small>
@@ -60,7 +60,7 @@
         <div>
             <div class="form-group">
                 <label for="level">Level</label>
-                <select id="level" name="level" class="custom-select" th:field="*{level}">
+                <select id="level" name="level" class="custom-select" th:classappend="${#fields.hasErrors('level')} ? 'is-invalid'" th:field="*{level}">
                     <option value="" selected disabled>Select level</option>
                     <option th:each="level : ${T(org.softuni.pathfinder.domain.entities.enums.Level).values()}"
                             th:value="${level}"
@@ -91,14 +91,15 @@
                        th:value="${category}">
                 <br>
             </div>
-            <small class="text-danger" th:if="${#fields.hasErrors('categories')}" th:errors="*{categories}"></small>
+            <!-- Adjusted error message styling -->
+            <small class="p-2 bg-danger text-white" style="font-size: 12px; margin-top: -10px;" th:if="${#fields.hasErrors('categories')}" th:errors="*{categories}"></small>
         </div>
 
         <!-- Photos Input -->
         <div class="form-group">
             <label for="images" class="col-form-label text-white">Upload Images : </label>
             <input type="file" name="images" required id="images" accept="image/jpeg, image/jpg" class="form-control-file" aria-describedby="inputPhotosError" multiple>
-            <small id="inputPhotosError" class="invalid-feedback form-text bg-danger rounded text-white"
+            <small id="inputPhotosError" class="invalid-feedback bg-danger rounded"
                    th:if="${#fields.hasErrors('images')}" th:errors="*{images}"></small>
         </div>
 

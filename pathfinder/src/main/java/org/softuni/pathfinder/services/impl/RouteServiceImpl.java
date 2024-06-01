@@ -65,8 +65,8 @@ public class RouteServiceImpl implements RouteService {
         User user = this.userRepository.findById(loggedInUser.getId()).orElse(null);
 
         Set<Category> collection = new HashSet<>();
-        for (String category : routeDto.getCategories()) {
-            Category catToAdd = this.categoryRepository.findByName(CategoryName.valueOf(category.toUpperCase()));
+        for (CategoryName categoryName : routeDto.getCategories()) {
+            Category catToAdd = this.categoryRepository.findByName(categoryName);
             collection.add(catToAdd);
         }
 
