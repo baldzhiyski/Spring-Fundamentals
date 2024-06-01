@@ -59,6 +59,8 @@ public class UserServiceImpl implements UserService {
 
         Set<Role> roles = new HashSet<>();
 
+        // TODO : Handle the table for roles is empty
+        
         Role adminRole = this.roleRepository.getById(1L);
         Role userRole = this.roleRepository.getById(3L);
         Role moderatorRole = this.roleRepository.getById(2L);
