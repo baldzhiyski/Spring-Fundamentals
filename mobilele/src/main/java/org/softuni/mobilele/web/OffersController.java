@@ -34,6 +34,15 @@ public class OffersController {
         this.userService = userService;
         this.brandService = brandService;
     }
+    @ModelAttribute("loggedIn")
+    public boolean isLoggedIn() {
+        return userService.checkLoggedUser();
+    }
+
+    @ModelAttribute("isAdmin")
+    public boolean isAdmin() {
+        return userService.isAdmin();
+    }
 
     @GetMapping("/offers/all")
     public ModelAndView getOffers() {
@@ -43,11 +52,6 @@ public class OffersController {
         List<Offer> offers = offerService.getAllOffers(); // Fetch offers from the service layer
         modelAndView.addObject("offers", offers); // Pass offers data to the view
 
-        boolean loggedIn = userService.checkLoggedUser();
-        modelAndView.addObject("loggedIn", loggedIn);
-
-        boolean isAdmin = userService.isAdmin();
-        modelAndView.addObject("isAdmin", isAdmin);
 
         return modelAndView;
     }
@@ -56,11 +60,7 @@ public class OffersController {
     public ModelAndView addOfferPage() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("offerRegisterDto", new OfferRegisterDto());
-        boolean loggedIn = userService.checkLoggedUser();
-        modelAndView.addObject("loggedIn", loggedIn);
 
-        boolean isAdmin = userService.isAdmin();
-        modelAndView.addObject("isAdmin", isAdmin);
 
         modelAndView.setViewName("offer-add");
         return modelAndView;
@@ -86,10 +86,7 @@ public class OffersController {
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("offer-add"); // Return to the same view
             modelAndView.addObject("offerRegisterDto", offerRegisterDto);
-            boolean loggedIn = userService.checkLoggedUser(); // Retrieve user login status
-            modelAndView.addObject("loggedIn", loggedIn); // Add user login status back to the model
-            boolean isAdmin = userService.isAdmin(); // Retrieve user admin status
-            modelAndView.addObject("isAdmin", isAdmin); // Add user admin status back to the model
+
         } else {
             try {
                 modelAndView.setViewName("redirect:/home"); // Redirect to home page
