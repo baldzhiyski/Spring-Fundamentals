@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -61,11 +62,13 @@ public class OffersController {
         boolean isAdmin = userService.isAdmin();
         modelAndView.addObject("isAdmin", isAdmin);
 
-        List<String> brandsByName = this.brandService.getAllBrandsNames();
-
-        modelAndView.addObject("brands",brandsByName);
         modelAndView.setViewName("offer-add");
         return modelAndView;
+    }
+
+    @ModelAttribute("brands")
+    public List<String> getBrandsName(){
+       return this.brandService.getAllBrandsNames();
     }
 
     @PostMapping("/offers/add")
