@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.softuni.mobilele.validation.annotations.ValidFile;
 import org.springframework.web.multipart.MultipartFile;
 
 @Getter
@@ -32,7 +33,7 @@ public class UserRegisterDto {
     @NotNull(message = "Please enter a role: 1- Admin, 2 - User")
     private Long role;
 
-    @NotNull(message = "Please select a photo")
+   @ValidFile
     private MultipartFile photo;
 }
 

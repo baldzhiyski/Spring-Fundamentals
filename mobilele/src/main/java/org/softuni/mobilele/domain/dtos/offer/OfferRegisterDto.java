@@ -1,5 +1,6 @@
 package org.softuni.mobilele.domain.dtos.offer;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -11,6 +12,7 @@ import org.softuni.mobilele.domain.entities.User;
 import org.softuni.mobilele.domain.entities.enums.Category;
 import org.softuni.mobilele.domain.entities.enums.Engine;
 import org.softuni.mobilele.domain.entities.enums.Transmission;
+import org.softuni.mobilele.validation.annotations.ValidFile;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.Year;
@@ -46,7 +48,7 @@ public class OfferRegisterDto {
     @NotNull(message = "Please write description")
     private String description;
 
-    @NotNull(message = "Please select a photo")
+    @ValidFile(allowedTypes = "text/plain")
     private MultipartFile photo;
 
     private User seller;

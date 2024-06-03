@@ -110,7 +110,7 @@
         <div class="form-group">
             <label class="text-center text-white font-weight-bold" for="photo">Photo</label>
             <input id="photo" name="photo" type="file" class="form-control" th:field="*{photo}" />
-            <p class="errors alert alert-danger" th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}">Please select a photo.</p>
+            <p class="errors alert alert-danger" th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}"></p>
         </div>
         <div class="row justify-content-center">
             <button type="submit" class="btn btn-primary">Upload</button>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.util.List;
@@ -34,6 +35,7 @@ public class OffersController {
         this.userService = userService;
         this.brandService = brandService;
     }
+
     @ModelAttribute("loggedIn")
     public boolean isLoggedIn() {
         return userService.checkLoggedUser();
@@ -67,8 +69,8 @@ public class OffersController {
     }
 
     @ModelAttribute("brands")
-    public List<String> getBrandsName(){
-       return this.brandService.getAllBrandsNames();
+    public List<String> getBrandsName() {
+        return this.brandService.getAllBrandsNames();
     }
 
     @PostMapping("/offers/add")
@@ -78,27 +80,22 @@ public class OffersController {
 
         ModelAndView modelAndView = new ModelAndView();
 
-        // Custom validation: Check if photo is not provided
-        if (photo.isEmpty()) {
-            bindingResult.rejectValue("photo", "error.offerRegisterDto", "Please select a photo.");
-        }
-
         if (bindingResult.hasErrors()) {
             modelAndView.setViewName("offer-add"); // Return to the same view
             modelAndView.addObject("offerRegisterDto", offerRegisterDto);
-
-        } else {
-            try {
-                modelAndView.setViewName("redirect:/home"); // Redirect to home page
-                this.offerService.addOffer(offerRegisterDto);
-            } catch (Exception e) {
-                // Handle the exception if needed
-                bindingResult.rejectValue("photo", "error.offerRegisterDto", "Failed to upload photo.");
-                modelAndView.setViewName("offer-add"); // Return to the same view with the error message
-                modelAndView.addObject("offerRegisterDto", offerRegisterDto);
-            }
-
+            return modelAndView;
         }
+
+        try {
+            this.offerService.addOffer(offerRegisterDto);
+            modelAndView.setViewName("redirect:/home"); // Redirect to the home page
+        } catch (Exception e) {
+            // Handle the exception if needed
+            bindingResult.rejectValue("photo", "error.offerRegisterDto", "Failed to upload photo.");
+            modelAndView.setViewName("offer-add"); // Return to the same view with the error message
+            modelAndView.addObject("offerRegisterDto", offerRegisterDto);
+        }
+
         return modelAndView;
     }
 }
