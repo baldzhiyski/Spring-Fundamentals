@@ -3,9 +3,11 @@ package org.softuni.mobilele.validation.validators;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.softuni.mobilele.validation.annotations.ValidFile;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Arrays;
+
 
 public class FileNotEmptyValidator implements ConstraintValidator<ValidFile, MultipartFile> {
 

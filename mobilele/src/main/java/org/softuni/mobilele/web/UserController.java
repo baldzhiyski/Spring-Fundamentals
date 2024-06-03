@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class UserController {
@@ -32,28 +33,23 @@ public class UserController {
     }
 
     @PostMapping("/users/register")
-    public ModelAndView registerUser(@Valid UserRegisterDto userRegisterDto, BindingResult bindingResult,@RequestParam("photo") MultipartFile photo) {
+    public ModelAndView registerUser(@Valid UserRegisterDto userRegisterDto, BindingResult bindingResult, @RequestParam("photo") MultipartFile photo,
+                                     RedirectAttributes redirectAttributes) {
         ModelAndView modelAndView = new ModelAndView();
 
-        if (this.userService.userByUsernameExists(userRegisterDto.getUsername())) {
-            bindingResult.rejectValue("username", "error.userRegisterDto", "Username already exists.");
-        }
-
-        if (photo.isEmpty()) {
-            bindingResult.rejectValue("photo", "error.offerRegisterDto", "Please select a photo.");
-        }
-
         if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("auth-register");
-            modelAndView.addObject("userRegisterDto", userRegisterDto);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterDto", bindingResult);
+            redirectAttributes.addFlashAttribute("userRegisterDto", userRegisterDto);
+            modelAndView.setViewName("auth-register"); // Redirect back to the registration page
         } else {
             try {
                 userService.registerUser(userRegisterDto);
-                modelAndView.setViewName("redirect:/users/login");
+                modelAndView.setViewName("redirect:/users/login"); // Redirect to the login page
             } catch (Exception e) {
                 bindingResult.rejectValue("photo", "error.userRegisterDto", "Failed to upload photo.");
-                modelAndView.setViewName("auth-register");
-                modelAndView.addObject("userRegisterDto", userRegisterDto);
+                redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterDto", bindingResult);
+                redirectAttributes.addFlashAttribute("userRegisterDto", userRegisterDto);
+                modelAndView.setViewName("redirect:/users/register"); // Redirect back to the registration page with the error message
             }
         }
         return modelAndView;
