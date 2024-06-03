@@ -35,7 +35,7 @@ public class OfferRegisterDto {
     private Long price;
     @NotNull(message = "Type of engine is required")
     private Engine engine;
-    @NotEmpty(message = "Transmission is required")
+    @NotNull(message = "Transmission is required")
     private Transmission transmission;
 
     @NotNull(message = "Year is required")
