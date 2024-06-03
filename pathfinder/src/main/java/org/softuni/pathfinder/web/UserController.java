@@ -28,6 +28,7 @@ public class UserController {
         this.mapper = mapper;
     }
 
+    // TODO : Add it only if no present
     @GetMapping("/users/register")
     public String showRegistrationForm(Model model) {
         // Create a new UserRegisterDto object and add it to the model
@@ -35,6 +36,7 @@ public class UserController {
         return "register";
     }
 
+    // TODO : When hasErrors , redirect to the /users/register page
     @PostMapping("/users/register")
     public ModelAndView register(@Valid UserRegisterDto userRegisterDto,
                                  BindingResult bindingResult,
@@ -58,6 +60,7 @@ public class UserController {
         return modelAndView;
     }
 
+    // TODO : Add object only if no present
     @GetMapping("/users/login")
     public ModelAndView showLoginForm() {
         // Create a new ModelAndView object
@@ -71,6 +74,8 @@ public class UserController {
 
         return modelAndView;
     }
+
+    // TODO : Implement via  redirecting attributes
     @PostMapping("/users/login")
     public ModelAndView logInUser(@Valid UserLogInDto userLogInDto,
                                   BindingResult bindingResult){
