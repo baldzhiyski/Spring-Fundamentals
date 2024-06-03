@@ -13,8 +13,6 @@ import org.softuni.mobilele.validation.annotations.CorrectUser;
 @NoArgsConstructor
 @CorrectUser
 public class UserLogInDto {
-    @NotBlank(message = "Enter your username !")
     private String username;
-    @NotBlank(message = "Enter your password !")
     private String password;
 }

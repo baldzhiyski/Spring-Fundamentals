@@ -23,19 +23,8 @@ public class CorrectUserValidator implements ConstraintValidator<CorrectUser, Us
         String username = dto.getUsername();
         String password = dto.getPassword();
 
-        if (username == null || password == null) {
+        if(username.isBlank() && password.isBlank()){
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate("Username and password must not be null")
-                    .addConstraintViolation();
-            return false;
-        }
-
-        if (!userService.userByUsernameExists(username)) {
-            context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate("No such username in the database. Please create an account first.")
-                    .addPropertyNode("username")
-                    .addConstraintViolation();
-            return false;
         }
 
         User user = userService.getUserByUsername(username);

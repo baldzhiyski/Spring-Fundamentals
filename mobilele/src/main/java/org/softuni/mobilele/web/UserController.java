@@ -28,7 +28,9 @@ public class UserController {
 
     @GetMapping("/users/register")
     public String register(Model model){
-        model.addAttribute("userRegisterDto", new UserRegisterDto());
+        if(!model.containsAttribute("userRegisterDto")){
+            model.addAttribute("userRegisterDto", new UserRegisterDto());
+        }
         return "auth-register";
     }
 
@@ -40,7 +42,7 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterDto", bindingResult);
             redirectAttributes.addFlashAttribute("userRegisterDto", userRegisterDto);
-            modelAndView.setViewName("auth-register"); // Redirect back to the registration page
+            modelAndView.setViewName("redirect:/users/register"); // Redirect back to the registration page
         } else {
             try {
                 userService.registerUser(userRegisterDto);
@@ -57,20 +59,23 @@ public class UserController {
 
     @GetMapping("/users/login")
     public String logIn(Model model){
-        model.addAttribute("logInDto", new UserLogInDto());
+        if(!model.containsAttribute("logInDto")){
+            model.addAttribute("logInDto", new UserLogInDto());
+        }
         return "auth-login";
     }
 
     @PostMapping("/users/login")
     public ModelAndView logIntoAccount(@Valid UserLogInDto logInDto,
-                                       BindingResult bindingResult) {
+                                       BindingResult bindingResult,
+                                       RedirectAttributes redirectAttributes) {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("logInDto",logInDto);
 
         if (bindingResult.hasErrors()) {
-            modelAndView.addObject("badRequest","Invalid username or password. Please try again.");
-            modelAndView.setViewName("auth-login");
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.logInDto", bindingResult);
+            redirectAttributes.addFlashAttribute("logInDto", logInDto);
+            modelAndView.setViewName("redirect:/users/login");
             return modelAndView;
         }
 
