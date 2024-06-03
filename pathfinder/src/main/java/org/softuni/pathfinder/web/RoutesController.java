@@ -136,17 +136,18 @@ public class RoutesController {
     }
 
     @GetMapping("/routes/add")
-    public ModelAndView addPage() {
+    public ModelAndView addPage(Model model) {
         ModelAndView modelAndView = new ModelAndView();
         boolean loggedIn = this.userService.isLoggedIn();
         modelAndView.addObject("loggedIn", loggedIn);
         modelAndView.addObject("isAtPage", true);
 
-        modelAndView.addObject("routeDto", new RouteDto());
+        if (!model.containsAttribute("routeDto")) {
+            model.addAttribute("routeDto", new RouteDto());
+        }
 
         modelAndView.setViewName("add-route");
         return modelAndView;
-
     }
 
     @PostMapping("/routes/add")
@@ -162,7 +163,7 @@ public class RoutesController {
             redirectAttributes
                     .addFlashAttribute(attributeName, routeDto)
                     .addFlashAttribute(bindingResultPath + DOT + attributeName, bindingResult);
-            modelAndView.setViewName("add-route");
+            modelAndView.setViewName("redirect:/routes/add");
         } else {
             routeService.registerRoute(routeDto);
             modelAndView.setViewName("redirect:/");

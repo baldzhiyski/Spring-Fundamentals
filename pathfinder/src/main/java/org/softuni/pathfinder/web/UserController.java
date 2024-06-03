@@ -28,15 +28,16 @@ public class UserController {
         this.mapper = mapper;
     }
 
-    // TODO : Add it only if no present
+
     @GetMapping("/users/register")
     public String showRegistrationForm(Model model) {
         // Create a new UserRegisterDto object and add it to the model
-        model.addAttribute("userRegisterDto", new UserRegisterDto());
+        if(!model.containsAttribute("userRegisterDto")) {
+            model.addAttribute("userRegisterDto", new UserRegisterDto());
+        }
         return "register";
     }
 
-    // TODO : When hasErrors , redirect to the /users/register page
     @PostMapping("/users/register")
     public ModelAndView register(@Valid UserRegisterDto userRegisterDto,
                                  BindingResult bindingResult,
@@ -49,25 +50,26 @@ public class UserController {
             redirectAttributes
                     .addFlashAttribute(attributeName, userRegisterDto)
                     .addFlashAttribute(BINDING_RESULT_PATH + DOT + attributeName, bindingResult);
-            modelAndView.setViewName("register");
+            modelAndView.setViewName("redirect:/users/register");
 
         } else {
             this.userService.register(userRegisterDto);
-            redirectAttributes.addFlashAttribute("successMessage","Successfully registered ! Please Log In !");
+            redirectAttributes.addFlashAttribute("successMessage", "Successfully registered ! Please Log In !");
             modelAndView.setViewName("redirect:login");
         }
 
         return modelAndView;
     }
 
-    // TODO : Add object only if no present
     @GetMapping("/users/login")
-    public ModelAndView showLoginForm() {
+    public ModelAndView showLoginForm(Model model) {
         // Create a new ModelAndView object
         ModelAndView modelAndView = new ModelAndView();
 
         // Add userLogInDto object to the ModelAndView
-        modelAndView.addObject("userLogInDto", new UserLogInDto());
+        if (!model.containsAttribute("userLogInDto")) {
+            modelAndView.addObject("userLogInDto", new UserLogInDto());
+        }
 
         // Set the view name to "login", assuming "login" is the name of your Thymeleaf template
         modelAndView.setViewName("login");
@@ -75,24 +77,23 @@ public class UserController {
         return modelAndView;
     }
 
-    // TODO : Implement via  redirecting attributes
     @PostMapping("/users/login")
     public ModelAndView logInUser(@Valid UserLogInDto userLogInDto,
-                                  BindingResult bindingResult){
+                                  BindingResult bindingResult,
+                                  RedirectAttributes redirectAttributes) {
         ModelAndView modelAndView = new ModelAndView();
 
         // Check if username exists
         if (!this.userService.userByUsernameExists(userLogInDto.getUsername()) || !userService.checkPasswordCorrectForTheUsername(userLogInDto)) {
-            modelAndView.addObject("badRequest","Invalid username or password. Please try again.");
-            modelAndView.setViewName("login");
-            return modelAndView;
+            redirectAttributes.addFlashAttribute("badRequest", "Invalid username or password. Please try again.");
+            return new ModelAndView("redirect:/login");
         }
 
-        // If there are errors, return to the login page with error messages
+        // If there are errors, redirect to the login page with flash attributes
         if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("login");
-            modelAndView.addObject("userLogInDto", userLogInDto);
-            modelAndView.addObject("bindingResult", bindingResult);
+            redirectAttributes.addFlashAttribute("userLogInDto", userLogInDto);
+            redirectAttributes.addFlashAttribute("bindingResult", bindingResult);
+            modelAndView.setViewName("redirect:/login");
         } else {
             // If no errors, perform login and redirect to home page
             this.userService.login(userLogInDto);
@@ -103,7 +104,7 @@ public class UserController {
     }
 
     @GetMapping("/users/profile")
-    public  ModelAndView profilePicture(){
+    public ModelAndView profilePicture() {
         ModelAndView modelAndView = new ModelAndView("profile");
 
         boolean loggedIn = this.userService.isLoggedIn();
@@ -119,7 +120,6 @@ public class UserController {
 
         return modelAndView;
     }
-
 
 
 }
