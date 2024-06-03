@@ -63,34 +63,20 @@ public class UserController {
 
     @PostMapping("/users/login")
     public ModelAndView logIntoAccount(@Valid UserLogInDto logInDto,
-                                       BindingResult bindingResult){
+                                       BindingResult bindingResult) {
+
         ModelAndView modelAndView = new ModelAndView();
-
         modelAndView.addObject("logInDto",logInDto);
+
         if (bindingResult.hasErrors()) {
+            modelAndView.addObject("badRequest","Invalid username or password. Please try again.");
             modelAndView.setViewName("auth-login");
-            modelAndView.addObject("loginError", "Invalid login details");
             return modelAndView;
         }
 
-        if (!this.userService.userByUsernameExists(logInDto.getUsername())) {
-            modelAndView.setViewName("auth-login");
-            modelAndView.addObject("loginError", "No such username in the database. Please create an account first.");
-            return modelAndView;
-        }
-
-        User user = this.userService.getUserByUsername(logInDto.getUsername());
-        boolean areEquals = BCrypt.checkpw(logInDto.getPassword(), user.getPassword());
-
-        if (areEquals) {
-            this.userService.logIn(logInDto);
-            modelAndView.setViewName("redirect:/home");
-        } else {
-            modelAndView.setViewName("auth-login");
-            modelAndView.addObject("loginError", "Incorrect username or password");
-            return modelAndView;
-        }
-
+        // Redirect to home page
+        modelAndView.setViewName("redirect:/home");
+        this.userService.logIn(logInDto);
         return modelAndView;
     }
 
