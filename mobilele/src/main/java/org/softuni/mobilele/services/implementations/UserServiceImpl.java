@@ -74,7 +74,7 @@ public class UserServiceImpl  implements UserService {
     }
     @Override
     public boolean userByUsernameExists(String username) {
-        return this.userRepository.findByUsername(username).isPresent();
+        return this.userRepository.getByUsername(username).isPresent();
     }
 
     @Override
@@ -84,16 +84,16 @@ public class UserServiceImpl  implements UserService {
 
     @Override
     public User getUserByUsername(String username) {
-        return this.userRepository.findByUsername(username).orElse(null);
+        return this.userRepository.getByUsername(username).orElse(null);
     }
 
     @Override
     public void logIn(UserLogInDto logInDto) {
-        User user = this.userRepository.findByUsername(logInDto.getUsername()).orElseThrow();
+        User user = this.userRepository.getByUsername(logInDto.getUsername()).orElseThrow();
         currentUser.setFirstName(user.getFirstName());
         currentUser.setLastName(user.getLastName());
-        currentUser.setLogged(true);
         currentUser.setId(user.getId());
+        currentUser.setLogged(true);
     }
 
     @Override
@@ -103,10 +103,7 @@ public class UserServiceImpl  implements UserService {
 
     @Override
     public void logOut() {
-        currentUser.setLogged(false);
-        currentUser.setFirstName(null);
-        currentUser.setLastName(null);
-        currentUser.setId(null);
+        this.currentUser.setLogged(false);
     }
 
     @Override
@@ -121,7 +118,7 @@ public class UserServiceImpl  implements UserService {
     @Override
     public User getLoggedUser() {
         // This method might need to return more information, depending on your needs
-        return currentUser.isLogged() ? this.userRepository.findByUsername(currentUser.getFirstName()).orElse(null) : null;
+        return currentUser.isLogged() ? this.userRepository.findById(currentUser.getId()).get(): null;
     }
 
 }

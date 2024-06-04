@@ -9,4 +9,6 @@ public interface BrandService {
     List<Brand> getAllWithModels();
 
     List<String> getAllBrandsNames();
+
+    List<Brand> getAllBrands();
 }

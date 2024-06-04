@@ -86,6 +86,7 @@ public class SeedServiceImpl implements SeedService {
     }
 
     @Override
+    @Transactional
     public void seedOffers() throws FileNotFoundException {
         if(this.offerRepository.count() > 0) return;
 

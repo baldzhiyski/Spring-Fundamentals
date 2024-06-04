@@ -5,6 +5,7 @@ import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
 import org.softuni.mobilele.domain.entities.Brand;
 import org.softuni.mobilele.domain.entities.Model;
 import org.softuni.mobilele.domain.entities.Offer;
+import org.softuni.mobilele.domain.entities.User;
 import org.softuni.mobilele.domain.entities.enums.Category;
 import org.softuni.mobilele.domain.entities.enums.Engine;
 import org.softuni.mobilele.domain.entities.enums.Transmission;
@@ -21,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.math.BigInteger;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -62,34 +64,46 @@ public class OfferServiceImpl implements OfferService {
         String name = offerRegisterDto.getName();
         Long mileage = offerRegisterDto.getMileage();
         String description = offerRegisterDto.getDescription();
-        Long price = offerRegisterDto.getPrice();
+        BigInteger price = offerRegisterDto.getPrice();
         Transmission transmission = offerRegisterDto.getTransmission();
         Year year = offerRegisterDto.getYear();
 
         Brand brand = this.brandRepository.findByName(brandName).orElseThrow();
 
+        Model model = createModel(name, brand, category, photoUrl);
+        this.modelRepository.saveAndFlush(model);
+
+
+        Offer currentOffer = createOffer(model, engine, mileage, price, year, transmission, description);
+
+        this.offerRepository.saveAndFlush(currentOffer);
+
+    }
+
+    private Offer createOffer(Model model, Engine engine, Long mileage, BigInteger price, Year year, Transmission transmission, String description) {
+        Offer currentOffer = new Offer();
+        currentOffer.setModel(model);
+        currentOffer.setEngine(engine);
+        User loggedUser = userService.getLoggedUser();
+
+        currentOffer.setSeller(loggedUser);
+        currentOffer.setMileage(mileage);
+        currentOffer.setPrice(price);
+        currentOffer.setYear(year);
+        currentOffer.setTransmission(transmission);
+        currentOffer.setDescription(description);
+        currentOffer.setCreated(new Date());
+        return currentOffer;
+    }
+
+    private static Model createModel(String name, Brand brand, Category category, String photoUrl) {
         Model model = new Model();
         model.setCreated(new Date());
         model.setName(name);
         model.setBrand(brand);
         model.setCategory(category);
         model.setImageUrl(photoUrl);
-        this.modelRepository.saveAndFlush(model);
-
-
-        Offer currentOffer = new Offer();
-        currentOffer.setModel(model);
-        currentOffer.setEngine(engine);
-        currentOffer.setSeller(userService.getLoggedUser());
-        currentOffer.setMileage(mileage);
-        currentOffer.setPrice(Double.valueOf(price));
-        currentOffer.setYear(year);
-        currentOffer.setTransmission(transmission);
-        currentOffer.setDescription(description);
-        currentOffer.setCreated(new Date());
-
-        this.offerRepository.saveAndFlush(currentOffer);
-
+        return model;
     }
 
     private String saveFile(MultipartFile file) throws IOException {

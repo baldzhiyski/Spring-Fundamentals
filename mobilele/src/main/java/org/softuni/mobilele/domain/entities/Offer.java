@@ -5,6 +5,8 @@ import lombok.*;
 import org.softuni.mobilele.domain.entities.enums.Engine;
 import org.softuni.mobilele.domain.entities.enums.Transmission;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.time.Year;
 import java.util.Date;
 
@@ -26,7 +28,7 @@ public class Offer extends BaseEntity{
     private Long mileage;
 
     @Column
-    private Double price;
+    private BigInteger price;
 
     @Enumerated(EnumType.STRING)
     private Transmission transmission;
@@ -44,7 +46,7 @@ public class Offer extends BaseEntity{
     @JoinColumn(name = "model_id")
     private Model model;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
     @JoinColumn(name = "seller_id")
     private User seller;
 }

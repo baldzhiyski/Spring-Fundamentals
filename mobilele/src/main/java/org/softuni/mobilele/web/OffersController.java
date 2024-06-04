@@ -2,13 +2,14 @@ package org.softuni.mobilele.web;
 
 import jakarta.validation.Valid;
 import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
-import org.softuni.mobilele.domain.entities.Model;
+import org.softuni.mobilele.domain.entities.Brand;
 import org.softuni.mobilele.domain.entities.Offer;
 import org.softuni.mobilele.services.BrandService;
 import org.softuni.mobilele.services.OfferService;
 import org.softuni.mobilele.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -57,32 +58,31 @@ public class OffersController {
 
         return modelAndView;
     }
-
+    @ModelAttribute("brands")
+    public List<String> brands(){
+        return this.brandService.getAllBrandsNames();
+    }
     @GetMapping("/offers/add")
-    public ModelAndView addOfferPage() {
+    public ModelAndView addOfferPage(Model model) {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("offerRegisterDto", new OfferRegisterDto());
-
-
+        if(!model.containsAttribute("offerRegisterDto")) {
+            modelAndView.addObject("offerRegisterDto", new OfferRegisterDto());
+        }
         modelAndView.setViewName("offer-add");
         return modelAndView;
-    }
-
-    @ModelAttribute("brands")
-    public List<String> getBrandsName() {
-        return this.brandService.getAllBrandsNames();
     }
 
     @PostMapping("/offers/add")
     public ModelAndView addOffer(@Valid OfferRegisterDto offerRegisterDto,
                                  BindingResult bindingResult,
-                                 @RequestParam("photo") MultipartFile photo) {
+                                 RedirectAttributes redirectAttributes) {
 
         ModelAndView modelAndView = new ModelAndView();
 
         if (bindingResult.hasErrors()) {
-            modelAndView.setViewName("offer-add"); // Return to the same view
-            modelAndView.addObject("offerRegisterDto", offerRegisterDto);
+            modelAndView.setViewName("redirect:/offers/add"); // Return to the same view
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.offerRegisterDto", bindingResult);
+            redirectAttributes.addFlashAttribute("offerRegisterDto", offerRegisterDto);
             return modelAndView;
         }
 
@@ -92,8 +92,10 @@ public class OffersController {
         } catch (Exception e) {
             // Handle the exception if needed
             bindingResult.rejectValue("photo", "error.offerRegisterDto", "Failed to upload photo.");
-            modelAndView.setViewName("offer-add"); // Return to the same view with the error message
-            modelAndView.addObject("offerRegisterDto", offerRegisterDto);
+            System.out.println(e.getMessage());
+            modelAndView.setViewName("redirect:/offers/add"); // Return to the same view with the error message
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.offerRegisterDto", bindingResult);
+            redirectAttributes.addFlashAttribute("offerRegisterDto", offerRegisterDto);
         }
 
         return modelAndView;

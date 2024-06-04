@@ -15,6 +15,7 @@ import org.softuni.mobilele.domain.entities.enums.Transmission;
 import org.softuni.mobilele.validation.annotations.ValidFile;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.math.BigInteger;
 import java.time.Year;
 
 @Getter
@@ -23,16 +24,18 @@ import java.time.Year;
 @NoArgsConstructor
 public class OfferRegisterDto {
 
+    // TODO : Fix the logic here and in the controller
+
     @NotEmpty(message = "Brand is required")
     private String brand;
     @NotNull(message = "Category is required")
     private Category category;
 
-    @NotNull(message = "Name is required")
+    @NotEmpty(message = "Name is required")
     private String name;
     @Positive(message = "Price can not be negative !")
     @NotNull(message = "Price is required")
-    private Long price;
+    private BigInteger price;
     @NotNull(message = "Type of engine is required")
     private Engine engine;
     @NotNull(message = "Transmission is required")
@@ -45,12 +48,10 @@ public class OfferRegisterDto {
     @NotNull(message = "Please write a mileage")
     private Long mileage;
 
-    @NotNull(message = "Please write description")
+    @NotEmpty(message = "Add some description")
     private String description;
 
-    @ValidFile(allowedTypes = "text/plain")
+    @ValidFile(allowedTypes = "image/jpeg")
     private MultipartFile photo;
-
-    private User seller;
 
 }

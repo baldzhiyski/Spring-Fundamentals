@@ -28,4 +28,9 @@ public class BrandServiceImpl implements BrandService {
         return this.brandRepository.getNamesBrands();
 
     }
+
+    @Override
+    public List<Brand> getAllBrands() {
+        return this.brandRepository.findAll();
+    }
 }

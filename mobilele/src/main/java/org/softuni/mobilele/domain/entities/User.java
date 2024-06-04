@@ -6,6 +6,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.softuni.mobilele.domain.entities.enums.Role;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -41,6 +42,9 @@ public class User  extends BaseEntity{
 
     @Column
     private Date modified;
+
+    @OneToMany(mappedBy = "seller")
+    private List<Offer> offers;
 
     @PrePersist
     public void hashPassword() {

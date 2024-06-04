@@ -26,6 +26,6 @@ public class Brand extends BaseEntity{
     @Column
     private Date modified;
 
-    @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Model> models;
 }
