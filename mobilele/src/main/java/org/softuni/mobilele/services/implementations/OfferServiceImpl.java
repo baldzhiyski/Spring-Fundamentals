@@ -17,6 +17,7 @@ import org.softuni.mobilele.repositories.ModelRepository;
 import org.softuni.mobilele.repositories.OfferRepository;
 import org.softuni.mobilele.services.OfferService;
 import org.softuni.mobilele.services.UserService;
+import org.softuni.mobilele.services.helpers.LoggedUserHelperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -40,6 +41,8 @@ public class OfferServiceImpl implements OfferService {
     private BrandRepository brandRepository;
     private ModelRepository modelRepository;
 
+    // TODO : Use helper Service and not the user service directly
+//    private LoggedUserHelperService loggedUserHelperService;
     private UserService userService;
     private ModelMapper mapper;
 
