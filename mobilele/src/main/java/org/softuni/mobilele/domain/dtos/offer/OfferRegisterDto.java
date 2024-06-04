@@ -1,6 +1,7 @@
 package org.softuni.mobilele.domain.dtos.offer;
 
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -13,6 +14,7 @@ import org.softuni.mobilele.domain.entities.enums.Category;
 import org.softuni.mobilele.domain.entities.enums.Engine;
 import org.softuni.mobilele.domain.entities.enums.Transmission;
 import org.softuni.mobilele.validation.annotations.ValidFile;
+import org.softuni.mobilele.validation.annotations.YearNotInTheFuture;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigInteger;
@@ -42,6 +44,8 @@ public class OfferRegisterDto {
     private Transmission transmission;
 
     @NotNull(message = "Year is required")
+    @YearNotInTheFuture
+    @Min(1930)
     private Year year;
 
     @Positive(message = "The mileage can not be negative !")

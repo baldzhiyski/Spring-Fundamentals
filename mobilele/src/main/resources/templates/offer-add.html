@@ -88,7 +88,7 @@
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label for="year" class="text-white font-weight-bold">Year</label>
-                <input id="year" type="number" name="year" min="1900" max="2099" step="1" class="form-control"
+                <input id="year" type="number" name="year" min="1930" step="1" class="form-control"
                        placeholder="Manufacturing year" th:field="*{year}"/>
                 <p class="errors alert alert-danger" th:if="${#fields.hasErrors('year')}"
                    th:errors="*{year}">Manufacturing year is required.</p>
