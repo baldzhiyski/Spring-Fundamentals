@@ -12,4 +12,6 @@ public interface OfferRepository extends JpaRepository<Offer,Long> {
     @Modifying
     @Query("DELETE FROM Offer o WHERE o.id = :offerId")
     void deleteOffersByModelId(Long offerId);
+
+    long countByModelId(Long id);
 }

@@ -43,7 +43,7 @@ public class Offer extends BaseEntity{
     private Date modified;
 
     // TODO : Maybe remove the cascade
-    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "model_id")
     private Model model;
 

@@ -100,7 +100,11 @@ public class OfferServiceImpl implements OfferService {
 
         Model modelOfTheOffer = offerToDelete.getModel();
         this.offerRepository.deleteOffersByModelId(offerToDelete.getId());
-        this.modelRepository.deleteModelById(modelOfTheOffer.getId());
+        // Check if the model has any other offers
+        long offerCount = this.offerRepository.countByModelId(modelOfTheOffer.getId());
+        if (offerCount == 0) {
+            this.modelRepository.deleteModelById(modelOfTheOffer.getId());
+        }
     }
 
     @Override
@@ -126,7 +130,7 @@ public class OfferServiceImpl implements OfferService {
 
         updateFieldsOffer(offer,engine,mileage,description,price,transmission,year);
 
-        this.offerRepository.save(offer);
+        this.offerRepository.saveAndFlush(offer);
 
     }
 
@@ -170,6 +174,7 @@ public class OfferServiceImpl implements OfferService {
         if (year != null) {
             offer.setYear(year);
         }
+        offer.setModified(new Date());
     }
 
     private Offer createOffer(Model model, Engine engine, Long mileage, BigInteger price, Year year, Transmission transmission, String description) {
@@ -188,7 +193,10 @@ public class OfferServiceImpl implements OfferService {
         return currentOffer;
     }
 
-    private static Model createModel(String name, Brand brand, Category category, String photoUrl) {
+    private  Model createModel(String name, Brand brand, Category category, String photoUrl) {
+        if(this.modelRepository.findByName(name).isPresent()){
+            return this.modelRepository.findByName(name).get();
+        }
         Model model = new Model();
         model.setCreated(new Date());
         model.setName(name);
