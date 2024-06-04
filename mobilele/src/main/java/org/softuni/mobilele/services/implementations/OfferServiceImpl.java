@@ -93,6 +93,9 @@ public class OfferServiceImpl implements OfferService {
     @Override
     @Transactional
     public void deleteOffer(Long offerId) {
+        if(!this.userService.isLoggedCreator(offerId)){
+            throw new IllegalArgumentException("You are not allowed to do this kind of operations !");
+        }
         Offer offerToDelete = this.offerRepository.findById(offerId).orElseThrow();
 
         Model modelOfTheOffer = offerToDelete.getModel();
@@ -102,6 +105,9 @@ public class OfferServiceImpl implements OfferService {
 
     @Override
     public void updateOffer(Long offerId, OfferUpdateDto offerUpdateDto) throws IOException {
+        if(!this.userService.isLoggedCreator(offerId)){
+            throw new IllegalArgumentException("You are not allowed to do this kind of operations !");
+        }
         Offer offer = this.offerRepository.findById(offerId).orElseThrow();
         String brandName = offerUpdateDto.getBrand();
         String photoUrl = saveFile(offerUpdateDto.getPhoto());
