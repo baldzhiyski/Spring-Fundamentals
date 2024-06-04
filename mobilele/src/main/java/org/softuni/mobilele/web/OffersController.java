@@ -112,4 +112,27 @@ public class OffersController {
         modelAndView.setViewName("details");
         return modelAndView;
     }
+
+    @PostMapping("/offers/details/{id}")
+    public ModelAndView deleteIfCreator(@PathVariable Long id){
+        ModelAndView modelAndView = new ModelAndView();
+
+        if(!this.userService.isLoggedCreator(id)){
+            modelAndView.setViewName("details");
+            modelAndView.addObject("errorMessage", "You are not authorized to delete this offer.");
+            return modelAndView;
+        }
+
+        this.offerService.deleteOffer(id);
+        modelAndView.setViewName("redirect:/");
+        return modelAndView;
+    }
+
+    @GetMapping("/offers/update/{id}")
+    public ModelAndView updateIfCreator(@PathVariable Long id){
+        ModelAndView modelAndVie= new ModelAndView();
+
+        modelAndVie.setViewName("update");
+        return modelAndVie;
+    }
 }

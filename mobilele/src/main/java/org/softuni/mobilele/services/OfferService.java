@@ -15,4 +15,6 @@ public interface OfferService {
     void addOffer(OfferRegisterDto offerRegisterDto) throws IOException;
 
     OfferDetailsDto getOfferById(Long id);
+
+    void deleteOffer(Long offerId);
 }

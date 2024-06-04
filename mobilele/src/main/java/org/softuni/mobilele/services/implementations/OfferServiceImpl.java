@@ -91,6 +91,11 @@ public class OfferServiceImpl implements OfferService {
         return this.mapper.map(offer, OfferDetailsDto.class);
     }
 
+    @Override
+    public void deleteOffer(Long offerId) {
+        this.offerRepository.delete(this.offerRepository.findById(offerId).orElseThrow());
+    }
+
     private Offer createOffer(Model model, Engine engine, Long mileage, BigInteger price, Year year, Transmission transmission, String description) {
         Offer currentOffer = new Offer();
         currentOffer.setModel(model);
