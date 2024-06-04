@@ -1,51 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="~{fragments/head}">
-
+<head th:replace="~{fragments/head}"></head>
 
 <body>
 
 <div>
-    <nav th:replace ="~{fragments/navbar}">
-
-    </nav>
+    <nav th:replace ="~{fragments/navbar}"></nav>
 </div>
-
 
 <div class="container-fluid">
     <h2 class="text-center text-white mt-5">Details</h2>
     <div class="offers row mx-auto d-flex flex-row justify-content-center">
-        <div class="offer card col-sm-2 col-md-3  col-lg-4 m-1 p-0" >
-
+        <div class="offer card col-sm-2 col-md-3 col-lg-4 m-1 p-0">
             <div class="card-body pb-1">
-                <h5 class="card-title">
-                    Offer year Brand name Model name</h5>
+                <h5 class="card-title" th:text="${offerDtoById.year} + ' ' + ${offerDtoById.modelBrandName} + ' ' + ${offerDtoById.modelName}">Offer year Brand name Model name</h5>
             </div>
             <ul class="offer-details list-group list-group-flush">
                 <li class="list-group-item">
-                    <div class="card-text"><span>• Mileage</span></div>
-                    <div class="card-text"><span>• Price</span></div>
-                    <div class="card-text"><span>• Engine type</span></div>
-                    <div class="card-text"><span>• Transmission type</span></div>
-                    <div class="card-text"><span>• Offer created</span></div>
-                    <div class="card-text"><span>• Offer modified</span></div>
-                    <div class="card-text"><span>• Seller - First and Last name</span></div>
+                    <div class="card-text"><span th:text="'• Mileage: ' + ${offerDtoById.mileage}">• Mileage</span></div>
+                    <div class="card-text"><span th:text="'• Price: ' + ${offerDtoById.price}">• Price</span></div>
+                    <div class="card-text"><span th:text="'• Engine type: ' + ${offerDtoById.engine}">• Engine type</span></div>
+                    <div class="card-text"><span th:text="'• Transmission type: ' + ${offerDtoById.transmission}">• Transmission type</span></div>
+                    <div class="card-text"><span th:text="'• Offer created: ' + ${offerDtoById.created}">• Offer created</span></div>
+                    <div class="card-text"><span th:text="'• Offer modified: ' + ${offerDtoById.modified}">• Offer modified</span></div>
+                    <div class="card-text"><span th:text="'• Seller: ' + ${offerDtoById.sellerFirstName} + ' ' + ${offerDtoById.sellerLastName}">• Seller - First and Last name</span></div>
                 </li>
             </ul>
-            <div class="card-body">
-                <a class="card-link" href="/">Update</a>
-                <a class="card-link" href="/">Delete</a>
+            <div class="card-body" th:if="${loggedIsCreator}">
+                <a class="card-link" th:href="@{/offers/update/{id}(id=${offerDtoById.id})}">Update</a>
+                <a class="card-link" th:href="@{/offers/delete/{id}(id=${offerDtoById.id})}">Delete</a>
             </div>
         </div>
-        <div class="offer card col-sm-2 col-md-3  col-lg-4 m-1 p-0">
-            <img src="/" class="card-img-top"  alt="Car image">
+        <div class="offer card col-sm-2 col-md-3 col-lg-4 m-1 p-0">
+            <img th:src="@{${offerDtoById.modelImageUrl}}" class="card-img-top" alt="Car image">
         </div>
     </div>
 </div>
 
 <div>
-             <footer> </footer>
+    <footer th:replace="~{fragments/footer}"></footer>
 </div>
 
 </body>

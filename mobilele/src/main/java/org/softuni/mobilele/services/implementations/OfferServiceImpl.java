@@ -1,6 +1,9 @@
 package org.softuni.mobilele.services.implementations;
 
 import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.modelmapper.ModelMapper;
+import org.softuni.mobilele.domain.dtos.offer.OfferDetailsDto;
+import org.softuni.mobilele.domain.dtos.offer.OfferDto;
 import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
 import org.softuni.mobilele.domain.entities.Brand;
 import org.softuni.mobilele.domain.entities.Model;
@@ -38,15 +41,17 @@ public class OfferServiceImpl implements OfferService {
     private ModelRepository modelRepository;
 
     private UserService userService;
+    private ModelMapper mapper;
 
     @Value("${upload.directory}")
     private String uploadDir;
     @Autowired
-    public OfferServiceImpl(OfferRepository offerRepository, BrandRepository brandRepository, ModelRepository modelRepository, UserService userService) {
+    public OfferServiceImpl(OfferRepository offerRepository, BrandRepository brandRepository, ModelRepository modelRepository, UserService userService, ModelMapper mapper) {
         this.offerRepository = offerRepository;
         this.brandRepository = brandRepository;
         this.modelRepository = modelRepository;
         this.userService = userService;
+        this.mapper = mapper;
     }
 
     @Override
@@ -78,6 +83,12 @@ public class OfferServiceImpl implements OfferService {
 
         this.offerRepository.saveAndFlush(currentOffer);
 
+    }
+
+    @Override
+    public OfferDetailsDto getOfferById(Long id) {
+        Offer offer = this.offerRepository.findById(id).orElseThrow();
+        return this.mapper.map(offer, OfferDetailsDto.class);
     }
 
     private Offer createOffer(Model model, Engine engine, Long mileage, BigInteger price, Year year, Transmission transmission, String description) {

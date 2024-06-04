@@ -4,8 +4,10 @@ import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.modelmapper.ModelMapper;
 import org.softuni.mobilele.domain.dtos.user.UserLogInDto;
 import org.softuni.mobilele.domain.dtos.user.UserRegisterDto;
+import org.softuni.mobilele.domain.entities.Offer;
 import org.softuni.mobilele.domain.entities.User;
 import org.softuni.mobilele.domain.entities.UserRole;
+import org.softuni.mobilele.repositories.OfferRepository;
 import org.softuni.mobilele.repositories.UserRepository;
 import org.softuni.mobilele.repositories.UserRoleRepository;
 import org.softuni.mobilele.services.UserService;
@@ -29,13 +31,15 @@ public class UserServiceImpl  implements UserService {
     @Value("${upload.directory}")
     private String uploadDir;
 
+    private OfferRepository offerRepository;
     private CurrentUser currentUser;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, UserRoleRepository userRoleRepository, CurrentUser currentUser) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, UserRoleRepository userRoleRepository, OfferRepository offerRepository, CurrentUser currentUser) {
         this.userRepository = userRepository;
         this.mapper = mapper;
         this.userRoleRepository = userRoleRepository;
+        this.offerRepository = offerRepository;
         this.currentUser = currentUser;
     }
 
@@ -119,6 +123,13 @@ public class UserServiceImpl  implements UserService {
     public User getLoggedUser() {
         // This method might need to return more information, depending on your needs
         return currentUser.isLogged() ? this.userRepository.findById(currentUser.getId()).get(): null;
+    }
+
+    @Override
+    public boolean isLoggedCreator(Long offerId) {
+        Offer offerById = offerRepository.findById(offerId).orElseThrow();
+
+        return offerById.getSeller().getId().equals(this.currentUser.getId());
     }
 
 }

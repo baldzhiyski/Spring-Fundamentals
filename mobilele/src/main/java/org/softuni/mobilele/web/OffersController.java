@@ -1,20 +1,20 @@
 package org.softuni.mobilele.web;
 
 import jakarta.validation.Valid;
+import org.softuni.mobilele.domain.dtos.offer.OfferDetailsDto;
+import org.softuni.mobilele.domain.dtos.offer.OfferDto;
 import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
 import org.softuni.mobilele.domain.entities.Brand;
 import org.softuni.mobilele.domain.entities.Offer;
 import org.softuni.mobilele.services.BrandService;
 import org.softuni.mobilele.services.OfferService;
 import org.softuni.mobilele.services.UserService;
+import org.softuni.pathfinder.domain.dtos.comments.CommentDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -98,6 +98,18 @@ public class OffersController {
             redirectAttributes.addFlashAttribute("offerRegisterDto", offerRegisterDto);
         }
 
+        return modelAndView;
+    }
+
+    @GetMapping("/offers/details/{id}")
+    public ModelAndView getDetails(@PathVariable Long id) {
+        ModelAndView modelAndView = new ModelAndView();
+
+        OfferDetailsDto offerDtoById = this.offerService.getOfferById(id);
+
+        modelAndView.addObject("loggedIsCreator",this.userService.isLoggedCreator(id));
+        modelAndView.addObject("offerDtoById",offerDtoById);
+        modelAndView.setViewName("details");
         return modelAndView;
     }
 }

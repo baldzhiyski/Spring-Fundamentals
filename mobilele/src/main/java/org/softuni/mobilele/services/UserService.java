@@ -25,4 +25,6 @@ public interface UserService {
     boolean isAdmin();
 
     User getLoggedUser();
+
+    boolean isLoggedCreator(Long offerId);
 }
