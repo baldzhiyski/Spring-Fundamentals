@@ -1149,7 +1149,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="339" parent="1" name="mobilele">
-      <LastIntrospectionLocalTimestamp>2024-06-04.16:01:48</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-06-04.19:13:01</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="340" parent="1" name="mysql.infoschema">

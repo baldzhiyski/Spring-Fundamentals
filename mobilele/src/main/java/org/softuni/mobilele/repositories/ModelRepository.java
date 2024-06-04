@@ -2,6 +2,8 @@ package org.softuni.mobilele.repositories;
 
 import org.softuni.mobilele.domain.entities.Model;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -10,4 +12,8 @@ import java.util.Optional;
 public interface ModelRepository extends JpaRepository<Model,Long> {
 
     Optional<Model> findById(Long id);
+
+    @Modifying
+    @Query("DELETE FROM Model m WHERE m.id = :modelId")
+    void deleteModelById(Long modelId);
 }

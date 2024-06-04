@@ -10,6 +10,7 @@ import org.hibernate.validator.constraints.Length;
 import org.softuni.mobilele.domain.entities.enums.Category;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "models")
@@ -38,6 +39,9 @@ public class Model  extends BaseEntity{
 
     @Column
     private Date modified;
+
+    @OneToMany(mappedBy = "model")
+    private List<Offer> offers;
 
     @ManyToOne
     @JoinColumn(name = "brand_id")

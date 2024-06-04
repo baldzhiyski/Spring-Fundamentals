@@ -9,11 +9,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/offer/OfferUpdateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/ford.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/ModelRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/ModelRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/OfferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/OfferRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/OfferService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/OffersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/OffersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/update.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +282,7 @@
       <workItem from="1717356016279" duration="13000" />
       <workItem from="1717444011690" duration="9451000" />
       <workItem from="1717453544585" duration="1601000" />
-      <workItem from="1717513506672" duration="8076000" />
+      <workItem from="1717513506672" duration="12735000" />
     </task>
     <servers />
   </component>
@@ -299,7 +307,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java</url>
-          <line>102</line>
+          <line>174</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

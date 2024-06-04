@@ -4,11 +4,10 @@
 <head th:replace="~{fragments/head}">
 </head>
 
-
 <body>
 
 <div>
-    <nav th:replace ="~{fragments/navbar}">
+    <nav th:replace="~{fragments/navbar}">
 
     </nav>
 </div>
@@ -16,106 +15,119 @@
 
 <div class="container">
     <h2 class="text-center text-white">Update Offer</h2>
-    <form method="POST"
-          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
+    <form method="POST" th:action="@{/offers/update/{id}(id=${offerDtoById.id})}" th:object="${offerUpdateDto}"
+          class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center" enctype="multipart/form-data">
         <div class="row">
-
             <div class="form-group col-md-6 mb-3">
-                <label class="text-center text-white font-weight-bold" for="model">Model</label>
-                <select id="model" class="form-control">
-                    <option value="">- Select a model -</option>
-                    <optgroup label="Brand name">
-                        <option>Model</option>
-                    </optgroup>
+                <label class="text-center text-white font-weight-bold" for="brand">Brand</label>
+                <select id="brand" class="form-control" th:field="*{brand}" >
+                    <option value="">- Select a brand -</option>
+                    <option th:each="brand : ${brands}"
+                            th:value="${brand}"
+                            th:text = "${brand}">
+                    </option>
                 </select>
-                <p class="errors alert alert-danger">
-                    Vechicle model is required.
-                </p>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('brand')}"
+                   th:errors="*{brand}">Vehicle brand is required.</p>
             </div>
             <div class="form-group col-md-6 mb-3">
+                <label class="text-center text-white font-weight-bold" for="category">Category</label>
+                <select id="category" name="category" class="form-control" th:field="*{category}">
+                    <option value="">- Select a category -</option>
+                    <option th:each="category : ${T(org.softuni.mobilele.domain.entities.enums.Category).values()}"
+                            th:value="${category}"
+                            th:text="${category}">
+                    </option>
+                </select>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('category')}"
+                   th:errors="*{category}">Vehicle category is required.</p>
+
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label for="name" class="text-white font-weight-bold">Name of the Model</label>
+                <input id="name" type="text" name="name" class="form-control"
+                       placeholder="Name of car" th:field="*{name}"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('name')}"
+                   th:errors="*{name}">Vehicle name is required.</p>
+            </div>
+
+            <div class="form-group col-md-6 mb-3">
                 <label for="price" class="text-white font-weight-bold">Price</label>
-                <input  id="price" type="number" min="0" step="100" class="form-control"
-                       placeholder="Suggested price"/>
-                <p class="errors alert alert-danger">
-                    Suggested price is required.
-                </p>
+                <input id="price" type="number" name="price" min="0" step="100" class="form-control"
+                       placeholder="Suggested price" th:field="*{price}"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('price')}"
+                   th:errors="*{price}" >Suggested price is required.</p>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label class="text-center text-white font-weight-bold" for="engine">Engine</label>
-                <select id="engine" class="form-control">
+                <select id="engine" name="engine" class="form-control" th:field="*{engine}">
                     <option value="">- Select engine type -</option>
-                    <option>
-                        Engine type
+                    <option th:each="engine : ${T(org.softuni.mobilele.domain.entities.enums.Engine).values()}"
+                            th:value="${engine}"
+                            th:text="${engine}">
                     </option>
                 </select>
-                <p class="errors alert alert-danger">
-                    Engine type is required.
-                </p>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('engine')}"
+                   th:errors="*{engine}">Engine type is required.</p>
             </div>
             <div class="form-group col-md-6 mb-3">
                 <label class="text-center text-white font-weight-bold" for="transmission">Transmission</label>
-                <select id="transmission" class="form-control">
+                <select id="transmission" name="transmission" class="form-control" th:field="*{transmission}">
                     <option value="">- Select transmission type -</option>
-                    <option> Transmission type
+                    <option th:each="transm : ${T(org.softuni.mobilele.domain.entities.enums.Transmission).values()}"
+                            th:value="${transm}"
+                            th:text="${transm}">
                     </option>
                 </select>
-                <p class="errors alert alert-danger">
-                    Transmission type is required.
-                </p>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('transmission')}"
+                   th:errors="*{transmission}">Transmission type is required.</p>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-md-6 mb-3">
                 <label for="year" class="text-white font-weight-bold">Year</label>
-                <input id="year" type="number" min="1900" max="2099" step="1" class="form-control"
-                       placeholder="Manufacturing year"/>
-                <p class="errors alert alert-danger">
-                    Manufacturing year is required.
-                </p>
+                <input id="year" type="number" name="year" min="1900" max="2099" step="1" class="form-control"
+                       placeholder="Manufacturing year" th:field="*{year}"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('year')}"
+                   th:errors="*{year}">Manufacturing year is required.</p>
             </div>
             <div class="form-group col-md-6 mb-3">
                 <label for="mileage" class="text-white font-weight-bold">Mileage</label>
-                <input id="mileage" type="number" min="0" max="900000" step="1000"
+                <input id="mileage" type="number" name="mileage" min="0" max="900000" step="1000"
                        class="form-control"
-                       placeholder="Mileage in kilometers"/>
-                <p class="errors alert alert-danger">
-                    Mileage in kilometers is required.
-                </p>
+                       placeholder="Mileage in kilometers" th:field="*{mileage}"/>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('mileage')}"
+                   th:errors="*{mileage}">Mileage is required.</p>
             </div>
         </div>
-
-        <div class="form-group">
-            <label class="text-white font-weight-bold" for="description">Description</label>
-            <textarea id="description" type="textarea" class="form-control" rows="3"
-                      placeholder="Description"></textarea>
-            <p class="errors alert alert-danger">
-                Description is required.
-            </p>
-        </div>
-        <div class="form-group">
-            <label class="text-white font-weight-bold" for="imageUrl">Image URL</label>
-            <input id="imageUrl" type="url" class="form-control"
-                   placeholder="Put vehicle image URL here">
-            <p class="errors alert alert-danger">
-                Vehicle image URL is required.
-            </p>
-        </div>
-
         <div class="row">
-            <div class="col col-md-4">
-                <div class="button-holder d-flex">
-                    <input type="submit" class="btn btn-info btn-lg" value="Update Offer"/>
-                </div>
+            <div class="form-group col-md-12 mb-3">
+                <label class="text-center text-white font-weight-bold" for="description">Description</label>
+                <textarea id="description" name="description" class="form-control"
+                          placeholder="Enter description" rows="5" th:field="*{description}"></textarea>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('description')}"
+                   th:errors="*{description}">Description is required.</p>
             </div>
         </div>
+        <div class="form-group">
+            <label class="text-center text-white font-weight-bold" for="photo">Photo</label>
+            <input id="photo" name="photo" type="file" class="form-control" th:field="*{photo}" />
+            <p class="errors alert alert-danger" th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}"></p>
+        </div>
+        <div class="row justify-content-center">
+            <button type="submit" class="btn btn-primary">Upload Differences</button>
+        </div>
+
     </form>
 </div>
 
+
 <div>
-		<footer> </footer>
+    <footer> </footer>
 </div>
 
 </body>
+
 </html>

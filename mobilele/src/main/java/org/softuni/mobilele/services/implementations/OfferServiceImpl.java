@@ -3,8 +3,8 @@ package org.softuni.mobilele.services.implementations;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.modelmapper.ModelMapper;
 import org.softuni.mobilele.domain.dtos.offer.OfferDetailsDto;
-import org.softuni.mobilele.domain.dtos.offer.OfferDto;
 import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
+import org.softuni.mobilele.domain.dtos.offer.OfferUpdateDto;
 import org.softuni.mobilele.domain.entities.Brand;
 import org.softuni.mobilele.domain.entities.Model;
 import org.softuni.mobilele.domain.entities.Offer;
@@ -90,10 +90,80 @@ public class OfferServiceImpl implements OfferService {
         Offer offer = this.offerRepository.findById(id).orElseThrow();
         return this.mapper.map(offer, OfferDetailsDto.class);
     }
+    @Override
+    @Transactional
+    public void deleteOffer(Long offerId) {
+        Offer offerToDelete = this.offerRepository.findById(offerId).orElseThrow();
+
+        Model modelOfTheOffer = offerToDelete.getModel();
+        this.offerRepository.deleteOffersByModelId(offerToDelete.getId());
+        this.modelRepository.deleteModelById(modelOfTheOffer.getId());
+    }
 
     @Override
-    public void deleteOffer(Long offerId) {
-        this.offerRepository.delete(this.offerRepository.findById(offerId).orElseThrow());
+    public void updateOffer(Long offerId, OfferUpdateDto offerUpdateDto) throws IOException {
+        Offer offer = this.offerRepository.findById(offerId).orElseThrow();
+        String brandName = offerUpdateDto.getBrand();
+        String photoUrl = saveFile(offerUpdateDto.getPhoto());
+        Category category = offerUpdateDto.getCategory();
+        Engine engine = offerUpdateDto.getEngine();
+        String name = offerUpdateDto.getName();
+        Long mileage = offerUpdateDto.getMileage();
+        String description = offerUpdateDto.getDescription();
+        BigInteger price = offerUpdateDto.getPrice();
+        Transmission transmission = offerUpdateDto.getTransmission();
+        Year year = offerUpdateDto.getYear();
+
+        Brand brand = brandName.isBlank() ? null : this.brandRepository.findByName(brandName).orElseThrow();;
+        Model model = updateModel(name,brand,category,photoUrl,offer.getModel());
+        this.modelRepository.saveAndFlush(model);
+
+        updateFieldsOffer(offer,engine,mileage,description,price,transmission,year);
+
+        this.offerRepository.save(offer);
+
+    }
+
+    private Model updateModel(String name, Brand brand, Category category, String photoUrl, Model existingModel) {
+        if (existingModel == null) {
+            // Handle the case where an existing model is not provided
+            throw new IllegalArgumentException("Existing model cannot be null for update.");
+        }
+        existingModel.setModified(new Date());
+        if (name != null && !name.isEmpty()) {
+            existingModel.setName(name);
+        }
+        if (brand != null) {
+            existingModel.setBrand(brand);
+        }
+        if (category != null) {
+            existingModel.setCategory(category);
+        }
+        if (photoUrl != null && !photoUrl.isEmpty()) {
+            existingModel.setImageUrl(photoUrl);
+        }
+        return existingModel;
+    }
+
+    private void updateFieldsOffer(Offer offer, Engine engine, Long mileage, String description, BigInteger price, Transmission transmission, Year year) {
+        if (engine != null) {
+            offer.setEngine(engine);
+        }
+        if (mileage != null) {
+            offer.setMileage(mileage);
+        }
+        if (description != null && !description.isEmpty()) {
+            offer.setDescription(description);
+        }
+        if (price != null) {
+            offer.setPrice(price);
+        }
+        if (transmission != null) {
+            offer.setTransmission(transmission);
+        }
+        if (year != null) {
+            offer.setYear(year);
+        }
     }
 
     private Offer createOffer(Model model, Engine engine, Long mileage, BigInteger price, Year year, Transmission transmission, String description) {

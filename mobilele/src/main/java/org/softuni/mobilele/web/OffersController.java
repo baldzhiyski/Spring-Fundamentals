@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import org.softuni.mobilele.domain.dtos.offer.OfferDetailsDto;
 import org.softuni.mobilele.domain.dtos.offer.OfferDto;
 import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
+import org.softuni.mobilele.domain.dtos.offer.OfferUpdateDto;
 import org.softuni.mobilele.domain.entities.Brand;
 import org.softuni.mobilele.domain.entities.Offer;
 import org.softuni.mobilele.services.BrandService;
@@ -129,10 +130,31 @@ public class OffersController {
     }
 
     @GetMapping("/offers/update/{id}")
-    public ModelAndView updateIfCreator(@PathVariable Long id){
-        ModelAndView modelAndVie= new ModelAndView();
+    public ModelAndView getUpdateViewIfCreator(@PathVariable Long id, Model model) {
+        ModelAndView modelAndView = new ModelAndView();
 
-        modelAndVie.setViewName("update");
-        return modelAndVie;
+        modelAndView.addObject("offerDtoById",this.offerService.getOfferById(id)); // Pass offer details to the view
+        if(!model.containsAttribute("offerUpdateDto")) {
+            modelAndView.addObject("offerUpdateDto", new OfferUpdateDto()); // Initialize OfferUpdateDto
+        }
+        modelAndView.setViewName("update");
+        return modelAndView;
+    }
+
+    @PostMapping("/offers/update/{id}")
+    public ModelAndView updateTheOfferIfCreator(@PathVariable Long id,@Valid OfferUpdateDto offerUpdateDto,
+                                                BindingResult bindingResult,RedirectAttributes redirectAttributes) throws IOException {
+        ModelAndView modelAndView = new ModelAndView();
+
+        if(bindingResult.hasErrors()){
+            modelAndView.setViewName("redirect:/offers/update/{id}"); // Return to the same view with the error message
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.offerUpdateDto", bindingResult);
+            redirectAttributes.addFlashAttribute("offerUpdateDto", offerUpdateDto);
+            return modelAndView;
+        }
+
+        this.offerService.updateOffer(id,offerUpdateDto);
+        modelAndView.setViewName("redirect:/");
+        return modelAndView;
     }
 }

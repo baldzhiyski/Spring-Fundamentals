@@ -3,6 +3,7 @@ package org.softuni.mobilele.services;
 import org.softuni.mobilele.domain.dtos.offer.OfferDetailsDto;
 import org.softuni.mobilele.domain.dtos.offer.OfferDto;
 import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
+import org.softuni.mobilele.domain.dtos.offer.OfferUpdateDto;
 import org.softuni.mobilele.domain.entities.Offer;
 
 import java.io.IOException;
@@ -17,4 +18,6 @@ public interface OfferService {
     OfferDetailsDto getOfferById(Long id);
 
     void deleteOffer(Long offerId);
+
+    void updateOffer(Long offerId, OfferUpdateDto offerUpdateDto) throws IOException;
 }
