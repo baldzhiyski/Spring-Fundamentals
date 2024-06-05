@@ -28,8 +28,12 @@
 
         <section class="route-info text-center" style="display: flex; flex-direction: column; align-items: center;">
             <h4 th:text="${route.name}" id="track-name"></h4>
-            <p style="font-size: 18px; font-weight: bold;">Total distance: <span id="totalDistance" style="font-weight: normal"></span> km</p>
-            <p style="font-size: 18px; font-weight: bold;">Author name: <span th:text="${route.author.fullName}" style="font-weight: normal" id="authorName"></span></p>
+            <p style="font-size: 18px; font-weight: bold;">Total distance: <span id="totalDistance"
+                                                                                 style="font-weight: normal"></span> km
+            </p>
+            <p style="font-size: 18px; font-weight: bold;">Author name: <span th:text="${route.author.fullName}"
+                                                                              style="font-weight: normal"
+                                                                              id="authorName"></span></p>
             <div style="margin-top: 20px;">
                 <span style="font-size: 18px; font-weight: bold; color: black;">Difficulty Level:</span>
                 <p th:text="${route.level}" style="margin-top: 5px; font-size: 18px;"></p>
@@ -84,7 +88,8 @@
                                   th:object="${commentDto}">
                                 <div class="form-group">
                                     <label for="textContent">Message</label>
-                                    <textarea form="commentForm" name="textContent" id="textContent" class="form-control" rows="5"></textarea>
+                                    <textarea form="commentForm" name="textContent" id="textContent"
+                                              class="form-control" rows="5"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Post Comment</button>
@@ -99,40 +104,37 @@
         <div class="my-5"></div>
 
         <section>
-            <h2 class="mb-4">Recent comments</h2>
-            <div class="container my-2 py-2" style="color: white;">
+            <div class="container my-1 py-1"> <!-- Adjusted margin and padding here -->
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-12 col-lg-10">
-                        <div class="card text-body" style="background-color: cornflowerblue;">
-                            <div class="card-body p-4">
-                                <!-- Loop through comments using Thymeleaf -->
-                                <div th:each="comment : ${comments}">
-                                    <div class="comment-container mb-3">
-                                        <div class="d-flex flex-start">
-                                            <img class="rounded-circle shadow-1-strong me-3"
-                                                 src="/images/profile.jpg" alt="avatar" width="60"
-                                                 height="60"/>
-                                            <div>
-                                                <h6 class="fw-bold mb-1" th:text="${comment.author.fullName}"></h6>
-                                                <div class="d-flex align-items-center mb-2">
-                                                    <p class="mb-0" th:text="${comment.created}"></p>
-                                                    <!-- Add more conditions for other statuses -->
-                                                </div>
-                                                <p class="mb-0" th:text="${comment.textContent}"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr class="separator" style="border-color: white;"> <!-- Add separator -->
-                                </div>
-                                <!-- End of comment loop -->
+                        <div class="card text-body">
+                            <h2 class="mt-auto">Recent comments</h2>
+                            <div class="card-body p-4" style="background-color: lightskyblue; margin-top: auto;  margin-right: 2rem;;"> <!-- Adjusted margin-left -->
+                                <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
 
+                                <div class="d-flex flex-start" th:each="comment : ${comments}">
+                                    <img class="rounded-circle shadow-1-strong me-3"
+                                         src="/images/profile.jpg" alt="avatar" width="60"
+                                         height="60"/>
+                                    <div>
+                                        <h6 class="fw-bold mb-1" th:text="${comment.author.fullName}">Maggie Marsh</h6>
+                                        <p class="mb-1" th:text="${comment.textContent}" style="color: white">
+                                        </p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <p class="mb-0" th:text="${comment.created}">
+                                                March 07, 2021
+                                            </p>
+                                        </div>
+                                        <hr class="my-0" style="margin-top: 10px"/>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
 
     </div>
 </div>
