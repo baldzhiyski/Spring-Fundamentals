@@ -24,6 +24,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
@@ -60,12 +61,14 @@ public class RoutesController {
         this.pictureService = pictureService;
     }
 
+    @ModelAttribute("loggedIn")
+    public boolean isLogged(){
+        return this.userService.isLoggedIn();
+    }
+
     @GetMapping("/routes")
     public ModelAndView getRoutes() {
         ModelAndView modelAndView = new ModelAndView();
-
-        boolean loggedIn = this.userService.isLoggedIn();
-        modelAndView.addObject("loggedIn", loggedIn);
 
         List<Route> routes = this.routeService.getAllRoutes();
         List<RouteWithRandomPicDto> routeWithRandomPics = new ArrayList<>();
@@ -91,9 +94,6 @@ public class RoutesController {
     @GetMapping("/routes/details/{id}")
     public ModelAndView getDetailInfo(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView();
-
-        boolean loggedIn = this.userService.isLoggedIn();
-        modelAndView.addObject("loggedIn", loggedIn);
 
         Route route = this.routeService.findById(id);
 
@@ -138,8 +138,6 @@ public class RoutesController {
     @GetMapping("/routes/add")
     public ModelAndView addPage(Model model) {
         ModelAndView modelAndView = new ModelAndView();
-        boolean loggedIn = this.userService.isLoggedIn();
-        modelAndView.addObject("loggedIn", loggedIn);
         modelAndView.addObject("isAtPage", true);
 
         if (!model.containsAttribute("routeDto")) {
@@ -154,8 +152,7 @@ public class RoutesController {
     public ModelAndView addRoute(@Valid RouteDto routeDto, BindingResult bindingResult
             , RedirectAttributes redirectAttributes) throws IOException {
         ModelAndView modelAndView = new ModelAndView();
-        boolean loggedIn = this.userService.isLoggedIn();
-        modelAndView.addObject("loggedIn", loggedIn);
+
         modelAndView.addObject("isAtPage", true);
 
         if (bindingResult.hasErrors()) {
