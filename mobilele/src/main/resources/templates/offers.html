@@ -17,30 +17,30 @@
         <h2 class="text-center text-white mt-5">All Offers</h2>
         <div class="offers row mx-auto d-flex flex-row justify-content-center">
             <!-- Iterate over each offer and generate HTML -->
-            <div class="offer card col-sm-6 col-md-3 col-lg-2 m-1 p-0" th:each="offer : ${offers}">
+            <div class="offer card col-sm-6 col-md-3 col-lg-2 m-1 p-0" th:each="offerDto : ${offersDtos}">
                 <div class="card-img-top-wrapper">
                     <!-- Display car image using the imageUrl attribute -->
-                    <img class="card-img-top" th:src="${offer.model.imageUrl}" alt="Car image">
+                    <img class="card-img-top" th:src="${offerDto.modelImageUrl}" alt="Car image">
                 </div>
                 <div class="card-body pb-1">
                     <h5 class="card-title">
                         <!-- Use offer properties to display offer details -->
-                        <span th:text="${offer.year}"></span>
-                        <span th:text="${offer.model.brand.name}"></span>
-                        <span th:text="${offer.model.name}"></span>
+                        <span th:text="${offerDto.year}"></span>
+                        <span th:text="${offerDto.modelBrandName}"></span>
+                        <span th:text="${offerDto.modelName}"></span>
                     </h5>
                 </div>
                 <ul class="offer-details list-group list-group-flush">
                     <li class="list-group-item">
                         <!-- Use offer properties to display offer details -->
-                        <div class="card-text"><span th:text="${'• Mileage: ' + offer.mileage}"></span></div>
-                        <div class="card-text"><span th:text="${'• Price: ' + offer.price}"></span></div>
-                        <div class="card-text"><span th:text="${'• Engine type: ' + offer.engine}"></span></div>
-                        <div class="card-text"><span th:text="${'• Transmission type: ' + offer.transmission}"></span></div>
+                        <div class="card-text"><span th:text="${'• Mileage: ' + offerDto.mileage}"></span></div>
+                        <div class="card-text"><span th:text="${'• Price: ' + offerDto.price}"></span></div>
+                        <div class="card-text"><span th:text="${'• Engine type: ' + offerDto.engine}"></span></div>
+                        <div class="card-text"><span th:text="${'• Transmission type: ' + offerDto.transmission}"></span></div>
                     </li>
                 </ul>
                 <div class="card-body">
-                    <a class="card-link" th:href="@{/offers/details/{id}(id=${offer.id})}">Details</a>
+                    <a class="card-link" th:href="@{/offers/details/{id}(id=${offerDto.id})}">Details</a>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@ package org.softuni.mobilele.services.implementations;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.modelmapper.ModelMapper;
 import org.softuni.mobilele.domain.dtos.offer.OfferDetailsDto;
+import org.softuni.mobilele.domain.dtos.offer.OfferDisplayDto;
 import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
 import org.softuni.mobilele.domain.dtos.offer.OfferUpdateDto;
 import org.softuni.mobilele.domain.entities.Brand;
@@ -34,6 +35,7 @@ import java.nio.file.StandardOpenOption;
 import java.time.Year;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class OfferServiceImpl implements OfferService {
@@ -58,8 +60,9 @@ public class OfferServiceImpl implements OfferService {
     }
 
     @Override
-    public List<Offer> getAllOffers() {
-        return this.offerRepository.findAll();
+    public List<OfferDisplayDto> getAllOffers() {
+         return this.offerRepository.findAll().stream().map(offer -> this.mapper.map(offer,OfferDisplayDto.class))
+                 .collect(Collectors.toList());
     }
 
     @Override

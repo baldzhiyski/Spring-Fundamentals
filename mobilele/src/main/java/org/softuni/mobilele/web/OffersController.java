@@ -1,10 +1,7 @@
 package org.softuni.mobilele.web;
 
 import jakarta.validation.Valid;
-import org.softuni.mobilele.domain.dtos.offer.OfferDetailsDto;
-import org.softuni.mobilele.domain.dtos.offer.OfferDto;
-import org.softuni.mobilele.domain.dtos.offer.OfferRegisterDto;
-import org.softuni.mobilele.domain.dtos.offer.OfferUpdateDto;
+import org.softuni.mobilele.domain.dtos.offer.*;
 import org.softuni.mobilele.domain.entities.Brand;
 import org.softuni.mobilele.domain.entities.Offer;
 import org.softuni.mobilele.services.BrandService;
@@ -53,8 +50,8 @@ public class OffersController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("offers");
 
-        List<Offer> offers = offerService.getAllOffers(); // Fetch offers from the service layer
-        modelAndView.addObject("offers", offers); // Pass offers data to the view
+        List<OfferDisplayDto> offers = offerService.getAllOffers(); // Fetch offers from the service layer
+        modelAndView.addObject("offersDtos", offers); // Pass offers data to the view
 
 
         return modelAndView;
