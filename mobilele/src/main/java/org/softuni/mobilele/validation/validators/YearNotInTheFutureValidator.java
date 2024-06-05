@@ -6,14 +6,14 @@ import org.softuni.mobilele.validation.annotations.YearNotInTheFuture;
 
 import java.time.Year;
 
-public class YearNotInTheFutureValidator implements ConstraintValidator<YearNotInTheFuture,Number> {
+public class YearNotInTheFutureValidator implements ConstraintValidator<YearNotInTheFuture,Year> {
     @Override
-    public boolean isValid(Number value, ConstraintValidatorContext constraintValidatorContext) {
+    public boolean isValid(Year value, ConstraintValidatorContext constraintValidatorContext) {
         if(value==null){
             return true;
         }
         int currentYear = Year.now().getValue();
 
-        return value.intValue()<=currentYear;
+        return value.getValue()<=currentYear;
     }
 }

@@ -45,7 +45,6 @@ public class OfferRegisterDto {
 
     @NotNull(message = "Year is required")
     @YearNotInTheFuture
-    @Min(1930)
     private Year year;
 
     @Positive(message = "The mileage can not be negative !")
