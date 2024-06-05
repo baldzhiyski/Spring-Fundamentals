@@ -34,6 +34,8 @@ public class User extends BaseEntity{
     @Length(min = 2)
     private String fullName;
 
+    @OneToMany(mappedBy = "author")
+    private List<Picture> pictures;
 
     @Email
     private String email;

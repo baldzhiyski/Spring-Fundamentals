@@ -2,6 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="~{fragments/head}">
+    <style>
+        .separator {
+            border-bottom: 1px solid white;
+            margin-bottom: 20px; /* Adjust as needed */
+        }
+
+        .comment-container:last-child .separator {
+            display: none; /* Hide the separator after the last comment */
+        }
+    </style>
 </head>
 
 <body>
@@ -64,42 +74,65 @@
             </div>
         </section>
 
-        <section class="comments">
-            <h2>Comments</h2>
+        <section class="write-comment">
+            <h2>Write a Comment</h2>
             <div class="row">
-                <!-- Section for writing comments -->
-                <div class="col-md-6">
-                    <div class="write-comment-block">
-                        <h3>Write a Comment</h3>
-                        <form id="commentForm" th:action="@{'/routes/details/' + ${route.id}}" method="post"
-                              th:object="${commentDto}">
-                            <div class="form-group">
-                                <label for="textContent">Message</label>
-                                <textarea form="commentForm" name="textContent" id="textContent" cols="30" rows="5"
-                                          class="form-control" style="background-color: white;"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Post Comment</button>
-                            </div>
-                        </form>
+                <div class="col-md-12">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <form id="commentForm" th:action="@{'/routes/details/' + ${route.id}}" method="post"
+                                  th:object="${commentDto}">
+                                <div class="form-group">
+                                    <label for="textContent">Message</label>
+                                    <textarea form="commentForm" name="textContent" id="textContent" class="form-control" rows="5"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Section for displaying current comments -->
-                <div class="col-md-6">
-                    <div class="current-comments-block">
-                        <h3>Current Comments</h3>
-                        <div id="commentContainer">
-                            <div th:each="comment : ${comments}">
-                                <p><strong th:text="${comment.author.fullName}">Author</strong>: <span
-                                        th:text="${comment.textContent}">Comment text</span></p>
-                                <p th:text="${#dates.format(comment.created, 'dd-MM-yyyy HH:mm:ss')}">Comment date</p>
+        <div class="my-5"></div>
+
+        <section>
+            <h2 class="mb-4">Recent comments</h2>
+            <div class="container my-2 py-2" style="color: white;">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-12 col-lg-10">
+                        <div class="card text-body" style="background-color: cornflowerblue;">
+                            <div class="card-body p-4">
+                                <!-- Loop through comments using Thymeleaf -->
+                                <div th:each="comment : ${comments}">
+                                    <div class="comment-container mb-3">
+                                        <div class="d-flex flex-start">
+                                            <img class="rounded-circle shadow-1-strong me-3"
+                                                 src="/images/profile.jpg" alt="avatar" width="60"
+                                                 height="60"/>
+                                            <div>
+                                                <h6 class="fw-bold mb-1" th:text="${comment.author.fullName}"></h6>
+                                                <div class="d-flex align-items-center mb-2">
+                                                    <p class="mb-0" th:text="${comment.created}"></p>
+                                                    <!-- Add more conditions for other statuses -->
+                                                </div>
+                                                <p class="mb-0" th:text="${comment.textContent}"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="separator" style="border-color: white;"> <!-- Add separator -->
+                                </div>
+                                <!-- End of comment loop -->
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
     </div>
 </div>
