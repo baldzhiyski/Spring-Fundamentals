@@ -38,11 +38,10 @@ public class NavBarController {
         return "index";
     }
 
-
-    @GetMapping("/logout")
-    public ModelAndView logout() {
+    @PostMapping("/logout")
+    public ModelAndView logoutPost() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/users/login");
+        modelAndView.setViewName("redirect:/");
 
         this.userService.logOut();
 
