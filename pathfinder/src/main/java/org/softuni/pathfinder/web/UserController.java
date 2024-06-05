@@ -86,7 +86,7 @@ public class UserController {
         // Check if username exists
         if (!this.userService.userByUsernameExists(userLogInDto.getUsername()) || !userService.checkPasswordCorrectForTheUsername(userLogInDto)) {
             redirectAttributes.addFlashAttribute("badRequest", "Invalid username or password. Please try again.");
-            return new ModelAndView("redirect:/login");
+            return new ModelAndView("redirect:/users/login");
         }
 
         // If there are errors, redirect to the login page with flash attributes

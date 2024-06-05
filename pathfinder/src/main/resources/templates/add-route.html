@@ -28,8 +28,10 @@
             <div class="form-group">
                 <input name="name" type="text" id="inputName" class="form-control"
                        aria-describedby="inputNameError" th:classappend="${#fields.hasErrors('name')} ? 'is-invalid'" th:field="*{name}">
-                <small id="inputNameError" class="invalid-feedback bg-danger rounded text-white"
-                       th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+                <ul th:if="${#fields.hasErrors('name')}">
+                    <li th:each="err : ${#fields.errors('name')}" th:text="${err}"></li>
+                </ul>
+                
             </div>
         </div>
 
@@ -40,8 +42,7 @@
             <div class="form-group">
                 <textarea name="description" id="inputDescription" class="form-control"
                           aria-describedby="inputDescriptionError" th:classappend="${#fields.hasErrors('description')} ? 'is-invalid'" th:field="*{description}"></textarea>
-                <small id="inputDescriptionError" class="invalid-feedback form-text bg-danger rounded text-white"
-                       th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></small>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
             </div>
         </div>
 
@@ -50,10 +51,9 @@
                 <label for="inputGpx" class="col-form-label">GPX Coordinates</label>
             </div>
             <div class="form-group">
-                <input type="file" name="gpxCoordinates" required id="inputGpx" class="form-control-file"
+                <input type="file" name="gpxCoordinates"  id="inputGpx" class="form-control-file"
                        aria-describedby="inputGpxError" accept=".txt" th:classappend="${#fields.hasErrors('gpxCoordinates')} ? 'is-invalid'" th:field="*{gpxCoordinates}">
-                <small id="inputGpxError" class="invalid-feedback bg-danger rounded"
-                       th:if="${#fields.hasErrors('gpxCoordinates')}" th:each="err : ${#fields.errors('gpxCoordinates')}" th:text="${err}">></small>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('gpxCoordinates')}" th:errors="*{gpxCoordinates}"></p>
             </div>
         </div>
 
@@ -67,6 +67,7 @@
                             th:text="${level}">
                     </option>
                 </select>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('level')}" th:errors="*{level}"></p>
             </div>
         </div>
 
@@ -74,8 +75,7 @@
             <div class="form-group">
                 <label for="videoUrl">Video Url (only last eleven characters from Youtube)</label>
                 <input  name="videoUrl" id="videoUrl"   type="text" class="form-control" placeholder="Video url" th:classappend="${#fields.hasErrors('videoUrl')} ? 'is-invalid'" th:field="*{videoUrl}">
-                <small class="invalid-feedback bg-danger rounded text-white"
-                       th:if="${#fields.hasErrors('videoUrl')}" th:errors="*{videoUrl}"></small>
+                <p class="errors alert alert-danger" th:if="${#fields.hasErrors('videoUrl')}" th:errors="*{videoUrl}"></p>
             </div>
         </div>
 
@@ -92,15 +92,14 @@
                 <br>
             </div>
             <!-- Adjusted error message styling -->
-            <small class="p-2 bg-danger text-white" style="font-size: 12px; margin-top: -10px;" th:if="${#fields.hasErrors('categories')}" th:errors="*{categories}"></small>
+            <p class="errors alert alert-danger" th:if="${#fields.hasErrors('categories')}" th:errors="*{categories}"></p>
         </div>
 
         <!-- Photos Input -->
         <div class="form-group">
             <label for="images" class="col-form-label text-white">Upload Images : </label>
-            <input type="file" name="images" required id="images" accept="image/jpeg, image/jpg" class="form-control-file" aria-describedby="inputPhotosError" multiple>
-            <small id="inputPhotosError" class="invalid-feedback bg-danger rounded"
-                   th:if="${#fields.hasErrors('images')}" th:errors="*{images}"></small>
+            <input type="file" name="images"  id="images" accept="image/jpeg, image/jpg" class="form-control-file" aria-describedby="inputPhotosError" multiple>
+            <p class="errors alert alert-danger" th:if="${#fields.hasErrors('images')}" th:errors="*{images}"></p>
         </div>
 
         <div class="d-flex justify-content-center mt-4">

@@ -27,8 +27,7 @@ public class RouteDto {
     @Length(min = 5)
     private String description;
 
-    @NotNull(message = "Please select a GPX file")
-    @FileAnnotation(contentTypes = "text/plain")
+    @FileAnnotation(contentTypes = "text/plain",message = "File is required . It should be text/plain .")
     private MultipartFile gpxCoordinates;
 
     @AtLeastOneCategory
@@ -41,5 +40,5 @@ public class RouteDto {
     private String videoUrl;
 
     @NotNull(message = "Please select at least one photo")
-    private List<MultipartFile> images;
+    private List< @FileAnnotation(contentTypes = "images/jpeg") MultipartFile> images;
 }
