@@ -10,6 +10,7 @@ import org.softuni.pathfinder.domain.entities.enums.CategoryName;
 import org.softuni.pathfinder.domain.entities.enums.Level;
 import org.softuni.pathfinder.validation.anotations.AtLeastOneCategory;
 import org.softuni.pathfinder.validation.anotations.FileAnnotation;
+import org.softuni.pathfinder.validation.anotations.NotEmptyFile;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -39,6 +40,6 @@ public class RouteDto {
     @NotEmpty(message = "Add a video url ")
     private String videoUrl;
 
-    @NotNull(message = "Please select at least one photo")
-    private List< @FileAnnotation(contentTypes = "images/jpeg") MultipartFile> images;
+    @NotEmptyFile
+    private List<MultipartFile> images;
 }
