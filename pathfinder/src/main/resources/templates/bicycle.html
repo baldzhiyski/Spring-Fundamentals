@@ -14,7 +14,7 @@
             <p th:text="${route.description}">Very long description</p>
             <a th:href="@{/routes/details/{id}(id=${route.id})}" class="btn">Learn More</a>
         </div>
-        <img class="rounded-circle w-75 ml-5" src="/images/pic1.jpg" th:src="@{${route.picture.url}}" alt="Title image">
+        <img class="rounded-circle w-75 ml-5" src="/images/pic1.jpg" th:src="@{${route.randomPicUrl}}" alt="Title image">
     </section>
 </div>
 <!-- Wrapper Ends -->

@@ -4,5 +4,5 @@ import org.softuni.pathfinder.domain.entities.Picture;
 
 public interface PictureService {
 
-    Picture getRandomPicture(Long id);
+    Picture getRandomPicture(Long routeId);
 }

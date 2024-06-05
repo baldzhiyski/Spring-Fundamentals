@@ -16,7 +16,7 @@ public class PictureServiceImpl  implements PictureService {
     }
 
     @Override
-    public Picture getRandomPicture(Long id) {
-        return this.pictureRepository.getRandomPicture(id);
+    public Picture getRandomPicture(Long routeId) {
+        return this.pictureRepository.getRandomPicture(routeId);
     }
 }

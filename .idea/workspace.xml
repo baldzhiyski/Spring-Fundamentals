@@ -9,11 +9,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Updating the read me">
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/validation/validators/NotEmptyMultipartFileListValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/validation/anotations/NotEmptyFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/dtos/routes/RouteDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/dtos/routes/RouteDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/add-route.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/add-route.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/dtos/routes/RouteCategoryViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/dtos/routes/RouteCategoryViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/PictureService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/PictureService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/PictureServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/PictureServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/car.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/car.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,7 +277,7 @@
       <workItem from="1717453544585" duration="1601000" />
       <workItem from="1717513506672" duration="17443000" />
       <workItem from="1717580864635" duration="478000" />
-      <workItem from="1717612402024" duration="2980000" />
+      <workItem from="1717612402024" duration="4075000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -310,14 +311,10 @@
           <line>186</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/RouteServiceImpl.java</url>
-          <line>114</line>
-          <properties class="org.softuni.pathfinder.services.impl.RouteServiceImpl" method="getAllByCategory">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java</url>
+          <line>186</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -172,6 +172,7 @@ public class RoutesController {
     @GetMapping("/routes/{categoryName}")
     public ModelAndView getAllByCategory(@PathVariable("categoryName") CategoryName categoryName) {
         List<RouteCategoryViewModel> routes = routeService.getAllByCategory(categoryName);
+        routes.forEach(route -> route.setRandomPicUrl(this.pictureService.getRandomPicture(route.getId()).getUrl()));
 
         String view =
                 switch (categoryName) {
@@ -181,7 +182,8 @@ public class RoutesController {
                     case BICYCLE -> "bicycle";
                 };
 
-        ModelAndView modelAndView = new ModelAndView(view);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName(view);
 
         modelAndView.addObject("routes", routes);
 

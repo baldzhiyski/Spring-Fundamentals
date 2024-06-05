@@ -10,5 +10,5 @@ public class RouteCategoryViewModel {
     private long id;
     private String name;
     private String description;
-    private Picture picture;
+    private String randomPicUrl;
 }
