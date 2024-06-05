@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -17,23 +18,22 @@ public class NavBarController {
         this.userService = userService;
     }
 
+    @ModelAttribute("loggedIn")
+    public boolean isLogged(){
+        return this.userService.isLoggedIn();
+    }
+
+    @ModelAttribute("isAdmin")
+    public boolean isAdmin(){
+        return this.userService.isAdmin();
+    }
+
     @GetMapping("/")
     public String firstPage(Model model) {
-        boolean loggedIn = this.userService.isLoggedIn();
-        model.addAttribute("loggedIn", loggedIn);
-
-        boolean isAdmin = this.userService.isAdmin();
-        model.addAttribute("isAdmin", isAdmin);
         return "index";
     }
     @GetMapping("/home")
     public String home(Model model) {
-        boolean loggedIn = this.userService.isLoggedIn();
-        model.addAttribute("loggedIn", loggedIn);
-
-
-        boolean isAdmin = this.userService.isAdmin();
-        model.addAttribute("isAdmin", isAdmin);
 
         return "index";
     }
@@ -53,13 +53,6 @@ public class NavBarController {
     public ModelAndView about(){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("/about");
-
-        boolean loggedIn = this.userService.isLoggedIn();
-        modelAndView.addObject("loggedIn", loggedIn);
-
-
-        boolean isAdmin = this.userService.isAdmin();
-        modelAndView.addObject("isAdmin", isAdmin);
 
         modelAndView.addObject("isInThePage",true);
 
