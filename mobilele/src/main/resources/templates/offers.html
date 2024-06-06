@@ -7,7 +7,7 @@
 <body>
 
 	<div>
-        <nav th:replace ="~{fragments/navbar}">
+        <nav th:replace="~{fragments/navbar::navbar(activeLink=${'offers'})}"></nav>
 
         </nav>
 	</div>

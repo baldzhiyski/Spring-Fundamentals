@@ -4,7 +4,7 @@
 
 </head>
 <body>
-    <nav  th:fragment="navbar"
+    <nav  th:fragment="navbar(activeLink)"
             class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
         <a class="navbar-brand" href="/"><img alt="car picture" src="/img/car.png" class="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -16,13 +16,13 @@
             <ul class="navbar-nav mr-auto col-12 justify-content-between">
                 <li class="nav-item"
                 >
-                    <a class="nav-link" href="/brands/all" th:if="${loggedIn}" >All Brands</a>
+                    <a class="nav-link" href="/brands/all" th:if="${loggedIn}" th:classappend="${activeLink == 'brands'}? 'active'" >All Brands</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/offers/add" th:if="${loggedIn}">Add Offer</a>
+                    <a class="nav-link" href="/offers/add" th:if="${loggedIn}" th:classappend="${activeLink == 'add-offer'}? 'active'">Add Offer</a>
                 </li>
                 <li class="nav-item" th:if="${loggedIn}">
-                    <a class="nav-link" href="/offers/all">All Offers</a>
+                    <a class="nav-link" href="/offers/all" th:classappend="${activeLink == 'offers'}? 'active'">All Offers</a>
                 </li>
                 <li class="nav-item dropdown" th:if="${isAdmin}">
                     <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button"
@@ -46,10 +46,10 @@
 
                 <!-- Centered Login and Register links -->
                 <li class="nav-item text-center" th:unless="${loggedIn}">
-                    <a class="nav-link" href="/users/login" style="color: white; font-weight: bold;">Login</a>
+                    <a class="nav-link" href="/users/login" th:classappend="${activeLink == 'login'}? 'active'">Login</a>
                 </li>
                 <li class="nav-item text-center" th:unless="${loggedIn}">
-                    <a class="nav-link" href="/users/register" style="color: white; font-weight: bold;">Register</a>
+                    <a class="nav-link" href="/users/register" th:classappend="${activeLink == 'register'}? 'active'">Register</a>
                 </li>
 
                 <!-- Move the message to the left side -->
