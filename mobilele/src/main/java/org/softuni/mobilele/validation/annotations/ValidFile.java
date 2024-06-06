@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidFile {
-    String message() default "Invalid file.";
+    String message() default "{file.invalid}";
 
     Class<?>[] groups() default {};
 

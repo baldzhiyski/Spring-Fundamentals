@@ -9,12 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Making logout a post mapping request">
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/dtos/offer/OfferDisplayDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/i18n/messages.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/OfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/OffersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/OffersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/offers.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/offers.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/validation/annotations/CorrectUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/validation/annotations/CorrectUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/validation/annotations/UniqueUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/validation/annotations/UniqueUsername.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/validation/annotations/ValidFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/validation/annotations/ValidFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/validation/annotations/YearNotInTheFuture.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/validation/annotations/YearNotInTheFuture.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,11 +137,11 @@
       <recent name="C:\GitHub\Spring Fundamentals\front-end-intro\src\main\resources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GitHub\Spring Fundamentals\mobilele\src\main\resources\i18n" />
       <recent name="C:\GitHub\Spring Fundamentals\mobilele\src\main\resources\static\img" />
       <recent name="C:\GitHub\Spring Fundamentals\mobilele\src\main\resources\static\img\users_photos" />
       <recent name="C:\GitHub\Spring Fundamentals\pathfinder\src\main\resources" />
       <recent name="C:\GitHub\Spring Fundamentals\mobilele\src\main\resources" />
-      <recent name="C:\GitHub\Spring Fundamentals\front-end-intro\src\main\resources\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -279,7 +280,9 @@
       <workItem from="1717580864635" duration="478000" />
       <workItem from="1717612402024" duration="11447000" />
       <workItem from="1717624195358" duration="62000" />
-      <workItem from="1717624765964" duration="595000" />
+      <workItem from="1717624765964" duration="1856000" />
+      <workItem from="1717653914932" duration="88000" />
+      <workItem from="1717702900993" duration="2688000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />

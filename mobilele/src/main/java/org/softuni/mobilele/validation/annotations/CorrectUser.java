@@ -11,7 +11,7 @@ import java.lang.annotation.*;
 @Target({ ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CorrectUser {
-    String message() default "Incorrect username or password.";
+    String message() default "{correct.user.data}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
