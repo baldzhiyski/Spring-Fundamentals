@@ -106,6 +106,10 @@ public class UserController {
     @GetMapping("/users/profile")
     public ModelAndView profilePicture() {
         ModelAndView modelAndView = new ModelAndView("profile");
+        if(!this.userService.isLoggedIn()){
+            modelAndView.setViewName("redirect:/");
+            return modelAndView;
+        }
 
         boolean loggedIn = this.userService.isLoggedIn();
         modelAndView.addObject("loggedIn", loggedIn);

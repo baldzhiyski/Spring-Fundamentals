@@ -69,7 +69,10 @@ public class RoutesController {
     @GetMapping("/routes")
     public ModelAndView getRoutes() {
         ModelAndView modelAndView = new ModelAndView();
-
+        if(!this.userService.isLoggedIn()){
+            modelAndView.setViewName("redirect:/");
+            return modelAndView;
+        }
         List<Route> routes = this.routeService.getAllRoutes();
         List<RouteWithRandomPicDto> routeWithRandomPics = new ArrayList<>();
         for (Route route : routes) {
@@ -94,6 +97,10 @@ public class RoutesController {
     @GetMapping("/routes/details/{id}")
     public ModelAndView getDetailInfo(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView();
+        if(!this.userService.isLoggedIn()){
+            modelAndView.setViewName("redirect:/");
+            return modelAndView;
+        }
 
         Route route = this.routeService.findById(id);
 
@@ -138,6 +145,10 @@ public class RoutesController {
     @GetMapping("/routes/add")
     public ModelAndView addPage(Model model) {
         ModelAndView modelAndView = new ModelAndView();
+        if(!this.userService.isLoggedIn()){
+            modelAndView.setViewName("redirect:/");
+            return modelAndView;
+        }
         modelAndView.addObject("isAtPage", true);
 
         if (!model.containsAttribute("routeDto")) {
@@ -171,6 +182,11 @@ public class RoutesController {
 
     @GetMapping("/routes/{categoryName}")
     public ModelAndView getAllByCategory(@PathVariable("categoryName") CategoryName categoryName) {
+        ModelAndView modelAndView = new ModelAndView();
+        if(!this.userService.isLoggedIn()){
+            modelAndView.setViewName("redirect:/");
+            return modelAndView;
+        }
         List<RouteCategoryViewModel> routes = routeService.getAllByCategory(categoryName);
         routes.forEach(route -> route.setRandomPicUrl(this.pictureService.getRandomPicture(route.getId()).getUrl()));
 
@@ -182,7 +198,6 @@ public class RoutesController {
                     case BICYCLE -> "bicycle";
                 };
 
-        ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName(view);
 
         modelAndView.addObject("routes", routes);

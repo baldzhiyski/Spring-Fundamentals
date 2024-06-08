@@ -8,9 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Creating a message.properties file for the invalid messages and also a bean for it">
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/auth-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/auth-login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Updating the navbar by including a fragment">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/NavBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/NavBarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +279,9 @@
       <workItem from="1717624195358" duration="62000" />
       <workItem from="1717624765964" duration="1856000" />
       <workItem from="1717653914932" duration="88000" />
-      <workItem from="1717702900993" duration="3036000" />
+      <workItem from="1717702900993" duration="5304000" />
+      <workItem from="1717833084437" duration="30000" />
+      <workItem from="1717881817407" duration="370000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -311,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717706557880</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updating the navbar by including a fragment">
+      <option name="closed" value="true" />
+      <created>1717706950957</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717706950957</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +334,8 @@
     <MESSAGE value="Updating the read me" />
     <MESSAGE value="Making logout a post mapping request" />
     <MESSAGE value="Creating a message.properties file for the invalid messages and also a bean for it" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating a message.properties file for the invalid messages and also a bean for it" />
+    <MESSAGE value="Updating the navbar by including a fragment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating the navbar by including a fragment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -339,7 +352,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java</url>
-          <line>185</line>
+          <line>200</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>

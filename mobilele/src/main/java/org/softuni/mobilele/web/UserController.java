@@ -88,6 +88,10 @@ public class UserController {
     @GetMapping("/users/logout")
     public ModelAndView logout() {
         ModelAndView modelAndView = new ModelAndView();
+        if(!this.userService.checkLoggedUser()){
+            modelAndView.setViewName("redirect:/");
+            return modelAndView;
+        }
         modelAndView.setViewName("redirect:/users/login");
 
         this.userService.logOut();

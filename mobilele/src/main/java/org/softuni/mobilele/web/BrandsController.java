@@ -24,6 +24,9 @@ public class BrandsController {
 
     @GetMapping("/brands/all")
     public String getAllBrands(Model model) {
+        if(!this.userService.checkLoggedUser()) {
+            return "redirect:/";
+        }
         List<Brand> brands = brandService.getAllWithModels();
         model.addAttribute("brands", brands);
 
