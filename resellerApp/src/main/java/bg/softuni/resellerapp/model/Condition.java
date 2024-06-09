@@ -22,6 +22,10 @@ public class Condition extends BaseEntity{
     public Condition() {
     }
 
+    public Condition(ConditionName conditionName) {
+        this.conditionName = conditionName;
+        setDescription(conditionName);
+    }
 
     public ConditionName getConditionName() {
         return conditionName;
