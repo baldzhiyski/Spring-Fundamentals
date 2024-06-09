@@ -17,9 +17,9 @@ public class UserRegisterDto {
     @Email
     @UniqueEmail
     private String email;
-    @Min(value = 4,message = "The password should be at least 4 symbols.")
+    @Length(min = 4,message = "The password should be at least 4 symbols.")
     private String password;
-    @Min(value = 4,message = "The password should be at least 4 symbols.")
+    @Length(min = 4,message = "The password should be at least 4 symbols.")
     private String confirmPassword;
 
     public String getUsername() {

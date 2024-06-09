@@ -8,14 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementing adding an offer logic also with the logic for the home page">
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementing the logOut button and fixing the query for finding other offers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/OfferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/OfferRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/OfferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/user/UserRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/user/UserRegisterDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/OfferService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/fragments/commons.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -301,7 +299,7 @@
       <workItem from="1717881817407" duration="1393000" />
       <workItem from="1717885371969" duration="645000" />
       <workItem from="1717912828430" duration="245000" />
-      <workItem from="1717941456417" duration="13745000" />
+      <workItem from="1717941456417" duration="15281000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -399,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717954139652</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Implementing the logOut button and fixing the query for finding other offers">
+      <option name="closed" value="true" />
+      <created>1717955467269</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1717955467269</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +424,8 @@
     <MESSAGE value="Implementation for the login and register pages" />
     <MESSAGE value="Implementing the home page and adding logic for the get request" />
     <MESSAGE value="Implementing adding an offer logic also with the logic for the home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing adding an offer logic also with the logic for the home page" />
+    <MESSAGE value="Implementing the logOut button and fixing the query for finding other offers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing the logOut button and fixing the query for finding other offers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -440,8 +447,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java</url>
-          <line>60</line>
+          <line>61</line>
           <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

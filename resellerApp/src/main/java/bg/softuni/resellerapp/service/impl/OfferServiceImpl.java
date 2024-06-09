@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -69,5 +70,18 @@ public class OfferServiceImpl implements OfferService {
         offer.setPrice(offerDto.getPrice());
 
         this.offerRepository.saveAndFlush(offer);
+    }
+
+    @Override
+    public void buy(UUID offerId) {
+        Offer offer = this.offerRepository.findById(offerId).orElseThrow();
+        offer.setBuyer(this.userRepository.findByUsername(this.currentLoggedUser.getUsername()).orElseThrow());
+        this.offerRepository.saveAndFlush(offer);
+    }
+
+    @Override
+    @Transactional
+    public void remove(UUID offerId) {
+        this.offerRepository.deleteById(offerId);
     }
 }

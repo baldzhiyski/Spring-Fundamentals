@@ -23,8 +23,7 @@
                                 <td th:text="${myOffer.description}"></td>
 
                                 <td style="width: 15%">
-                                    <form th:method="POST" th:action="@{/home/remove}" target="form-submit-iframe">
-                                        <input type="hidden" name="offerId" th:value="${myOffer.id}">
+                                    <form th:method="POST" th:action="@{/offers/remove/{id}(id=${myOffer.id})}" target="form-submit-iframe">
                                         <button type="submit" class="btn-danger btn">Remove</button>
                                     </form>
                                 </td>
@@ -57,7 +56,7 @@
 
             <div class="col-6 mt-1 mb-1">
                 <h3 class="mySticky bg-gray text-dark  mb-0 mt-2">All Other Offers</h3>
-                <h6 class="mySticky bg-gray text-dark  mb-0 mt-0"> 0</h6>
+                <h6 class="mySticky bg-gray text-dark  mb-0 mt-0" th:text="${loggedUserOffersDto.otherOffers.size()}"> </h6>
                 <div class="bg-dark rounded m-auto" style="height: 67vh; overflow: auto">
                     <div>
                         <div>
@@ -85,11 +84,9 @@
                                                 <a th:text="'Price: ' + ${other.price}"></a>
                                             </td>
                                             <td>
-                                                <form th:method="POST" th:action="@{/home}" target="form-submit-iframe">
-                                                    <input type="hidden" name="offerId" th:value="${other.id}">
-                                                    <button type="submit" class="ml-3 text-danger" style="background-color: transparent; border: none;">
-                                                        <img src="/img/buy.png" height="35px">
-                                                    </button>
+                                                <form th:action="@{/offers/buy/{id}(id=${other.id})}" th:method="POST">
+                                                    <button type="submit" class="ml-3 text-danger">
+                                                        <img src="/img/buy.png" height="35px"></button>
                                                 </form>
                                             </td>
                                         </tr>
