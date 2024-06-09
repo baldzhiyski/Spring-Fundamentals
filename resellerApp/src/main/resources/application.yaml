@@ -13,8 +13,8 @@ spring:
         enabled: 'true'
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    password: ${my_username}
-    username: ${my_pass}
+    password: ${my_pass}
+    username: ${my_username}
     url: jdbc:mysql://localhost:3306/reseller?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
 logging:
   level:
