@@ -8,14 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementing the logOut button and fixing the query for finding other offers">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/OfferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/user/UserRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/user/UserRegisterDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/OfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/home.html" afterDir="false" />
-    </list>
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementation of delete and buy offer buttons" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -299,7 +292,7 @@
       <workItem from="1717881817407" duration="1393000" />
       <workItem from="1717885371969" duration="645000" />
       <workItem from="1717912828430" duration="245000" />
-      <workItem from="1717941456417" duration="15281000" />
+      <workItem from="1717941456417" duration="15580000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -405,7 +398,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717955467269</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Implementation of delete and buy offer buttons">
+      <option name="closed" value="true" />
+      <created>1717957002688</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1717957002688</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +426,8 @@
     <MESSAGE value="Implementing the home page and adding logic for the get request" />
     <MESSAGE value="Implementing adding an offer logic also with the logic for the home page" />
     <MESSAGE value="Implementing the logOut button and fixing the query for finding other offers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing the logOut button and fixing the query for finding other offers" />
+    <MESSAGE value="Implementation of delete and buy offer buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementation of delete and buy offer buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
