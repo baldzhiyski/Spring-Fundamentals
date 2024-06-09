@@ -1,6 +1,6 @@
 package bg.softuni.resellerapp.vallidation.validators;
 
-import bg.softuni.resellerapp.model.dtos.UserRegisterDto;
+import bg.softuni.resellerapp.model.dtos.user.UserRegisterDto;
 import bg.softuni.resellerapp.vallidation.annotations.PasswordMatch;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

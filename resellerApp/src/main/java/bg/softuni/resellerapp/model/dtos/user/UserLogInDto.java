@@ -1,4 +1,4 @@
-package bg.softuni.resellerapp.model.dtos;
+package bg.softuni.resellerapp.model.dtos.user;
 
 import jakarta.validation.constraints.NotBlank;
 

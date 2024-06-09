@@ -1,7 +1,7 @@
 package bg.softuni.resellerapp.service;
 
-import bg.softuni.resellerapp.model.dtos.UserLogInDto;
-import bg.softuni.resellerapp.model.dtos.UserRegisterDto;
+import bg.softuni.resellerapp.model.dtos.user.UserLogInDto;
+import bg.softuni.resellerapp.model.dtos.user.UserRegisterDto;
 import bg.softuni.resellerapp.util.CurrentLoggedUser;
 
 public interface UserService {

@@ -1,9 +1,7 @@
 package bg.softuni.resellerapp.controller;
 
-import bg.softuni.resellerapp.model.dtos.LoggedUserOffersDto;
 import bg.softuni.resellerapp.service.OfferService;
 import bg.softuni.resellerapp.service.UserService;
-import bg.softuni.resellerapp.util.CurrentLoggedUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

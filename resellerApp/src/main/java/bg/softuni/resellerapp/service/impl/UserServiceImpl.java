@@ -1,8 +1,8 @@
 package bg.softuni.resellerapp.service.impl;
 
 import bg.softuni.resellerapp.model.User;
-import bg.softuni.resellerapp.model.dtos.UserLogInDto;
-import bg.softuni.resellerapp.model.dtos.UserRegisterDto;
+import bg.softuni.resellerapp.model.dtos.user.UserLogInDto;
+import bg.softuni.resellerapp.model.dtos.user.UserRegisterDto;
 import bg.softuni.resellerapp.repository.UserRepository;
 import bg.softuni.resellerapp.service.UserService;
 import bg.softuni.resellerapp.util.CurrentLoggedUser;

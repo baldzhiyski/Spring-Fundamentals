@@ -1,7 +1,7 @@
 package bg.softuni.resellerapp.controller;
 
-import bg.softuni.resellerapp.model.dtos.UserLogInDto;
-import bg.softuni.resellerapp.model.dtos.UserRegisterDto;
+import bg.softuni.resellerapp.model.dtos.user.UserLogInDto;
+import bg.softuni.resellerapp.model.dtos.user.UserRegisterDto;
 import bg.softuni.resellerapp.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;

@@ -1,11 +1,10 @@
-package bg.softuni.resellerapp.model.dtos;
+package bg.softuni.resellerapp.model.dtos.user;
 
 import bg.softuni.resellerapp.vallidation.annotations.PasswordMatch;
 import bg.softuni.resellerapp.vallidation.annotations.UniqueEmail;
 import bg.softuni.resellerapp.vallidation.annotations.UniqueUsername;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 import org.hibernate.validator.constraints.Length;
 
 @PasswordMatch

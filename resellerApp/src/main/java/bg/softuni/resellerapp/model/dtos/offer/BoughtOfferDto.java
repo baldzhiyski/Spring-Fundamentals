@@ -1,4 +1,4 @@
-package bg.softuni.resellerapp.model.dtos;
+package bg.softuni.resellerapp.model.dtos.offer;
 
 import bg.softuni.resellerapp.model.Offer;
 

@@ -1,16 +1,16 @@
 package bg.softuni.resellerapp.service.impl;
 
+import bg.softuni.resellerapp.model.Condition;
 import bg.softuni.resellerapp.model.Offer;
 import bg.softuni.resellerapp.model.User;
-import bg.softuni.resellerapp.model.dtos.BoughtOfferDto;
-import bg.softuni.resellerapp.model.dtos.LoggedUserOffer;
-import bg.softuni.resellerapp.model.dtos.LoggedUserOffersDto;
-import bg.softuni.resellerapp.model.dtos.OtherOfferDto;
+import bg.softuni.resellerapp.model.dtos.offer.*;
+import bg.softuni.resellerapp.repository.ConditionRepository;
 import bg.softuni.resellerapp.repository.OfferRepository;
 import bg.softuni.resellerapp.repository.UserRepository;
 import bg.softuni.resellerapp.service.OfferService;
 import bg.softuni.resellerapp.util.CurrentLoggedUser;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Set;
@@ -22,10 +22,15 @@ public class OfferServiceImpl implements OfferService {
     private UserRepository userRepository;
     private OfferRepository offerRepository;
 
-    public OfferServiceImpl(CurrentLoggedUser currentLoggedUser, UserRepository userRepository, OfferRepository offerRepository) {
+    private ConditionRepository conditionRepository;
+
+
+
+    public OfferServiceImpl(CurrentLoggedUser currentLoggedUser, UserRepository userRepository, OfferRepository offerRepository, ConditionRepository conditionRepository) {
         this.currentLoggedUser = currentLoggedUser;
         this.userRepository = userRepository;
         this.offerRepository = offerRepository;
+        this.conditionRepository = conditionRepository;
     }
 
     @Override
@@ -48,5 +53,21 @@ public class OfferServiceImpl implements OfferService {
         loggedUserOffersDto.setUsername(user.getUsername());
 
         return loggedUserOffersDto;
+    }
+
+    @Override
+    @Transactional
+    public void registerOffer(AddOfferDto offerDto) {
+        Offer offer = new Offer();
+        String username = currentLoggedUser.getUsername();
+        offer.setCreator(this.userRepository.findByUsername(username).get());
+        offer.setDescription(offerDto.getDescription());
+
+        Condition condition =this.conditionRepository.getByConditionName(offerDto.getCondition());
+
+        offer.setCondition(condition);
+        offer.setPrice(offerDto.getPrice());
+
+        this.offerRepository.saveAndFlush(offer);
     }
 }

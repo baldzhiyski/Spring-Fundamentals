@@ -8,19 +8,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementation for the login and register pages">
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/BoughtOfferDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/LoggedUserOffer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/LoggedUserOffersDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/OtherOfferDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/OfferService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java" afterDir="false" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementing the home page and adding logic for the get request">
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/OfferController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/AddOfferDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/OfferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/OfferRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/BoughtOfferDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/BoughtOfferDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/LoggedUserOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/LoggedUserOffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/LoggedUserOffersDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/LoggedUserOffersDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/OtherOfferDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/OtherOfferDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/UserLogInDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/user/UserLogInDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/UserRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/user/UserRegisterDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/ConditionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/ConditionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/OfferService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/PasswordValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/PasswordValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/fragments/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/offer-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/offer-add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -305,7 +312,7 @@
       <workItem from="1717881817407" duration="1393000" />
       <workItem from="1717885371969" duration="645000" />
       <workItem from="1717912828430" duration="245000" />
-      <workItem from="1717941456417" duration="10128000" />
+      <workItem from="1717941456417" duration="12447000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -387,7 +394,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717948924153</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implementing the home page and adding logic for the get request">
+      <option name="closed" value="true" />
+      <created>1717952162339</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717952162339</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +419,8 @@
     <MESSAGE value="Creating the database" />
     <MESSAGE value="Creating the repositories and seeding the conditions in the database" />
     <MESSAGE value="Implementation for the login and register pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementation for the login and register pages" />
+    <MESSAGE value="Implementing the home page and adding logic for the get request" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing the home page and adding logic for the get request" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -428,6 +444,11 @@
           <url>file://$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/UserController.java</url>
           <line>67</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/UserService.java</url>
