@@ -8,15 +8,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Creating the database">
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/Runner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/ConditionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/OfferRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/SeedService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/SeedServiceImpl.java" afterDir="false" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Creating the repositories and seeding the conditions in the database">
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/UserLogInDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/UserRegisterDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/util/CurrentLoggedUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/Class.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/annotations/PasswordMatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/annotations/UniqueEmail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/annotations/UniqueUsername.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/PasswordValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/UniqueEmailValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/UniqueUsernameValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/Condition.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/Condition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/fragments/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +69,8 @@
         <option value="package.json" />
         <option value="HTML File" />
         <option value="Enum" />
-        <option value="AnnotationType" />
         <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -301,7 +316,7 @@
       <workItem from="1717881817407" duration="1393000" />
       <workItem from="1717885371969" duration="645000" />
       <workItem from="1717912828430" duration="245000" />
-      <workItem from="1717941456417" duration="2355000" />
+      <workItem from="1717941456417" duration="7228000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -367,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717943401212</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Creating the repositories and seeding the conditions in the database">
+      <option name="closed" value="true" />
+      <created>1717943864325</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717943864325</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +405,8 @@
     <MESSAGE value="Hiding pages from anonymous users if they try to type the url" />
     <MESSAGE value="Importing skeleton of the first exam preparation.6 hours in total for completion." />
     <MESSAGE value="Creating the database" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating the database" />
+    <MESSAGE value="Creating the repositories and seeding the conditions in the database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating the repositories and seeding the conditions in the database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -401,6 +425,15 @@
           <url>file://$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java</url>
           <line>200</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/UserService.java</url>
+          <line>12</line>
+          <properties class="bg.softuni.resellerapp.service.UserService" method="logIn">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
