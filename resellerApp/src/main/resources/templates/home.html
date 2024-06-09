@@ -59,10 +59,10 @@
                 <h3 class="mySticky bg-gray text-dark  mb-0 mt-2">All Other Offers</h3>
                 <h6 class="mySticky bg-gray text-dark  mb-0 mt-0"> 0</h6>
                 <div class="bg-dark rounded m-auto" style="height: 67vh; overflow: auto">
-                    <div th:each="other, otherOffers : *{otherOffers}">
+                    <div>
                         <div>
                             <br>
-                            <ul class="list-group list-group-horizontal text-dark">
+                            <ul class="list-group list-group-horizontal text-dark" th:each="other, otherOffers : *{otherOffers}">
                                 <li class="list-group-item">
                                     <table>
                                         <tr>
@@ -79,7 +79,7 @@
                                     <table>
                                         <tr>
                                             <td style="width: 40%">
-                                                <a th:text="'Condition: ' + ${other.condition}"></a>
+                                                <a th:text="'Condition: ' + ${other.condition.conditionName}"></a>
                                             </td>
                                             <td class="text-primary" style="width: 40%">
                                                 <a th:text="'Price: ' + ${other.price}"></a>

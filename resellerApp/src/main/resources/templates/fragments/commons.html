@@ -26,7 +26,11 @@
                 </li>
 
                 <li class="nav-item col-md-4">
-                    <a th:if="${isLogged}" class="nav-link text-primary active h5 text-stroke" href="/">Logout</a>
+                    <form th:if="${isLogged}" th:method="POST" th:action="@{/logout}">
+                        <button type="submit" class="btn btn-link text-primary active h5 text-stroke" style="padding: 0;">
+                            <a class="nav-link text-primary active h5 text-stroke">Logout</a>
+                        </button>
+                    </form>
                 </li>
             </ul>
         </div>

@@ -14,7 +14,7 @@ public interface UserService {
 
     void register(UserRegisterDto userRegisterDto);
 
-    void logOut();
+    void logOutCurrentUser();
 
     boolean userByUsernameExists(String username);
 
