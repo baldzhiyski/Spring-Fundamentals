@@ -2,20 +2,36 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_INJECTED_CODE" value="false" />
-    <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Creating the database and adding the front end things">
-      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/init/LanguageInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/LanguageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/WordRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/SeedService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/SeedServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/Language.java" afterDir="false" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Initializing repos , seeding languages in the database , removing redundant dependencies">
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/LogInDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/UserRegisterDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/util/CurrentLoggedInUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/PasswordMatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/UniqueEmail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/UniqueUsername.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/PasswordValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/UniqueEmailValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/UniqueUsernameValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/YearNotInTheFuture.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/YearNotInTheFuture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/YearNotInTheFutureValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/YearNotInTheFutureValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/fragments/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,6 +81,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -105,7 +124,7 @@
     "javascript.nodejs.core.library.typings.version": "20.12.10",
     "jdk.selected.JAVA_MODULE": "20",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/GitHub/Spring Fundamentals/pathfinder/src/main/java/org/softuni/pathfinder/validation",
+    "last_opened_file_path": "C:/GitHub/Spring Fundamentals/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -128,13 +147,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="bg.softuni.resellerapp.model.dtos" />
       <recent name="bg.softuni.dictionaryapp.model" />
       <recent name="bg.softuni.dictionaryapp.validation" />
-      <recent name="bg.softuni.resellerapp.model.dtos" />
       <recent name="org.softuni.mobilele.validation.validators" />
       <recent name="org.softuni.pathfinder.domain.dtos.routes" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GitHub\Spring Fundamentals\dictionaryApp\src\main\java\bg\softuni\dictionaryapp\validation\validators" />
+      <recent name="C:\GitHub\Spring Fundamentals\dictionaryApp\src\main\java\bg\softuni\dictionaryapp\validation\annotations" />
       <recent name="C:\GitHub\Spring Fundamentals\pathfinder\src\main\java\org\softuni\pathfinder\validation" />
       <recent name="C:\GitHub\Spring Fundamentals\front-end-intro\src\main\resources\images" />
     </key>
@@ -318,7 +339,8 @@
       <workItem from="1717912828430" duration="245000" />
       <workItem from="1717941456417" duration="15722000" />
       <workItem from="1717997201768" duration="55000" />
-      <workItem from="1718045587390" duration="1673000" />
+      <workItem from="1718045587390" duration="2629000" />
+      <workItem from="1718048233086" duration="4106000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -456,7 +478,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718046909055</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Initializing repos , seeding languages in the database , removing redundant dependencies">
+      <option name="closed" value="true" />
+      <created>1718047470838</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1718047470838</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +510,8 @@
     <MESSAGE value="Last change in the home page" />
     <MESSAGE value="Impl the skeleton for the exam" />
     <MESSAGE value="Creating the database and adding the front end things" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating the database and adding the front end things" />
+    <MESSAGE value="Initializing repos , seeding languages in the database , removing redundant dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initializing repos , seeding languages in the database , removing redundant dependencies" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,6 +1,6 @@
 package bg.softuni.dictionaryapp.model;
 
-import bg.softuni.dictionaryapp.validation.YearNotInTheFuture;
+import bg.softuni.dictionaryapp.validation.annotations.YearNotInTheFuture;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;

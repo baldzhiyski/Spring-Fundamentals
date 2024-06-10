@@ -27,3 +27,4 @@ logging:
     blog: WARN
 server:
   port: 8080
+

@@ -1,5 +1,6 @@
-package bg.softuni.dictionaryapp.validation;
+package bg.softuni.dictionaryapp.validation.annotations;
 
+import bg.softuni.dictionaryapp.validation.validators.YearNotInTheFutureValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
