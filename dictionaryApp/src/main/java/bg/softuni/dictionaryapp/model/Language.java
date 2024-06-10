@@ -1,24 +1,31 @@
 package bg.softuni.dictionaryapp.model;
 
 import bg.softuni.dictionaryapp.model.enums.LanguageName;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "languages")
 public class Language extends BaseEntity{
 
+    @Enumerated(EnumType.STRING)
     private LanguageName name;
 
+    @Column
     private String description;
 
     @OneToMany(mappedBy = "language")
     private Set<Word> words;
 
     public Language() {
+        this.words = new HashSet<>();
+    }
+
+    public Language(LanguageName name) {
+        this();
+        setName(name);
     }
 
     public LanguageName getName() {
