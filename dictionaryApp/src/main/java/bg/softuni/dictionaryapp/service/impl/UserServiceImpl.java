@@ -5,6 +5,7 @@ import bg.softuni.dictionaryapp.model.dtos.LogInDto;
 import bg.softuni.dictionaryapp.model.dtos.UserRegisterDto;
 import bg.softuni.dictionaryapp.repo.UserRepository;
 import bg.softuni.dictionaryapp.service.UserService;
+import bg.softuni.dictionaryapp.util.CurrentLoggedInUser;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +14,12 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     private PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    private CurrentLoggedInUser currentLoggedInUser;
+
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, CurrentLoggedInUser currentLoggedInUser) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.currentLoggedInUser = currentLoggedInUser;
     }
 
     @Override
@@ -40,6 +44,19 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void logIn(LogInDto logInDto) {
+        currentLoggedInUser.setLogged(true);
+        currentLoggedInUser.setId(this.userRepository.getByUsername(logInDto.getUsername()).orElseThrow().getId());
+        currentLoggedInUser.setUsername(logInDto.getUsername());
+    }
 
+    @Override
+    public User getUserByUsername(String username) {
+        return this.userRepository.getByUsername(username).orElse(null);
+    }
+
+    @Override
+    public void logOutCurrentUser() {
+        this.currentLoggedInUser.setLogged(false);
+        this.currentLoggedInUser.setUsername("");
     }
 }

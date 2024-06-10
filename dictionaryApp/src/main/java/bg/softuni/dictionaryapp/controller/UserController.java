@@ -55,7 +55,7 @@ public class UserController {
         return modelAndView;
     }
 
-    @GetMapping("/login")
+    @GetMapping("/user/login")
     public String logInPage(Model model){
         if(this.currentLoggedInUser.isLogged()){
             return "redirect:/home";
@@ -66,4 +66,26 @@ public class UserController {
         return "login";
     }
 
+    @PostMapping("/user/login")
+    public ModelAndView logInUser(@Valid LogInDto logInDto,BindingResult bindingResult,RedirectAttributes redirectAttributes){
+        ModelAndView modelAndView = new ModelAndView();
+        if(bindingResult.hasErrors()){
+            redirectAttributes.addFlashAttribute("incorrect",true);
+            modelAndView.setViewName("redirect:/user/login");
+            return modelAndView;
+        }
+
+        modelAndView.setViewName("redirect:/home");
+        this.userService.logIn(logInDto);
+        return modelAndView;
+    }
+
+    @PostMapping("/logout")
+    public ModelAndView logOut(){
+        if(!this.currentLoggedInUser.isLogged()){
+            return  new ModelAndView("redirect:/home");
+        }
+        this.userService.logOutCurrentUser();
+        return new ModelAndView("redirect:/");
+    }
 }

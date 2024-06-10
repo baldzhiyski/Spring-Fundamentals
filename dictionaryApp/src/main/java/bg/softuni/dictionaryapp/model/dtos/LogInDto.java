@@ -1,5 +1,8 @@
 package bg.softuni.dictionaryapp.model.dtos;
 
+import bg.softuni.dictionaryapp.validation.annotations.CorrectUser;
+
+@CorrectUser
 public class LogInDto {
 
     private String username;
