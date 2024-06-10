@@ -7,17 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementing the index and common pages. Implementing the logic for register a user with and adding custom annotations for validations.">
-      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/CorrectUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/CorrectUserValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Impl of the login and logout logic plus login page">
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/WordsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/WordDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/WordsWrapperDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/WordsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/WordsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/LogInDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/LogInDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/fragments/commons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/LanguageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/LanguageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/WordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/WordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +328,7 @@
       <workItem from="1717941456417" duration="15722000" />
       <workItem from="1717997201768" duration="55000" />
       <workItem from="1718045587390" duration="2629000" />
-      <workItem from="1718048233086" duration="5769000" />
+      <workItem from="1718048233086" duration="8870000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -482,7 +482,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718052642011</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Impl of the login and logout logic plus login page">
+      <option name="closed" value="true" />
+      <created>1718054231363</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1718054231363</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +516,8 @@
     <MESSAGE value="Creating the database and adding the front end things" />
     <MESSAGE value="Initializing repos , seeding languages in the database , removing redundant dependencies" />
     <MESSAGE value="Implementing the index and common pages. Implementing the logic for register a user with and adding custom annotations for validations." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing the index and common pages. Implementing the logic for register a user with and adding custom annotations for validations." />
+    <MESSAGE value="Impl of the login and logout logic plus login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Impl of the login and logout logic plus login page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

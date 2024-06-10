@@ -1,5 +1,6 @@
 package bg.softuni.dictionaryapp.controller;
 
+import bg.softuni.dictionaryapp.service.WordsService;
 import bg.softuni.dictionaryapp.util.CurrentLoggedInUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +11,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 public class HomeController {
     private CurrentLoggedInUser currentLoggedInUser;
 
-    public HomeController(CurrentLoggedInUser currentLoggedInUser) {
+    private WordsService wordsService;
+
+    public HomeController(CurrentLoggedInUser currentLoggedInUser, WordsService wordsService) {
         this.currentLoggedInUser = currentLoggedInUser;
+        this.wordsService = wordsService;
     }
 
     @ModelAttribute("loggedInUser")
@@ -32,6 +36,7 @@ public class HomeController {
         if(!this.currentLoggedInUser.isLogged()){
             return "redirect:/";
         }
+        model.addAttribute("wrapperWordsDto",this.wordsService.getWordsWrapperDto());
         return "home";
     }
 }
