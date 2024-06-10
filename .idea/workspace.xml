@@ -8,7 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementation of delete and buy offer buttons" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Last change in the home page">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,7 +149,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ResellerAppApplication">
+  <component name="RunManager" selected="Spring Boot.DictionaryAppApplication">
     <configuration name="data.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/pathfinder/src/main/resources/data.sql" />
       <script-mode>FILE</script-mode>
@@ -163,6 +166,13 @@
     </configuration>
     <configuration name="PersonalBMI.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/front-end-intro/src/main/resources/script/PersonalBMI.js" working-dir="$PROJECT_DIR$/front-end-intro/src/main/resources/script">
       <method v="2" />
+    </configuration>
+    <configuration name="DictionaryAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="dictionaryApp" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="bg.softuni.dictionaryapp.DictionaryAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="FrontEndBasicsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="front-end-basics" />
@@ -217,6 +227,7 @@
       <item itemvalue="Node.js.ConvertTable.js" />
       <item itemvalue="Node.js.HeroicInventory.js" />
       <item itemvalue="Node.js.PersonalBMI.js" />
+      <item itemvalue="Spring Boot.DictionaryAppApplication" />
       <item itemvalue="Spring Boot.ResellerAppApplication" />
       <item itemvalue="Spring Boot.FrontEndBasicsApplication" />
       <item itemvalue="Spring Boot.FrontEndIntroApplication" />
@@ -292,7 +303,8 @@
       <workItem from="1717881817407" duration="1393000" />
       <workItem from="1717885371969" duration="645000" />
       <workItem from="1717912828430" duration="245000" />
-      <workItem from="1717941456417" duration="15580000" />
+      <workItem from="1717941456417" duration="15722000" />
+      <workItem from="1717997201768" duration="55000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -406,7 +418,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717957002688</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Last change in the home page">
+      <option name="closed" value="true" />
+      <created>1717957201201</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1717957201201</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +447,8 @@
     <MESSAGE value="Implementing adding an offer logic also with the logic for the home page" />
     <MESSAGE value="Implementing the logOut button and fixing the query for finding other offers" />
     <MESSAGE value="Implementation of delete and buy offer buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementation of delete and buy offer buttons" />
+    <MESSAGE value="Last change in the home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last change in the home page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
