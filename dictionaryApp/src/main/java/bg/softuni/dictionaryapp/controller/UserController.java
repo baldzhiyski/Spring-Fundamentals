@@ -1,7 +1,7 @@
 package bg.softuni.dictionaryapp.controller;
 
-import bg.softuni.dictionaryapp.model.dtos.LogInDto;
-import bg.softuni.dictionaryapp.model.dtos.UserRegisterDto;
+import bg.softuni.dictionaryapp.model.dtos.user.LogInDto;
+import bg.softuni.dictionaryapp.model.dtos.user.UserRegisterDto;
 import bg.softuni.dictionaryapp.service.UserService;
 import bg.softuni.dictionaryapp.util.CurrentLoggedInUser;
 import jakarta.validation.Valid;
@@ -51,7 +51,7 @@ public class UserController {
             return modelAndView;
         }
         userService.registerUser(userRegisterDto);
-        modelAndView.setViewName("redirect:/login");
+        modelAndView.setViewName("redirect:/user/login");
         return modelAndView;
     }
 

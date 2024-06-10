@@ -1,6 +1,6 @@
 package bg.softuni.dictionaryapp.validation.annotations;
 
-import bg.softuni.dictionaryapp.validation.validators.YearNotInTheFutureValidator;
+import bg.softuni.dictionaryapp.validation.validators.DateNotInTheFutureValidator;
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
 
@@ -9,11 +9,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+@Constraint(validatedBy = DateNotInTheFutureValidator.class)
+@Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
-@Constraint(validatedBy = YearNotInTheFutureValidator.class)
-public @interface YearNotInTheFuture {
-    String message() default "Year should be in the present or past !";
+public @interface DateNotInTheFuture {
+    String message() default "Date should be in the present or past";
 
     Class<?>[] groups() default {};
 

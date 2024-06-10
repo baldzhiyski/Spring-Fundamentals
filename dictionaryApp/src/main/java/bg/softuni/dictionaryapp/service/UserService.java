@@ -1,8 +1,8 @@
 package bg.softuni.dictionaryapp.service;
 
 import bg.softuni.dictionaryapp.model.User;
-import bg.softuni.dictionaryapp.model.dtos.LogInDto;
-import bg.softuni.dictionaryapp.model.dtos.UserRegisterDto;
+import bg.softuni.dictionaryapp.model.dtos.user.LogInDto;
+import bg.softuni.dictionaryapp.model.dtos.user.UserRegisterDto;
 
 public interface UserService {
     boolean usernameByEmailExists(String email);

@@ -1,8 +1,8 @@
 package bg.softuni.dictionaryapp.service.impl;
 
 import bg.softuni.dictionaryapp.model.User;
-import bg.softuni.dictionaryapp.model.dtos.LogInDto;
-import bg.softuni.dictionaryapp.model.dtos.UserRegisterDto;
+import bg.softuni.dictionaryapp.model.dtos.user.LogInDto;
+import bg.softuni.dictionaryapp.model.dtos.user.UserRegisterDto;
 import bg.softuni.dictionaryapp.repo.UserRepository;
 import bg.softuni.dictionaryapp.service.UserService;
 import bg.softuni.dictionaryapp.util.CurrentLoggedInUser;

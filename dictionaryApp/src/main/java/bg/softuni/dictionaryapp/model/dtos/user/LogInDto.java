@@ -1,4 +1,4 @@
-package bg.softuni.dictionaryapp.model.dtos;
+package bg.softuni.dictionaryapp.model.dtos.user;
 
 import bg.softuni.dictionaryapp.validation.annotations.CorrectUser;
 

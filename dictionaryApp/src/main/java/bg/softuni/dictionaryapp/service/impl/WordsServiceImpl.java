@@ -1,13 +1,18 @@
 package bg.softuni.dictionaryapp.service.impl;
 
 import bg.softuni.dictionaryapp.model.Language;
-import bg.softuni.dictionaryapp.model.dtos.WordDto;
-import bg.softuni.dictionaryapp.model.dtos.WordsWrapperDto;
+import bg.softuni.dictionaryapp.model.Word;
+import bg.softuni.dictionaryapp.model.dtos.word.AddWordDto;
+import bg.softuni.dictionaryapp.model.dtos.word.WordDto;
+import bg.softuni.dictionaryapp.model.dtos.word.WordsWrapperDto;
 import bg.softuni.dictionaryapp.model.enums.LanguageName;
 import bg.softuni.dictionaryapp.repo.LanguageRepository;
+import bg.softuni.dictionaryapp.repo.UserRepository;
 import bg.softuni.dictionaryapp.repo.WordRepository;
 import bg.softuni.dictionaryapp.service.WordsService;
+import bg.softuni.dictionaryapp.util.CurrentLoggedInUser;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -16,10 +21,15 @@ import java.util.stream.Collectors;
 public class WordsServiceImpl implements WordsService {
     private WordRepository wordRepository;
     private LanguageRepository languageRepository;
+    private CurrentLoggedInUser currentLoggedInUser;
 
-    public WordsServiceImpl(WordRepository wordRepository, LanguageRepository languageRepository) {
+    private UserRepository userRepository;
+
+    public WordsServiceImpl(WordRepository wordRepository, LanguageRepository languageRepository, CurrentLoggedInUser currentLoggedInUser, UserRepository userRepository) {
         this.wordRepository = wordRepository;
         this.languageRepository = languageRepository;
+        this.currentLoggedInUser = currentLoggedInUser;
+        this.userRepository = userRepository;
     }
 
     @Override
@@ -41,5 +51,19 @@ public class WordsServiceImpl implements WordsService {
                 .setGermanWords(germanWords)
                 .setItalianWords(italianWords)
                 .setSpanishWords(spanishWords);
+    }
+
+    @Override
+    @Transactional
+    public void addWord(AddWordDto addWordDto) {
+        Word word = new Word();
+        word.setAddedBy(this.userRepository.getByUsername(currentLoggedInUser.getUsername()).orElseThrow())
+                .setExample(addWordDto.getExample())
+                .setTerm(addWordDto.getTerm())
+                .setLanguage(this.languageRepository.findByName(addWordDto.getLanguageName()))
+                .setTranslation(addWordDto.getTranslation())
+                .setInputDate(addWordDto.getInputDate());
+
+        this.wordRepository.saveAndFlush(word);
     }
 }

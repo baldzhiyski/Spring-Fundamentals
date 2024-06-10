@@ -18,7 +18,7 @@
                         <br>
                         <span th:text="'Example: ' + ${germanWord.example}"></span>
                         <br>
-                        <span th:text="'Added by: ' + ${germanWord.addedByUsername} + 'on ' + ${germanWord.inputDate}"></span>
+                        <span th:text="'Added by: ' + ${germanWord.addedByUsername} + ' on ' + ${#dates.format(germanWord.inputDate, 'yyyy-MM-dd')}"></span>
                         <form th:method="POST" th:action="@{/word/remove/{id}(id=${germanWord.id})}" target="form-submit-iframe">
                             <button type="submit" class="btn-danger btn">Remove</button>
                         </form>
@@ -33,7 +33,7 @@
                         <br>
                         <span th:text="'Example: ' + ${spanishWord.example}"></span>
                         <br>
-                        <span th:text="'Added by: ' + ${spanishWord.addedByUsername} + 'on ' + ${spanishWord.inputDate}"></span>
+                        <span th:text="'Added by: ' + ${spanishWord.addedByUsername} + ' on ' + ${#dates.format(spanishWord.inputDate, 'yyyy-MM-dd')}"></span>
                         <form th:method="POST" th:action="@{/word/remove/{id}(id=${spanishWord.id})}" target="form-submit-iframe">
                             <button type="submit" class="btn-danger btn">Remove</button>
                         </form>
@@ -50,7 +50,7 @@
                         <br>
                         <span th:text="'Example: ' + ${frenchWord.example}">></span>
                         <br>
-                        <span th:text="'Added by: ' + ${frenchWord.addedByUsername} + 'on ' + ${frenchWord.inputDate}"></span>
+                        <span th:text="'Added by: ' + ${frenchWord.addedByUsername} + ' on ' + ${#dates.format(frenchWord.inputDate, 'yyyy-MM-dd')}"></span>
                         <form th:method="POST" th:action="@{/word/remove/{id}(id=${frenchWord.id})}" target="form-submit-iframe">
                             <button type="submit" class="btn-danger btn">Remove</button>
                         </form>
@@ -65,7 +65,7 @@
                         <br>
                         <span th:text="'Example: ' + ${italianWord.example}"></span>
                         <br>
-                        <span th:text="'Added by: ' + ${italianWord.addedByUsername} + 'on ' + ${italianWord.inputDate}" ></span>
+                        <span th:text="'Added by: ' + ${italianWord.addedByUsername} + ' on ' + ${#dates.format(italianWord.inputDate, 'yyyy-MM-dd')}" ></span>
                         <form th:method="POST" th:action="@{/word/remove/{id}(id=${italianWord.id})}" target="form-submit-iframe">
                             <button type="submit" class="btn-danger btn">Remove</button>
                         </form>

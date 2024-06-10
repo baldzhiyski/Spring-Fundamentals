@@ -1,20 +1,14 @@
-package bg.softuni.dictionaryapp.model;
+package bg.softuni.dictionaryapp.model.dtos.word;
 
+import bg.softuni.dictionaryapp.model.enums.LanguageName;
 import bg.softuni.dictionaryapp.validation.annotations.DateNotInTheFuture;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 import java.util.Date;
 
-@Entity
-@Table(name = "words")
-public class Word extends BaseEntity{
-
-    @ManyToOne
-    private User addedBy;
+public class AddWordDto {
 
     @Length(min = 2,max = 40)
     private String term;
@@ -25,30 +19,17 @@ public class Word extends BaseEntity{
     @Length(min = 2,max = 200)
     private String example;
 
-    @Column(name = "input_date",nullable = false)
     @DateNotInTheFuture
     private Date inputDate;
 
-    @ManyToOne
-    private Language language;
-
-    public Word() {
-    }
-
-    public User getAddedBy() {
-        return addedBy;
-    }
-
-    public Word setAddedBy(User addedBy) {
-        this.addedBy = addedBy;
-        return this;
-    }
+    @NotNull(message = "Language is required !")
+    private LanguageName languageName;
 
     public String getTerm() {
         return term;
     }
 
-    public Word setTerm(String term) {
+    public AddWordDto setTerm(String term) {
         this.term = term;
         return this;
     }
@@ -57,7 +38,7 @@ public class Word extends BaseEntity{
         return translation;
     }
 
-    public Word setTranslation(String translation) {
+    public AddWordDto setTranslation(String translation) {
         this.translation = translation;
         return this;
     }
@@ -66,7 +47,7 @@ public class Word extends BaseEntity{
         return example;
     }
 
-    public Word setExample(String example) {
+    public AddWordDto setExample(String example) {
         this.example = example;
         return this;
     }
@@ -75,17 +56,17 @@ public class Word extends BaseEntity{
         return inputDate;
     }
 
-    public Word setInputDate(Date inputDate) {
+    public AddWordDto setInputDate(Date inputDate) {
         this.inputDate = inputDate;
         return this;
     }
 
-    public Language getLanguage() {
-        return language;
+    public LanguageName getLanguageName() {
+        return languageName;
     }
 
-    public Word setLanguage(Language language) {
-        this.language = language;
+    public AddWordDto setLanguageName(LanguageName languageName) {
+        this.languageName = languageName;
         return this;
     }
 }

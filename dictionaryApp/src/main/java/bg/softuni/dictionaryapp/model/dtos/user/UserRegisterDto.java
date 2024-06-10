@@ -1,11 +1,10 @@
-package bg.softuni.dictionaryapp.model.dtos;
+package bg.softuni.dictionaryapp.model.dtos.user;
 
 import bg.softuni.dictionaryapp.validation.annotations.PasswordMatch;
 import bg.softuni.dictionaryapp.validation.annotations.UniqueEmail;
 import bg.softuni.dictionaryapp.validation.annotations.UniqueUsername;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 @PasswordMatch

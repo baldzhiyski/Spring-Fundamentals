@@ -1,6 +1,6 @@
 package bg.softuni.dictionaryapp.validation.validators;
 
-import bg.softuni.dictionaryapp.model.dtos.UserRegisterDto;
+import bg.softuni.dictionaryapp.model.dtos.user.UserRegisterDto;
 
 import bg.softuni.dictionaryapp.validation.annotations.PasswordMatch;
 import jakarta.validation.ConstraintValidator;

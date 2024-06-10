@@ -1,7 +1,7 @@
 package bg.softuni.dictionaryapp.validation.validators;
 
 import bg.softuni.dictionaryapp.model.User;
-import bg.softuni.dictionaryapp.model.dtos.LogInDto;
+import bg.softuni.dictionaryapp.model.dtos.user.LogInDto;
 import bg.softuni.dictionaryapp.service.UserService;
 import bg.softuni.dictionaryapp.validation.annotations.CorrectUser;
 import jakarta.validation.ConstraintValidator;

@@ -1,4 +1,4 @@
-package bg.softuni.dictionaryapp.model.dtos;
+package bg.softuni.dictionaryapp.model.dtos.word;
 
 import java.util.HashSet;
 import java.util.Set;
