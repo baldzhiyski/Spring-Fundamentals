@@ -11,4 +11,7 @@ import java.util.UUID;
 @Repository
 public interface WordRepository extends JpaRepository<Word, UUID> {
     Set<Word> findByLanguage(Language language);
+
+    void deleteById(UUID id);
+
 }

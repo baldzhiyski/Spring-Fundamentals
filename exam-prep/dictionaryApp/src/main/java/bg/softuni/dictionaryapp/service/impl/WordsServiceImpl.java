@@ -14,7 +14,9 @@ import bg.softuni.dictionaryapp.util.CurrentLoggedInUser;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -65,5 +67,21 @@ public class WordsServiceImpl implements WordsService {
                 .setInputDate(addWordDto.getInputDate());
 
         this.wordRepository.saveAndFlush(word);
+    }
+
+    @Override
+    public Optional<Word> getById(UUID uuid) {
+        return this.wordRepository.findById(uuid);
+    }
+
+    @Override
+    @Transactional
+    public void remove(Word word) {
+        this.wordRepository.deleteById(word.getId());
+    }
+
+    @Override
+    public void removeAllWords() {
+        this.wordRepository.deleteAll();
     }
 }

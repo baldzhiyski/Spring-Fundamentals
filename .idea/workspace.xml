@@ -8,124 +8,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Extracting the exam prep in a folder">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/DictionaryAppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/DictionaryAppApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/WordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/WordsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/init/LanguageInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/init/LanguageInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/Language.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/user/LogInDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/user/LogInDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/user/UserRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/user/UserRegisterDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/word/AddWordDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/word/AddWordDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/word/WordDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/word/WordDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/word/WordsWrapperDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/dtos/word/WordsWrapperDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/enums/LanguageName.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/model/enums/LanguageName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/LanguageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/LanguageRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/WordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/WordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/SeedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/SeedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/WordsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/WordsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/SeedServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/SeedServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/WordsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/WordsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/util/CurrentLoggedInUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/util/CurrentLoggedInUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/CorrectUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/CorrectUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/DateNotInTheFuture.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/DateNotInTheFuture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/PasswordMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/PasswordMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/UniqueEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/UniqueEmail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/UniqueUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/annotations/UniqueUsername.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/CorrectUserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/CorrectUserValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/DateNotInTheFutureValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/DateNotInTheFutureValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/PasswordValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/PasswordValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/UniqueEmailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/UniqueEmailValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/UniqueUsernameValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators/UniqueUsernameValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/css/reset-css.css" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/css/reset-css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/img/assign-to-me-button.png" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/img/assign-to-me-button.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/img/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/img/background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/img/done-remove-button.png" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/img/done-remove-button.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/img/french.png" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/img/french.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/img/german.png" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/img/german.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/img/italian.png" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/img/italian.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/img/pin.png" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/img/pin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/img/return.png" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/img/return.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/static/img/spanish.png" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/static/img/spanish.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/templates/fragments/commons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/main/resources/templates/word-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/resources/templates/word-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaryApp/src/test/java/bg/softuni/dictionaryapp/DictionaryAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/test/java/bg/softuni/dictionaryapp/DictionaryAppApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/ResellerAppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/ResellerAppApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/Runner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/OfferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/controller/OfferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/BaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/Condition.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/Condition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/Offer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/AddOfferDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/AddOfferDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/BoughtOfferDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/BoughtOfferDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/LoggedUserOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/LoggedUserOffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/LoggedUserOffersDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/LoggedUserOffersDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/OtherOfferDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/offer/OtherOfferDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/user/UserLogInDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/user/UserLogInDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/user/UserRegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/dtos/user/UserRegisterDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/model/enums/ConditionName.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/model/enums/ConditionName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/ConditionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/repository/ConditionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/OfferRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/repository/OfferRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/OfferService.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/service/OfferService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/SeedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/service/SeedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/SeedServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/SeedServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/util/CurrentLoggedUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/util/CurrentLoggedUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/Class.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/annotations/PasswordMatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/annotations/PasswordMatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/annotations/UniqueEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/annotations/UniqueEmail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/annotations/UniqueUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/annotations/UniqueUsername.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/PasswordValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/PasswordValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/UniqueEmailValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/UniqueEmailValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/UniqueUsernameValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/vallidation/validators/UniqueUsernameValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/static/css/reset-css.css" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/static/css/reset-css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/static/img/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/static/img/background.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/static/img/buy.png" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/static/img/buy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/static/img/etiquette.png" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/static/img/etiquette.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/templates/fragments/commons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/offer-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/templates/offer-add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/main/resources/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resellerApp/src/test/java/bg/softuni/resellerapp/ResellerAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/resellerApp/src/test/java/bg/softuni/resellerapp/ResellerAppApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/WordsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/controller/WordsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/WordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/repo/WordRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/WordsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/WordsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/WordsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam-prep/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/service/impl/WordsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,56 +78,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Node.js.ArgumentInfo.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.CappyJuice.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.ConvertTable.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.HeroicInventory.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.PersonalBMI.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.SortArray.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.demo.js (1).executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.demo.js.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.DictionaryAppApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.FrontEndBasicsApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MobileleApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.PathfinderApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.ResellerAppApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;22.1.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.12.10&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/GitHub/Spring Fundamentals/dictionaryApp/src/main/java/bg/softuni/dictionaryapp/validation/validators&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;C:/Program Files/nodejs/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Node.js.ArgumentInfo.js.executor": "Run",
+    "Node.js.CappyJuice.js.executor": "Run",
+    "Node.js.ConvertTable.js.executor": "Run",
+    "Node.js.HeroicInventory.js.executor": "Run",
+    "Node.js.PersonalBMI.js.executor": "Run",
+    "Node.js.SortArray.js.executor": "Run",
+    "Node.js.demo.js (1).executor": "Run",
+    "Node.js.demo.js.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.DictionaryAppApplication.executor": "Run",
+    "Spring Boot.FrontEndBasicsApplication.executor": "Run",
+    "Spring Boot.MobileleApplication.executor": "Run",
+    "Spring Boot.PathfinderApplication.executor": "Run",
+    "Spring Boot.ResellerAppApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "javascript.nodejs.core.library.configured.version": "22.1.0",
+    "javascript.nodejs.core.library.typings.version": "20.12.10",
+    "jdk.selected.JAVA_MODULE": "20",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/GitHub/Spring Fundamentals/exam-prep/resellerApp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Program Files/nodejs/node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "configurable.group.language",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.softuni.mobilele.validation.validators" />
@@ -275,7 +164,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ResellerAppApplication">
+  <component name="RunManager" selected="Spring Boot.DictionaryAppApplication">
     <configuration name="data.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/pathfinder/src/main/resources/data.sql" />
       <script-mode>FILE</script-mode>
@@ -438,7 +327,7 @@
       <workItem from="1718045587390" duration="2629000" />
       <workItem from="1718048233086" duration="11826000" />
       <workItem from="1718086940838" duration="233000" />
-      <workItem from="1718123756936" duration="13000" />
+      <workItem from="1718123756936" duration="728000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -624,7 +513,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718060056791</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Extracting the exam prep in a folder">
+      <option name="closed" value="true" />
+      <created>1718123884754</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1718123884754</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,7 +551,8 @@
     <MESSAGE value="Impl of the whole home page and adding some dtos for the logic of the words" />
     <MESSAGE value="Impl of the logic for adding a word. Adding a bean for converting from string to date." />
     <MESSAGE value="Adding a TODO for the final logic for the exam" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding a TODO for the final logic for the exam" />
+    <MESSAGE value="Extracting the exam prep in a folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Extracting the exam prep in a folder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

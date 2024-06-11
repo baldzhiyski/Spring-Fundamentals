@@ -15,6 +15,8 @@
         <option value="$PROJECT_DIR$/pathfinder/pom.xml" />
         <option value="$PROJECT_DIR$/resellerApp/pom.xml" />
         <option value="$PROJECT_DIR$/dictionaryApp/pom.xml" />
+        <option value="$PROJECT_DIR$/exam-prep/dictionaryApp/pom.xml" />
+        <option value="$PROJECT_DIR$/exam-prep/resellerApp/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
