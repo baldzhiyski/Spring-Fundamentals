@@ -7,7 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Extracting the exam prep in a folder" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Adding the skeleton of the API and Rest Controllers exercise">
+      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/init/DBInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/model/entity/AuthorEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/model/entity/BookEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/repository/AuthorRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/resources/application.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,9 +53,9 @@
         <option value="package.json" />
         <option value="HTML File" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -89,6 +98,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.BookServiceApplication.executor": "Run",
     "Spring Boot.DictionaryAppApplication.executor": "Run",
     "Spring Boot.FrontEndBasicsApplication.executor": "Run",
     "Spring Boot.MobileleApplication.executor": "Run",
@@ -99,7 +109,7 @@
     "javascript.nodejs.core.library.typings.version": "20.12.10",
     "jdk.selected.JAVA_MODULE": "20",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/GitHub/Spring Fundamentals/webAPI_restControllers/books-server",
+    "last_opened_file_path": "C:/GitHub/Spring Fundamentals/webAPI_restControllers/book_service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -135,11 +145,11 @@
       <recent name="C:\GitHub\Spring Fundamentals\front-end-intro\src\main\resources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GitHub\Spring Fundamentals\webAPI_restControllers\book-client\src" />
       <recent name="C:\GitHub\Spring Fundamentals\webAPI_restControllers" />
       <recent name="C:\GitHub\Spring Fundamentals\webAPI_restControllers\booksDemo\src" />
       <recent name="C:\GitHub\Spring Fundamentals\exam-prep" />
       <recent name="C:\GitHub\Spring Fundamentals\dictionaryApp\src\main\resources" />
-      <recent name="C:\GitHub\Spring Fundamentals\dictionaryApp\src\main\java\bg\softuni\dictionaryapp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="bg.softuni.dictionaryapp.validation.validators" />
@@ -156,7 +166,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DictionaryAppApplication">
+  <component name="RunManager" selected="Spring Boot.BookServiceApplication">
     <configuration name="data.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/pathfinder/src/main/resources/data.sql" />
       <script-mode>FILE</script-mode>
@@ -175,6 +185,10 @@
       <method v="2" />
     </configuration>
     <configuration name="BookServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="MYSQL_USER" value="root" />
+        <env name="MYSQL_PASSWORD" value="pass123" />
+      </envs>
       <module name="book_service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="bg.softuni.book_service.BookServiceApplication" />
       <method v="2">
@@ -521,7 +535,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718123884754</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Adding the skeleton of the API and Rest Controllers exercise">
+      <option name="closed" value="true" />
+      <created>1718380681829</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1718380681829</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -575,7 +597,8 @@
     <MESSAGE value="Impl of the logic for adding a word. Adding a bean for converting from string to date." />
     <MESSAGE value="Adding a TODO for the final logic for the exam" />
     <MESSAGE value="Extracting the exam prep in a folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extracting the exam prep in a folder" />
+    <MESSAGE value="Adding the skeleton of the API and Rest Controllers exercise" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the skeleton of the API and Rest Controllers exercise" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
