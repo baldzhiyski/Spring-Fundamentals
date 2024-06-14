@@ -48,20 +48,20 @@ public class BooksRestController {
     }
 
     @PostMapping
-    public ResponseEntity<BookDTO> createBook(
+    public ResponseEntity<Object> createBook(
             @RequestBody BookDTO bookDTO,
             UriComponentsBuilder uriComponentsBuilder) {
 
-        long newBookID = bookService.createBook(bookDTO);
+        try {
+            long newBookID = bookService.createBook(bookDTO);
 
-        return ResponseEntity.created(
-                uriComponentsBuilder.path("/api/books/{id}").build(newBookID)
-        ).build();
+            return ResponseEntity.created(
+                    uriComponentsBuilder.path("/api/books/{id}").build(newBookID)
+            ).build();
+        }catch (BookAlreadyExists e){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
     }
 
-    @ExceptionHandler(BookAlreadyExists.class)
-    public ResponseEntity<String> handleBookAlreadyExistsException(BookAlreadyExists ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
-    }
 
 }

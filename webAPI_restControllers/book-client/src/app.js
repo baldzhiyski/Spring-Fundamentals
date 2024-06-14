@@ -82,13 +82,14 @@ function submitForm(event) {
     fetch('http://localhost:8080/api/books', requestOptions)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Failed to create book: ' + response.statusText);
+                return response.text().then(errorMessage => {
+                    throw new Error(errorMessage);
+                });
             }
             reloadBooks(); // Reload books after successful creation
             form.reset(); // Reset form fields
         })
         .catch(error => {
             alert('Error creating book: ' + error.message);
-            console.error('Error creating book:', error);
         });
 }
