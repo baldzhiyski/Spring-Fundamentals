@@ -7,14 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Adding persistence layer">
-      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/model/dtos/AuthorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/model/dtos/BookDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/service/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/service/impl/BookServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/web/BooksRestController.java" afterDir="false" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementation of the service and creating a rest controller">
+      <change afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/exception/BookAlreadyExists.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/repository/AuthorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/repository/AuthorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webAPI_restControllers/book-client/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/webAPI_restControllers/book-client/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webAPI_restControllers/book-client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webAPI_restControllers/book-client/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webAPI_restControllers/book-client/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/webAPI_restControllers/book-client/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/repository/BookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/service/impl/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/service/impl/BookServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/web/BooksRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/webAPI_restControllers/book_service/src/main/java/bg/softuni/book_service/web/BooksRestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +123,7 @@
     "run.code.analysis.last.selected.profile": "pProject Default",
     "run.configurations.included.in.services": "true",
     "settings.editor.selected.configurable": "configurable.group.language",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -550,7 +553,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718381313653</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Implementation of the service and creating a rest controller">
+      <option name="closed" value="true" />
+      <created>1718381986347</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1718381986347</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,7 +592,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updating the read me" />
     <MESSAGE value="Making logout a post mapping request" />
     <MESSAGE value="Creating a message.properties file for the invalid messages and also a bean for it" />
     <MESSAGE value="Updating the navbar by including a fragment" />
@@ -606,7 +616,8 @@
     <MESSAGE value="Extracting the exam prep in a folder" />
     <MESSAGE value="Adding the skeleton of the API and Rest Controllers exercise" />
     <MESSAGE value="Adding persistence layer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding persistence layer" />
+    <MESSAGE value="Implementation of the service and creating a rest controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementation of the service and creating a rest controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

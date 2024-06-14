@@ -1,5 +1,6 @@
 package bg.softuni.book_service.service.impl;
 
+import bg.softuni.book_service.exception.BookAlreadyExists;
 import bg.softuni.book_service.model.dtos.AuthorDTO;
 import bg.softuni.book_service.model.dtos.BookDTO;
 import bg.softuni.book_service.model.entity.AuthorEntity;
@@ -54,6 +55,11 @@ public class BookServiceImpl implements BookService {
     @Override
     public Long createBook(BookDTO bookDTO) {
         Optional<AuthorEntity> authorOpt = authorRepository.findByName(bookDTO.getAuthor().getName());
+        Optional<BookEntity> byTitle = this.bookRepository.findByTitle(bookDTO.getTitle());
+
+        if(byTitle.isPresent()){
+            throw new BookAlreadyExists("Book with title " + bookDTO.getTitle() + " already exists.");
+        }
 
         BookEntity newBook = new BookEntity()
                 .setAuthor(authorOpt.orElseGet(() ->

@@ -1,8 +1,10 @@
 package bg.softuni.book_service.web;
 
 
+import bg.softuni.book_service.exception.BookAlreadyExists;
 import bg.softuni.book_service.model.dtos.BookDTO;
 import bg.softuni.book_service.service.BookService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -55,6 +57,11 @@ public class BooksRestController {
         return ResponseEntity.created(
                 uriComponentsBuilder.path("/api/books/{id}").build(newBookID)
         ).build();
+    }
+
+    @ExceptionHandler(BookAlreadyExists.class)
+    public ResponseEntity<String> handleBookAlreadyExistsException(BookAlreadyExists ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
     }
 
 }
