@@ -17,6 +17,8 @@
         <option value="$PROJECT_DIR$/dictionaryApp/pom.xml" />
         <option value="$PROJECT_DIR$/exam-prep/dictionaryApp/pom.xml" />
         <option value="$PROJECT_DIR$/exam-prep/resellerApp/pom.xml" />
+        <option value="$PROJECT_DIR$/book_service/pom.xml" />
+        <option value="$PROJECT_DIR$/webAPI_restControllers/book_service/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

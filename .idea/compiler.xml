@@ -11,6 +11,7 @@
         <module name="pathfinder" />
         <module name="dictionaryApp" />
         <module name="mobilele" />
+        <module name="book_service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Front-End-Basics" options="-parameters" />
+      <module name="book_service" options="-parameters" />
       <module name="dictionaryApp" options="-parameters" />
       <module name="front-end-basics" options="-parameters" />
       <module name="front-end-intro" options="-parameters" />
