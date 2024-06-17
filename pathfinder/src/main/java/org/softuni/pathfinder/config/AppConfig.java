@@ -13,7 +13,7 @@ import java.time.Year;
 import java.time.format.DateTimeFormatter;
 
 @Configuration
-public class Config {
+public class AppConfig {
     @Bean
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();

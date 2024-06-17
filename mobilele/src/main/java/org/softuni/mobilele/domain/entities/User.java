@@ -46,8 +46,4 @@ public class User  extends BaseEntity{
     @OneToMany(mappedBy = "seller")
     private List<Offer> offers;
 
-    @PrePersist
-    public void hashPassword() {
-        this.password = BCrypt.hashpw(this.password, BCrypt.gensalt());
-    }
 }

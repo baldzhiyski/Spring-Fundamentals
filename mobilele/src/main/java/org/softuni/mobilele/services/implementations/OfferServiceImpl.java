@@ -16,11 +16,14 @@ import org.softuni.mobilele.domain.entities.enums.Transmission;
 import org.softuni.mobilele.repositories.BrandRepository;
 import org.softuni.mobilele.repositories.ModelRepository;
 import org.softuni.mobilele.repositories.OfferRepository;
+import org.softuni.mobilele.repositories.UserRepository;
 import org.softuni.mobilele.services.OfferService;
 import org.softuni.mobilele.services.UserService;
-import org.softuni.mobilele.services.helpers.LoggedUserHelperService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -43,20 +46,21 @@ public class OfferServiceImpl implements OfferService {
     private BrandRepository brandRepository;
     private ModelRepository modelRepository;
 
-    // TODO : Use helper Service and not the user service directly
-//    private LoggedUserHelperService loggedUserHelperService;
-    private UserService userService;
+    private UserRepository userRepository;
     private ModelMapper mapper;
 
     @Value("${upload.directory}")
     private String uploadDir;
+    private UserServiceImpl userService;
+
     @Autowired
-    public OfferServiceImpl(OfferRepository offerRepository, BrandRepository brandRepository, ModelRepository modelRepository, UserService userService, ModelMapper mapper) {
+    public OfferServiceImpl(OfferRepository offerRepository, BrandRepository brandRepository, ModelRepository modelRepository, UserRepository userRepository, ModelMapper mapper, UserServiceImpl userService) {
         this.offerRepository = offerRepository;
         this.brandRepository = brandRepository;
         this.modelRepository = modelRepository;
-        this.userService = userService;
+        this.userRepository = userRepository;
         this.mapper = mapper;
+        this.userService = userService;
     }
 
     @Override
@@ -187,7 +191,10 @@ public class OfferServiceImpl implements OfferService {
         Offer currentOffer = new Offer();
         currentOffer.setModel(model);
         currentOffer.setEngine(engine);
-        User loggedUser = userService.getLoggedUser();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
+
+        User loggedUser = this.userRepository.getByUsername(currentUsername).orElseThrow();
 
         currentOffer.setSeller(loggedUser);
         currentOffer.setMileage(mileage);
@@ -230,6 +237,6 @@ public class OfferServiceImpl implements OfferService {
         }
 
         // Return the URL of the saved photo (relative to the application context)
-        return "/img/" + filename;
+        return "/images/" + filename;
     }
 }

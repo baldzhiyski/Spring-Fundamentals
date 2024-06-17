@@ -10,25 +10,26 @@
 
 <div class="container">
     <h2 class="text-center text-white">Login</h2>
-    <form th:action="@{/users/login}" method="POST"
-          th:object="${logInDto}"
+    <form th:action="@{/users/login}" th:method="POST"
           enctype="multipart/form-data"
           class="main-form mx-auto col-md-8 d-flex flex-column justify-content-center">
 
+        <!-- Display success message -->
+        <div th:if="${badRequest}" class="alert alert-danger" role="alert">
+            <p th:text="${badRequest}"></p>
+        </div>
+
         <div class="form-group">
             <label for="username" class="text-white font-weight-bold">Username</label>
-            <input th:field="*{username}" id="username" name="username" type="text" min="2" max="50"
+            <input th:value="${username}" id="username" name="username" type="text" min="2" max="50"
                    class="form-control"
                    placeholder="Enter your username here"/>
-            <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="errors alert alert-danger"></p>
         </div>
         <div class="form-group">
             <label for="password" class="text-white font-weight-bold">Password</label>
-            <input th:field="*{password}" id="password" name="password" type="password" min="2"
+            <input  id="password" name="password" type="password" min="2"
                    max="20" class="form-control"
                    placeholder="Enter your password here"/>
-            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="errors alert alert-danger"></p>
-
         </div>
 
         <div class="row">
@@ -37,6 +38,15 @@
                     <input type="submit" class="btn btn-info btn-lg" value="Login"/>
                 </div>
             </div>
+        </div>
+
+        <div class="form-group">
+            <label for="rememberme" class="text-white font-weight-bold">Remember me</label>
+            <input  id="rememberme"
+                    name="rememberme"
+                    type="checkbox"
+                    class="form-control"/>
+
         </div>
     </form>
 </div>

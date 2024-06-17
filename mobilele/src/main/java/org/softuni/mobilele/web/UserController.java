@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -56,47 +57,20 @@ public class UserController {
         }
         return modelAndView;
     }
-
     @GetMapping("/users/login")
-    public String logIn(Model model){
-        if(!model.containsAttribute("logInDto")){
-            model.addAttribute("logInDto", new UserLogInDto());
-        }
+    public String login() {
         return "auth-login";
     }
 
-    @PostMapping("/users/login")
-    public ModelAndView logIntoAccount(@Valid UserLogInDto logInDto,
-                                       BindingResult bindingResult,
-                                       RedirectAttributes redirectAttributes) {
+    @PostMapping("/users/login-error")
+    public String onFailure(
+            @ModelAttribute("username") String username,
+            Model model) {
 
-        ModelAndView modelAndView = new ModelAndView();
+        model.addAttribute("username", username);
+        model.addAttribute("badRequest", "Invalid username or password !");
 
-        if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.logInDto", bindingResult);
-            redirectAttributes.addFlashAttribute("logInDto", logInDto);
-            modelAndView.setViewName("redirect:/users/login");
-            return modelAndView;
-        }
-
-        // Redirect to home page
-        modelAndView.setViewName("redirect:/home");
-        this.userService.logIn(logInDto);
-        return modelAndView;
-    }
-
-    @GetMapping("/users/logout")
-    public ModelAndView logout() {
-        ModelAndView modelAndView = new ModelAndView();
-        if(!this.userService.checkLoggedUser()){
-            modelAndView.setViewName("redirect:/");
-            return modelAndView;
-        }
-        modelAndView.setViewName("redirect:/users/login");
-
-        this.userService.logOut();
-
-        return modelAndView;
+        return "auth-login";
     }
 
 

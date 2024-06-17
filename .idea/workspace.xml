@@ -7,8 +7,69 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementing the js for the client-part using the localhost API I created">
-      <change beforePath="$PROJECT_DIR$/webAPI_restControllers/book-client/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/webAPI_restControllers/book-client/src/app.js" afterDir="false" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Using Spring Security for mobilele">
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/MobileleUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/Screenshot (10).png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-intro/src/main/resources/static/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-intro/src/main/resources/static/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-intro/src/main/resources/static/js/bootstrap.esm.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-intro/src/main/resources/static/js/bootstrap.esm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-intro/src/main/resources/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-intro/src/main/resources/static/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/MobileleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/MobileleApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/domain/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/helpers/LoggedUserHelperService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/utils/CurrentUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/BrandsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/BrandsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/NavBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/NavBarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/OffersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/OffersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/3series.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/3series.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/Stuttgart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/Stuttgart.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/a4.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/a4.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/accord.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/accord.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/altima.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/altima.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/audi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/audi.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/bmw.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/bmw.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/bus.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/bus.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/car-dealership-car-car-showroom.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/car-dealership-car-car-showroom.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/car.png" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/car.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/cclass.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/cclass.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/corolla1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/corolla1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/desert.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/desert.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/ford.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/ford.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/ford1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/ford1.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/ford2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/ford2.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/forest.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/forest.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/golf.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/golf.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/hundai.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/hundai.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/kia.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/kia.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/malibu.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/malibu.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/malibu2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/malibu2.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/perelik.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/perelik.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/sanraCr.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/sanraCr.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/santaCruz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/santaCruz.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/seqoia.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/seqoia.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/truck.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/truck.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/uni-stuttgart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/uni-stuttgart.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/user-avatar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/user-avatar.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/static/img/x7.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/x7.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/auth-login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/auth-login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/static/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/pedestrian.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/pedestrian.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +221,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BookServiceApplication">
+  <component name="RunManager" selected="Spring Boot.MobileleApplication">
     <configuration name="data.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/pathfinder/src/main/resources/data.sql" />
       <script-mode>FILE</script-mode>
@@ -218,6 +279,7 @@
       <envs>
         <env name="MYSQL_PASS" value="pass123" />
         <env name="MYSQL_USER" value="root" />
+        <env name="REMEMBER_ME_KEY" value="topsecret" />
       </envs>
       <module name="mobilele" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="org.softuni.mobilele.MobileleApplication" />
@@ -336,6 +398,14 @@
       <workItem from="1718048233086" duration="11826000" />
       <workItem from="1718086940838" duration="233000" />
       <workItem from="1718123756936" duration="728000" />
+      <workItem from="1718471761071" duration="611000" />
+      <workItem from="1718476361215" duration="152000" />
+      <workItem from="1718477646480" duration="484000" />
+      <workItem from="1718483628404" duration="280000" />
+      <workItem from="1718485104918" duration="294000" />
+      <workItem from="1718520000149" duration="36000" />
+      <workItem from="1718548918740" duration="714000" />
+      <workItem from="1718648614566" duration="7307000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -561,7 +631,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718386741716</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Updating the error handling">
+      <option name="closed" value="true" />
+      <created>1718387929607</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1718387929607</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,8 +670,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creating a message.properties file for the invalid messages and also a bean for it" />
-    <MESSAGE value="Updating the navbar by including a fragment" />
     <MESSAGE value="Hiding pages from anonymous users if they try to type the url" />
     <MESSAGE value="Importing skeleton of the first exam preparation.6 hours in total for completion." />
     <MESSAGE value="Creating the database" />
@@ -617,7 +693,9 @@
     <MESSAGE value="Adding persistence layer" />
     <MESSAGE value="Implementation of the service and creating a rest controller" />
     <MESSAGE value="Implementing the js for the client-part using the localhost API I created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing the js for the client-part using the localhost API I created" />
+    <MESSAGE value="Updating the error handling" />
+    <MESSAGE value="Using Spring Security for mobilele" />
+    <option name="LAST_COMMIT_MESSAGE" value="Using Spring Security for mobilele" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -626,11 +704,6 @@
           <url>file://$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/UserServiceImpl.java</url>
           <line>69</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/OfferServiceImpl.java</url>
-          <line>189</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java</url>
@@ -646,6 +719,11 @@
           <url>file://$PROJECT_DIR$/exam-prep/resellerApp/src/main/java/bg/softuni/resellerapp/service/impl/OfferServiceImpl.java</url>
           <line>44</line>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mobilele/src/main/java/org/softuni/mobilele/services/implementations/UserServiceImpl.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

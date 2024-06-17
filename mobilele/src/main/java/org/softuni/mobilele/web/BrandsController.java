@@ -24,17 +24,10 @@ public class BrandsController {
 
     @GetMapping("/brands/all")
     public String getAllBrands(Model model) {
-        if(!this.userService.checkLoggedUser()) {
-            return "redirect:/";
-        }
+
         List<Brand> brands = brandService.getAllWithModels();
         model.addAttribute("brands", brands);
 
-        boolean loggedIn = this.userService.checkLoggedUser();
-        boolean isAdmin = this.userService.isAdmin();
-
-        model.addAttribute("isAdmin",isAdmin);
-        model.addAttribute("loggedIn",loggedIn);
 
         return "brands";
     }

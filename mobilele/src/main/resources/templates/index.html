@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:replace="~{fragments/head}">
 </head>
@@ -16,7 +16,7 @@
 <div class="container-fluid">
     <h5 class="text-center text-white mt-5">Welcome to MobiLeLeLe</h5>
     <!-- Use th:if to conditionally render the message -->
-    <h6 class="text-center text-white" th:if="${not loggedIn}">In order to see our models and offers, please register or log into your account!</h6>
+    <h6 class="text-center text-white" sec:authorize="!isAuthenticated()">In order to see our models and offers, please register or log into your account!</h6>
 </div>
 <div>
     <footer> </footer>

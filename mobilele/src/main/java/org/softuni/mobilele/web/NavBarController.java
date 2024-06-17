@@ -21,12 +21,6 @@ public class NavBarController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index");
 
-        boolean loggedIn = userService.checkLoggedUser();
-        modelAndView.addObject("loggedIn", loggedIn);
-
-        boolean isAdmin = userService.isAdmin();
-        modelAndView.addObject("isAdmin", isAdmin);
-
         return modelAndView;
     }
 }

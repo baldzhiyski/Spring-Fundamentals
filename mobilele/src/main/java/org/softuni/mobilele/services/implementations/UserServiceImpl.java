@@ -11,9 +11,13 @@ import org.softuni.mobilele.repositories.OfferRepository;
 import org.softuni.mobilele.repositories.UserRepository;
 import org.softuni.mobilele.repositories.UserRoleRepository;
 import org.softuni.mobilele.services.UserService;
-import org.softuni.mobilele.utils.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -32,15 +36,17 @@ public class UserServiceImpl  implements UserService {
     private String uploadDir;
 
     private OfferRepository offerRepository;
-    private CurrentUser currentUser;
+
+    private PasswordEncoder passwordEncoder;
+
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, UserRoleRepository userRoleRepository, OfferRepository offerRepository, CurrentUser currentUser) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, UserRoleRepository userRoleRepository, OfferRepository offerRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.mapper = mapper;
         this.userRoleRepository = userRoleRepository;
         this.offerRepository = offerRepository;
-        this.currentUser = currentUser;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -48,7 +54,7 @@ public class UserServiceImpl  implements UserService {
         UserRole userRole = userRoleRepository.findById(userRegisterDto.getRole()).orElseThrow();
         User user = this.mapper.map(userRegisterDto, User.class);
         String photoUrl = saveFile(userRegisterDto.getPhoto());
-
+        user.setPassword(passwordEncoder.encode(userRegisterDto.getPassword()));
         user.setImageUrl(photoUrl);
         user.setRole(userRole);
         user.setCreated(new Date());
@@ -74,7 +80,7 @@ public class UserServiceImpl  implements UserService {
         }
 
         // Return the URL of the saved photo (relative to the application context)
-        return "/img/" + filename;
+        return "/images/" + filename;
     }
     @Override
     public boolean userByUsernameExists(String username) {
@@ -82,54 +88,19 @@ public class UserServiceImpl  implements UserService {
     }
 
     @Override
-    public boolean checkValidUsernameAndPass(String username, String password) {
-        return this.userRepository.findByUsernameAndPassword(username,password).isPresent();
-    }
-
-    @Override
     public User getUserByUsername(String username) {
         return this.userRepository.getByUsername(username).orElse(null);
     }
 
-    @Override
-    public void logIn(UserLogInDto logInDto) {
-        User user = this.userRepository.getByUsername(logInDto.getUsername()).orElseThrow();
-        currentUser.setFirstName(user.getFirstName());
-        currentUser.setLastName(user.getLastName());
-        currentUser.setId(user.getId());
-        currentUser.setLogged(true);
-    }
-
-    @Override
-    public boolean checkLoggedUser() {
-        return currentUser.isLogged();
-    }
-
-    @Override
-    public void logOut() {
-        this.currentUser.setLogged(false);
-    }
-
-    @Override
-    public boolean isAdmin() {
-        if (!currentUser.isLogged()) {
-            return false;
-        }
-
-        UserRole userRole = userRoleRepository.findById(currentUser.getId()).orElse(null);
-        return userRole != null && "ADMIN".equals(userRole.getRole());
-    }
-    @Override
-    public User getLoggedUser() {
-        // This method might need to return more information, depending on your needs
-        return currentUser.isLogged() ? this.userRepository.findById(currentUser.getId()).get(): null;
-    }
 
     @Override
     public boolean isLoggedCreator(Long offerId) {
         Offer offerById = offerRepository.findById(offerId).orElseThrow();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
 
-        return offerById.getSeller().getId().equals(this.currentUser.getId());
+        return offerById.getSeller().getUsername().equals(currentUsername);
     }
+
 
 }

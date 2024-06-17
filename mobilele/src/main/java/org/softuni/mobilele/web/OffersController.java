@@ -35,23 +35,10 @@ public class OffersController {
         this.brandService = brandService;
     }
 
-    @ModelAttribute("loggedIn")
-    public boolean isLoggedIn() {
-        return userService.checkLoggedUser();
-    }
-
-    @ModelAttribute("isAdmin")
-    public boolean isAdmin() {
-        return userService.isAdmin();
-    }
 
     @GetMapping("/offers/all")
     public ModelAndView getOffers() {
         ModelAndView modelAndView = new ModelAndView();
-        if(!this.userService.checkLoggedUser()){
-            modelAndView.setViewName("redirect:/");
-            return modelAndView;
-        }
         modelAndView.setViewName("offers");
 
         List<OfferDisplayDto> offers = offerService.getAllOffers(); // Fetch offers from the service layer
@@ -67,10 +54,7 @@ public class OffersController {
     @GetMapping("/offers/add")
     public ModelAndView addOfferPage(Model model) {
         ModelAndView modelAndView = new ModelAndView();
-        if(!this.userService.checkLoggedUser()){
-            modelAndView.setViewName("redirect:/");
-            return modelAndView;
-        }
+
         if(!model.containsAttribute("offerRegisterDto")) {
             modelAndView.addObject("offerRegisterDto", new OfferRegisterDto());
         }
@@ -110,10 +94,6 @@ public class OffersController {
     @GetMapping("/offers/details/{id}")
     public ModelAndView getDetails(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView();
-        if(!this.userService.checkLoggedUser()){
-            modelAndView.setViewName("redirect:/");
-            return modelAndView;
-        }
 
         OfferDetailsDto offerDtoById = this.offerService.getOfferById(id);
 
@@ -141,10 +121,6 @@ public class OffersController {
     @GetMapping("/offers/update/{id}")
     public ModelAndView getUpdateViewIfCreator(@PathVariable Long id, Model model) {
         ModelAndView modelAndView = new ModelAndView();
-        if(!this.userService.checkLoggedUser()){
-            modelAndView.setViewName("redirect:/");
-            return modelAndView;
-        }
 
         modelAndView.addObject("offerDtoById",this.offerService.getOfferById(id)); // Pass offer details to the view
         if(!model.containsAttribute("offerUpdateDto")) {

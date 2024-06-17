@@ -17,7 +17,6 @@ public class HomeController {
 
     @GetMapping("/")
     public String index(Model model){
-        model.addAttribute("loggedIn",this.userService.checkLoggedUser());
         return "index";
     }
 }

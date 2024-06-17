@@ -12,19 +12,7 @@ public interface UserService {
 
     boolean userByUsernameExists(String username);
 
-    boolean checkValidUsernameAndPass(String username,String password);
-
     User getUserByUsername(String username);
 
-    void logIn(UserLogInDto logInDto);
-
-    boolean checkLoggedUser();
-
-    void logOut();
-
-    boolean isAdmin();
-
-    User getLoggedUser();
-
-    boolean isLoggedCreator(Long offerId);
+    boolean isLoggedCreator(Long id);
 }
