@@ -49,9 +49,4 @@ public class User extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private Level level;
 
-    @PrePersist
-    public void hashPassword() {
-        this.password = BCrypt.hashpw(this.password, BCrypt.gensalt());
-    }
-
 }

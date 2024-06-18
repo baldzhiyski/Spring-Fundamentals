@@ -18,15 +18,7 @@ public class NavBarController {
         this.userService = userService;
     }
 
-    @ModelAttribute("loggedIn")
-    public boolean isLogged(){
-        return this.userService.isLoggedIn();
-    }
 
-    @ModelAttribute("isAdmin")
-    public boolean isAdmin(){
-        return this.userService.isAdmin();
-    }
 
     @GetMapping("/")
     public String firstPage(Model model) {
@@ -36,16 +28,6 @@ public class NavBarController {
     public String home(Model model) {
 
         return "index";
-    }
-
-    @PostMapping("/logout")
-    public ModelAndView logoutPost() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("redirect:/");
-
-        this.userService.logOut();
-
-        return modelAndView;
     }
 
     @GetMapping("/about")

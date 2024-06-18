@@ -10,7 +10,7 @@
     <h1 class="border-bottom">Register</h1>
     <div class="d-flex justify-content-center">
         <div class="row g-3">
-            <form action="/users/register" method="post" th:object="${userRegisterDto}">
+            <form th:action="@{/users/register}" th:method="POST" th:object="${userRegisterDto}">
 
                 <!-- Display global errors -->
                 <div th:if="${successMessage}" class="alert alert-success" role="alert">

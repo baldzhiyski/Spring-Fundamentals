@@ -1,5 +1,5 @@
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head th:replace="~{fragments/head}">
 </head>
@@ -16,7 +16,7 @@
         <div class="showcase">
             <h1>Find amazing routes</h1>
             <p>Sick of staying at home, sick of limitations? Be free! Find a route and enjoy nature!</p>
-            <a href="/routes" class="btn" th:if="${loggedIn}" >To routes</a>
+            <a href="/routes" class="btn" sec:authorize="isAuthenticated()" >To routes</a>
         </div>
         <div class="top-box top-box-a">
             <h4>Времето в София</h4>
@@ -32,7 +32,7 @@
 
     <!-- Boxes Section -->
     <section class="boxes">
-        <div th:if="${loggedIn}">
+        <div sec:authorize="isAuthenticated()">
         <a th:href="@{/routes/PEDESTRIAN}" class="main-btn">
             <div class="box">
                 <img src="/images/pedestrian.png" height="150px" alt="">
@@ -42,7 +42,7 @@
         </a>
         </div>
 
-        <div th:if="${loggedIn}">
+        <div sec:authorize="isAuthenticated()">
         <a th:href="@{/routes/BICYCLE}" class="main-btn">
             <div class="box">
                 <img src="/images/bicycle.png" height="150px" alt="">
@@ -52,7 +52,7 @@
         </a>
         </div>
 
-        <div th:if="${loggedIn}">
+        <div sec:authorize="isAuthenticated()">
         <a th:href="@{/routes/MOTORCYCLE}" class="main-btn">
             <div class="box">
                 <img src="/images/motorcycle.png" height="150px" alt="">
@@ -62,7 +62,7 @@
         </a>
         </div>
 
-        <div th:if="${loggedIn}">
+        <div sec:authorize="isAuthenticated()">
         <a th:href="@{/routes/CAR}" class="main-btn">
             <div class="box">
                 <img src="/images/car.png" height="150px" alt="">
@@ -72,7 +72,7 @@
         </a>
         </div>
 
-        <div th:unless="${loggedIn}">
+        <div sec:authorize="isAuthenticated()">
             <div class="box">
                 <h2>Log in or Register and explore our website</h2>
             </div>

@@ -5,6 +5,7 @@ import org.softuni.pathfinder.domain.dtos.comments.CommentDto;
 import org.softuni.pathfinder.domain.dtos.routes.RouteCategoryViewModel;
 import org.softuni.pathfinder.domain.dtos.routes.RouteDto;
 import org.softuni.pathfinder.domain.dtos.routes.RouteWithRandomPicDto;
+import org.softuni.pathfinder.domain.dtos.user.UserLogInDto;
 import org.softuni.pathfinder.domain.entities.Comment;
 import org.softuni.pathfinder.domain.entities.Picture;
 import org.softuni.pathfinder.domain.entities.Route;
@@ -16,7 +17,6 @@ import org.softuni.pathfinder.services.CommentService;
 import org.softuni.pathfinder.services.PictureService;
 import org.softuni.pathfinder.services.RouteService;
 import org.softuni.pathfinder.services.UserService;
-import org.softuni.pathfinder.utils.LoggedInUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -40,7 +40,6 @@ import static org.softuni.pathfinder.domain.entities.enums.CategoryName.*;
 @Controller
 public class RoutesController {
     private RouteService routeService;
-    private LoggedInUser logged;
 
     private CommentService commentService;
     private UserService userService;
@@ -52,27 +51,18 @@ public class RoutesController {
     private static final String DOT = ".";
 
 
+
     @Autowired
-    public RoutesController(RouteRepository routeRepository, RouteService routeService, LoggedInUser logged, CommentService commentService, UserService userService, PictureService pictureService) {
+    public RoutesController(RouteRepository routeRepository, RouteService routeService,CommentService commentService, UserService userService, PictureService pictureService) {
         this.routeService = routeService;
-        this.logged = logged;
         this.commentService = commentService;
         this.userService = userService;
         this.pictureService = pictureService;
     }
-
-    @ModelAttribute("loggedIn")
-    public boolean isLogged(){
-        return this.userService.isLoggedIn();
-    }
-
     @GetMapping("/routes")
     public ModelAndView getRoutes() {
         ModelAndView modelAndView = new ModelAndView();
-        if(!this.userService.isLoggedIn()){
-            modelAndView.setViewName("redirect:/");
-            return modelAndView;
-        }
+
         List<Route> routes = this.routeService.getAllRoutes();
         List<RouteWithRandomPicDto> routeWithRandomPics = new ArrayList<>();
         for (Route route : routes) {
@@ -97,10 +87,6 @@ public class RoutesController {
     @GetMapping("/routes/details/{id}")
     public ModelAndView getDetailInfo(@PathVariable Long id) {
         ModelAndView modelAndView = new ModelAndView();
-        if(!this.userService.isLoggedIn()){
-            modelAndView.setViewName("redirect:/");
-            return modelAndView;
-        }
 
         Route route = this.routeService.findById(id);
 
@@ -117,9 +103,11 @@ public class RoutesController {
     @PostMapping("/routes/details/{id}")
     public ModelAndView postComment(@PathVariable Long id, @Valid CommentDto commentDto,
                                     BindingResult bindingResult) {
+
         ModelAndView modelAndView = new ModelAndView();
         Route route = this.routeService.findById(id);
-        User user = this.userService.getById(logged.getId());
+        UserLogInDto loggedInUser = this.userService.getLoggedInUser();
+        User user = this.userService.getByUsername(loggedInUser.getUsername());
 
         modelAndView.addObject("route", route);
         modelAndView.setViewName("route-details");
@@ -145,10 +133,6 @@ public class RoutesController {
     @GetMapping("/routes/add")
     public ModelAndView addPage(Model model) {
         ModelAndView modelAndView = new ModelAndView();
-        if(!this.userService.isLoggedIn()){
-            modelAndView.setViewName("redirect:/");
-            return modelAndView;
-        }
         modelAndView.addObject("isAtPage", true);
 
         if (!model.containsAttribute("routeDto")) {
@@ -183,10 +167,6 @@ public class RoutesController {
     @GetMapping("/routes/{categoryName}")
     public ModelAndView getAllByCategory(@PathVariable("categoryName") CategoryName categoryName) {
         ModelAndView modelAndView = new ModelAndView();
-        if(!this.userService.isLoggedIn()){
-            modelAndView.setViewName("redirect:/");
-            return modelAndView;
-        }
         List<RouteCategoryViewModel> routes = routeService.getAllByCategory(categoryName);
         routes.forEach(route -> route.setRandomPicUrl(this.pictureService.getRandomPicture(route.getId()).getUrl()));
 

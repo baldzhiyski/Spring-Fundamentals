@@ -8,7 +8,7 @@
     <div class="d-flex justify-content-center">
         <div class="row g-3 align-items-center">
 
-            <form action="/users/login" method="post" th:object="${userLogInDto}">
+            <form th:action="@{/users/login}" th:method="POST" >
                 <!-- Display success message -->
                 <div th:if="${successMessage}" class="alert alert-success" role="alert">
                     <p th:text="${successMessage}"></p>
@@ -21,23 +21,30 @@
 
                 <!-- Username -->
                 <div class="col-auto">
-                    <label for="inputUsername" class="col-form-label">Username</label>
+                    <label for="username" class="col-form-label">Username</label>
                 </div>
                 <div class="col-auto">
-                    <input type="text" name="username" id="inputUsername" class="form-control"  aria-describedby="usernameHelpInline"  th:field="${userLogInDto.username}">
+                    <input type="text" name="username" id="username" class="form-control"  th:value="${username}">
 
                 </div>
                 <!-- Password -->
                 <div class="col-auto mt-3">
-                    <label for="inputPassword" class="col-form-label">Password</label>
+                    <label for="password" class="col-form-label">Password</label>
                 </div>
                 <div class="col-auto mt-3">
-                    <input type="password" name="password" id="inputPassword" class="form-control"  aria-describedby="passwordHelpInline" th:field="${userLogInDto.password}">
+                    <input type="password" name="password" id="password" class="form-control" >
                 </div>
                 <div class="d-flex justify-content-center mt-3">
                     <button class="btn btn-primary btn-block w-50" type="submit">Login</button>
                 </div>
+                <div class="form-group">
+                    <label for="rememberme" class="text-white font-weight-bold">Remember me</label>
+                    <input  id="rememberme"
+                            name="rememberme"
+                            type="checkbox"
+                            class="form-control"/>
 
+                </div>
             </form>
         </div>
     </div>

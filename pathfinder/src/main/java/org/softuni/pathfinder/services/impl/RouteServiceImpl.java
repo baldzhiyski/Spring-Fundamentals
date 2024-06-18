@@ -9,15 +9,15 @@ import org.softuni.pathfinder.domain.entities.Picture;
 import org.softuni.pathfinder.domain.entities.Route;
 import org.softuni.pathfinder.domain.entities.User;
 import org.softuni.pathfinder.domain.entities.enums.CategoryName;
-import org.softuni.pathfinder.domain.entities.enums.Level;
 import org.softuni.pathfinder.repositories.CategoryRepository;
 import org.softuni.pathfinder.repositories.PictureRepository;
 import org.softuni.pathfinder.repositories.RouteRepository;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.RouteService;
-import org.softuni.pathfinder.utils.LoggedInUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -36,7 +36,6 @@ import java.util.stream.Collectors;
 @Service
 public class RouteServiceImpl implements RouteService {
     private RouteRepository routeRepository;
-    private LoggedInUser loggedInUser;
     private UserRepository userRepository;
 
     private PictureRepository pictureRepository;
@@ -49,9 +48,8 @@ public class RouteServiceImpl implements RouteService {
     private String uploadDir;
 
     @Autowired
-    public RouteServiceImpl(RouteRepository routeRepository, LoggedInUser loggedInUser, UserRepository userRepository, PictureRepository pictureRepository, CategoryRepository categoryRepository, ModelMapper mapper) {
+    public RouteServiceImpl(RouteRepository routeRepository,UserRepository userRepository, PictureRepository pictureRepository, CategoryRepository categoryRepository, ModelMapper mapper) {
         this.routeRepository = routeRepository;
-        this.loggedInUser = loggedInUser;
         this.userRepository = userRepository;
         this.pictureRepository = pictureRepository;
         this.categoryRepository = categoryRepository;
@@ -62,7 +60,9 @@ public class RouteServiceImpl implements RouteService {
     @Transactional
     public void registerRoute(RouteDto routeDto) throws IOException {
         Route route = new Route();
-        User user = this.userRepository.findById(loggedInUser.getId()).orElse(null);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
+        User user = this.userRepository.getUserByUsername(currentUsername).orElse(null);
 
         Set<Category> collection = new HashSet<>();
         for (CategoryName categoryName : routeDto.getCategories()) {

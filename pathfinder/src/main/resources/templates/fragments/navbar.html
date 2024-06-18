@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <body>
 <nav class="main-nav" th:fragment="navbar">
@@ -7,25 +7,25 @@
         <li>
             <a href="/home">Home</a>
         </li>
-        <li th:unless="${loggedIn}">
+        <li sec:authorize="!isAuthenticated()">
             <a href="/users/login">Login</a>
         </li>
-        <li th:unless="${loggedIn}">
+        <li sec:authorize="!isAuthenticated()">
             <a href="/users/register">Register</a>
         </li>
-        <li th:unless = "${isInThePage}">
+        <li sec:authorize="!isAuthenticated()">
             <a href="/about">About</a>
         </li>
-        <li th:if="${loggedIn}" th:unless="${isAtPage}">
+        <li sec:authorize="isAuthenticated()" th:unless="${isAtPage}">
             <a href="/routes/add">Add new route</a>
         </li>
-        <li th:if="${loggedIn}">
+        <li sec:authorize="isAuthenticated()">
             <a href="/users/profile">Profile</a>
         </li>
-        <li th:if="${isAdmin}">
+        <li sec:authorize="hasRole('ADMIN')">
             <a href="/admin/page">Admin</a>
         </li>
-        <li th:if="${loggedIn}">
+        <li sec:authorize="isAuthenticated()">
             <form th:action="@{/logout}" th:method="POST">
                 <input class="mybtn" type="submit" value="LOGOUT" style="cursor: pointer; background-color: ghostwhite; padding: 15px 25px; font-size: 18px; border: 2px solid #ccc; border-radius: 5px; width: 200px;" onmouseover="this.style.backgroundColor='black'; this.style.color='white';" onmouseout="this.style.backgroundColor='ghostwhite'; this.style.color='black';"/>
             </form>

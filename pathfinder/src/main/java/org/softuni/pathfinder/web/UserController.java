@@ -1,16 +1,15 @@
 package org.softuni.pathfinder.web;
 
 import jakarta.validation.Valid;
-import org.modelmapper.ModelMapper;
-import org.softuni.pathfinder.domain.dtos.user.UserLogInDto;
 import org.softuni.pathfinder.domain.dtos.user.UserRegisterDto;
+import org.softuni.pathfinder.domain.entities.User;
 import org.softuni.pathfinder.services.UserService;
-import org.softuni.pathfinder.utils.LoggedInUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -20,12 +19,10 @@ public class UserController {
     public static final String BINDING_RESULT_PATH = "org.springframework.validation.BindingResult";
     public static final String DOT = ".";
     private UserService userService;
-    private ModelMapper mapper;
 
     @Autowired
-    public UserController(UserService userService, ModelMapper mapper) {
+    public UserController(UserService userService) {
         this.userService = userService;
-        this.mapper = mapper;
     }
 
 
@@ -62,65 +59,31 @@ public class UserController {
     }
 
     @GetMapping("/users/login")
-    public ModelAndView showLoginForm(Model model) {
-        // Create a new ModelAndView object
-        ModelAndView modelAndView = new ModelAndView();
-
-        // Add userLogInDto object to the ModelAndView
-        if (!model.containsAttribute("userLogInDto")) {
-            modelAndView.addObject("userLogInDto", new UserLogInDto());
+    public String login(Model model) {
+        if(!model.containsAttribute("username")){
+            model.addAttribute("username","");
         }
-
-        // Set the view name to "login", assuming "login" is the name of your Thymeleaf template
-        modelAndView.setViewName("login");
-
-        return modelAndView;
+        return "login";
     }
 
-    @PostMapping("/users/login")
-    public ModelAndView logInUser(@Valid UserLogInDto userLogInDto,
-                                  BindingResult bindingResult,
-                                  RedirectAttributes redirectAttributes) {
-        ModelAndView modelAndView = new ModelAndView();
+    @PostMapping("/users/login-error")
+    public String onFailure(
+            @ModelAttribute("username") String username,
+            Model model) {
 
-        // Check if username exists
-        if (!this.userService.userByUsernameExists(userLogInDto.getUsername()) || !userService.checkPasswordCorrectForTheUsername(userLogInDto)) {
-            redirectAttributes.addFlashAttribute("badRequest", "Invalid username or password. Please try again.");
-            return new ModelAndView("redirect:/users/login");
-        }
+        model.addAttribute("username", username);
+        model.addAttribute("badRequest", "Invalid username or password !");
 
-        // If there are errors, redirect to the login page with flash attributes
-        if (bindingResult.hasErrors()) {
-            redirectAttributes.addFlashAttribute("userLogInDto", userLogInDto);
-            redirectAttributes.addFlashAttribute("bindingResult", bindingResult);
-            modelAndView.setViewName("redirect:/login");
-        } else {
-            // If no errors, perform login and redirect to home page
-            this.userService.login(userLogInDto);
-            modelAndView.setViewName("redirect:/");
-        }
-
-        return modelAndView;
+        return "login";
     }
+
 
     @GetMapping("/users/profile")
     public ModelAndView profilePicture() {
         ModelAndView modelAndView = new ModelAndView("profile");
-        if(!this.userService.isLoggedIn()){
-            modelAndView.setViewName("redirect:/");
-            return modelAndView;
-        }
 
-        boolean loggedIn = this.userService.isLoggedIn();
-        modelAndView.addObject("loggedIn", loggedIn);
-
-
-        boolean isAdmin = this.userService.isAdmin();
-        modelAndView.addObject("isAdmin", isAdmin);
-        // Retrieve the currently logged-in user
-        LoggedInUser loggedUser = userService.getLoggedInUser();
-
-        modelAndView.addObject("loggedIn", loggedUser);
+        User user = this.userService.getByUsername(this.userService.getLoggedInUser().getUsername());
+        modelAndView.addObject("loggedIn", user);
 
         return modelAndView;
     }

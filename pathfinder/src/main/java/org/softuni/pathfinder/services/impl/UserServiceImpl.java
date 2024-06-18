@@ -1,6 +1,5 @@
 package org.softuni.pathfinder.services.impl;
 
-import org.mindrot.jbcrypt.BCrypt;
 import org.modelmapper.ModelMapper;
 import org.softuni.pathfinder.domain.dtos.user.UserLogInDto;
 import org.softuni.pathfinder.domain.dtos.user.UserRegisterDto;
@@ -11,8 +10,11 @@ import org.softuni.pathfinder.domain.entities.enums.UserRole;
 import org.softuni.pathfinder.repositories.RoleRepository;
 import org.softuni.pathfinder.repositories.UserRepository;
 import org.softuni.pathfinder.services.UserService;
-import org.softuni.pathfinder.utils.LoggedInUser;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,15 +30,14 @@ public class UserServiceImpl implements UserService {
     private ModelMapper mapper;
     private RoleRepository roleRepository;
 
-    private BCrypt passwordEncoder;
-    private LoggedInUser logged;
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, RoleRepository roleRepository,LoggedInUser logged) {
+    public UserServiceImpl(UserRepository userRepository, ModelMapper mapper, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.mapper = mapper;
         this.roleRepository = roleRepository;
-        this.logged = logged;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -56,6 +57,7 @@ public class UserServiceImpl implements UserService {
         // TODO : How should we actually set the roles , which should be admins , which not
 
         User mapped = this.mapper.map(userRegisterDto, User.class);
+        mapped.setPassword(passwordEncoder.encode(userRegisterDto.getPassword()));
 
         Set<Role> roles = new HashSet<>();
 
@@ -83,68 +85,23 @@ public class UserServiceImpl implements UserService {
         this.userRepository.saveAndFlush(mapped);
     }
 
-    @Override
-    public void login(UserLogInDto userLogInDto) {
-        User user = this.userRepository.getUserByUsername(userLogInDto.getUsername())
-                .orElseThrow();
-
-        this.logged.setId(user.getId());
-        this.logged.setLogged(true);
-        this.logged.setFullName(user.getFullName());
-        this.logged.setUsername(user.getUsername());
-        this.logged.setAge(user.getAge());
-        this.logged.setRoles(user.getRoles());
-        this.logged.setLevel(user.getLevel());
-
-    }
 
     @Override
-    public boolean checkPasswordCorrectForTheUsername(UserLogInDto userLogInDto) {
-        Optional<User> optionalUser = userRepository.getUserByUsername(userLogInDto.getUsername());
-        if (optionalUser.isPresent()) {
-            User user = optionalUser.get();
-            String hashedPassword = user.getPassword(); // Get hashed password from the database
-            // Use BCryptPasswordEncoder to verify if the provided password matches the hashed password
-            return BCrypt.checkpw(userLogInDto.getPassword(), hashedPassword);
-
-        } else {
-            return false;
-        }
-    }
-
-    @Override
-    public boolean logOut() {
-        if(!this.logged.isLogged()){
-            return false;
-        }else{
-            this.logged.setLogged(false);
-            return true;
-        }
-    }
-
-    @Override
-    public boolean isLoggedIn() {
-        return this.logged != null && this.logged.isLogged();
-
-    }
-
-    @Override
-    public boolean isAdmin() {
-        if (!logged.isLogged()) {
-            return false;
-        }
-
-        User user = userRepository.findById(logged.getId()).orElse(null);
-        return (user != null ? user.getRoles().stream().filter(role -> role.getName().equals(UserRole.valueOf("ADMIN"))).count() : 0) > 0;
-    }
-
-    @Override
-    public LoggedInUser getLoggedInUser() {
-        return this.logged;
+    public UserLogInDto getLoggedInUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String currentUsername = authentication.getName();
+        UserLogInDto userLogInDto = new UserLogInDto();
+        userLogInDto.setUsername(currentUsername);
+        return userLogInDto;
     }
 
     @Override
     public User getById(Long id) {
         return this.userRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public User getByUsername(String username) {
+        return this.userRepository.getUserByUsername(username).orElseThrow();
     }
 }
