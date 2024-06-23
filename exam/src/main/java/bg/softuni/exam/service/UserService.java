@@ -30,4 +30,6 @@ public interface UserService {
     void addToFavourites(UUID paintingId);
 
     void addVote(UUID paintingId);
+
+    void removeFromFav(UUID pictureId);
 }

@@ -74,5 +74,11 @@ public class PaintingsController {
         return modelAndView;
     }
 
+    @PostMapping("/paintings/remove-favorites/{id}")
+    public String removeFromFav(@PathVariable UUID id){
+        this.userService.removeFromFav(id);
+        return "redirect:/home";
+    }
+
 
 }

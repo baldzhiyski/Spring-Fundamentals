@@ -1100,7 +1100,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="322" parent="1" name="painting_collectors">
-      <LastIntrospectionLocalTimestamp>2024-06-23.10:45:18</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-06-23.11:33:14</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="323" parent="1" name="pathfinder">

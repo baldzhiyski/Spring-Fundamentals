@@ -30,9 +30,9 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "owner",fetch = FetchType.EAGER)
     private Set<Painting> createdPaintings;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Set<Painting> favouritePaintings;
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Set<Painting> ratedPaintings;
 }

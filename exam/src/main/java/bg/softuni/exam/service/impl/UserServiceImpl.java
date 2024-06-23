@@ -145,6 +145,16 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Override
+    @Transactional
+    public void removeFromFav(UUID pictureId) {
+        Painting painting = this.paintingRepository.findById(pictureId).orElseThrow();
+        User user = this.userRepository.findByUsername(this.currentLoggedUser.getUsername()).orElseThrow();
+        user.getFavouritePaintings().remove(painting);
+
+        this.userRepository.saveAndFlush(user);
+    }
+
     private boolean userHasRatedPainting(User user, Painting painting) {
         for (Painting ratedPainting : user.getRatedPaintings()) {
             if (ratedPainting.getId().equals(painting.getId())) {
