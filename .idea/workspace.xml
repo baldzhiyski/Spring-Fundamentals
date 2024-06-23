@@ -7,25 +7,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Changing place for the annotation">
-      <change afterPath="$PROJECT_DIR$/mobilele/src/main/resources/static/images/car.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/PathfinderUserDetailsService.java" afterDir="false" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Changing structure of pathfinder using Spring Security">
+      <change afterPath="$PROJECT_DIR$/exam/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/ExamApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/Painting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/Style.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/enums/StyleName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/test/java/bg/softuni/exam/ExamApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/domain/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/RouteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/RouteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/services/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/utils/LoggedInUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/NavBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/NavBarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/RoutesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/java/org/softuni/pathfinder/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/fragments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/fragments/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/pathfinder/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/offer-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/offer-add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,10 +62,10 @@
         <option value="JavaScript File" />
         <option value="package.json" />
         <option value="HTML File" />
-        <option value="Enum" />
         <option value="AnnotationType" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -110,6 +110,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.BookServiceApplication.executor": "Run",
     "Spring Boot.DictionaryAppApplication.executor": "Run",
+    "Spring Boot.ExamApplication.executor": "Run",
     "Spring Boot.FrontEndBasicsApplication.executor": "Run",
     "Spring Boot.MobileleApplication.executor": "Run",
     "Spring Boot.PathfinderApplication.executor": "Run",
@@ -156,11 +157,11 @@
       <recent name="C:\GitHub\Spring Fundamentals\front-end-intro\src\main\resources\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GitHub\Spring Fundamentals\exam\src\main\resources" />
+      <recent name="C:\GitHub\Spring Fundamentals\exam\src\main\java\bg\softuni\exam" />
       <recent name="C:\GitHub\Spring Fundamentals\webAPI_restControllers\book-client\src" />
       <recent name="C:\GitHub\Spring Fundamentals\webAPI_restControllers" />
       <recent name="C:\GitHub\Spring Fundamentals\webAPI_restControllers\booksDemo\src" />
-      <recent name="C:\GitHub\Spring Fundamentals\exam-prep" />
-      <recent name="C:\GitHub\Spring Fundamentals\dictionaryApp\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="bg.softuni.dictionaryapp.validation.validators" />
@@ -177,7 +178,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PathfinderApplication">
+  <component name="RunManager" selected="Spring Boot.ExamApplication">
     <configuration name="data.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/pathfinder/src/main/resources/data.sql" />
       <script-mode>FILE</script-mode>
@@ -213,6 +214,17 @@
       </envs>
       <module name="dictionaryApp" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="bg.softuni.dictionaryapp.DictionaryAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExamApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <envs>
+        <env name="my_pass" value="pass123" />
+        <env name="my_username" value="root" />
+      </envs>
+      <module name="exam" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="bg.softuni.exam.ExamApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -272,6 +284,7 @@
       <item itemvalue="Node.js.ConvertTable.js" />
       <item itemvalue="Node.js.HeroicInventory.js" />
       <item itemvalue="Node.js.PersonalBMI.js" />
+      <item itemvalue="Spring Boot.ExamApplication" />
       <item itemvalue="Spring Boot.BookServiceApplication" />
       <item itemvalue="Spring Boot.DictionaryAppApplication" />
       <item itemvalue="Spring Boot.ResellerAppApplication" />
@@ -365,7 +378,17 @@
       <workItem from="1718648614566" duration="8673000" />
       <workItem from="1718662593821" duration="42000" />
       <workItem from="1718720583964" duration="14000" />
-      <workItem from="1718727152455" duration="2793000" />
+      <workItem from="1718727152455" duration="2871000" />
+      <workItem from="1718741074479" duration="21000" />
+      <workItem from="1718747053799" duration="783000" />
+      <workItem from="1718747945687" duration="7000" />
+      <workItem from="1718784555079" duration="37000" />
+      <workItem from="1718830399182" duration="653000" />
+      <workItem from="1718832782116" duration="646000" />
+      <workItem from="1718918790089" duration="1660000" />
+      <workItem from="1718980402283" duration="624000" />
+      <workItem from="1719000087058" duration="599000" />
+      <workItem from="1719120390437" duration="2555000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -623,7 +646,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718656461826</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Changing structure of pathfinder using Spring Security">
+      <option name="closed" value="true" />
+      <created>1718730016269</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1718730016269</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,7 +685,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creating the database" />
     <MESSAGE value="Creating the repositories and seeding the conditions in the database" />
     <MESSAGE value="Implementation for the login and register pages" />
     <MESSAGE value="Implementing the home page and adding logic for the get request" />
@@ -679,7 +709,8 @@
     <MESSAGE value="Using Spring Security for mobilele" />
     <MESSAGE value="Adding a TODO for tomorrow in pathfinder" />
     <MESSAGE value="Changing place for the annotation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing place for the annotation" />
+    <MESSAGE value="Changing structure of pathfinder using Spring Security" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing structure of pathfinder using Spring Security" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
