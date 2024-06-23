@@ -1,4 +1,4 @@
-package bg.softuni.exam.model.dto;
+package bg.softuni.exam.model.dto.user;
 
 import bg.softuni.exam.vallidation.annotations.CorrectUser;
 import lombok.Getter;

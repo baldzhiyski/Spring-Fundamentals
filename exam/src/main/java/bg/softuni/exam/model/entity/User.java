@@ -27,12 +27,12 @@ public class User extends BaseEntity {
     @Column(unique = true,nullable = false)
     private String email;
 
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner",fetch = FetchType.EAGER)
     private Set<Painting> createdPaintings;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Painting> favouritePaintings;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
     private Set<Painting> ratedPaintings;
 }

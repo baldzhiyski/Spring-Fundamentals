@@ -7,26 +7,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Adding a current logged user and fulfilling the navbar , index page and home page">
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/LogInDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/RegisterDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/annotations/CorrectUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/annotations/PasswordMatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/annotations/UniqueEmail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/annotations/UniqueUsername.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/validators/CorrectUserValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/validators/PasswordValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/validators/UniqueEmailValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/validators/UniqueUsernameValidator.java" afterDir="false" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Implementing logic for login , register and logout">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/controller/PaintingsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/painting/AddPaintingDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/painting/FavouritePaintingDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/painting/OtherPaintingDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/painting/PaintingDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/painting/WrapperPaintings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/user/LoggedUserWithDetailsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/PaintingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/impl/PaintingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/LogInDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/user/LogInDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/RegisterDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/dto/user/RegisterDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/Painting.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/Painting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/repository/PaintingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/repository/PaintingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/repository/StyleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/repository/StyleRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/exam/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/validators/CorrectUserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/validators/CorrectUserValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/validators/PasswordValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/vallidation/validators/PasswordValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/resources/templates/add-painting.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/resources/templates/add-painting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/resources/templates/fragments/commons.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/resources/templates/fragments/commons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/exam/src/main/resources/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +120,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.BookServiceApplication.executor": "Run",
     "Spring Boot.DictionaryAppApplication.executor": "Run",
-    "Spring Boot.ExamApplication.executor": "Run",
+    "Spring Boot.ExamApplication.executor": "Debug",
     "Spring Boot.FrontEndBasicsApplication.executor": "Run",
     "Spring Boot.MobileleApplication.executor": "Run",
     "Spring Boot.PathfinderApplication.executor": "Run",
@@ -391,7 +400,7 @@
       <workItem from="1718918790089" duration="1660000" />
       <workItem from="1718980402283" duration="624000" />
       <workItem from="1719000087058" duration="599000" />
-      <workItem from="1719120390437" duration="7254000" />
+      <workItem from="1719120390437" duration="20801000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -681,7 +690,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719125061006</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Implementing logic for login , register and logout">
+      <option name="closed" value="true" />
+      <created>1719128418717</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1719128418717</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -712,7 +729,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implementing adding an offer logic also with the logic for the home page" />
     <MESSAGE value="Implementing the logOut button and fixing the query for finding other offers" />
     <MESSAGE value="Implementation of delete and buy offer buttons" />
     <MESSAGE value="Last change in the home page" />
@@ -737,7 +753,8 @@
     <MESSAGE value="Persistence Layer" />
     <MESSAGE value="Seeding styles into DB" />
     <MESSAGE value="Adding a current logged user and fulfilling the navbar , index page and home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding a current logged user and fulfilling the navbar , index page and home page" />
+    <MESSAGE value="Implementing logic for login , register and logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing logic for login , register and logout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -777,8 +794,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/impl/UserServiceImpl.java</url>
-          <line>58</line>
+          <line>66</line>
           <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/PaintingService.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/impl/PaintingServiceImpl.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/impl/UserServiceImpl.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/controller/UserController.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

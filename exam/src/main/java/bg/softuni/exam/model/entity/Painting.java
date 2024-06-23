@@ -29,8 +29,10 @@ public class Painting extends BaseEntity{
     @ManyToOne
     private User owner;
 
+    private String imageUrl;
+
     @Column(name = "is_favoourite")
-    private Boolean isFavourite;
+    private boolean isFavourite;
 
     @NotNull
     @Column

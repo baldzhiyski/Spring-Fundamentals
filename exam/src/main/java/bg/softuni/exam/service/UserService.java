@@ -1,9 +1,12 @@
 package bg.softuni.exam.service;
 
-import bg.softuni.exam.model.dto.LogInDto;
-import bg.softuni.exam.model.dto.RegisterDto;
+import bg.softuni.exam.model.dto.painting.WrapperPaintings;
+import bg.softuni.exam.model.dto.user.LogInDto;
+import bg.softuni.exam.model.dto.user.RegisterDto;
 import bg.softuni.exam.model.entity.User;
 import bg.softuni.exam.util.CurrentLoggedUser;
+
+import java.util.UUID;
 
 public interface UserService {
 
@@ -20,4 +23,11 @@ public interface UserService {
     void registerUser(RegisterDto userRegisterDto);
 
     void logOutCurrentUser();
+
+    User getUserFromLogged();
+    void removePainting(UUID paintingId);
+
+    void addToFavourites(UUID paintingId);
+
+    void addVote(UUID paintingId);
 }

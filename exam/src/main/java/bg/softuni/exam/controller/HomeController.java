@@ -1,5 +1,7 @@
 package bg.softuni.exam.controller;
 
+import bg.softuni.exam.model.dto.user.LoggedUserWithDetailsDto;
+import bg.softuni.exam.service.PaintingService;
 import bg.softuni.exam.service.UserService;
 import bg.softuni.exam.util.CurrentLoggedUser;
 import org.springframework.stereotype.Controller;
@@ -11,9 +13,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 public class HomeController {
 
     private UserService userService;
+    private PaintingService paintingService;
 
-    public HomeController(UserService userService) {
+    public HomeController(UserService userService, PaintingService paintingService) {
         this.userService = userService;
+        this.paintingService = paintingService;
     }
     @ModelAttribute("currentUser")
     public CurrentLoggedUser currentLoggedUser() {
@@ -32,6 +36,13 @@ public class HomeController {
     public String homePage(Model model){
         if(!userService.getLoggedUser().isLogged()){
             return "redirect:/";
+        }
+        LoggedUserWithDetailsDto loggedUserWithDetailsDto = new LoggedUserWithDetailsDto();
+        loggedUserWithDetailsDto.setWrapperPaintings(this.paintingService.getWrapper());
+        loggedUserWithDetailsDto.setUsername(this.userService.getLoggedUser().getUsername());
+
+        if(!model.containsAttribute("loggedUserWithDetails")){
+            model.addAttribute("loggedUserWithDetails",loggedUserWithDetailsDto);
         }
         return "home";
     }

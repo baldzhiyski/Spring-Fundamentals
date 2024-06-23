@@ -1,7 +1,7 @@
 package bg.softuni.exam.controller;
 
-import bg.softuni.exam.model.dto.LogInDto;
-import bg.softuni.exam.model.dto.RegisterDto;
+import bg.softuni.exam.model.dto.user.LogInDto;
+import bg.softuni.exam.model.dto.user.RegisterDto;
 import bg.softuni.exam.service.UserService;
 import bg.softuni.exam.util.CurrentLoggedUser;
 import jakarta.validation.Valid;

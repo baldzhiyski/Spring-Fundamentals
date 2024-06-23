@@ -11,10 +11,10 @@
 </head>
 <body>
 <header>
-    <nav th:object="${currentUser}">
+    <nav  th:object="${currentUser}">
         <div class="home">
-            <a th:if="*{isLogged}" th:href="@{/paintings}">Paintings Collectors App</a>
-            <a  th:if="*{isLogged}" th:href="@{/paintings/add/{id}(id=${currentUser.id})}">Add Painting</a>
+            <a th:if="*{isLogged}" th:href="@{/home}">Paintings Collectors App</a>
+            <a th:if="${currentUser.isLogged()}" th:href="@{/paintings/add/{id}(id=${currentUser.id})}">Add Painting</a>
         </div>
         <div class="links">
             <li th:if="*{!isLogged}">

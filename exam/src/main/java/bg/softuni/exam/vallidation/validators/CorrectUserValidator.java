@@ -1,6 +1,6 @@
 package bg.softuni.exam.vallidation.validators;
 
-import bg.softuni.exam.model.dto.LogInDto;
+import bg.softuni.exam.model.dto.user.LogInDto;
 import bg.softuni.exam.model.entity.User;
 import bg.softuni.exam.service.UserService;
 import bg.softuni.exam.vallidation.annotations.CorrectUser;

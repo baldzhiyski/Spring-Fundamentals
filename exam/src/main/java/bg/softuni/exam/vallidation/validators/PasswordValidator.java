@@ -1,6 +1,6 @@
 package bg.softuni.exam.vallidation.validators;
 
-import bg.softuni.exam.model.dto.RegisterDto;
+import bg.softuni.exam.model.dto.user.RegisterDto;
 import bg.softuni.exam.vallidation.annotations.PasswordMatch;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

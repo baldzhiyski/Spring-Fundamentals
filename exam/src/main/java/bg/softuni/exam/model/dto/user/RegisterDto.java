@@ -1,4 +1,4 @@
-package bg.softuni.exam.model.dto;
+package bg.softuni.exam.model.dto.user;
 
 import bg.softuni.exam.vallidation.annotations.PasswordMatch;
 import bg.softuni.exam.vallidation.annotations.UniqueEmail;
