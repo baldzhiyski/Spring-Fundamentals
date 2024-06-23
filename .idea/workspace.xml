@@ -7,25 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Changing structure of pathfinder using Spring Security">
-      <change afterPath="$PROJECT_DIR$/exam/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/ExamApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/Painting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/Style.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/model/entity/enums/StyleName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/main/resources/application.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/exam/src/test/java/bg/softuni/exam/ExamApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobilele/src/main/resources/templates/offer-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/mobilele/src/main/resources/templates/offer-add.html" afterDir="false" />
+    <list default="true" id="11f25905-d07c-4610-9937-c9b117b421db" name="Changes" comment="Persistence Layer">
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/init/StyleInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/SeedService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exam/src/main/java/bg/softuni/exam/service/impl/SeedServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9eb4b37e-d50b-49d8-8fcf-3010439cc486.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +49,9 @@
         <option value="package.json" />
         <option value="HTML File" />
         <option value="AnnotationType" />
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -388,7 +374,7 @@
       <workItem from="1718918790089" duration="1660000" />
       <workItem from="1718980402283" duration="624000" />
       <workItem from="1719000087058" duration="599000" />
-      <workItem from="1719120390437" duration="2555000" />
+      <workItem from="1719120390437" duration="3080000" />
     </task>
     <task id="LOCAL-00001" summary="Updating the read me">
       <option name="closed" value="true" />
@@ -654,7 +640,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718730016269</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Persistence Layer">
+      <option name="closed" value="true" />
+      <created>1719123700732</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1719123700732</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,7 +679,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Creating the repositories and seeding the conditions in the database" />
     <MESSAGE value="Implementation for the login and register pages" />
     <MESSAGE value="Implementing the home page and adding logic for the get request" />
     <MESSAGE value="Implementing adding an offer logic also with the logic for the home page" />
@@ -710,7 +703,8 @@
     <MESSAGE value="Adding a TODO for tomorrow in pathfinder" />
     <MESSAGE value="Changing place for the annotation" />
     <MESSAGE value="Changing structure of pathfinder using Spring Security" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing structure of pathfinder using Spring Security" />
+    <MESSAGE value="Persistence Layer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Persistence Layer" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
