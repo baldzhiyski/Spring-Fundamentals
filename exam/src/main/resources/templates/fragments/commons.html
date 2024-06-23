@@ -5,29 +5,31 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Paintings Collectors App</title>
-    <link rel="stylesheet" href="/css/reset-css.css"/>
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" th:href="@{/css/reset-css.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
 </head>
 <body>
 <header>
-    <nav>
+    <nav th:object="${currentUser}">
         <div class="home">
-            <a href="/">Paintings Collectors App</a>
-            <a href="/">Add Painting</a>
+            <a th:if="*{isLogged}" th:href="@{/paintings}">Paintings Collectors App</a>
+            <a  th:if="*{isLogged}" th:href="@{/paintings/add/{id}(id=${currentUser.id})}">Add Painting</a>
         </div>
         <div class="links">
-            <li>
-                <a href="/">Login</a>
+            <li th:if="*{!isLogged}">
+                <a th:href="@{/users/login}">Login</a>
             </li>
 
-            <li>
-                <a href="/">Register</a>
+            <li th:if="*{!isLogged}">
+                <a th:href="@{/users/register}">Register</a>
             </li>
 
-            <li>
-                <a href="/">Logout</a>
-            </li>
+            <form th:if="*{isLogged}" th:method="POST" th:action="@{/users/logout}">
+                <button type="submit" class="btn btn-link text-primary active h5 text-stroke" style="padding: 0;">
+                    <a class="nav-link text-primary active h5 text-stroke">Logout</a>
+                </button>
+            </form>
         </div>
     </nav>
 </header>
