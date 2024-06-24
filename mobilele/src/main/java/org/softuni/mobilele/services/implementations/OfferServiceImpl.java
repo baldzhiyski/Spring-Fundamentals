@@ -13,6 +13,7 @@ import org.softuni.mobilele.domain.entities.User;
 import org.softuni.mobilele.domain.entities.enums.Category;
 import org.softuni.mobilele.domain.entities.enums.Engine;
 import org.softuni.mobilele.domain.entities.enums.Transmission;
+import org.softuni.mobilele.exceptions.ObjectNotFoundException;
 import org.softuni.mobilele.repositories.BrandRepository;
 import org.softuni.mobilele.repositories.ModelRepository;
 import org.softuni.mobilele.repositories.OfferRepository;
@@ -97,7 +98,7 @@ public class OfferServiceImpl implements OfferService {
 
     @Override
     public OfferDetailsDto getOfferById(Long id) {
-        Offer offer = this.offerRepository.findById(id).orElseThrow();
+        Offer offer = this.offerRepository.findById(id).orElseThrow(() -> new ObjectNotFoundException("No such offer",id));
         return this.mapper.map(offer, OfferDetailsDto.class);
     }
     @Override
@@ -122,7 +123,7 @@ public class OfferServiceImpl implements OfferService {
         if(!this.userService.isLoggedCreator(offerId)){
             throw new IllegalArgumentException("You are not allowed to do this kind of operations !");
         }
-        Offer offer = this.offerRepository.findById(offerId).orElseThrow();
+        Offer offer = this.offerRepository.findById(offerId).orElseThrow(()-> new ObjectNotFoundException("No such offer",offerId));
         String brandName = offerUpdateDto.getBrand();
         String photoUrl = saveFile(offerUpdateDto.getPhoto());
         Category category = offerUpdateDto.getCategory();
